@@ -28,7 +28,7 @@
       <div class="noti-left">
         <span class="live-pulse"></span>
         <span class="noti-badge">실시간 업데이트</span>
-        <span class="noti-text" id="rollingNotice">아고다 3월 전세계 호텔 5~7% 할인코드 즉시 사용 가능!</span>
+        <span class="noti-text" id="rollingNotice">실시간 검증된 국내외 100+ 브랜드 할인코드 배달 중!</span>
       </div>
       <a href="#quick-coupons" class="noti-cta-btn">쿠폰 받기 <i class="fa-solid fa-chevron-right"></i></a>
     </div>
@@ -40,7 +40,7 @@
       
       <!-- 독자 브랜드 로고: 쿠폰트럭 (CouponTruck) -->
       <div class="site-logo">
-        <a href="#" class="logo-link">
+        <a href="./" class="logo-link">
           <div class="logo-box">
             <div class="logo-icon-wrap logo-truck-wrap">
               <img src="assets/truck-icon.png" alt="쿠폰트럭 로고" class="logo-truck-img">
@@ -320,21 +320,21 @@
                         <div class="visual-icon visual-icon-gamsgo"><i class="fa-solid fa-fire"></i></div>
                         <div class="visual-text">
                           <div class="spotlight-label-group">
-                            <span class="sub-label">월 3천원대 파격 특가 · 2년 연속 이용자 만족도 1위</span>
+                            <span class="sub-label">월 4천원대 특가 · 글로벌 5년차 검증된 계정공유 플랫폼</span>
                             <span class="spotlight-pulse-tag">실시간 최다 신청 🔥</span>
                           </div>
                           <h2 class="banner-title">유튜브 프리미엄 & 넷플릭스 최대 85% 할인 (겜스고)</h2>
-                          <p class="banner-desc">운영진도 직접 매일 쓰는 100% 정품 계정공유 플랫폼! 유튜브, 넷플릭스, ChatGPT Plus, 스포티파이 전세계 최저가 보장</p>
+                          <p class="banner-desc">운영진도 직접 매일 쓰는 100% 정품 계정공유 플랫폼! 유튜브, 넷플릭스, ChatGPT Plus, 스포티파이 최대 85% 할인</p>
                         </div>
                       </div>
                       <div class="gamsgo-benefit-highlights">
-                        <div class="benefit-tag-item"><i class="fa-solid fa-circle-check"></i> 유튜브 프리미엄 월 3,000원대</div>
+                        <div class="benefit-tag-item"><i class="fa-solid fa-circle-check"></i> 유튜브 프리미엄 월 4천원대 (환율 기준)</div>
                         <div class="benefit-tag-item"><i class="fa-solid fa-circle-check"></i> 넷플릭스 4K 프리미엄 최대 85% 절약</div>
                         <div class="benefit-tag-item"><i class="fa-solid fa-circle-check"></i> 챗GPT Plus / 스포티파이 반값</div>
                         <div class="benefit-tag-item"><i class="fa-solid fa-circle-check"></i> 5% 추가 즉시할인 코드 [GAMSGO5]</div>
                       </div>
                       <div class="tag-chips">
-                        <span class="chip-white">#유튜브 월3천원</span>
+                        <span class="chip-white">#유튜브 월4천원대</span>
                         <span class="chip-white">#최대 85%할인</span>
                         <span class="chip-white">#정품 자동갱신</span>
                         <span class="chip-white">#코드: GAMSGO5</span>
@@ -354,7 +354,7 @@
                 </div>
 
                 <!-- 1. 여행 쿠폰 모음집 -->
-                <div class="banner-card banner-travel animate-card" data-category="travel" data-tags="여행 아고다 트립닷컴 클룩 kkday 호텔스닷컴 마이리얼트립 익스피디아 야놀자 부킹닷컴 유심사 돈키호테">
+                <div class="banner-card banner-travel animate-card" id="travel-section" data-category="travel" data-tags="여행 아고다 트립닷컴 클룩 kkday 호텔스닷컴 마이리얼트립 익스피디아 야놀자 부킹닷컴 유심사 돈키호테">
                   <div class="banner-inner" onclick="openCategoryModal('travel');">
                     <div class="banner-badge badge-blue">인기 여행 혜택</div>
                     <div class="banner-visual travel-gradient">
@@ -382,7 +382,7 @@
                 </div>
 
                 <!-- 2. 쇼핑 할인코드 모음집 -->
-                <div class="banner-card banner-shopping animate-card" data-category="shopping" data-tags="쇼핑 알리익스프레스 알리 테무 오늘의집 아이허브 쿠팡 아마존 크림 올리브영 케이스티파이 레고 레노버">
+                <div class="banner-card banner-shopping animate-card" id="shopping-section" data-category="shopping" data-tags="쇼핑 알리익스프레스 알리 테무 오늘의집 아이허브 쿠팡 아마존 크림 올리브영 케이스티파이 레고 레노버">
                   <div class="banner-inner" onclick="openCategoryModal('shopping');">
                     <div class="banner-badge badge-orange">직구 & 이커머스</div>
                     <div class="banner-visual shopping-gradient">
@@ -410,7 +410,7 @@
                 </div>
 
                 <!-- 3. 구독 서비스 할인 모음집 -->
-                <div class="banner-card banner-sub animate-card" data-category="sub" data-tags="구독 겜스고 스픽 틱톡라이트 VPN 노드VPN 서프샤크 익스프레스VPN 어도비 크몽 우버택시">
+                <div class="banner-card banner-sub animate-card" id="sub-section" data-category="sub" data-tags="구독 겜스고 스픽 틱톡라이트 VPN 노드VPN 서프샤크 익스프레스VPN 어도비 크몽 우버택시">
                   <div class="banner-inner" onclick="openCategoryModal('sub');">
                     <div class="banner-badge badge-purple">고수익 OTT & SW</div>
                     <div class="banner-visual sub-gradient">
@@ -438,7 +438,7 @@
                 </div>
 
                 <!-- 4. 게임 & 게이밍 기어 할인 모음집 -->
-                <div class="banner-card banner-game animate-card" data-category="game" data-tags="게임 게이밍 스팀 엑시트랙 에픽게임즈 레이저 로지텍G 닌텐도 엑스박스 험블번들 미꾸라지">
+                <div class="banner-card banner-game animate-card" id="game-section" data-category="game" data-tags="게임 게이밍 스팀 엑시트랙 에픽게임즈 레이저 로지텍G 닌텐도 엑스박스 험블번들 미꾸라지">
                   <div class="banner-inner" onclick="openCategoryModal('game');">
                     <div class="banner-badge badge-game">게이밍 HOT 특가</div>
                     <div class="banner-visual game-gradient">
@@ -466,7 +466,7 @@
                 </div>
 
                 <!-- 5. 패션 할인코드 모음집 -->
-                <div class="banner-card banner-fashion animate-card" data-category="fashion" data-tags="패션 파페치 마이테레사 룰루레몬 COS 띠어리 무신사 지그재그 에이블리 세타이어 W컨셉">
+                <div class="banner-card banner-fashion animate-card" id="fashion-section" data-category="fashion" data-tags="패션 파페치 마이테레사 룰루레몬 COS 띠어리 무신사 지그재그 에이블리 세타이어 W컨셉">
                   <div class="banner-inner" onclick="openCategoryModal('fashion');">
                     <div class="banner-badge badge-dark">디자이너 & 명품</div>
                     <div class="banner-visual fashion-gradient">
@@ -494,7 +494,7 @@
                 </div>
 
                 <!-- 5. 절약 백서 가이드 -->
-                <div class="banner-card banner-guide animate-card" data-category="guide" data-tags="가이드 꿀팁 캐시백 직구 관부가세 환율 절약 팁">
+                <div class="banner-card banner-guide animate-card" id="guide-section" data-category="guide" data-tags="가이드 꿀팁 캐시백 직구 관부가세 환율 절약 팁">
                   <div class="banner-inner" onclick="openCategoryModal('guide');">
                     <div class="banner-badge badge-emerald">스마트 머니 팁</div>
                     <div class="banner-visual guide-gradient">
@@ -568,11 +568,11 @@
           <div class="widget widget-top-deals">
             <h3 class="widget-title"><i class="fa-solid fa-fire text-orange"></i> 이달의 실시간 베스트 TOP 5</h3>
             <ul class="top-deal-list">
-              <li onclick="showCouponCode('겜스고', 'GAMSGO5', 'https://www.gamsgo.com/partner/aTqwg')" class="top-deal-hero">
+              <li onclick="openGamsgoPartner(event)" class="top-deal-hero">
                 <span class="rank-num rank-1"><i class="fa-solid fa-crown"></i> 1</span>
                 <div class="deal-info">
                   <strong>[개발자 TOP 1 픽] 겜스고 유튜브·OTT</strong>
-                  <span>월 3천원대 최대 85% 할인 + 5% 추가</span>
+                  <span>월 4천원대 최대 85% 할인 + 5% 추가</span>
                 </div>
                 <span class="badge-discount badge-discount-hero">85%+5%</span>
               </li>
@@ -830,13 +830,17 @@
           </div>
         </div>
 
-        <!-- 컬럼 2: 공정위 대가성 고지 (법적 필수) -->
+        <!-- 컬럼 2: 공정위 대가성 고지 & 면책 안내 (법적 필수) -->
         <div class="footer-col">
-          <h4 class="footer-col-title">공정위 고지 & 투명성</h4>
+          <h4 class="footer-col-title">공정위 고지 & 면책 안내</h4>
           <div class="footer-col-content">
             <p class="transparency-notice">
               <i class="fa-solid fa-circle-info"></i> <strong>경제적 이해관계 표시:</strong><br>
               본 사이트의 일부 링크는 파트너스/제휴 마케팅 활동의 일환으로 링크를 통한 예약 또는 구매 시 서비스 운영자가 소정의 수수료를 제공받을 수 있으며, 이는 서비스 유지 및 양질의 할인 정보 제공에 사용됩니다.
+            </p>
+            <p class="disclaimer-notice" style="margin-top: 10px; font-size: 12.5px; color: #94a3b8; line-height: 1.55;">
+              <i class="fa-solid fa-triangle-exclamation" style="color: #f59e0b;"></i> <strong>할인코드 유의사항:</strong><br>
+              각 브랜드의 프로모션 코드 및 할인 혜택은 제휴사 사정에 따라 예고 없이 조기 마감되거나 변경될 수 있습니다. 해외 서비스 결제 시 환율 변동에 따라 원화 청구 금액에 일부 차이가 발생할 수 있습니다.
             </p>
           </div>
         </div>

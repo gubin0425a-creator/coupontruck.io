@@ -68,37 +68,70 @@ async function loadCouponData() {
   updateUIWithData();
 }
 
-// 0-1. 데이터 기반 UI 갱신 (사이드바 TOP 5 및 태그 리스트)
+// 0-1. 데이터 기반 UI 갱신 (사이드바 TOP 5 고정 보장)
 function updateUIWithData() {
   if (!COUPON_DATA || !COUPON_DATA.categories) return;
 
-  // 사이드바 TOP 5 자동 갱신
+  // 사이드바 TOP 5 갱신 (겜스고 1위 고정 및 대표 딜 유지)
   const topListEl = document.querySelector(".top-deal-list");
   if (topListEl) {
-    const allItems = [];
-    Object.keys(COUPON_DATA.categories).forEach(catKey => {
-      const cat = COUPON_DATA.categories[catKey];
-      (cat.items || []).forEach(item => {
-        if (item.is_active !== false) {
-          allItems.push({ ...item, catKey });
-        }
-      });
-    });
+    const curatedTop5 = [
+      {
+        name: "[개발자 TOP 1 픽] 겜스고 유튜브·OTT",
+        desc: "월 4천원대 최대 85% 할인 + 5% 추가",
+        code: "GAMSGO5",
+        url: "https://www.gamsgo.com/partner/aTqwg",
+        badge: "85%+5%",
+        isHero: true
+      },
+      {
+        name: "아고다 전세계 호텔",
+        desc: "전 객실 5~7% 즉시할인",
+        code: "AGODAHUB05",
+        url: "https://www.agoda.com",
+        badge: "7%"
+      },
+      {
+        name: "알리 익스프레스",
+        desc: "$50 이상 결제 시 $6 할인",
+        code: "ALI26SAVE",
+        url: "https://ko.aliexpress.com",
+        badge: "$6"
+      },
+      {
+        name: "트립닷컴 항공 & 호텔",
+        desc: "항공권/호텔 패키지 최대 8%",
+        code: "TRIPNEW26",
+        url: "https://kr.trip.com",
+        badge: "8%"
+      },
+      {
+        name: "스픽 (Speak) AI 영어",
+        desc: "연간 이용권 20,000원 할인",
+        code: "SPEAKSAVE",
+        url: "https://www.usespeak.com",
+        badge: "-2만"
+      }
+    ];
 
-    // 뱃지 또는 우선순위 있는 상위 5개 추출
-    const top5 = allItems.slice(0, 5);
     topListEl.innerHTML = "";
-    top5.forEach((deal, idx) => {
+    curatedTop5.forEach((deal, idx) => {
       const li = document.createElement("li");
-      li.onclick = () => showCouponCode(deal.name, deal.code, deal.url);
+      if (deal.isHero) {
+        li.className = "top-deal-hero";
+        li.onclick = (e) => openGamsgoPartner(e);
+      } else {
+        li.onclick = () => showCouponCode(deal.name, deal.code, deal.url);
+      }
       const rankClass = idx === 0 ? "rank-1" : idx === 1 ? "rank-2" : idx === 2 ? "rank-3" : "";
+      const badgeClass = deal.isHero ? "badge-discount badge-discount-hero" : "badge-discount";
       li.innerHTML = `
-        <span class="rank-num ${rankClass}">${idx + 1}</span>
+        <span class="rank-num ${rankClass}">${deal.isHero ? '<i class="fa-solid fa-crown"></i> 1' : idx + 1}</span>
         <div class="deal-info">
           <strong>${deal.name}</strong>
           <span>${deal.desc}</span>
         </div>
-        <span class="badge-discount">${deal.badge || '특가'}</span>
+        <span class="${badgeClass}">${deal.badge}</span>
       `;
       topListEl.appendChild(li);
     });
@@ -214,14 +247,15 @@ function initFilterTabs() {
   });
 }
 
-// 5. 상단 롤링 알림 티커
+// 5. 상단 롤링 알림 티커 (실시간 현재 월 동적 반영)
 function initNoticeTicker() {
   const noticeEl = document.getElementById("rollingNotice");
   if (!noticeEl) return;
 
+  const currentMonth = new Date().getMonth() + 1;
   const messages = [
-    "👑 [운영자 & 개발자 TOP 1 픽] 겜스고 유튜브 프리미엄 월 3,000원대 & 5% 추가할인 코드 'GAMSGO5' 적용 중!",
-    "아고다 3월 전세계 호텔 5~7% 할인코드 즉시 사용 가능!",
+    "👑 [운영자 & 개발자 TOP 1 픽] 겜스고 유튜브 프리미엄 최대 85% 할인 & 5% 추가할인 코드 'GAMSGO5' 적용 중!",
+    `아고다 ${currentMonth}월 전세계 호텔 5~7% 할인코드 즉시 사용 가능!`,
     "스팀(Steam) & 엑시트랙 핑 VPN 20% 게이머 전용 즉시할인 코드 갱신",
     "알리익스프레스 $50 이상 결제 시 $6 즉시할인 코드 갱신",
     "파페치 & 마이테레사 해외 명품 첫 구매 10% 할인코드 배포",
@@ -328,16 +362,44 @@ function renderModalItems(items) {
     const itemCard = document.createElement("div");
     itemCard.className = "coupon-item-card";
     const badgeHtml = item.badge ? `<span class="badge-mini">${item.badge}</span>` : "";
-    itemCard.innerHTML = `
-      <div class="coupon-item-info">
-        <h4>${item.name} ${badgeHtml}</h4>
-        <p>${item.desc}</p>
-        <span class="coupon-code-badge"><i class="fa-solid fa-scissors"></i> ${item.code}</span>
-      </div>
-      <button class="btn-coupon-copy" onclick="copyAndRedirect('${item.name}', '${item.code}', '${item.url}')">
-        <i class="fa-regular fa-copy"></i> 복사 & 사이트 이동
-      </button>
-    `;
+
+    const isGuide = currentModalCategoryKey === "guide" || (item.code && item.code.startsWith("TIP-")) || item.url === "#";
+    const isGamsgo = item.name && item.name.includes("겜스고");
+
+    if (isGuide) {
+      itemCard.innerHTML = `
+        <div class="coupon-item-info">
+          <h4>${item.name} ${badgeHtml}</h4>
+          <p>${item.desc}</p>
+          <span class="coupon-code-badge tip-guide-badge"><i class="fa-solid fa-lightbulb"></i> 실전 절약 팁</span>
+        </div>
+        <button class="btn-coupon-copy btn-tip-guide" onclick="showToast('💡 [절약 팁] ${item.name} 확인 완료!')">
+          <i class="fa-solid fa-circle-check"></i> 팁 확인완료
+        </button>
+      `;
+    } else if (isGamsgo) {
+      itemCard.innerHTML = `
+        <div class="coupon-item-info">
+          <h4>${item.name} ${badgeHtml}</h4>
+          <p>${item.desc}</p>
+          <span class="coupon-code-badge"><i class="fa-solid fa-scissors"></i> ${item.code}</span>
+        </div>
+        <button class="btn-coupon-copy" onclick="openGamsgoPartner(event)">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> 바로가기 & 5% 할인
+        </button>
+      `;
+    } else {
+      itemCard.innerHTML = `
+        <div class="coupon-item-info">
+          <h4>${item.name} ${badgeHtml}</h4>
+          <p>${item.desc}</p>
+          <span class="coupon-code-badge"><i class="fa-solid fa-scissors"></i> ${item.code}</span>
+        </div>
+        <button class="btn-coupon-copy" onclick="copyAndRedirect('${item.name}', '${item.code}', '${item.url}')">
+          <i class="fa-regular fa-copy"></i> 복사 & 사이트 이동
+        </button>
+      `;
+    }
     listEl.appendChild(itemCard);
   });
 }
@@ -707,7 +769,7 @@ function handleAdminDeleteCoupon(catKey, code) {
 // 변경사항 영구 저장 (localStorage + server.py API 실시간 동기화)
 function persistDataChanges(newItem, catKey) {
   COUPON_DATA.last_updated = new Date().toISOString();
-  localStorage.setItem("COUPONPICK_DATA_OVERRIDE", JSON.stringify(COUPON_DATA));
+  localStorage.setItem("COUPONTRUCK_DATA_OVERRIDE", JSON.stringify(COUPON_DATA));
 
   // 서버 API가 살아있는 경우 data/coupons.json 파일에도 즉시 저장
   if (newItem && catKey) {
@@ -725,6 +787,7 @@ function persistDataChanges(newItem, catKey) {
 // 기본값 복원
 function resetToDefaultData() {
   if (confirm("모든 수동 변경 사항을 취소하고 원본 JSON 파일 기준으로 복원하시겠습니까?")) {
+    localStorage.removeItem("COUPONTRUCK_DATA_OVERRIDE");
     localStorage.removeItem("COUPONPICK_DATA_OVERRIDE");
     loadCouponData().then(() => {
       refreshAdminTable();
@@ -1252,7 +1315,7 @@ function getFallbackData() {
           "id": "sub-01",
           "name": "겜스고 (GamsGo)",
           "code": "GAMSGO5",
-          "desc": "유튜브 프리미엄, 넷플릭스 최대 85% 할인 계정공유 + 5% 추가할인 코드 (월 3천원대)",
+          "desc": "유튜브 프리미엄, 넷플릭스 최대 85% 할인 계정공유 + 5% 추가할인 코드 (월 4천원대)",
           "url": "https://www.gamsgo.com/partner/aTqwg",
           "expires": "2026-12-31",
           "is_active": true,
