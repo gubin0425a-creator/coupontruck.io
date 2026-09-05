@@ -3042,17 +3042,26 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  width: 100%;
 }
 
 .pwa-dock-left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   flex: 1;
+  min-width: 0;
 }
 
 .pwa-icon {
-  font-size: 26px;
+  font-size: 24px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.pwa-dock-text {
+  min-width: 0;
+  flex: 1;
 }
 
 .pwa-dock-text strong {
@@ -3060,6 +3069,9 @@ button {
   font-size: 13.5px;
   font-weight: 800;
   color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .pwa-dock-text span {
@@ -3075,6 +3087,7 @@ button {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .btn-pwa-install {
@@ -3091,6 +3104,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  flex-shrink: 0;
 }
 
 .btn-pwa-install:hover {
@@ -3099,16 +3113,27 @@ button {
 }
 
 .btn-pwa-dismiss {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.12);
   border: none;
-  color: #94a3b8;
-  font-size: 20px;
+  color: #cbd5e1;
+  font-size: 16px;
   cursor: pointer;
-  padding: 4px;
+  padding: 0;
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  min-height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   line-height: 1;
+  flex-shrink: 0;
+  transition: var(--transition);
 }
 
 .btn-pwa-dismiss:hover {
+  background: rgba(255, 255, 255, 0.25);
   color: #ffffff;
 }
 
@@ -3131,26 +3156,86 @@ button {
   }
   .pwa-smart-dock {
     bottom: 74px !important;
-    left: 12px !important;
+    left: 10px !important;
+    right: 10px !important;
     transform: none !important;
-    width: calc(100% - 24px) !important;
-    max-width: calc(100% - 24px) !important;
+    width: calc(100% - 20px) !important;
+    max-width: calc(100% - 20px) !important;
     box-sizing: border-box !important;
-    padding: 10px 14px !important;
+    padding: 9px 12px !important;
+    border-radius: 14px !important;
   }
   .pwa-dock-inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
     gap: 8px !important;
+    width: 100% !important;
+  }
+  .pwa-dock-left {
+    display: flex !important;
+    align-items: center !important;
+    min-width: 0 !important;
+    flex: 1 !important;
+    gap: 8px !important;
+    overflow: hidden !important;
+  }
+  .pwa-icon {
+    font-size: 20px !important;
+    flex-shrink: 0 !important;
+  }
+  .pwa-dock-text {
+    min-width: 0 !important;
+    flex: 1 !important;
+    overflow: hidden !important;
   }
   .pwa-dock-text strong {
-    font-size: 13px !important;
-  }
-  .pwa-dock-text span {
-    font-size: 11px !important;
-  }
-  .btn-pwa-install {
-    padding: 8px 12px !important;
     font-size: 12px !important;
     white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    line-height: 1.3 !important;
+  }
+  .pwa-dock-text span {
+    font-size: 10.5px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    line-height: 1.3 !important;
+  }
+  .pwa-dock-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    flex-shrink: 0 !important;
+  }
+  .btn-pwa-install {
+    padding: 6px 10px !important;
+    font-size: 11.5px !important;
+    font-weight: 800 !important;
+    white-space: nowrap !important;
+    border-radius: 8px !important;
+    flex-shrink: 0 !important;
+    gap: 4px !important;
+  }
+  .btn-pwa-install i {
+    font-size: 11px !important;
+  }
+  .btn-pwa-dismiss {
+    width: 26px !important;
+    height: 26px !important;
+    min-width: 26px !important;
+    min-height: 26px !important;
+    font-size: 16px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(255, 255, 255, 0.18) !important;
+    color: #ffffff !important;
+    border-radius: 50% !important;
+    flex-shrink: 0 !important;
+    padding: 0 !important;
+    cursor: pointer !important;
   }
 }
 
