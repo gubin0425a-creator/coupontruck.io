@@ -539,7 +539,7 @@ function initBannerClicks() {
   });
 }
 
-// 핫딜 브랜드 바: 사진 칸(컨테이너 박스 전체) 좌우 스와이프/스크롤 인식 범위 대폭 확장
+// 핫딜 브랜드 바: 사진 칸(컨테이너 박스 전체) 좌우 스와이프 & 관성(모멘텀) 스크롤 물리 엔진
 function initBrandScrollContainer() {
   const container = document.querySelector(".brand-scroll-container");
   const track = document.querySelector(".brand-scroll-track");
@@ -551,15 +551,33 @@ function initBrandScrollContainer() {
   let scrollLeft = 0;
   let hasMoved = false;
 
-  // 1. 모바일 터치 스와이프 (헤더, 제목, 빈 여백 등 박스 어디를 터치하고 밀어도 좌우 스크롤 인식)
+  // 관성(Momentum) 및 속도(Velocity) 측정 변수
+  let lastTouchX = 0;
+  let lastTouchTime = 0;
+  let velocityX = 0;
+  let momentumAnimId = null;
+
+  const stopMomentum = () => {
+    if (momentumAnimId) {
+      cancelAnimationFrame(momentumAnimId);
+      momentumAnimId = null;
+    }
+  };
+
+  // 1. 모바일 터치 이벤트 (박스 전체 터치 인식 + 플릭 관성 슬라이딩)
   container.addEventListener("touchstart", (e) => {
     if (e.touches.length !== 1) return;
+    stopMomentum(); // 기존 진행 중이던 관성 스크롤 즉시 중단 (인터럽트 지원)
+
     const touch = e.touches[0];
     isDown = true;
     hasMoved = false;
     startX = touch.pageX;
     startY = touch.pageY;
+    lastTouchX = touch.pageX;
+    lastTouchTime = performance.now();
     scrollLeft = track.scrollLeft;
+    velocityX = 0;
   }, { passive: true });
 
   container.addEventListener("touchmove", (e) => {
@@ -568,32 +586,71 @@ function initBrandScrollContainer() {
     const dx = touch.pageX - startX;
     const dy = touch.pageY - startY;
 
-    // 좌우 스와이프 인식이 우선되도록 처리
-    if (Math.abs(dx) > 5) {
-      if (Math.abs(dx) > Math.abs(dy)) {
-        hasMoved = true;
-        track.scrollLeft = scrollLeft - dx;
-        if (e.cancelable) {
-          e.preventDefault(); // 수평 탐색 중 페이지 위아래 흔들림 방지
-        }
+    // 좌우 스와이프 판별
+    if (Math.abs(dx) > 5 && Math.abs(dx) > Math.abs(dy)) {
+      hasMoved = true;
+      // 민감도: 1.15배 가속으로 손가락에 착 달라붙는 기분 좋은 반응성
+      track.scrollLeft = scrollLeft - (dx * 1.15);
+
+      // 최근 속도 샘플링 (픽셀/ms)
+      const now = performance.now();
+      const dt = now - lastTouchTime;
+      if (dt > 8) {
+        velocityX = (touch.pageX - lastTouchX) / dt;
+        lastTouchX = touch.pageX;
+        lastTouchTime = now;
+      }
+
+      if (e.cancelable) {
+        e.preventDefault(); // 수평 탐색 중 페이지 위아래 흔들림 방지
       }
     }
   }, { passive: false });
 
-  const endTouch = () => {
+  const handleTouchEnd = () => {
+    if (!isDown) return;
     isDown = false;
+
+    // 손을 뗐을 때 속도가 남아있으면 감속 관성 애니메이션(Momentum Glide) 시작
+    const timeSinceLastMove = performance.now() - lastTouchTime;
+    if (timeSinceLastMove < 90 && Math.abs(velocityX) > 0.15) {
+      // Swiper.js / iOS 기준 최적 관성 파라미터
+      let speed = velocityX * 16.5; // 초기 추진력
+      const friction = 0.945; // 자연스러운 지수 감속 계수 (0.94~0.95 황금 비율)
+
+      const applyMomentum = () => {
+        if (Math.abs(speed) < 0.3) {
+          stopMomentum();
+          return;
+        }
+        track.scrollLeft -= speed;
+        speed *= friction;
+        momentumAnimId = requestAnimationFrame(applyMomentum);
+      };
+
+      stopMomentum();
+      momentumAnimId = requestAnimationFrame(applyMomentum);
+    }
   };
 
-  container.addEventListener("touchend", endTouch, { passive: true });
-  container.addEventListener("touchcancel", endTouch, { passive: true });
+  container.addEventListener("touchend", handleTouchEnd, { passive: true });
+  container.addEventListener("touchcancel", handleTouchEnd, { passive: true });
 
-  // 2. PC 마우스 드래그 지원
+  // 2. PC 마우스 드래그 & 관성 스크롤
+  let mouseLastX = 0;
+  let mouseLastTime = 0;
+  let mouseVelocityX = 0;
+
   container.addEventListener("mousedown", (e) => {
     if (e.button !== 0) return;
+    stopMomentum();
     isDown = true;
     hasMoved = false;
     startX = e.pageX;
+    mouseLastX = e.pageX;
+    mouseLastTime = performance.now();
     scrollLeft = track.scrollLeft;
+    mouseVelocityX = 0;
     container.classList.add("is-dragging");
   });
 
@@ -602,14 +659,38 @@ function initBrandScrollContainer() {
     const dx = e.pageX - startX;
     if (Math.abs(dx) > 4) {
       hasMoved = true;
-      track.scrollLeft = scrollLeft - dx;
+      track.scrollLeft = scrollLeft - (dx * 1.15);
+
+      const now = performance.now();
+      const dt = now - mouseLastTime;
+      if (dt > 8) {
+        mouseVelocityX = (e.pageX - mouseLastX) / dt;
+        mouseLastX = e.pageX;
+        mouseLastTime = now;
+      }
     }
   });
 
   window.addEventListener("mouseup", () => {
-    if (isDown) {
-      isDown = false;
-      container.classList.remove("is-dragging");
+    if (!isDown) return;
+    isDown = false;
+    container.classList.remove("is-dragging");
+
+    const timeSinceLastMove = performance.now() - mouseLastTime;
+    if (timeSinceLastMove < 90 && Math.abs(mouseVelocityX) > 0.15) {
+      let speed = mouseVelocityX * 16.5;
+      const friction = 0.945;
+      const applyMouseMomentum = () => {
+        if (Math.abs(speed) < 0.3) {
+          stopMomentum();
+          return;
+        }
+        track.scrollLeft -= speed;
+        speed *= friction;
+        momentumAnimId = requestAnimationFrame(applyMouseMomentum);
+      };
+      stopMomentum();
+      momentumAnimId = requestAnimationFrame(applyMouseMomentum);
     }
   });
 
