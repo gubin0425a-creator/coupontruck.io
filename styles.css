@@ -197,12 +197,13 @@ button {
 }
 
 .logo-truck-wrap {
-  width: 52px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   background: #ffffff;
   border: 1.5px solid #e2e8f0;
-  border-radius: 10px;
+  border-radius: 11px;
   padding: 2px;
+  overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
