@@ -1,5 +1,17 @@
 User-agent: *
 Allow: /
 
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Daumoa
+Allow: /
+
 # Sitemaps
 Sitemap: https://gubin0425a-creator.github.io/coupontruck.io/sitemap.xml
