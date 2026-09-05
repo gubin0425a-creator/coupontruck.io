@@ -963,8 +963,8 @@
       ]
     },
     "game": {
-      "title": "🎮 게임 · 게이밍 기어 · 스팀 할인",
-      "badge": "게이밍 특가",
+      "title": "🎮 게임 · 기어 · 스팀 할인",
+      "badge": "게임특가",
       "items": [
         {
           "id": "gam-01",
@@ -1014,7 +1014,7 @@
           "url": "https://www.razer.com/kr-kr",
           "expires": "2026-10-15",
           "is_active": true,
-          "badge": "게이밍기어"
+          "badge": "기어특가"
         },
         {
           "id": "gam-06",

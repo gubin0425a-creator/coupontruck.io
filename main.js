@@ -78,11 +78,11 @@ function updateUIWithData() {
   if (topListEl) {
     const curatedTop5 = [
       {
-        name: "[개발자 TOP 1 픽] 겜스고 유튜브·OTT",
-        desc: "월 4천원대 최대 85% 할인 + 프로모션 코드",
+        name: "[1위] 겜스고 유튜브·OTT",
+        desc: "월 4천원대 최대 85% 할인",
         code: "DASSD",
         url: "https://www.gamsgo.com/partner/aTqwg",
-        badge: "85%+추가",
+        badge: "85%",
         isHero: true
       },
       {
@@ -94,21 +94,21 @@ function updateUIWithData() {
       },
       {
         name: "알리 익스프레스",
-        desc: "$50 이상 결제 시 $6 할인",
+        desc: "$50 결제 시 $6 할인",
         code: "ALI26SAVE",
         url: "https://ko.aliexpress.com",
         badge: "$6"
       },
       {
-        name: "트립닷컴 항공 & 호텔",
-        desc: "항공권/호텔 패키지 최대 8%",
+        name: "트립닷컴 항공·호텔",
+        desc: "패키지 최대 8% 할인",
         code: "TRIPNEW26",
         url: "https://kr.trip.com",
         badge: "8%"
       },
       {
-        name: "스픽 (Speak) AI 영어",
-        desc: "연간 이용권 20,000원 할인",
+        name: "스픽 AI 영어회화",
+        desc: "연간권 20,000원 할인",
         code: "SPEAKSAVE",
         url: "https://www.usespeak.com",
         badge: "-2만"
@@ -2232,8 +2232,8 @@ function getFallbackData() {
       ]
     },
     "game": {
-      "title": "🎮 게임 · 게이밍 기어 · 스팀 할인",
-      "badge": "게이밍 특가",
+      "title": "🎮 게임 · 기어 · 스팀 할인",
+      "badge": "게임특가",
       "items": [
         {
           "id": "gam-01",
@@ -2283,7 +2283,7 @@ function getFallbackData() {
           "url": "https://www.razer.com/kr-kr",
           "expires": "2026-12-31",
           "is_active": true,
-          "badge": "게이밍기어"
+          "badge": "기어특가"
         },
         {
           "id": "gam-06",
