@@ -707,6 +707,12 @@ button {
   justify-content: space-between;
   gap: 16px;
   border-top: 1.5px solid #ffedd5;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.action-bar-spotlight:hover {
+  background: #fff7ed;
 }
 
 .action-text-bold {

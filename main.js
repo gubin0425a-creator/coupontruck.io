@@ -256,6 +256,22 @@ function showCouponCode(name, code, url) {
   });
 }
 
+// 6-1. 겜스고 파트너 링크 원클릭 즉시 이동 & 코드 복사
+function openGamsgoPartner(e) {
+  if (e) {
+    e.stopPropagation();
+    if (e.preventDefault) e.preventDefault();
+  }
+  const code = "GAMSGO5";
+  const url = "https://www.gamsgo.com/partner/aTqwg";
+  try {
+    navigator.clipboard.writeText(code);
+  } catch (err) {}
+  showToast("🎉 겜스고 5% 할인코드 [GAMSGO5]가 복사되었습니다! 겜스고로 이동합니다 🚀");
+  window.open(url, "_blank");
+}
+window.openGamsgoPartner = openGamsgoPartner;
+
 // 7. 특정 브랜드 즉시 찾기
 function quickSelectBrand(brandName) {
   closeCategoryModal();
