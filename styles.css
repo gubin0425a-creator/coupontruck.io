@@ -1646,8 +1646,8 @@ button {
 
   body {
     padding-bottom: calc(75px + env(safe-area-inset-bottom, 0px));
-    word-break: break-word !important;
-    overflow-wrap: anywhere !important;
+    word-break: keep-all !important;
+    overflow-wrap: break-word !important;
   }
 
   /* 컨테이너 유동성 100% 확보 */
@@ -1783,13 +1783,15 @@ button {
   .entry-title {
     font-size: 20px !important;
     line-height: 1.3 !important;
-    word-break: break-word !important;
+    word-break: keep-all !important;
+    overflow-wrap: break-word !important;
   }
 
   .entry-subtitle {
     font-size: 13px !important;
     line-height: 1.5 !important;
-    word-break: break-word !important;
+    word-break: keep-all !important;
+    overflow-wrap: break-word !important;
   }
 
   .search-box-wrap {
@@ -1913,16 +1915,16 @@ button {
     flex: 1 !important;
     min-width: 0 !important;
     width: 100% !important;
-    word-break: break-word !important;
-    overflow-wrap: anywhere !important;
+    word-break: keep-all !important;
+    overflow-wrap: break-word !important;
   }
 
   .sub-label {
     font-size: 12px !important;
     font-weight: 700 !important;
     margin-bottom: 3px !important;
-    word-break: break-word !important;
-    overflow-wrap: anywhere !important;
+    word-break: keep-all !important;
+    overflow-wrap: break-word !important;
     display: block !important;
   }
 
@@ -1931,8 +1933,8 @@ button {
     font-weight: 800 !important;
     line-height: 1.35 !important;
     margin-bottom: 6px !important;
-    word-break: break-word !important;
-    overflow-wrap: anywhere !important;
+    word-break: keep-all !important;
+    overflow-wrap: break-word !important;
   }
 
   .banner-desc {
@@ -1940,8 +1942,8 @@ button {
     line-height: 1.5 !important;
     color: rgba(255, 255, 255, 0.95) !important;
     margin-bottom: 8px !important;
-    word-break: break-word !important;
-    overflow-wrap: anywhere !important;
+    word-break: keep-all !important;
+    overflow-wrap: break-word !important;
   }
 
   .tag-chips {
@@ -1991,9 +1993,9 @@ button {
     font-size: 11px !important;
     font-weight: 800 !important;
     padding: 4px 10px !important;
-    white-space: normal !important;
-    word-break: break-word !important;
-    overflow-wrap: anywhere !important;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    overflow-wrap: break-word !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
@@ -2032,8 +2034,8 @@ button {
   .benefit-tag-item {
     font-size: 13px !important;
     font-weight: 700 !important;
-    word-break: break-word !important;
-    overflow-wrap: anywhere !important;
+    word-break: keep-all !important;
+    overflow-wrap: break-word !important;
     display: flex !important;
     align-items: flex-start !important;
     gap: 8px !important;
@@ -2058,15 +2060,15 @@ button {
   .action-text-bold {
     font-size: 14.5px !important;
     line-height: 1.4 !important;
-    word-break: break-word !important;
-    overflow-wrap: anywhere !important;
+    word-break: keep-all !important;
+    overflow-wrap: break-word !important;
   }
 
   .action-subtext {
     font-size: 12px !important;
     margin-top: 3px !important;
-    word-break: break-word !important;
-    overflow-wrap: anywhere !important;
+    word-break: keep-all !important;
+    overflow-wrap: break-word !important;
   }
 
   .spotlight-direct-btn {
@@ -2081,24 +2083,83 @@ button {
     border-radius: 12px !important;
   }
 
-  /* SEO 테이블 및 하우투 모바일 최적화 */
+  /* SEO 테이블 및 요금 비교 모바일 최적화 (어색한 줄바꿈 완벽 해결) */
   .seo-price-table-wrap {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    display: block;
-    border-radius: 8px;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    display: block !important;
+    border-radius: 12px !important;
+    border: 1px solid #e2e8f0 !important;
+    background: #ffffff !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+    margin-bottom: 24px !important;
   }
 
   .seo-price-table {
-    min-width: 480px;
+    min-width: 540px !important;
+    width: 100% !important;
+    border-collapse: collapse !important;
   }
 
-  .seo-price-table th,
+  .seo-price-table th {
+    padding: 12px 14px !important;
+    font-size: 13px !important;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    background: #f8fafc !important;
+  }
+
   .seo-price-table td {
-    padding: 10px 12px;
-    font-size: 12.5px;
+    padding: 12px 14px !important;
+    font-size: 13px !important;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    overflow-wrap: normal !important;
+    vertical-align: middle !important;
+  }
+
+  .seo-price-table td:nth-child(1),
+  .seo-price-table td:nth-child(2),
+  .seo-price-table td:nth-child(3),
+  .seo-price-table td:nth-child(4) {
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+  }
+
+  .status-bad,
+  .status-warning,
+  .status-good {
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 4px 10px !important;
+    font-size: 12px !important;
+    border-radius: 6px !important;
+  }
+
+  .table-scroll-hint {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 6px !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    color: #64748b !important;
+    margin-bottom: 8px !important;
+    padding: 0 4px !important;
+  }
+
+  .table-scroll-hint i {
+    color: #2563eb !important;
+    animation: bounceX 1.5s infinite !important;
+  }
+
+  @keyframes bounceX {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(4px); }
   }
 
   .seo-howto-grid {
@@ -2682,13 +2743,16 @@ button {
 /* 4단계 요금 비교 테이블 */
 .seo-price-table-wrap {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   margin-bottom: 32px;
   border-radius: 10px;
   border: 1px solid var(--border-color);
+  background: #ffffff;
 }
 
 .seo-price-table {
   width: 100%;
+  min-width: 540px;
   border-collapse: collapse;
   text-align: left;
   font-size: 13.5px;
@@ -2700,12 +2764,16 @@ button {
   font-weight: 800;
   padding: 14px 18px;
   border-bottom: 2px solid #e2e8f0;
+  white-space: nowrap;
+  word-break: keep-all;
 }
 
 .seo-price-table td {
   padding: 14px 18px;
   border-bottom: 1px solid #f1f5f9;
   color: #334155;
+  white-space: nowrap;
+  word-break: keep-all;
 }
 
 .seo-price-table tr.highlight-row {
@@ -2719,33 +2787,42 @@ button {
 }
 
 .status-bad {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  word-break: keep-all;
   background: #fee2e2;
   color: #991b1b;
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 700;
-  padding: 3px 8px;
-  border-radius: 4px;
+  padding: 4px 10px;
+  border-radius: 6px;
 }
 
 .status-warning {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  word-break: keep-all;
   background: #fef3c7;
   color: #92400e;
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 700;
-  padding: 3px 8px;
-  border-radius: 4px;
+  padding: 4px 10px;
+  border-radius: 6px;
 }
 
 .status-good {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  word-break: keep-all;
   background: #dcfce7;
   color: #166534;
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 800;
-  padding: 3px 8px;
-  border-radius: 4px;
+  padding: 4px 10px;
+  border-radius: 6px;
 }
 
 /* 4스텝 카드 그리드 */
