@@ -1921,10 +1921,11 @@ button {
 .admin-auth-window {
   width: 480px !important;
   max-width: 95% !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
   border-radius: var(--radius-lg);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  overflow: hidden;
   animation: modalScale 0.22s ease forwards;
 }
 

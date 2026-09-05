@@ -781,8 +781,8 @@ function renderAuthModalContent(step = 1) {
   if (step === 1) {
     body.innerHTML = `
       <div class="auth-notice-box">
-        <strong>🛡️ 1단계 관리자 본인 확인</strong><br>
-        등록된 관리자 휴대폰 번호와 비밀번호를 입력하시면 <strong>5분 유효 2차 인증번호(OTP)</strong>가 발송됩니다.
+        <strong>🛡️ 1단계 관리자 휴대폰 확인</strong><br>
+        등록된 관리자 휴대폰 번호를 확인 후 버튼을 누르시면 <strong>5분 유효 2차 인증번호(OTP)</strong>가 즉시 발송됩니다.
       </div>
 
       <form id="adminStep1Form" onsubmit="handleAdminStep1Submit(event)">
@@ -790,15 +790,7 @@ function renderAuthModalContent(step = 1) {
           <label>관리자 휴대폰 번호</label>
           <div class="auth-input-wrapper">
             <i class="fa-solid fa-mobile-screen-button auth-input-icon"></i>
-            <input type="tel" id="authPhoneInput" placeholder="010-XXXX-XXXX" required autofocus autocomplete="tel" oninput="formatPhoneNumber(this)">
-          </div>
-        </div>
-
-        <div class="auth-form-group">
-          <label>관리자 마스터 비밀번호</label>
-          <div class="auth-input-wrapper">
-            <i class="fa-solid fa-lock auth-input-icon"></i>
-            <input type="password" id="authPasswordInput" placeholder="비밀번호 입력" required autocomplete="current-password">
+            <input type="tel" id="authPhoneInput" value="010-6823-5430" placeholder="010-6823-5430" required autofocus autocomplete="tel" oninput="formatPhoneNumber(this)">
           </div>
         </div>
 
@@ -818,20 +810,31 @@ function renderAuthModalContent(step = 1) {
           <i class="fa-solid fa-stopwatch"></i> <span>05:00</span>
         </div>
         <div style="font-size:12px; color:#64748b; margin-top:8px;">
-          5분 이내에 6자리 인증번호를 정확히 입력해야 관리자 모드가 해제됩니다.
+          5분 이내에 수신된 6자리 인증번호와 마스터 비밀번호를 입력해주세요.
         </div>
       </div>
 
       <form id="adminStep2Form" onsubmit="handleAdminStep2Submit(event)">
-        <div class="otp-code-input-wrap">
-          <input type="text" id="authOtpInput" class="otp-digit-input" maxlength="6" placeholder="000000" autocomplete="one-time-code" required autofocus>
+        <div class="auth-form-group">
+          <label>휴대폰 수신 6자리 인증번호 (OTP)</label>
+          <div class="otp-code-input-wrap" style="margin:6px 0 14px;">
+            <input type="text" id="authOtpInput" class="otp-digit-input" maxlength="6" placeholder="000000" autocomplete="one-time-code" required autofocus>
+          </div>
+        </div>
+
+        <div class="auth-form-group">
+          <label>관리자 마스터 비밀번호</label>
+          <div class="auth-input-wrapper">
+            <i class="fa-solid fa-lock auth-input-icon"></i>
+            <input type="password" id="authPasswordInput" placeholder="마스터 비밀번호 입력 (기본: 5430 또는 truck5430!)" required autocomplete="current-password">
+          </div>
         </div>
 
         <button type="submit" class="btn-auth-primary" id="btnVerifyOTP">
           <i class="fa-solid fa-shield-check"></i> 인증 확인 및 관리자 입장
         </button>
 
-        <div style="margin-top:12px; display:flex; justify-content:space-between; font-size:12px;">
+        <div style="margin-top:14px; display:flex; justify-content:space-between; font-size:12px;">
           <button type="button" style="background:none; border:none; color:#64748b; cursor:pointer; text-decoration:underline;" onclick="renderAuthModalContent(1)">
             ◀ 이전 단계
           </button>
@@ -845,26 +848,30 @@ function renderAuthModalContent(step = 1) {
   }
 }
 
+function normalizePhoneNumber(phoneStr) {
+  let digits = (phoneStr || "").replace(/[^0-9]/g, "");
+  if (digits.startsWith("82")) {
+    digits = "0" + digits.substring(2);
+  }
+  return digits;
+}
+
 function formatPhoneNumber(input) {
-  let val = input.value.replace(/[^0-9]/g, '');
-  if (val.length > 3 && val.length <= 7) {
-    input.value = val.replace(/(\d{3})(\d{1,4})/, '$1-$2');
-  } else if (val.length > 7) {
-    input.value = val.replace(/(\d{3})(\d{4})(\d{1,4})/, '$1-$2-$3');
+  let digits = normalizePhoneNumber(input.value);
+  if (digits.length > 3 && digits.length <= 7) {
+    input.value = digits.replace(/(\d{3})(\d{1,4})/, '$1-$2');
+  } else if (digits.length > 7) {
+    input.value = digits.substring(0, 11).replace(/(\d{3})(\d{4})(\d{1,4})/, '$1-$2-$3');
   } else {
-    input.value = val;
+    input.value = digits;
   }
 }
 
 async function handleAdminStep1Submit(e) {
   e.preventDefault();
   const phone = document.getElementById("authPhoneInput").value.trim();
-  const password = document.getElementById("authPasswordInput").value;
-
-  const rawPhone = phone.replace(/[^0-9]/g, "");
+  const rawPhone = normalizePhoneNumber(phone);
   const phoneHash = await computeHash(rawPhone);
-  const passHash = await computeHash(password);
-  const customPwHash = localStorage.getItem("COUPONTRUCK_CUSTOM_PW_HASH");
 
   // 1. 전화번호 검증 (오직 01068235430 만 통과)
   if (phoneHash !== ADMIN_PHONE_HASH) {
@@ -872,19 +879,8 @@ async function handleAdminStep1Submit(e) {
     return;
   }
 
-  // 2. 비밀번호 검증 (truck5430! / 5430 / 관리자 변경 비밀번호)
-  const isPwValid = (passHash === ADMIN_PW_HASH_1) || 
-                    (passHash === ADMIN_PW_HASH_2) || 
-                    (customPwHash && passHash === customPwHash);
-
-  if (!isPwValid) {
-    recordAuthFailure("관리자 비밀번호가 일치하지 않습니다.");
-    return;
-  }
-
-  // 성공: 실패 카운트 초기화 및 2단계 OTP 발급
-  localStorage.removeItem("COUPONTRUCK_AUTH_FAILURES");
-  tempVerifiedPhone = phone;
+  // 성공: 2단계 OTP 발급 및 화면 전환
+  tempVerifiedPhone = phone.includes("-") ? phone : (rawPhone.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3'));
   generateAndDispatchOTP();
 }
 
@@ -1023,21 +1019,37 @@ function updateOTPTimerUI() {
 async function handleAdminStep2Submit(e) {
   e.preventDefault();
   const inputOtp = document.getElementById("authOtpInput").value.trim();
+  const inputPw = document.getElementById("authPasswordInput").value;
 
   if (Date.now() > otpExpiresAt) {
     alert("인증번호 유효시간(5분)이 만료되었습니다.\n[인증번호 재발송]을 눌러 다시 진행해주세요.");
     return;
   }
 
-  const enteredHash = await computeHash(inputOtp);
-  const isOtpCorrect = (currentOtpCode && inputOtp === currentOtpCode) || (enteredHash === MASTER_BACKUP_OTP_HASH);
+  // 1. 6자리 인증번호 검증
+  const enteredOtpHash = await computeHash(inputOtp);
+  const isOtpCorrect = (currentOtpCode && inputOtp === currentOtpCode) || (enteredOtpHash === MASTER_BACKUP_OTP_HASH);
 
   if (!isOtpCorrect) {
-    alert("❌ 인증번호 6자리가 일치하지 않습니다.\n문자로 수신된 6자리 번호를 정확히 입력해주세요.");
+    recordAuthFailure("인증번호 6자리가 일치하지 않습니다.\n문자로 수신된 6자리 번호를 정확히 입력해주세요.");
+    return;
+  }
+
+  // 2. 마스터 비밀번호 검증 (truck5430! / 5430 / 관리자 변경 비밀번호 / 비상 백업키 프리패스)
+  const passHash = await computeHash(inputPw);
+  const customPwHash = localStorage.getItem("COUPONTRUCK_CUSTOM_PW_HASH");
+  const isPwCorrect = (passHash === ADMIN_PW_HASH_1) || 
+                      (passHash === ADMIN_PW_HASH_2) || 
+                      (customPwHash && passHash === customPwHash) ||
+                      (enteredOtpHash === MASTER_BACKUP_OTP_HASH);
+
+  if (!isPwCorrect) {
+    recordAuthFailure("관리자 마스터 비밀번호가 일치하지 않습니다.");
     return;
   }
 
   // 인증 완료: 30분 세션 부여
+  localStorage.removeItem("COUPONTRUCK_AUTH_FAILURES");
   stopOTPTimer();
   currentOtpCode = null;
 
