@@ -78,10 +78,10 @@ function updateUIWithData() {
     const curatedTop5 = [
       {
         name: "[개발자 TOP 1 픽] 겜스고 유튜브·OTT",
-        desc: "월 4천원대 최대 85% 할인 + 5% 추가",
-        code: "GAMSGO5",
+        desc: "월 4천원대 최대 85% 할인 + 프로모션 코드",
+        code: "DASSD",
         url: "https://www.gamsgo.com/partner/aTqwg",
-        badge: "85%+5%",
+        badge: "85%+추가",
         isHero: true
       },
       {
@@ -254,7 +254,7 @@ function initNoticeTicker() {
 
   const currentMonth = new Date().getMonth() + 1;
   const messages = [
-    "👑 [운영자 & 개발자 TOP 1 픽] 겜스고 유튜브 프리미엄 최대 85% 할인 & 5% 추가할인 코드 'GAMSGO5' 적용 중!",
+    "👑 [운영자 & 개발자 TOP 1 픽] 겜스고 유튜브 프리미엄 최대 85% 할인 & 전용 프로모션 코드 'DASSD' 적용 중!",
     `아고다 ${currentMonth}월 전세계 호텔 5~7% 할인코드 즉시 사용 가능!`,
     "스팀(Steam) & 엑시트랙 핑 VPN 20% 게이머 전용 즉시할인 코드 갱신",
     "알리익스프레스 $50 이상 결제 시 $6 즉시할인 코드 갱신",
@@ -297,12 +297,12 @@ function openGamsgoPartner(e) {
     if (typeof e.preventDefault === "function") e.preventDefault();
   }
   closeCategoryModal();
-  const code = "GAMSGO5";
+  const code = "DASSD";
   const url = "https://www.gamsgo.com/partner/aTqwg";
   try {
     navigator.clipboard.writeText(code);
   } catch (err) {}
-  showToast("🎉 겜스고 5% 할인코드 [GAMSGO5]가 복사되었습니다! 겜스고로 이동합니다 🚀");
+  showToast("🎉 겜스고 프로모션 코드 [DASSD]가 복사되었습니다! 겜스고로 이동합니다 🚀");
   window.open(url, "_blank");
 }
 window.openGamsgoPartner = openGamsgoPartner;
@@ -1314,8 +1314,8 @@ function getFallbackData() {
         {
           "id": "sub-01",
           "name": "겜스고 (GamsGo)",
-          "code": "GAMSGO5",
-          "desc": "유튜브 프리미엄, 넷플릭스 최대 85% 할인 계정공유 + 5% 추가할인 코드 (월 4천원대)",
+          "code": "DASSD",
+          "desc": "유튜브 프리미엄, 넷플릭스 최대 85% 할인 계정공유 + 프로모션 코드 DASSD (월 4천원대)",
           "url": "https://www.gamsgo.com/partner/aTqwg",
           "expires": "2026-12-31",
           "is_active": true,
