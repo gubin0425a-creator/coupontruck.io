@@ -1620,6 +1620,11 @@ button {
    12. 반응형 미디어 쿼리
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
+  .grid-container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
   .site-content {
     flex-direction: column;
   }
@@ -1648,10 +1653,25 @@ button {
     overflow-wrap: break-word !important;
   }
 
-  /* 컨테이너 유동성 100% 확보 */
+  /* 상단 실시간 티커바 모바일 최적화 (단어 잘림 & ... 원천 차단) */
+  .noti-badge {
+    display: none !important;
+  }
+  .noti-text {
+    font-size: 11.5px !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
+  .noti-cta-btn {
+    font-size: 11px !important;
+    padding: 2px 8px !important;
+  }
+
+  /* 컨테이너 유동성 100% 확보 (2025 해상도 가이드 기준) */
   .grid-container {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;

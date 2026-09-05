@@ -255,12 +255,12 @@ function initNoticeTicker() {
 
   const currentMonth = new Date().getMonth() + 1;
   const messages = [
-    "👑 [운영자 & 개발자 TOP 1 픽] 겜스고 유튜브 프리미엄 최대 85% 할인 & 전용 프로모션 코드 'DASSD' 적용 중!",
-    `아고다 ${currentMonth}월 전세계 호텔 5~7% 할인코드 즉시 사용 가능!`,
-    "스팀(Steam) & 엑시트랙 핑 VPN 20% 게이머 전용 즉시할인 코드 갱신",
-    "알리익스프레스 $50 이상 결제 시 $6 즉시할인 코드 갱신",
-    "파페치 & 마이테레사 해외 명품 첫 구매 10% 할인코드 배포",
-    "스픽(Speak) AI 영어회화 연간 이용권 2만원 즉시 할인"
+    "👑 [TOP 1] 겜스고 유튜브 85% 할인 (DASSD)",
+    `아고다 ${currentMonth}월 호텔 5~7% 즉시할인`,
+    "스팀 세일 & 엑시트랙 20% 즉시할인",
+    "알리익스프레스 $50 결제 $6 할인",
+    "파페치·마이테레사 첫 구매 10% 할인",
+    "스픽 AI 영어회화 연간권 2만원 할인"
   ];
 
   let index = 0;
@@ -1715,7 +1715,7 @@ function getFallbackData() {
           "id": "shp-19",
           "name": "레노버 (Lenovo)",
           "code": "LENOVO8",
-          "desc": "ThinkPad, Legion 게이밍 노트북 공식몰 5% 추가할인",
+          "desc": "ThinkPad, Legion 고성능 노트북 공식몰 5% 추가할인",
           "url": "https://www.lenovo.com/kr",
           "expires": "2026-12-31",
           "is_active": true,
@@ -2257,7 +2257,7 @@ function getFallbackData() {
         },
         {
           "id": "gam-03",
-          "name": "그린맨게이밍 (GMG)",
+          "name": "그린맨게임 (GMG)",
           "code": "GMG15OFF",
           "desc": "정품 스팀 CD키 공식 리셀러 신작 및 예약구매 15% 할인",
           "url": "https://www.greenmangaming.com",
@@ -2279,7 +2279,7 @@ function getFallbackData() {
           "id": "gam-05",
           "name": "레이저 (Razer)",
           "code": "RAZER10KR",
-          "desc": "게이밍 마우스, 기계식 키보드 공식몰 첫 구매 10% 쿠폰",
+          "desc": "프로 게이머 마우스, 기계식 키보드 공식몰 첫 구매 10% 쿠폰",
           "url": "https://www.razer.com/kr-kr",
           "expires": "2026-12-31",
           "is_active": true,
