@@ -1910,3 +1910,289 @@ button {
   }
 }
 
+/* --------------------------------------------------------------------------
+   14. 관리자 2단계 보안 인증 게이트 (Admin 2FA Security Gate)
+   -------------------------------------------------------------------------- */
+.admin-auth-overlay {
+  background: rgba(15, 23, 42, 0.85) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.admin-auth-window {
+  width: 480px !important;
+  max-width: 95% !important;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+  animation: modalScale 0.22s ease forwards;
+}
+
+.admin-auth-header {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  padding: 22px 26px;
+  border-bottom: 1px solid #334155;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.admin-auth-header-left {
+  flex: 1;
+}
+
+.admin-auth-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.admin-auth-title {
+  font-size: 19px;
+  font-weight: 800;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-auth-subtitle {
+  font-size: 12.5px;
+  color: #94a3b8;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+.admin-auth-body {
+  padding: 24px 26px;
+  background: #ffffff;
+}
+
+.auth-notice-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid var(--accent);
+  padding: 12px 14px;
+  border-radius: 6px;
+  font-size: 12.5px;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.auth-notice-box.warning {
+  background: #fff7ed;
+  border-color: #fed7aa;
+  border-left-color: #f97316;
+  color: #9a3412;
+}
+
+.auth-form-group {
+  margin-bottom: 15px;
+}
+
+.auth-form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.auth-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.auth-input-icon {
+  position: absolute;
+  left: 14px;
+  color: #94a3b8;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.auth-input-wrapper input {
+  width: 100%;
+  padding: 11px 14px 11px 38px;
+  font-size: 13.5px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.auth-input-wrapper input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15);
+}
+
+.btn-auth-primary {
+  width: 100%;
+  padding: 12px;
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: var(--transition);
+  margin-top: 18px;
+}
+
+.btn-auth-primary:hover {
+  background: var(--accent);
+}
+
+/* OTP 5분 카운트다운 박스 */
+.otp-countdown-container {
+  text-align: center;
+  background: #f8fafc;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 18px 14px;
+  margin-bottom: 18px;
+}
+
+.otp-target-phone {
+  font-size: 13.5px;
+  color: #334155;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.otp-timer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.otp-code-input-wrap {
+  margin: 16px 0;
+  text-align: center;
+}
+
+.otp-digit-input {
+  width: 100%;
+  max-width: 260px;
+  padding: 12px;
+  font-size: 24px;
+  letter-spacing: 8px;
+  text-align: center;
+  font-weight: 800;
+  font-family: monospace, sans-serif;
+  border: 2px solid #ea580c;
+  border-radius: 8px;
+  background: #fffaf0;
+  outline: none;
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.1);
+}
+
+.otp-digit-input:focus {
+  border-color: #c2410c;
+  box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.2);
+}
+
+.auth-lockout-screen {
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.auth-lockout-icon {
+  font-size: 44px;
+  color: #dc2626;
+  margin-bottom: 14px;
+}
+
+.auth-lockout-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #991b1b;
+  margin-bottom: 6px;
+}
+
+.auth-lockout-timer {
+  font-size: 20px;
+  font-weight: 800;
+  color: #dc2626;
+  margin: 10px 0;
+  font-family: monospace;
+}
+
+/* 관리자 대시보드 상단 세션 관리 바 */
+.admin-session-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 9px 18px;
+  font-size: 12.5px;
+  border-radius: 6px;
+  margin: 14px 24px 0;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.admin-session-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-session-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-session-action {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: none;
+  padding: 4px 10px;
+  font-size: 11.5px;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-session-action:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.btn-session-logout {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.btn-session-logout:hover {
+  background: #dc2626;
+}
+
+

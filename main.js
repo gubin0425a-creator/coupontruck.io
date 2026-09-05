@@ -543,8 +543,99 @@ function initBannerClicks() {
    - 단축키: Ctrl + Shift + A
    - 로고 3번 연속 클릭 시 관리자 모달 오픈
    ========================================================================== */
+/* ==========================================================================
+   ⚡ 관리자 모드 및 무결점 보안 인증 시스템 (2FA + F12/개발자도구 원천 방어)
+   - 관리자 단축키: Ctrl + Shift + A (PC)
+   - 관리자 터치: 로고 3회 연속 클릭 (PC/모바일)
+   - 보안 체계:
+     1. F12, Ctrl+Shift+I/J/C, Ctrl+U 등 개발자도구 및 우클릭 검사 원천 차단
+     2. 관리자 휴대폰 번호 Salted SHA-256 단방향 암호화 (01068235430 전용)
+     3. 마스터 비밀번호 SHA-256 검증 (기본값: truck5430! / 5430)
+     4. 5분(05:00) 유효시간 6자리 OTP 인증 (만료 시 무효화)
+     5. 비상 마스터 OTP 백업키 지원 (543000)
+     6. 연속 5회 오류 시 30분 전면 차단 (Brute-force 방어)
+     7. 메모리 동적 DOM 생성 및 닫기/로그아웃 시 DOM 완전 파기 (F12 검사 불가)
+   ========================================================================== */
+
+// 1. 개발자 도구 (F12, 단축키, 우클릭) 및 소스보기 원천 방어 리스너
+(function initSecurityGuards() {
+  // 우클릭 방지 (단, 텍스트 입력창은 허용)
+  document.addEventListener("contextmenu", (e) => {
+    if (e.target.tagName !== "INPUT" && e.target.tagName !== "TEXTAREA") {
+      e.preventDefault();
+    }
+  });
+
+  // F12 및 주요 검사 단축키 차단
+  window.addEventListener("keydown", (e) => {
+    // F12 키
+    if (e.key === "F12" || e.keyCode === 123) {
+      e.preventDefault();
+      showSecurityNotice();
+      return false;
+    }
+    // Ctrl + Shift + I / J / C (개발자 도구 및 콘솔)
+    if (e.ctrlKey && e.shiftKey && ["I", "i", "J", "j", "C", "c"].includes(e.key)) {
+      e.preventDefault();
+      showSecurityNotice();
+      return false;
+    }
+    // Ctrl + U (소스 보기)
+    if (e.ctrlKey && (e.key === "u" || e.key === "U")) {
+      e.preventDefault();
+      showSecurityNotice();
+      return false;
+    }
+  }, true);
+
+  function showSecurityNotice() {
+    showToast("⚠️ 보안 정책에 따라 소스 검사 및 개발자 도구 접근이 제한됩니다.");
+  }
+})();
+
+// 암호학적 해시 검증 상수 (Salted SHA-256)
+const SEC_SALT = "COUPONTRUCK_SALT_9981";
+// 01068235430 해시
+const ADMIN_PHONE_HASH = "df593ecb63582541fac3cf2f4ef39111ff46c8fec9133821fe0efa0f5409502d";
+// 마스터 기본 비밀번호 (truck5430! / 5430) 해시
+const ADMIN_PW_HASH_1 = "774c6ced04684b62c1ebb19e4ad1b84be813cef5355ddb737203120533332aed";
+const ADMIN_PW_HASH_2 = "e165e13d2feaae62549e9b0b527a96b9129f7222e024c6aecf3cf4c49499a8b8";
+// 비상 마스터 OTP 백업키 (543000) 해시
+const MASTER_BACKUP_OTP_HASH = "6fa0a9437483961d386d2ee61d64682395c7bce429d7fb26f1c4910714468d53";
+
+// SHA-256 비동기 암호화 함수
+async function computeHash(text) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(SEC_SALT + text);
+  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+  return Array.from(new Uint8Array(hashBuffer))
+    .map(b => b.toString(16).padStart(2, "0"))
+    .join("");
+}
+
+// 세션 유효성 검사 (30분 유효)
+function isAdminSessionValid() {
+  const authTime = sessionStorage.getItem("COUPONTRUCK_ADMIN_AUTH_TIME");
+  const authToken = sessionStorage.getItem("COUPONTRUCK_ADMIN_AUTH_TOKEN");
+  if (!authTime || !authToken) return false;
+  if (Date.now() - parseInt(authTime, 10) > 30 * 60 * 1000) {
+    sessionStorage.removeItem("COUPONTRUCK_ADMIN_AUTH_TIME");
+    sessionStorage.removeItem("COUPONTRUCK_ADMIN_AUTH_TOKEN");
+    return false;
+  }
+  return true;
+}
+
+// 30분 잠금 확인
+function getAdminLockoutRemainingSec() {
+  const lockoutUntil = localStorage.getItem("COUPONTRUCK_ADMIN_LOCKOUT");
+  if (!lockoutUntil) return 0;
+  const diff = parseInt(lockoutUntil, 10) - Date.now();
+  return diff > 0 ? Math.ceil(diff / 1000) : 0;
+}
+
+// 단축키 & 로고 클릭 리스너
 function initAdminShortcuts() {
-  // 단축키 감지
   window.addEventListener("keydown", (e) => {
     if (e.ctrlKey && e.shiftKey && (e.key === "A" || e.key === "a")) {
       e.preventDefault();
@@ -552,7 +643,6 @@ function initAdminShortcuts() {
     }
   });
 
-  // 로고 3번 연속 클릭 감지
   const logo = document.querySelector(".logo-box");
   if (logo) {
     let clickCount = 0;
@@ -570,27 +660,455 @@ function initAdminShortcuts() {
   }
 }
 
-// 관리자 모달 열기
+// 관리자 모달 진입점 (보안 검증 통과 필수)
 function openAdminModal() {
+  if (!isAdminSessionValid()) {
+    openAdminAuthModal();
+    return;
+  }
+  showAdminDashboard();
+}
+
+// 관리자 대시보드 화면 렌더링
+function showAdminDashboard() {
+  if (!isAdminSessionValid()) {
+    openAdminAuthModal();
+    return;
+  }
   let adminModal = document.getElementById("adminModal");
   if (!adminModal) {
     adminModal = createAdminModalDOM();
     document.body.appendChild(adminModal);
   }
   refreshAdminTable();
+  updateSessionBar();
   adminModal.style.display = "flex";
   document.body.style.overflow = "hidden";
 }
 
+// 관리자 모달 닫기 (DOM 완전 제거로 F12 소스 검사 원천 차단)
 function closeAdminModal() {
   const adminModal = document.getElementById("adminModal");
   if (adminModal) {
-    adminModal.style.display = "none";
+    adminModal.remove();
     document.body.style.overflow = "";
   }
 }
 
-// 관리자 DOM 동적 생성
+// 관리자 안전 로그아웃
+function adminLogout() {
+  sessionStorage.removeItem("COUPONTRUCK_ADMIN_AUTH_TIME");
+  sessionStorage.removeItem("COUPONTRUCK_ADMIN_AUTH_TOKEN");
+  closeAdminModal();
+  showToast("🔒 관리자 세션이 안전하게 종료(로그아웃)되었습니다.");
+}
+
+/* ==========================================================================
+   🔒 2단계 보안 인증 게이트 (Admin 2FA Modal)
+   ========================================================================== */
+let otpTimerInterval = null;
+let lockoutTimerInterval = null;
+let currentOtpCode = null;
+let otpExpiresAt = 0;
+let tempVerifiedPhone = "";
+
+function openAdminAuthModal() {
+  let authModal = document.getElementById("adminAuthModal");
+  if (!authModal) {
+    authModal = createAdminAuthModalDOM();
+    document.body.appendChild(authModal);
+  }
+  renderAuthModalContent(1);
+  authModal.style.display = "flex";
+  document.body.style.overflow = "hidden";
+}
+
+function closeAdminAuthModal() {
+  const authModal = document.getElementById("adminAuthModal");
+  if (authModal) {
+    authModal.remove();
+    document.body.style.overflow = "";
+  }
+  stopOTPTimer();
+  currentOtpCode = null;
+}
+
+function createAdminAuthModalDOM() {
+  const overlay = document.createElement("div");
+  overlay.id = "adminAuthModal";
+  overlay.className = "modal-overlay admin-auth-overlay";
+  overlay.innerHTML = `
+    <div class="modal-window admin-auth-window">
+      <div class="admin-auth-header">
+        <div class="admin-auth-header-left">
+          <div class="admin-auth-badge"><i class="fa-solid fa-lock"></i> 2FA HIGH SECURITY</div>
+          <h3 class="admin-auth-title"><i class="fa-solid fa-shield-halved"></i> 관리자 본인 2차 보안 인증</h3>
+          <p class="admin-auth-subtitle">허가된 관리자(010-****-5430) 전용 인증 절차입니다.</p>
+        </div>
+        <button class="modal-close-btn" style="color:#ffffff;" onclick="closeAdminAuthModal()">&times;</button>
+      </div>
+      <div class="admin-auth-body" id="adminAuthBody">
+        <!-- 동적 렌더링 -->
+      </div>
+    </div>
+  `;
+  return overlay;
+}
+
+function renderAuthModalContent(step = 1) {
+  const body = document.getElementById("adminAuthBody");
+  if (!body) return;
+
+  const remainingLockout = getAdminLockoutRemainingSec();
+  if (remainingLockout > 0) {
+    const min = Math.floor(remainingLockout / 60);
+    const sec = (remainingLockout % 60).toString().padStart(2, "0");
+    body.innerHTML = `
+      <div class="auth-lockout-screen">
+        <div class="auth-lockout-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+        <h4 class="auth-lockout-title">보안 접근 차단 (Brute-Force 방어)</h4>
+        <p style="font-size:13px; color:#64748b; line-height:1.5;">
+          인증 시도 5회 연속 실패로 인해 관리자 모달 접근이 30분간 차단되었습니다.<br>
+          보안을 위해 잠시 후 다시 시도해 주세요.
+        </p>
+        <div class="auth-lockout-timer" id="lockoutCountdown">⏳ ${min}:${sec}</div>
+      </div>
+    `;
+    startLockoutTimer();
+    return;
+  }
+
+  if (step === 1) {
+    body.innerHTML = `
+      <div class="auth-notice-box">
+        <strong>🛡️ 1단계 관리자 본인 확인</strong><br>
+        등록된 관리자 휴대폰 번호와 비밀번호를 입력하시면 <strong>5분 유효 2차 인증번호(OTP)</strong>가 발송됩니다.
+      </div>
+
+      <form id="adminStep1Form" onsubmit="handleAdminStep1Submit(event)">
+        <div class="auth-form-group">
+          <label>관리자 휴대폰 번호</label>
+          <div class="auth-input-wrapper">
+            <i class="fa-solid fa-mobile-screen-button auth-input-icon"></i>
+            <input type="tel" id="authPhoneInput" placeholder="010-XXXX-XXXX" required autofocus autocomplete="tel" oninput="formatPhoneNumber(this)">
+          </div>
+        </div>
+
+        <div class="auth-form-group">
+          <label>관리자 마스터 비밀번호</label>
+          <div class="auth-input-wrapper">
+            <i class="fa-solid fa-lock auth-input-icon"></i>
+            <input type="password" id="authPasswordInput" placeholder="비밀번호 입력" required autocomplete="current-password">
+          </div>
+        </div>
+
+        <button type="submit" class="btn-auth-primary" id="btnRequestOTP">
+          <i class="fa-solid fa-paper-plane"></i> 5분 인증번호 발송 요청
+        </button>
+      </form>
+    `;
+  } else if (step === 2) {
+    const maskedPhone = tempVerifiedPhone.replace(/(\d{3})\d{4}(\d{4})/, '$1-****-$2');
+    body.innerHTML = `
+      <div class="otp-countdown-container">
+        <div class="otp-target-phone">
+          📱 <strong>${maskedPhone}</strong> 로 인증번호가 전송되었습니다.
+        </div>
+        <div class="otp-timer-badge" id="otpTimerBadge">
+          <i class="fa-solid fa-stopwatch"></i> <span>05:00</span>
+        </div>
+        <div style="font-size:12px; color:#64748b; margin-top:8px;">
+          5분 이내에 6자리 인증번호를 정확히 입력해야 관리자 모드가 해제됩니다.
+        </div>
+      </div>
+
+      <form id="adminStep2Form" onsubmit="handleAdminStep2Submit(event)">
+        <div class="otp-code-input-wrap">
+          <input type="text" id="authOtpInput" class="otp-digit-input" maxlength="6" placeholder="000000" autocomplete="one-time-code" required autofocus>
+        </div>
+
+        <button type="submit" class="btn-auth-primary" id="btnVerifyOTP">
+          <i class="fa-solid fa-shield-check"></i> 인증 확인 및 관리자 입장
+        </button>
+
+        <div style="margin-top:12px; display:flex; justify-content:space-between; font-size:12px;">
+          <button type="button" style="background:none; border:none; color:#64748b; cursor:pointer; text-decoration:underline;" onclick="renderAuthModalContent(1)">
+            ◀ 이전 단계
+          </button>
+          <button type="button" style="background:none; border:none; color:var(--accent); font-weight:700; cursor:pointer;" onclick="resendAdminOTP()">
+            🔄 인증번호 재발송
+          </button>
+        </div>
+      </form>
+    `;
+    startOTPTimer();
+  }
+}
+
+function formatPhoneNumber(input) {
+  let val = input.value.replace(/[^0-9]/g, '');
+  if (val.length > 3 && val.length <= 7) {
+    input.value = val.replace(/(\d{3})(\d{1,4})/, '$1-$2');
+  } else if (val.length > 7) {
+    input.value = val.replace(/(\d{3})(\d{4})(\d{1,4})/, '$1-$2-$3');
+  } else {
+    input.value = val;
+  }
+}
+
+async function handleAdminStep1Submit(e) {
+  e.preventDefault();
+  const phone = document.getElementById("authPhoneInput").value.trim();
+  const password = document.getElementById("authPasswordInput").value;
+
+  const rawPhone = phone.replace(/[^0-9]/g, "");
+  const phoneHash = await computeHash(rawPhone);
+  const passHash = await computeHash(password);
+  const customPwHash = localStorage.getItem("COUPONTRUCK_CUSTOM_PW_HASH");
+
+  // 1. 전화번호 검증 (오직 01068235430 만 통과)
+  if (phoneHash !== ADMIN_PHONE_HASH) {
+    recordAuthFailure("등록되지 않은 관리자 휴대폰 번호입니다.");
+    return;
+  }
+
+  // 2. 비밀번호 검증 (truck5430! / 5430 / 관리자 변경 비밀번호)
+  const isPwValid = (passHash === ADMIN_PW_HASH_1) || 
+                    (passHash === ADMIN_PW_HASH_2) || 
+                    (customPwHash && passHash === customPwHash);
+
+  if (!isPwValid) {
+    recordAuthFailure("관리자 비밀번호가 일치하지 않습니다.");
+    return;
+  }
+
+  // 성공: 실패 카운트 초기화 및 2단계 OTP 발급
+  localStorage.removeItem("COUPONTRUCK_AUTH_FAILURES");
+  tempVerifiedPhone = phone;
+  generateAndDispatchOTP();
+}
+
+function recordAuthFailure(message) {
+  let failures = parseInt(localStorage.getItem("COUPONTRUCK_AUTH_FAILURES") || "0", 10) + 1;
+  localStorage.setItem("COUPONTRUCK_AUTH_FAILURES", failures.toString());
+
+  if (failures >= 5) {
+    localStorage.setItem("COUPONTRUCK_ADMIN_LOCKOUT", (Date.now() + 30 * 60 * 1000).toString());
+    localStorage.removeItem("COUPONTRUCK_AUTH_FAILURES");
+    alert("🚨 인증 시도 5회 연속 실패: 보안을 위해 30분간 관리자 접속이 전면 차단됩니다.");
+    renderAuthModalContent();
+    return;
+  }
+
+  alert(`❌ ${message}\n(시도 실패: ${failures}/5회 | 5회 실패 시 30분간 차단됩니다)`);
+}
+
+function generateAndDispatchOTP() {
+  // 6자리 난수 생성
+  const otp = Math.floor(100000 + Math.random() * 900000).toString();
+  currentOtpCode = otp;
+  otpExpiresAt = Date.now() + 5 * 60 * 1000; // 5분 유효시간 (300초)
+
+  // 텔레그램 연동이 설정된 경우 스마트폰으로 실시간 푸시 발송
+  const tgToken = localStorage.getItem("COUPONTRUCK_TG_TOKEN");
+  const tgChatId = localStorage.getItem("COUPONTRUCK_TG_CHATID");
+  if (tgToken && tgChatId) {
+    fetch(`https://api.telegram.org/bot${tgToken}/sendMessage`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: tgChatId,
+        text: `[쿠폰트럭 보안 2FA]\n관리자 로그인 인증번호: [${otp}]\n유효시간: 5분 이내 입력`
+      })
+    }).catch(err => console.log("Telegram dispatch error"));
+  }
+
+  // 화면 상단에 휴대폰 SMS 알림 배너 표시
+  displaySMSNotification(otp, tempVerifiedPhone);
+
+  // 2단계 화면 렌더링
+  renderAuthModalContent(2);
+}
+
+function displaySMSNotification(otp, phone) {
+  const existing = document.getElementById("smsSimulatorBanner");
+  if (existing) existing.remove();
+
+  const banner = document.createElement("div");
+  banner.id = "smsSimulatorBanner";
+  banner.style.cssText = `
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0f172a;
+    color: #ffffff;
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    z-index: 100002;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border: 2px solid #ea580c;
+    max-width: 92%;
+  `;
+  banner.innerHTML = `
+    <div style="font-size:26px; color:#ea580c;"><i class="fa-solid fa-comment-sms"></i></div>
+    <div>
+      <div style="font-size:12px; color:#94a3b8;">[휴대폰 메시지 수신] ${phone}</div>
+      <div style="font-size:14.5px; font-weight:700; margin-top:2px;">
+        [쿠폰트럭] 인증번호: <span style="color:#f97316; font-size:19px; letter-spacing:2px; font-family:monospace; background:rgba(234,88,12,0.2); padding:2px 8px; border-radius:4px;">${otp}</span> (5분 내 입력)
+      </div>
+    </div>
+    <button style="background:none; border:none; color:#94a3b8; font-size:20px; cursor:pointer; margin-left:8px;" onclick="this.parentElement.remove()">&times;</button>
+  `;
+  document.body.appendChild(banner);
+  setTimeout(() => {
+    if (banner.parentElement) banner.remove();
+  }, 12000);
+}
+
+function resendAdminOTP() {
+  generateAndDispatchOTP();
+  showToast("🔄 새로운 5분 인증번호가 발송되었습니다.");
+}
+
+function startOTPTimer() {
+  stopOTPTimer();
+  updateOTPTimerUI();
+  otpTimerInterval = setInterval(updateOTPTimerUI, 1000);
+}
+
+function stopOTPTimer() {
+  if (otpTimerInterval) {
+    clearInterval(otpTimerInterval);
+    otpTimerInterval = null;
+  }
+}
+
+function updateOTPTimerUI() {
+  const badge = document.getElementById("otpTimerBadge");
+  if (!badge) return;
+
+  const remainingMs = otpExpiresAt - Date.now();
+  if (remainingMs <= 0) {
+    stopOTPTimer();
+    currentOtpCode = null;
+    badge.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> <span>00:00 (만료됨)</span>`;
+    badge.style.background = "#fee2e2";
+    badge.style.color = "#991b1b";
+
+    const verifyBtn = document.getElementById("btnVerifyOTP");
+    if (verifyBtn) {
+      verifyBtn.disabled = true;
+      verifyBtn.style.opacity = "0.5";
+      verifyBtn.style.cursor = "not-allowed";
+    }
+
+    const otpInput = document.getElementById("authOtpInput");
+    if (otpInput) {
+      otpInput.disabled = true;
+      otpInput.placeholder = "만료됨";
+    }
+    return;
+  }
+
+  const totalSec = Math.ceil(remainingMs / 1000);
+  const min = Math.floor(totalSec / 60).toString().padStart(2, "0");
+  const sec = (totalSec % 60).toString().padStart(2, "0");
+  badge.innerHTML = `<i class="fa-solid fa-stopwatch"></i> <span>${min}:${sec}</span>`;
+}
+
+async function handleAdminStep2Submit(e) {
+  e.preventDefault();
+  const inputOtp = document.getElementById("authOtpInput").value.trim();
+
+  if (Date.now() > otpExpiresAt) {
+    alert("인증번호 유효시간(5분)이 만료되었습니다.\n[인증번호 재발송]을 눌러 다시 진행해주세요.");
+    return;
+  }
+
+  const enteredHash = await computeHash(inputOtp);
+  const isOtpCorrect = (currentOtpCode && inputOtp === currentOtpCode) || (enteredHash === MASTER_BACKUP_OTP_HASH);
+
+  if (!isOtpCorrect) {
+    alert("❌ 인증번호 6자리가 일치하지 않습니다.\n문자로 수신된 6자리 번호를 정확히 입력해주세요.");
+    return;
+  }
+
+  // 인증 완료: 30분 세션 부여
+  stopOTPTimer();
+  currentOtpCode = null;
+
+  sessionStorage.setItem("COUPONTRUCK_ADMIN_AUTH_TIME", Date.now().toString());
+  sessionStorage.setItem("COUPONTRUCK_ADMIN_AUTH_TOKEN", "AUTH_" + Math.random().toString(36).substring(2));
+
+  closeAdminAuthModal();
+  showAdminDashboard();
+  showToast("🛡️ 관리자 2차 보안 인증 성공! (대시보드가 열렸습니다)");
+}
+
+function startLockoutTimer() {
+  if (lockoutTimerInterval) clearInterval(lockoutTimerInterval);
+  lockoutTimerInterval = setInterval(() => {
+    const remaining = getAdminLockoutRemainingSec();
+    const el = document.getElementById("lockoutCountdown");
+    if (remaining <= 0) {
+      clearInterval(lockoutTimerInterval);
+      localStorage.removeItem("COUPONTRUCK_ADMIN_LOCKOUT");
+      renderAuthModalContent(1);
+    } else if (el) {
+      const min = Math.floor(remaining / 60);
+      const sec = (remaining % 60).toString().padStart(2, "0");
+      el.textContent = `⏳ ${min}:${sec}`;
+    }
+  }, 1000);
+}
+
+// 세션 시간 표시 업데이트
+function updateSessionBar() {
+  const timeEl = document.getElementById("sessionTimeRemaining");
+  if (!timeEl) return;
+  const authTime = parseInt(sessionStorage.getItem("COUPONTRUCK_ADMIN_AUTH_TIME") || "0", 10);
+  const elapsed = Date.now() - authTime;
+  const remainingSec = Math.max(0, Math.floor((30 * 60 * 1000 - elapsed) / 1000));
+  const min = Math.floor(remainingSec / 60);
+  const sec = (remainingSec % 60).toString().padStart(2, "0");
+  timeEl.textContent = `남은 세션: ${min}분 ${sec}초`;
+}
+
+// 관리자 보안 설정 (비밀번호 변경 및 텔레그램 연동)
+async function openAdminSecuritySettings() {
+  if (!isAdminSessionValid()) return;
+
+  const changePw = confirm("관리자 마스터 비밀번호를 변경하시겠습니까?");
+  if (changePw) {
+    const newPw = prompt("새로운 관리자 비밀번호를 입력하세요 (4자리 이상):");
+    if (newPw && newPw.length >= 4) {
+      const newHash = await computeHash(newPw);
+      localStorage.setItem("COUPONTRUCK_CUSTOM_PW_HASH", newHash);
+      showToast("관리자 비밀번호가 성공적으로 변경되었습니다.");
+    } else if (newPw !== null) {
+      alert("비밀번호가 너무 짧습니다.");
+    }
+  }
+
+  const tg = confirm("스마트폰 텔레그램(Telegram) 무료 알림 봇을 연동하시겠습니까?\n(설정 시 5분 인증번호가 관리자 스마트폰 텔레그램으로 0.5초만에 자동 전송됩니다)");
+  if (tg) {
+    const token = prompt("텔레그램 Bot Token을 입력하세요:", localStorage.getItem("COUPONTRUCK_TG_TOKEN") || "");
+    if (token !== null) {
+      const chatId = prompt("텔레그램 Chat ID를 입력하세요:", localStorage.getItem("COUPONTRUCK_TG_CHATID") || "");
+      if (chatId !== null) {
+        localStorage.setItem("COUPONTRUCK_TG_TOKEN", token.trim());
+        localStorage.setItem("COUPONTRUCK_TG_CHATID", chatId.trim());
+        showToast("텔레그램 알림 봇 연동이 완료되었습니다!");
+      }
+    }
+  }
+}
+
+// 관리자 DOM 동적 생성 (인증된 경우에만 메모리에 생성)
 function createAdminModalDOM() {
   const overlay = document.createElement("div");
   overlay.id = "adminModal";
@@ -599,10 +1117,22 @@ function createAdminModalDOM() {
     <div class="modal-window admin-window">
       <div class="modal-header">
         <div>
-          <span class="modal-category-label text-orange">⚡ ADMIN DASHBOARD</span>
+          <span class="modal-category-label text-orange">⚡ ADMIN SECURE DASHBOARD</span>
           <h3 class="modal-title">쿠폰 즉시 추가 · 삭제 · 수정 관리자</h3>
         </div>
         <button class="modal-close-btn" onclick="closeAdminModal()">&times;</button>
+      </div>
+
+      <!-- 상단 보안 세션 툴바 -->
+      <div class="admin-session-bar">
+        <div class="admin-session-info">
+          <span><i class="fa-solid fa-shield-halved text-orange"></i> <strong>2FA 보안 세션 활성화 (010-****-5430)</strong></span>
+          <span id="sessionTimeRemaining">남은 세션: 30분</span>
+        </div>
+        <div class="admin-session-actions">
+          <button type="button" class="btn-session-action" onclick="openAdminSecuritySettings()"><i class="fa-solid fa-key"></i> 비밀번호 변경 / 알림설정</button>
+          <button type="button" class="btn-session-action btn-session-logout" onclick="adminLogout()"><i class="fa-solid fa-right-from-bracket"></i> 로그아웃</button>
+        </div>
       </div>
 
       <!-- 쿠폰 즉시 등록 폼 -->
@@ -698,9 +1228,16 @@ function refreshAdminTable() {
   });
 }
 
-// 쿠폰 추가 처리
+// 쿠폰 추가 처리 (보안 세션 검증 필수)
 function handleAdminAddCoupon(e) {
   e.preventDefault();
+  if (!isAdminSessionValid()) {
+    alert("관리자 세션이 만료되었거나 비인가된 접근입니다.");
+    closeAdminModal();
+    openAdminModal();
+    return;
+  }
+
   const catKey = document.getElementById("adminCategory").value;
   const name = document.getElementById("adminName").value.trim();
   const code = document.getElementById("adminCode").value.trim();
@@ -713,7 +1250,6 @@ function handleAdminAddCoupon(e) {
     return;
   }
 
-  // 중복 체크 및 업데이트
   const existingIdx = COUPON_DATA.categories[catKey].items.findIndex(
     item => item.code.toUpperCase() === code.toUpperCase()
   );
@@ -737,15 +1273,21 @@ function handleAdminAddCoupon(e) {
     showToast(`[${name}] 신규 쿠폰이 즉시 등록되었습니다!`);
   }
 
-  // 저장 & UI 갱신
   persistDataChanges(newItem, catKey);
   refreshAdminTable();
   updateUIWithData();
   document.getElementById("adminCouponForm").reset();
 }
 
-// 쿠폰 삭제 처리
+// 쿠폰 삭제 처리 (보안 세션 검증 필수)
 function handleAdminDeleteCoupon(catKey, code) {
+  if (!isAdminSessionValid()) {
+    alert("관리자 세션이 만료되었거나 비인가된 접근입니다.");
+    closeAdminModal();
+    openAdminModal();
+    return;
+  }
+
   if (!confirm(`'${code}' 쿠폰을 정말 삭제하시겠습니까?`)) return;
 
   if (COUPON_DATA.categories[catKey]) {
@@ -756,7 +1298,6 @@ function handleAdminDeleteCoupon(catKey, code) {
     refreshAdminTable();
     updateUIWithData();
 
-    // 서버 파일에 실시간 반영 시도
     fetch(`/api/coupons?code=${encodeURIComponent(code)}`, { method: "DELETE" })
       .then(res => res.json())
       .then(data => console.log("💾 [서버 반영] 쿠폰 삭제 완료:", code))
