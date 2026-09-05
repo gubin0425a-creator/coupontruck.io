@@ -1,0 +1,1072 @@
+{
+  "last_updated": "2026-09-05T13:17:08.233276",
+  "version": "2.0.0",
+  "categories": {
+    "travel": {
+      "title": "✈️ 여행 · 항공권 · 호텔 숙소 할인코드",
+      "badge": "여행 특가",
+      "items": [
+        {
+          "id": "trv-01",
+          "name": "아고다 (Agoda)",
+          "code": "AGODAHUB05",
+          "desc": "전 세계 호텔 및 리조트 예약 5%~7% 전용 즉시할인 코드",
+          "url": "https://www.agoda.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "인기 1위"
+        },
+        {
+          "id": "trv-02",
+          "name": "트립닷컴 (Trip.com)",
+          "code": "TRIPNEW26",
+          "desc": "국내외 항공권 및 제휴 호텔 패키지 최대 8% 즉시할인",
+          "url": "https://kr.trip.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "항공+호텔"
+        },
+        {
+          "id": "trv-03",
+          "name": "클룩 (Klook)",
+          "code": "KLOOKBHUB",
+          "desc": "전세계 투어, 액티비티, 유심/교통패스 5,000원 즉시할인",
+          "url": "https://www.klook.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "액티비티"
+        },
+        {
+          "id": "trv-04",
+          "name": "KKday (케이케이데이)",
+          "code": "KKDAYSPRING",
+          "desc": "일본/대만/동남아 필수 입장권 및 공항철도 즉시할인 바우처",
+          "url": "https://www.kkday.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "해외교통"
+        },
+        {
+          "id": "trv-05",
+          "name": "호텔스닷컴 (Hotels.com)",
+          "code": "HOTELLP08",
+          "desc": "국내 및 해외 인기 호텔 예약 시 8% 할인코드 (10박 적립)",
+          "url": "https://kr.hotels.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "8% OFF"
+        },
+        {
+          "id": "trv-06",
+          "name": "익스피디아 (Expedia)",
+          "code": "EXPEDIA8",
+          "desc": "전 세계 엄선된 숙소 예약 시 8% 추가 할인 프로모션",
+          "url": "https://www.expedia.co.kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "호텔할인"
+        },
+        {
+          "id": "trv-07",
+          "name": "마이리얼트립",
+          "code": "MYREAL2026",
+          "desc": "국내외 투어, 항공권, 숙소 첫 결제 시 3,000원 즉시할인",
+          "url": "https://www.myrealtrip.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "국내외투어"
+        },
+        {
+          "id": "trv-08",
+          "name": "부킹닷컴 (Booking.com)",
+          "code": "BOOK10SAVE",
+          "desc": "Genius 회원 전 세계 숙박 최대 15% 전용 혜택",
+          "url": "https://www.booking.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "15% 혜택"
+        },
+        {
+          "id": "trv-09",
+          "name": "트래블로카 (Traveloka)",
+          "code": "TVLKSPRING",
+          "desc": "동남아 항공권 및 인기 리조트 예약 특별 프로모션 코드",
+          "url": "https://www.traveloka.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "동남아특화"
+        },
+        {
+          "id": "trv-10",
+          "name": "라쿠텐 트래블 (Rakuten)",
+          "code": "RAKUTENJP",
+          "desc": "일본 전역 료칸, 특급 호텔 예약 5%~10% 전용 쿠폰",
+          "url": "https://travel.rakuten.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "일본료칸"
+        },
+        {
+          "id": "trv-11",
+          "name": "돈키호테 (Don Quijote)",
+          "code": "DONKI5OFF",
+          "desc": "일본 돈키호테 매장 면세 10% + 추가 5% 모바일 바코드 쿠폰",
+          "url": "https://www.donki.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "면세+5%"
+        },
+        {
+          "id": "trv-12",
+          "name": "유심사 (USIMSA)",
+          "code": "USIMSA2026",
+          "desc": "전세계 무제한 로밍 eSIM 전 국가 10% 즉시할인 코드",
+          "url": "https://www.usimsa.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "eSIM추천"
+        },
+        {
+          "id": "trv-13",
+          "name": "에어알로 (Airalo)",
+          "code": "AIRALO3OFF",
+          "desc": "글로벌 200+ 국가 지원 1위 eSIM 첫 구매 $3 즉시할인",
+          "url": "https://www.airalo.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "글로벌eSIM"
+        },
+        {
+          "id": "trv-14",
+          "name": "로밍도깨비 (Ggabi eSIM)",
+          "code": "ROAMINGDOK",
+          "desc": "일본/동남아/미주 로밍도깨비 eSIM 1,000원 할인 쿠폰",
+          "url": "https://rokebi.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "eSIM할인"
+        },
+        {
+          "id": "trv-15",
+          "name": "와이파이도시락",
+          "code": "DOSIRAK10",
+          "desc": "해외 포켓와이파이 및 도시락eSIM 상시 10% 할인 예약",
+          "url": "https://www.wifidosirak.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "포켓와이파이"
+        },
+        {
+          "id": "trv-16",
+          "name": "인터파크투어 (Interpark)",
+          "code": "INTPARKTOUR",
+          "desc": "국내외 패키지, 땡처리 항공권, 호텔 전용 할인 바우처",
+          "url": "https://tour.interpark.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "땡처리항공"
+        },
+        {
+          "id": "trv-17",
+          "name": "야놀자 (NOL)",
+          "code": "NOLYJ2026",
+          "desc": "국내 호텔, 풀빌라, 레저, KTX 최대 10% 쿠폰팩",
+          "url": "https://www.yanolja.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "국내숙박"
+        },
+        {
+          "id": "trv-18",
+          "name": "여기어때",
+          "code": "YEOGIPRO26",
+          "desc": "해외숙소 최대 8% 즉시할인 + 국내 숙박 10만원 쿠폰팩",
+          "url": "https://www.goodchoice.kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "해외/국내"
+        },
+        {
+          "id": "trv-19",
+          "name": "제주패스 (JEJUPASS)",
+          "code": "JEJUPASSRENT",
+          "desc": "제주도 렌터카 가격비교 최저가 예약 + 5% 추가할인",
+          "url": "https://www.jejupass.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "제주렌터카"
+        },
+        {
+          "id": "trv-20",
+          "name": "트립비토즈 (Tripbtoz)",
+          "code": "TRIPBTOZ5",
+          "desc": "영상 리뷰 기반 국내외 호텔 예약 5% 즉시할인 코드",
+          "url": "https://www.tripbtoz.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": null
+        },
+        {
+          "id": "trv-21",
+          "name": "와그 (WAUG)",
+          "code": "WAUGNEW",
+          "desc": "국내외 테마파크, 뮤지컬 티켓, 투어 액티비티 첫구매 할인",
+          "url": "https://www.waug.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": null
+        },
+        {
+          "id": "trv-22",
+          "name": "민다 (Minda)",
+          "code": "MINDASTAY",
+          "desc": "유럽, 미주 전세계 검증된 한인민박 예약 5,000원 할인",
+          "url": "https://www.theminda.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "한인민박"
+        },
+        {
+          "id": "trv-23",
+          "name": "오미오 (Omio)",
+          "code": "OMIOEUROPE",
+          "desc": "유럽 기차(유로스타/이탈로/TGV), 플릭스버스 예약 10유로 할인",
+          "url": "https://www.omio.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "유럽교통"
+        },
+        {
+          "id": "trv-24",
+          "name": "렌터카스닷컴",
+          "code": "RENTALCARS",
+          "desc": "전세계 글로벌 렌터카 Hertz, Avis, Enterprise 5% 할인",
+          "url": "https://www.rentalcars.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": null
+        },
+        {
+          "id": "trv-25",
+          "name": "IHG 호텔 & 리조트",
+          "code": "IHGDIRECT",
+          "desc": "인터컨티넨탈, 홀리데이인 공식 홈페이지 직영 최저가 보장",
+          "url": "https://www.ihg.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "특급호텔"
+        }
+      ]
+    },
+    "shopping": {
+      "title": "🛍️ 해외직구 & 국내 쇼핑몰 할인코드",
+      "badge": "쇼핑 특가",
+      "items": [
+        {
+          "id": "shp-01",
+          "name": "알리익스프레스 (AliExpress)",
+          "code": "ALI26SAVE",
+          "desc": "$50 이상 결제 시 $6, $100 이상 결제 시 $15 프로모션 코드",
+          "url": "https://ko.aliexpress.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "직구 1위"
+        },
+        {
+          "id": "shp-02",
+          "name": "테무 (Temu)",
+          "code": "TEMU90OFF",
+          "desc": "신규 앱 설치 & 가입 시 최대 90% 할인 및 13만원 쿠폰세트",
+          "url": "https://www.temu.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "초특가"
+        },
+        {
+          "id": "shp-03",
+          "name": "아이허브 (iHerb)",
+          "code": "HUB9999",
+          "desc": "영양제, 오메가3, 보충제, 웰니스 전 품목 5%~10% 상시할인",
+          "url": "https://kr.iherb.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "영양제필수"
+        },
+        {
+          "id": "shp-04",
+          "name": "오늘의집",
+          "code": "OHOU10000",
+          "desc": "가구, 조명, 인테리어 소품 첫 결제 10,000원 웰컴 쿠폰",
+          "url": "https://ohou.se",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "인테리어"
+        },
+        {
+          "id": "shp-05",
+          "name": "쿠팡 (Coupang)",
+          "code": "COUPANGWOW",
+          "desc": "로켓와우 골든박스 단독특가 및 로켓직구 무료배송",
+          "url": "https://www.coupang.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "로켓배송"
+        },
+        {
+          "id": "shp-06",
+          "name": "아마존 (Amazon)",
+          "code": "AMZKR20",
+          "desc": "한국 직배송 $100 이상 결제 시 $15 즉시할인 프로모션",
+          "url": "https://www.amazon.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "미국직구"
+        },
+        {
+          "id": "shp-07",
+          "name": "케이스티파이 (CASETiFY)",
+          "code": "CASEVIP15",
+          "desc": "아이폰 & 갤럭시 케이스, 테크 액세서리 전 품목 15% VIP 할인",
+          "url": "https://www.casetify.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "15% 할인"
+        },
+        {
+          "id": "shp-08",
+          "name": "올리브영 (Olive Young)",
+          "code": "OLIVEBIG",
+          "desc": "올영세일 인기 뷰티, 스킨케어 10% 장바구니 보너스 쿠폰",
+          "url": "https://www.oliveyoung.co.kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "K-뷰티"
+        },
+        {
+          "id": "shp-09",
+          "name": "크림 (KREAM)",
+          "code": "KREAMSPRING",
+          "desc": "한정판 스니커즈, 스트릿웨어, 럭셔리 배송비 무료 쿠폰",
+          "url": "https://kream.co.kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "스니커즈"
+        },
+        {
+          "id": "shp-10",
+          "name": "큐텐 (Qoo10)",
+          "code": "QOO10GLOBAL",
+          "desc": "일본/아시아 직구 화장품 및 전자기기 $10 장바구니 쿠폰",
+          "url": "https://www.qoo10.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "아시아직구"
+        },
+        {
+          "id": "shp-11",
+          "name": "11번가 아마존",
+          "code": "11STAMZ",
+          "desc": "우주패스 전용 5,000원 장바구니 쿠폰 + 무료배송",
+          "url": "https://www.11st.co.kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "우주패스"
+        },
+        {
+          "id": "shp-12",
+          "name": "마켓컬리 (Kurly)",
+          "code": "KURLY5000",
+          "desc": "샛별배송 첫 주문 100원딜 혜택 + 5,000원 할인 쿠폰",
+          "url": "https://www.kurly.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "신규100원"
+        },
+        {
+          "id": "shp-13",
+          "name": "CJ더마켓 (CJ Market)",
+          "code": "CJMARKET40",
+          "desc": "비비고, 햇반, 고메 등 가공식품 공식몰 최대 45% 쿠폰",
+          "url": "https://www.cjthemarket.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "비비고할인"
+        },
+        {
+          "id": "shp-14",
+          "name": "풀무원 공식몰 (#풀무원)",
+          "code": "PULMUONE10",
+          "desc": "바른먹거리 풀무원 신선식품 신규가입 1만원 쿠폰팩",
+          "url": "https://shop.pulmuone.co.kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": null
+        },
+        {
+          "id": "shp-15",
+          "name": "미트리 (Metree)",
+          "code": "METREESAVE",
+          "desc": "닭가슴살, 식단 도시락, 소고기 VIP 추천인 특가 (최대 56% 할인)",
+          "url": "https://metree.co.kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "닭가슴살"
+        },
+        {
+          "id": "shp-16",
+          "name": "랭킹닭컴 (Rankingdak)",
+          "code": "RANKINGDAK",
+          "desc": "맛있닭, 잇메이트 닭가슴살 특급배송 전용 5,000원 쿠폰",
+          "url": "https://www.rankingdak.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": null
+        },
+        {
+          "id": "shp-17",
+          "name": "펫프렌즈 (Pet Friends)",
+          "code": "PETFRIENDS",
+          "desc": "강아지/고양이 사료, 간식, 용품 첫구매 5,000원 쿠폰",
+          "url": "https://pet-friends.co.kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "반려동물"
+        },
+        {
+          "id": "shp-18",
+          "name": "레고 공식몰 (LEGO)",
+          "code": "LEGOBRICKS",
+          "desc": "공식 스토어 한정판 브릭 세트 사은품 증정 프로모션",
+          "url": "https://www.lego.com/ko-kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": null
+        },
+        {
+          "id": "shp-19",
+          "name": "레노버 (Lenovo)",
+          "code": "LENOVO8",
+          "desc": "ThinkPad, Legion 게이밍 노트북 공식몰 5% 추가할인",
+          "url": "https://www.lenovo.com/kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "노트북"
+        },
+        {
+          "id": "shp-20",
+          "name": "다이슨 공식몰 (Dyson)",
+          "code": "DYSONSPECIAL",
+          "desc": "에어랩, 청소기, 공기청정기 공식몰 전용 거치대 사은품 혜택",
+          "url": "https://www.dyson.co.kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "에어랩"
+        },
+        {
+          "id": "shp-21",
+          "name": "예스24 (YES24)",
+          "code": "YES24BOOKS",
+          "desc": "도서, 음반, e-book 장바구니 3,000원 상품권",
+          "url": "https://www.yes24.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "도서할인"
+        },
+        {
+          "id": "shp-22",
+          "name": "교보문고",
+          "code": "KYOBO2026",
+          "desc": "온라인 교보문고 도서 결제 2,000원 앱 다운로드 쿠폰",
+          "url": "https://www.kyobobook.co.kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": null
+        },
+        {
+          "id": "shp-23",
+          "name": "솔드아웃 (sold out)",
+          "code": "SOLDOUT50",
+          "desc": "무신사 한정판 거래 플랫폼 수수료 무료 쿠폰",
+          "url": "https://www.soldout.co.kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": null
+        }
+      ]
+    },
+    "sub": {
+      "title": "🎬 OTT 계정공유 · VPN · 소프트웨어 구독 할인",
+      "badge": "초특가 구독",
+      "items": [
+        {
+          "id": "sub-01",
+          "name": "겜스고 (GamsGo)",
+          "code": "GAMSGO5",
+          "desc": "유튜브 프리미엄, 넷플릭스 70% 계정공유 5% 추가할인 코드 (월 3천원대)",
+          "url": "https://www.gamsgo.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "인기 1위"
+        },
+        {
+          "id": "sub-02",
+          "name": "스픽 (Speak)",
+          "code": "SPEAKSAVE",
+          "desc": "AI 영어회화 1위 스픽 프리미엄 연간 구독권 20,000원 즉시할인",
+          "url": "https://www.usespeak.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "2만원 할인"
+        },
+        {
+          "id": "sub-03",
+          "name": "노드VPN (NordVPN)",
+          "code": "NORD70OFF",
+          "desc": "보안 1위 VPN 2년 플랜 최대 72% 할인 + 3개월 추가 무료 증정",
+          "url": "https://nordvpn.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "72% OFF"
+        },
+        {
+          "id": "sub-04",
+          "name": "서프샤크 (Surfshark VPN)",
+          "code": "SURF85OFF",
+          "desc": "무제한 기기 동시접속 가성비 VPN 85% 특별할인 + 2개월 무료",
+          "url": "https://surfshark.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "85% OFF"
+        },
+        {
+          "id": "sub-05",
+          "name": "익스프레스VPN (ExpressVPN)",
+          "code": "EXPRESS3M",
+          "desc": "초고속 스트리밍 최적화 VPN 12개월 결제 시 3개월 무료 연장",
+          "url": "https://www.expressvpn.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "+3개월"
+        },
+        {
+          "id": "sub-06",
+          "name": "프로톤VPN (ProtonVPN)",
+          "code": "PROTONSAVE",
+          "desc": "스위스 기반 강력한 개인정보 보호 VPN 50% 할인 프로모션",
+          "url": "https://protonvpn.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "보안최강"
+        },
+        {
+          "id": "sub-07",
+          "name": "어도비 (Adobe CC)",
+          "code": "ADOBE60",
+          "desc": "포토샵, 일러스트레이터, 프리미어 프로 학생/교직원 60% 특별할인",
+          "url": "https://www.adobe.com/kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "학생60%"
+        },
+        {
+          "id": "sub-08",
+          "name": "우버택시 (Uber)",
+          "code": "UBERKR2026",
+          "desc": "첫 탑승 요금 50% 즉시 할인쿠폰 (최대 10,000원 할인)",
+          "url": "https://www.uber.com/kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "50% 할인"
+        },
+        {
+          "id": "sub-09",
+          "name": "틱톡 라이트 (TikTok Lite)",
+          "code": "TIKTOKLITE",
+          "desc": "친구 초대 신규 가입 시 현금 출금 가능한 포인트 즉시 지급",
+          "url": "https://www.tiktok.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "포인트증정"
+        },
+        {
+          "id": "sub-10",
+          "name": "크몽 (Kmong)",
+          "code": "KMONG10000",
+          "desc": "디자인, 프로그래밍, 번역 등 전문가 외주 첫 의뢰 1만원 할인",
+          "url": "https://kmong.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "1만원 할인"
+        },
+        {
+          "id": "sub-11",
+          "name": "숨고 (Soomgo)",
+          "code": "SOOMGO5000",
+          "desc": "생활 서비스, 인테리어, 과외 견적 요청 5,000원 쿠폰",
+          "url": "https://soomgo.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": null
+        },
+        {
+          "id": "sub-12",
+          "name": "밀리의 서재",
+          "code": "MILLIEFIRST",
+          "desc": "전자책 16만 권 무제한 첫 달 무료 구독 혜택",
+          "url": "https://www.millie.co.kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "첫달무료"
+        },
+        {
+          "id": "sub-13",
+          "name": "윌라 오디오북",
+          "code": "WELAAROCKS",
+          "desc": "베스트셀러 오디오북 & 클래스 2주 무료 체험 + 3개월 50%",
+          "url": "https://www.welaaa.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": null
+        },
+        {
+          "id": "sub-14",
+          "name": "링글 (Ringle)",
+          "code": "RINGLEPOINT",
+          "desc": "아이비리그 튜터 1:1 화상영어 20분 무료 수업권 + 포인트",
+          "url": "https://www.ringleplus.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "아이비리그"
+        },
+        {
+          "id": "sub-15",
+          "name": "캔바 프로 (Canva Pro)",
+          "code": "CANVAPRO30",
+          "desc": "디자인 템플릿 & AI 도구 30일 무료 체험 프로모션",
+          "url": "https://www.canva.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "무료체험"
+        },
+        {
+          "id": "sub-16",
+          "name": "마이크로소프트 365",
+          "code": "MS365FAMILY",
+          "desc": "Word, Excel, PowerPoint 1개월 무료체험 + 1TB 클라우드",
+          "url": "https://www.microsoft.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": null
+        }
+      ]
+    },
+    "fashion": {
+      "title": "👗 해외 럭셔리 & 패션 브랜드 할인코드",
+      "badge": "패션 특가",
+      "items": [
+        {
+          "id": "fas-01",
+          "name": "파페치 (Farfetch)",
+          "code": "FARFETCH10",
+          "desc": "글로벌 디자이너 명품 브랜드 첫 구매 10% 정가품 할인코드",
+          "url": "https://www.farfetch.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "명품1위"
+        },
+        {
+          "id": "fas-02",
+          "name": "마이테레사 (Mytheresa)",
+          "code": "MYT15FIRST",
+          "desc": "독일 명품 직구 공식몰 첫 주문 10%~15% 웰컴 바우처",
+          "url": "https://www.mytheresa.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "15% 할인"
+        },
+        {
+          "id": "fas-03",
+          "name": "룰루레몬 (Lululemon)",
+          "code": "LULU10KR",
+          "desc": "요가복 & 프리미엄 애슬레저 공식 스토어 전 상품 무료배송",
+          "url": "https://www.lululemon.co.kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "요가복"
+        },
+        {
+          "id": "fas-04",
+          "name": "세타이어 (Cettire)",
+          "code": "CETTIRE10",
+          "desc": "호주 명품 플랫폼 세일 상품 추가 10% 프로모션 코드",
+          "url": "https://www.cettire.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "추가10%"
+        },
+        {
+          "id": "fas-05",
+          "name": "COS (코스)",
+          "code": "COSHELLO10",
+          "desc": "미니멀 패션 COS 공식 온라인몰 신규 가입 10% 웰컴 쿠폰",
+          "url": "https://www.cos.com/ko-kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "10% 쿠폰"
+        },
+        {
+          "id": "fas-06",
+          "name": "아르켓 (ARKET)",
+          "code": "ARKET10HELLO",
+          "desc": "노르딕 라이프스타일 브랜드 ARKET 첫 구매 10% 할인코드",
+          "url": "https://www.arket.com/ko-kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": null
+        },
+        {
+          "id": "fas-07",
+          "name": "W컨셉 (W Concept)",
+          "code": "WCONCEPT10",
+          "desc": "국내 최고 디자이너 편집몰 10% 앱 전용 장바구니 쿠폰",
+          "url": "https://www.wconcept.co.kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "디자이너몰"
+        },
+        {
+          "id": "fas-08",
+          "name": "무신사 (Musinsa)",
+          "code": "MUSINSA7",
+          "desc": "무신사 스토어 전 브랜드 7% 쿠폰 및 회원등급 추가할인",
+          "url": "https://www.musinsa.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "국내 1위"
+        },
+        {
+          "id": "fas-09",
+          "name": "지그재그 (Zigzag)",
+          "code": "ZIGZAG20",
+          "desc": "2030 여성 쇼핑몰 통합 첫 구매 20,000원 웰컴 쿠폰팩",
+          "url": "https://zigzag.kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "쿠폰팩"
+        },
+        {
+          "id": "fas-10",
+          "name": "에이블리 (ABLY)",
+          "code": "ABLYSAVE",
+          "desc": "전 상품 무료배송 스타일 커머스 첫 쇼핑 지원금 쿠폰",
+          "url": "https://a-bly.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": null
+        },
+        {
+          "id": "fas-11",
+          "name": "SSENSE (에센스)",
+          "code": "SSENSESALE",
+          "desc": "캐나다 명품 편집숍 스트릿웨어 & 하이엔드 시즌 오프 세일",
+          "url": "https://www.ssense.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "스트릿명품"
+        },
+        {
+          "id": "fas-12",
+          "name": "24S (24세브르)",
+          "code": "24SFIRST15",
+          "desc": "LVMH 루이비통 모회사 공식 럭셔리몰 첫 구매 15% 할인",
+          "url": "https://www.24s.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "LVMH공식"
+        },
+        {
+          "id": "fas-13",
+          "name": "조마샵 (Jomashop)",
+          "code": "JOMAFAST20",
+          "desc": "명품 시계, 선글라스, 향수 직구 $200 이상 결제 시 $20 할인",
+          "url": "https://www.jomashop.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "명품시계"
+        },
+        {
+          "id": "fas-14",
+          "name": "조말론 런던 (Jo Malone)",
+          "code": "JOMALONEGIFT",
+          "desc": "공식 온라인 부티크 향수 구매 시 미니어처 코롱 증정",
+          "url": "https://www.jomalone.co.kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "향수증정"
+        },
+        {
+          "id": "fas-15",
+          "name": "띠어리 (Theory)",
+          "code": "THEORY15",
+          "desc": "미니멀 컨템포러리 브랜드 띠어리 공식몰 신규 15% 바우처",
+          "url": "https://www.theory.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": null
+        },
+        {
+          "id": "fas-16",
+          "name": "알로요가 (Alo Yoga)",
+          "code": "ALOYOGA15",
+          "desc": "글로벌 셀럽들의 워너비 애슬레저 첫 주문 15% 할인코드",
+          "url": "https://www.aloyoga.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "셀럽애슬레저"
+        },
+        {
+          "id": "fas-17",
+          "name": "크록스 공식몰 (Crocs)",
+          "code": "CROCS20KR",
+          "desc": "클로그, 샌들, 지비츠 참 공식몰 클럽 회원 20% 할인",
+          "url": "https://www.crocs.co.kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "20% 할인"
+        },
+        {
+          "id": "fas-18",
+          "name": "H&M 공식 온라인스토어",
+          "code": "HMAPP15",
+          "desc": "H&M 멤버십 신규 가입 & 앱 첫 구매 시 15% 즉시할인",
+          "url": "https://www2.hm.com/ko_kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": null
+        },
+        {
+          "id": "fas-19",
+          "name": "스와로브스키 (Swarovski)",
+          "code": "SWAROVSKI10",
+          "desc": "크리스털 주얼리, 목걸이, 귀걸이 클럽 회원 10% 바우처",
+          "url": "https://www.swarovski.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "주얼리"
+        },
+        {
+          "id": "fas-20",
+          "name": "나이키 공식몰 (Nike)",
+          "code": "NIKEWELCOME",
+          "desc": "나이키 멤버 가입 시 웰컴 1만원 쿠폰 및 전 상품 무료배송/반품",
+          "url": "https://www.nike.com/kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "무료반품"
+        },
+        {
+          "id": "fas-21",
+          "name": "아디다스 공식몰 (Adidas)",
+          "code": "ADICLUB10",
+          "desc": "아디클럽 신규 가입 시 10% 웰컴 쿠폰 및 한정판 래플 응모",
+          "url": "https://www.adidas.co.kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": null
+        }
+      ]
+    },
+    "guide": {
+      "title": "💡 스마트 소비 & 직구 절약 백서",
+      "badge": "절약 가이드",
+      "items": [
+        {
+          "id": "gde-01",
+          "name": "해외 원화결제(DCC) 차단법",
+          "code": "TIP-DCC",
+          "desc": "해외 결제 시 3~8% 불필요한 이중 환전 수수료 아끼는 카드사 세팅 방법",
+          "url": "#",
+          "expires": "2029-12-31",
+          "is_active": true,
+          "badge": "필독"
+        },
+        {
+          "id": "gde-02",
+          "name": "해외직구 관부가세 면세 한도 계산법",
+          "code": "TIP-TAX",
+          "desc": "미국 $200(목록통관), 일반 국가 $150 관세 면제 기준과 합산과세 주의사항",
+          "url": "#",
+          "expires": "2029-12-31",
+          "is_active": true,
+          "badge": "세금절약"
+        },
+        {
+          "id": "gde-03",
+          "name": "호텔 최저가 예약 노하우 5가지",
+          "code": "TIP-HOTEL",
+          "desc": "브라우저 시크릿 모드 검색, 통화 설정(현지통화 vs USD) 비교법",
+          "url": "#",
+          "expires": "2029-12-31",
+          "is_active": true,
+          "badge": "여행꿀팁"
+        },
+        {
+          "id": "gde-04",
+          "name": "제휴 캐시백 사이트 중복 적립법",
+          "code": "TIP-CASHBACK",
+          "desc": "할인코드 적용 후 추가로 결제액의 3~5% 캐시백 돌려받는 노하우",
+          "url": "#",
+          "expires": "2029-12-31",
+          "is_active": true,
+          "badge": "페이백"
+        },
+        {
+          "id": "gde-05",
+          "name": "항공권 가장 저렴하게 예매하는 요일/시간",
+          "code": "TIP-FLIGHT",
+          "desc": "출발 6주 전 화요일/수요일 예매가 가장 저렴한 데이터 분석 결과",
+          "url": "#",
+          "expires": "2029-12-31",
+          "is_active": true,
+          "badge": "항공권"
+        },
+        {
+          "id": "gde-06",
+          "name": "해외여행자보험 5분 만에 최저가 가입 팁",
+          "code": "TIP-INSUR",
+          "desc": "항공기 지연, 휴대품 파손 보장 필수 특약만 골라 반값에 가입하는 법",
+          "url": "#",
+          "expires": "2029-12-31",
+          "is_active": true,
+          "badge": "여행자보험"
+        },
+        {
+          "id": "gde-07",
+          "name": "글로벌 직구 블랙프라이데이 세일 캘린더",
+          "code": "TIP-SALE-CAL",
+          "desc": "알리 광군제, 미국 블프, 사이버먼데이, 여름 정기 세일 일정 총정리",
+          "url": "#",
+          "expires": "2029-12-31",
+          "is_active": true,
+          "badge": "세일캘린더"
+        },
+        {
+          "id": "gde-08",
+          "name": "환전 수수료 100% 우대받는 트래블로그/트래블월렛 비교",
+          "code": "TIP-FXCARD",
+          "desc": "해외 ATM 출금 수수료 무료 및 환전 수수료 0원 혜택 카드 완벽 분석",
+          "url": "#",
+          "expires": "2029-12-31",
+          "is_active": true,
+          "badge": "환전꿀팁"
+        }
+      ]
+    },
+    "game": {
+      "title": "🎮 게임 · 게이밍 기어 · 스팀 할인",
+      "badge": "게이밍 특가",
+      "items": [
+        {
+          "id": "gam-01",
+          "name": "스팀 (Steam)",
+          "code": "STEAMSALE",
+          "desc": "스팀 계절 정기 세일 및 주말 특가 최대 90% 할인",
+          "url": "https://store.steampowered.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "스팀특가"
+        },
+        {
+          "id": "gam-02",
+          "name": "엑시트랙 (ExitLag)",
+          "code": "EXITLAG20",
+          "desc": "배그/롤 해외서버 핑(Ping) 렉 감소 VPN 20% 즉시할인",
+          "url": "https://www.exitlag.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "핑VPN 1위"
+        },
+        {
+          "id": "gam-03",
+          "name": "그린맨게이밍 (GMG)",
+          "code": "GMG15OFF",
+          "desc": "정품 스팀 CD키 공식 리셀러 신작 및 예약구매 15% 할인",
+          "url": "https://www.greenmangaming.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "정품키 15%"
+        },
+        {
+          "id": "gam-04",
+          "name": "에픽게임즈 (Epic Games)",
+          "code": "EPICFREE",
+          "desc": "매주 목요일 업데이트되는 인기 PC 게임 100% 무료 배포",
+          "url": "https://store.epicgames.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "매주무료"
+        },
+        {
+          "id": "gam-05",
+          "name": "레이저 (Razer)",
+          "code": "RAZER10KR",
+          "desc": "게이밍 마우스, 기계식 키보드 공식몰 첫 구매 10% 쿠폰",
+          "url": "https://www.razer.com/kr-kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "게이밍기어"
+        },
+        {
+          "id": "gam-06",
+          "name": "로지텍 G (Logitech G)",
+          "code": "LOGITECHG",
+          "desc": "G PRO 무선 마우스, 헤드셋 공식 인증 스토어 특가 쿠폰",
+          "url": "https://www.logitechg.com/ko-kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "G-PRO"
+        },
+        {
+          "id": "gam-07",
+          "name": "Xbox Game Pass",
+          "code": "XBOXPASS",
+          "desc": "PC 및 콘솔 수백 개 명작 게임 첫 달 1,000원 무제한 플레이",
+          "url": "https://www.xbox.com/ko-KR/xbox-game-pass",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "첫달천원"
+        },
+        {
+          "id": "gam-08",
+          "name": "닌텐도 e숍 (Nintendo)",
+          "code": "NINTENDOJP",
+          "desc": "닌텐도 스위치 디지털 다운로드 타이틀 정기 골드포인트 적립",
+          "url": "https://www.nintendo.co.kr",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "스위치"
+        },
+        {
+          "id": "gam-09",
+          "name": "험블번들 (Humble Bundle)",
+          "code": "HUMBLECHOICE",
+          "desc": "인기 게임 패키지 초특가 번들 구매 + 자선 기부",
+          "url": "https://www.humblebundle.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "번들세일"
+        },
+        {
+          "id": "gam-10",
+          "name": "미꾸라지 VPN (Mudfish)",
+          "code": "MUDFISHBOOST",
+          "desc": "종량제 최저가 게임 가속 VPN 종량제 크레딧 충전 혜택",
+          "url": "https://mudfish.net",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "종량제VPN"
+        }
+      ]
+    }
+  }
+}
