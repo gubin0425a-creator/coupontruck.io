@@ -1,0 +1,36 @@
+name: CouponTruck 2x Daily Factual Update & Search Engine Indexing
+
+on:
+  schedule:
+    # Runs at 21:00 UTC (06:00 KST) and 09:00 UTC (18:00 KST) every day
+    # Calculated with 1.5h search engine crawler buffer before morning (07:30) and evening (19:30) traffic peaks
+    - cron: '0 9,21 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  factual-update-and-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: 1. Factual Coupon Validation & Expired Cleanup (Zero Hallucination)
+        run: python updater.py
+
+      - name: 2. Update Sitemap & Call Search Engine Bots (Google / Bing / Naver IndexNow)
+        run: python seo_automation.py
+
+      - name: 3. Commit and Push Verified Updates to GitHub Pages
+        run: |
+          git config --global user.name "CouponTruck-Verified-Bot"
+          git config --global user.email "bot@coupontruck.io"
+          git add data/ sitemap.xml index.html
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Automated Factual 2x Daily Update: Verified coupons and sitemap refreshed (KST 06:00/18:00) [skip ci]" && git push)

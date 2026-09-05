@@ -1,19 +1,20 @@
 @echo off
 chcp 65001 >nul
 echo ==============================================================
-echo [쿠폰트럭] 윈도우 작업 스케줄러 자동 등록 (매일 오전 7시 / 오후 7시)
+echo [쿠폰트럭] 윈도우 작업 스케줄러 자동 등록
+echo [봇 반영 딜레이 계산 완료: 매일 오전 6시 / 오후 6시]
 echo ==============================================================
 
 set BAT_PATH=%~dp0run_update.bat
 
-echo 1. 오전 07:00 작업 등록 중...
-schtasks /create /tn "CouponTruck_Update_07AM" /tr "\"%BAT_PATH%\"" /sc daily /st 07:00 /f
+echo 1. 오전 06:00 작업 등록 중 (출근길 07:30 피크 노출용)...
+schtasks /create /tn "CouponTruck_Update_06AM" /tr ""%BAT_PATH%"" /sc daily /st 06:00 /f
 
-echo 2. 오후 19:00 작업 등록 중...
-schtasks /create /tn "CouponTruck_Update_07PM" /tr "\"%BAT_PATH%\"" /sc daily /st 19:00 /f
+echo 2. 오후 18:00 작업 등록 중 (저녁·심야 19:30 피크 노출용)...
+schtasks /create /tn "CouponTruck_Update_06PM" /tr ""%BAT_PATH%"" /sc daily /st 18:00 /f
 
 echo.
 echo ==============================================================
-echo [완료] 매일 오전 7시와 오후 7시에 updater.py가 자동 실행됩니다!
+echo [완료] 매일 오전 6시와 오후 6시에 팩트 검증 자동 업데이트가 실행됩니다!
 echo ==============================================================
 pause
