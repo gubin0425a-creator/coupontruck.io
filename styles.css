@@ -362,22 +362,40 @@ button {
 .site {
   margin-top: 24px;
   margin-bottom: 70px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .site-content {
   display: flex;
   gap: 20px;
   align-items: flex-start;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .content-area {
   flex: 1;
   min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .widget-area.sidebar {
   width: 280px;
   flex-shrink: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.page-card {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .inside-article {
@@ -386,6 +404,11 @@ button {
   padding: 24px;
   box-shadow: var(--shadow-md);
   border: 1px solid var(--border);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 /* 메인 인트로 헤더 */
@@ -505,6 +528,11 @@ button {
   touch-action: pan-y pinch-zoom;
   user-select: none;
   cursor: grab;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .brand-scroll-container.is-dragging {
@@ -517,6 +545,9 @@ button {
   justify-content: space-between;
   margin-bottom: 10px;
   padding: 0 2px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .scroll-title {
@@ -542,6 +573,10 @@ button {
   scrollbar-width: thin;
   scrollbar-color: #cbd5e1 transparent;
   -webkit-overflow-scrolling: touch;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .brand-scroll-track::-webkit-scrollbar {
@@ -801,6 +836,10 @@ button {
 }
 
 .banner-card {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
@@ -1620,17 +1659,97 @@ button {
    12. 반응형 미디어 쿼리
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
   .grid-container {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .site-content {
-    flex-direction: column;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    gap: 20px !important;
+  }
+
+  .content-area,
+  .site-main,
+  .page-card,
+  .inside-article {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
   }
 
   .widget-area.sidebar {
-    width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .mobile-menu-control-wrapper {
+    display: block !important;
+  }
+
+  .main-navigation {
+    position: absolute !important;
+    top: 56px !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    box-shadow: var(--shadow-lg) !important;
+    border-bottom: 1px solid var(--border) !important;
+    display: none !important;
+    z-index: 1000 !important;
+  }
+
+  .main-navigation.toggled {
+    display: block !important;
+  }
+
+  .main-navigation .menu {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 12px !important;
+    gap: 4px !important;
+  }
+
+  .main-navigation .menu > li > a {
+    justify-content: space-between !important;
+    padding: 12px 14px !important;
+    font-size: 15px !important;
+  }
+
+  .sub-menu {
+    position: static !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: #f8fafc !important;
+    border-radius: 8px !important;
+    margin: 4px 8px !important;
+    padding: 6px !important;
+    display: none !important;
+  }
+
+  .menu-item-has-children.active .sub-menu {
+    display: block !important;
+  }
+
+  .inside-header {
+    height: 56px;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 
   .footer-columns {
@@ -2760,6 +2879,10 @@ button {
 
 /* 4단계 요금 비교 테이블 */
 .seo-price-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: block;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   margin-bottom: 32px;

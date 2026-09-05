@@ -155,7 +155,7 @@ function initMobileMenu() {
     const menuItemsWithChildren = navMenu.querySelectorAll(".menu-item-has-children > a");
     menuItemsWithChildren.forEach(item => {
       item.addEventListener("click", (e) => {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1024) {
           e.preventDefault();
           const parent = item.parentElement;
           parent.classList.toggle("active");
