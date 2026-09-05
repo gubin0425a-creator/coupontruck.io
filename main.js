@@ -607,51 +607,67 @@ async function computeHash(text) {
 
 // 로컬 관리자 세션 유효성 검사
 function isAdminSessionValid() {
-  if (!isLocalAdminEnvironment()) return false;
   return sessionStorage.getItem("COUPONTRUCK_LOCAL_ADMIN_AUTH") === "true";
 }
 
-// 관리자 키보드 단축키 & 로고 클릭 리스너 (로컬 전용)
+// 관리자 키보드 단축키, 로고 3회 클릭, #admin 주소 리스너
 function initAdminShortcuts() {
-  // 배포된 공개 웹사이트(GitHub Pages 등)에서는 단축키 및 이벤트 리스너 자체를 일체 등록하지 않음
-  if (!isLocalAdminEnvironment()) {
-    return;
-  }
-
-  // 로컬(localhost:8000)에서만 동작하는 관리자 단축키 (Ctrl + Shift + A)
+  // 1. 단축키 리스너 (한글/영문 키보드 상태 무관하게 KeyA/ㅁ/keyCode 65 감지, Ctrl+Shift+A 및 Ctrl+Alt+A 동시 지원)
   window.addEventListener("keydown", (e) => {
-    if (e.ctrlKey && e.shiftKey && (e.key === "A" || e.key === "a")) {
-      e.preventDefault();
-      openAdminModal();
-    }
-  });
+    const isKeyA = (e.code === "KeyA") || (e.keyCode === 65) || (e.key && (e.key.toLowerCase() === "a" || e.key === "ㅁ"));
+    const isCtrlShiftA = e.ctrlKey && e.shiftKey && isKeyA;
+    const isCtrlAltA = e.ctrlKey && e.altKey && isKeyA;
 
-  // 로컬에서 로고 3번 클릭 시 관리자 모달 오픈
-  const logo = document.querySelector(".logo-box");
-  if (logo) {
+    if (isCtrlShiftA || isCtrlAltA) {
+      e.preventDefault();
+      e.stopPropagation();
+      openAdminModal();
+      return false;
+    }
+  }, true);
+
+  // 2. 로고 연속 3회 클릭 리스너 (<a> 링크 새로고침 차단 & 완벽 감지)
+  const logoLink = document.querySelector(".logo-link") || document.querySelector(".site-logo");
+  if (logoLink) {
     let clickCount = 0;
-    let timer = null;
-    logo.addEventListener("click", (e) => {
+    let clickTimer = null;
+
+    logoLink.addEventListener("click", (e) => {
+      // 3회 클릭 시도 중 링크에 의한 페이지 새로고침 방지
+      e.preventDefault();
+      e.stopPropagation();
+
       clickCount++;
-      if (timer) clearTimeout(timer);
-      if (clickCount >= 3) {
-        e.preventDefault();
-        openAdminModal();
+      if (clickTimer) clearTimeout(clickTimer);
+
+      if (e.detail >= 3 || clickCount >= 3) {
         clickCount = 0;
+        openAdminModal();
+        return false;
       }
-      timer = setTimeout(() => { clickCount = 0; }, 800);
+
+      clickTimer = setTimeout(() => {
+        if (clickCount === 1) {
+          // 1회 단일 클릭 시 맨 위로 부드럽게 스크롤
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        clickCount = 0;
+      }, 700);
     });
   }
+
+  // 3. 주소창에 #admin 입력 시 즉시 관리자 모달 오픈
+  function checkAdminHash() {
+    if (window.location.hash.toLowerCase() === "#admin") {
+      setTimeout(() => openAdminModal(), 100);
+    }
+  }
+  checkAdminHash();
+  window.addEventListener("hashchange", checkAdminHash);
 }
 
-// 관리자 모달 진입점 (로컬 환경에서만 작동)
+// 관리자 모달 진입점
 function openAdminModal() {
-  // 로컬 호스트 환경이 아니면 전면 차단
-  if (!isLocalAdminEnvironment()) {
-    console.warn("관리자 모드는 로컬 서버(http://localhost:8000/)에서만 접근 가능합니다.");
-    return;
-  }
-
   if (!isAdminSessionValid()) {
     openLocalAdminLoginModal();
     return;
@@ -682,6 +698,11 @@ function closeAdminModal() {
   if (adminModal) {
     adminModal.remove();
     document.body.style.overflow = "";
+  }
+  if (window.location.hash.toLowerCase() === "#admin") {
+    try {
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+    } catch (e) {}
   }
 }
 
@@ -716,9 +737,14 @@ function closeAdminAuthModal() {
     authModal.remove();
     document.body.style.overflow = "";
   }
+  if (window.location.hash.toLowerCase() === "#admin") {
+    try {
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+    } catch (e) {}
+  }
 }
 
-// 로컬 관리자 인증 모달 DOM 동적 생성
+// 관리자 인증 모달 DOM 동적 생성
 function createLocalAdminAuthModalDOM() {
   const overlay = document.createElement("div");
   overlay.id = "adminAuthModal";
@@ -728,10 +754,10 @@ function createLocalAdminAuthModalDOM() {
       <div class="admin-auth-header">
         <div class="admin-auth-header-left">
           <div class="admin-auth-badge" style="background:rgba(34,197,94,0.2); color:#86efac; border-color:rgba(34,197,94,0.4);">
-            <i class="fa-solid fa-server"></i> LOCALHOST ONLY
+            <i class="fa-solid fa-lock"></i> ADMIN SECURE
           </div>
-          <h3 class="admin-auth-title"><i class="fa-solid fa-shield-halved"></i> 로컬 관리자 인증</h3>
-          <p class="admin-auth-subtitle">http://localhost:8000 로컬 전용 관리자 모드입니다.</p>
+          <h3 class="admin-auth-title"><i class="fa-solid fa-shield-halved"></i> 관리자 인증</h3>
+          <p class="admin-auth-subtitle">쿠폰트럭 관리자 전용 대시보드 입장</p>
         </div>
         <button class="modal-close-btn" style="color:#ffffff;" onclick="closeAdminAuthModal()">&times;</button>
       </div>
