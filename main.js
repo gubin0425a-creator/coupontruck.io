@@ -2136,3 +2136,64 @@ function getFallbackData() {
   }
 };
 }
+
+/* --------------------------------------------------------------------------
+   16. SEO FAQ 아코디언 및 PWA 스마트 독 인터랙션
+   -------------------------------------------------------------------------- */
+function toggleFaq(btn) {
+  const item = btn.closest(".faq-item");
+  if (!item) return;
+  const isActive = item.classList.contains("active");
+  
+  // 다른 모든 FAQ 닫기
+  document.querySelectorAll(".faq-item").forEach(el => el.classList.remove("active"));
+  
+  if (!isActive) {
+    item.classList.add("active");
+  }
+}
+
+function dismissPwaDock() {
+  const dock = document.getElementById("pwaSmartDock");
+  if (dock) {
+    dock.style.display = "none";
+    try {
+      localStorage.setItem("COUPONTRUCK_PWA_DISMISSED", "true");
+    } catch (e) {}
+  }
+}
+
+let deferredPrompt = null;
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+});
+
+function handlePwaInstall() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === "accepted") {
+        showToast("🎉 쿠폰트럭이 홈 화면에 성공적으로 추가되었습니다!");
+        dismissPwaDock();
+      }
+      deferredPrompt = null;
+    });
+  } else {
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    if (isIOS) {
+      alert("📱 아이폰(Safari): 하단 공유 버튼(□에 ↑) 누른 후 [홈 화면에 추가]를 눌러주세요!");
+    } else {
+      alert("📱 안드로이드(Chrome): 브라우저 우측 상단 메뉴(⋮) 누른 후 [홈 화면에 추가] 또는 [앱 설치]를 선택해 주세요!");
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  try {
+    if (localStorage.getItem("COUPONTRUCK_PWA_DISMISSED") === "true") {
+      const dock = document.getElementById("pwaSmartDock");
+      if (dock) dock.style.display = "none";
+    }
+  } catch (e) {}
+});
