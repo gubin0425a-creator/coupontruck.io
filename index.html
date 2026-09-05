@@ -130,9 +130,45 @@
           "@type": "Offer",
           "price": "4300",
           "priceCurrency": "KRW",
+          "validFrom": "2026-01-01",
           "priceValidUntil": "2026-12-31",
           "availability": "https://schema.org/InStock",
-          "url": "https://www.gamsgo.com/partner/aTqwg"
+          "url": "https://www.gamsgo.com/partner/aTqwg",
+          "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "value": "0",
+              "currency": "KRW"
+            },
+            "shippingDestination": {
+              "@type": "DefinedRegion",
+              "addressCountry": "KR"
+            },
+            "deliveryTime": {
+              "@type": "ShippingDeliveryTime",
+              "handlingTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 0,
+                "maxValue": 0,
+                "unitCode": "DAY"
+              },
+              "transitTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 0,
+                "maxValue": 0,
+                "unitCode": "DAY"
+              }
+            }
+          },
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "applicableCountry": "KR",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "merchantReturnDays": 14,
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "returnFees": "https://schema.org/FreeReturn"
+          }
         },
         "aggregateRating": {
           "@type": "AggregateRating",
