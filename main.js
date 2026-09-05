@@ -1219,7 +1219,7 @@ function getFallbackData() {
           "name": "겜스고 (GamsGo)",
           "code": "GAMSGO5",
           "desc": "유튜브 프리미엄, 넷플릭스 70% 계정공유 5% 추가할인 코드 (월 3천원대)",
-          "url": "https://www.gamsgo.com",
+          "url": "https://www.gamsgo.com/partner/aTqwg",
           "expires": "2026-12-31",
           "is_active": true,
           "badge": "인기 1위"
