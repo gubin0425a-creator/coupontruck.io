@@ -3169,15 +3169,16 @@ button {
     justify-content: center;
   }
   .pwa-smart-dock {
-    bottom: 74px !important;
-    left: 10px !important;
-    right: 10px !important;
+    bottom: calc(88px + env(safe-area-inset-bottom, 0px)) !important;
+    left: 12px !important;
+    right: 12px !important;
     transform: none !important;
-    width: calc(100% - 20px) !important;
-    max-width: calc(100% - 20px) !important;
+    width: calc(100% - 24px) !important;
+    max-width: calc(100% - 24px) !important;
     box-sizing: border-box !important;
-    padding: 9px 12px !important;
+    padding: 10px 14px !important;
     border-radius: 14px !important;
+    z-index: 1005 !important;
   }
   .pwa-dock-inner {
     display: flex !important;
