@@ -203,6 +203,11 @@
                   <span class="scroll-hint"><i class="fa-solid fa-arrows-left-right"></i> 좌우로 밀어서 탐색</span>
                 </div>
                 <div class="brand-scroll-track">
+                  <button class="brand-chip chip-hero-top" onclick="showCouponCode('겜스고', 'GAMSGO5', 'https://www.gamsgo.com/partner/aTqwg')">
+                    <span class="chip-emoji">👑</span>
+                    <span class="chip-name"><strong>겜스고 (운영자 TOP 1 픽)</strong></span>
+                    <span class="chip-badge badge-crown">70% OFF</span>
+                  </button>
                   <button class="brand-chip chip-hot" onclick="showCouponCode('아고다', 'AGODAHUB05', 'https://www.agoda.com')">
                     <span class="chip-emoji">🏨</span>
                     <span class="chip-name">아고다</span>
@@ -222,11 +227,6 @@
                     <span class="chip-emoji">🛍️</span>
                     <span class="chip-name">알리익스프레스</span>
                     <span class="chip-badge">$15</span>
-                  </button>
-                  <button class="brand-chip chip-sub" onclick="showCouponCode('겜스고', 'GAMSGO5', 'https://www.gamsgo.com/partner/aTqwg')">
-                    <span class="chip-emoji">🎬</span>
-                    <span class="chip-name">겜스고 유튜브</span>
-                    <span class="chip-badge">70%</span>
                   </button>
                   <button class="brand-chip chip-game" onclick="showCouponCode('에픽게임즈', 'EPICFREE', 'https://store.epicgames.com')">
                     <span class="chip-emoji">🎁</span>
@@ -309,6 +309,50 @@
               <!-- 메인 배너 카드 목록 (신용카드 완전 제거, 합법 제휴 모델에 집중) -->
               <div class="banners-container" id="quick-coupons">
                 
+                <!-- 0. [운영자 & 개발자 최고의 TOP 1 픽] 겜스고 스포트라이트 카드 -->
+                <div class="banner-card banner-spotlight-top animate-card" data-category="sub" data-tags="겜스고 유튜브 넷플릭스 OTT 챗GPT 챗지피티 스포티파이 공유 구독 최저가">
+                  <div class="spotlight-top-badge">
+                    <i class="fa-solid fa-crown text-yellow"></i> 👑 운영자 & 개발자 강력 추천! 최고의 TOP 1 픽
+                  </div>
+                  <div class="banner-inner" onclick="openCategoryModal('sub');">
+                    <div class="banner-visual gamsgo-hero-gradient">
+                      <div class="visual-inner">
+                        <div class="visual-icon visual-icon-gamsgo"><i class="fa-solid fa-fire"></i></div>
+                        <div class="visual-text">
+                          <div class="spotlight-label-group">
+                            <span class="sub-label">월 3천원대 파격 특가 · 2년 연속 이용자 만족도 1위</span>
+                            <span class="spotlight-pulse-tag">실시간 최다 신청 🔥</span>
+                          </div>
+                          <h2 class="banner-title">유튜브 프리미엄 & 넷플릭스 70% 할인 (겜스고)</h2>
+                          <p class="banner-desc">운영진도 직접 매일 쓰는 100% 정품 계정공유 플랫폼! 유튜브, 넷플릭스, ChatGPT Plus, 스포티파이 전세계 최저가 보장</p>
+                        </div>
+                      </div>
+                      <div class="gamsgo-benefit-highlights">
+                        <div class="benefit-tag-item"><i class="fa-solid fa-circle-check"></i> 유튜브 프리미엄 월 3,000원대</div>
+                        <div class="benefit-tag-item"><i class="fa-solid fa-circle-check"></i> 넷플릭스 4K 프리미엄 70% 절약</div>
+                        <div class="benefit-tag-item"><i class="fa-solid fa-circle-check"></i> 챗GPT Plus / 스포티파이 반값</div>
+                        <div class="benefit-tag-item"><i class="fa-solid fa-circle-check"></i> 5% 추가 즉시할인 코드 [GAMSGO5]</div>
+                      </div>
+                      <div class="tag-chips">
+                        <span class="chip-white">#유튜브 월3천원</span>
+                        <span class="chip-white">#넷플릭스 70%</span>
+                        <span class="chip-white">#정품 자동갱신</span>
+                        <span class="chip-white">#코드: GAMSGO5</span>
+                        <span class="chip-white">#환불보장</span>
+                      </div>
+                    </div>
+                    <div class="banner-action-bar action-bar-spotlight">
+                      <div class="spotlight-cta-left">
+                        <span class="action-text-bold">👉 지금 5% 추가할인 받고 겜스고 최저가 바로가기</span>
+                        <span class="action-subtext">공식 파트너 추천코드 'GAMSGO5' 자동 적용 완료</span>
+                      </div>
+                      <a href="https://www.gamsgo.com/partner/aTqwg" target="_blank" class="spotlight-direct-btn" onclick="event.stopPropagation();">
+                        할인 링크 바로가기 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
                 <!-- 1. 여행 쿠폰 모음집 -->
                 <div class="banner-card banner-travel animate-card" data-category="travel" data-tags="여행 아고다 트립닷컴 클룩 kkday 호텔스닷컴 마이리얼트립 익스피디아 야놀자 부킹닷컴 유심사 돈키호테">
                   <div class="banner-inner" onclick="openCategoryModal('travel');">
@@ -524,21 +568,21 @@
           <div class="widget widget-top-deals">
             <h3 class="widget-title"><i class="fa-solid fa-fire text-orange"></i> 이달의 실시간 베스트 TOP 5</h3>
             <ul class="top-deal-list">
+              <li onclick="showCouponCode('겜스고', 'GAMSGO5', 'https://www.gamsgo.com/partner/aTqwg')" class="top-deal-hero">
+                <span class="rank-num rank-1"><i class="fa-solid fa-crown"></i> 1</span>
+                <div class="deal-info">
+                  <strong>[개발자 TOP 1 픽] 겜스고 유튜브·OTT</strong>
+                  <span>월 3천원대 파격할인 + 5% 추가할인</span>
+                </div>
+                <span class="badge-discount badge-discount-hero">70%+5%</span>
+              </li>
               <li onclick="showCouponCode('아고다', 'AGODAHUB05', 'https://www.agoda.com')">
-                <span class="rank-num rank-1">1</span>
+                <span class="rank-num rank-2">2</span>
                 <div class="deal-info">
                   <strong>아고다 전세계 호텔</strong>
                   <span>전 객실 5~7% 즉시할인</span>
                 </div>
                 <span class="badge-discount">7%</span>
-              </li>
-              <li onclick="showCouponCode('겜스고', 'GAMSGO5', 'https://www.gamsgo.com/partner/aTqwg')">
-                <span class="rank-num rank-2">2</span>
-                <div class="deal-info">
-                  <strong>겜스고 유튜브·OTT</strong>
-                  <span>월 3천원대 계정공유 할인</span>
-                </div>
-                <span class="badge-discount">70%</span>
               </li>
               <li onclick="showCouponCode('알리익스프레스', 'ALI26SAVE', 'https://ko.aliexpress.com')">
                 <span class="rank-num rank-3">3</span>
