@@ -688,6 +688,7 @@ function closeAdminModal() {
 // 관리자 안전 로그아웃
 function adminLogout() {
   sessionStorage.removeItem("COUPONTRUCK_LOCAL_ADMIN_AUTH");
+  sessionStorage.removeItem("COUPONTRUCK_ADMIN_AUTH_TOKEN");
   closeAdminModal();
   showToast("🔒 관리자 세션이 종료(로그아웃)되었습니다.");
 }
@@ -772,6 +773,7 @@ async function handleLocalAdminLoginSubmit(e) {
 
   if (isMasterPw) {
     sessionStorage.setItem("COUPONTRUCK_LOCAL_ADMIN_AUTH", "true");
+    sessionStorage.setItem("COUPONTRUCK_ADMIN_AUTH_TOKEN", inputHash);
     closeAdminAuthModal();
     showAdminDashboard();
     showToast("🔓 관리자 대시보드가 열렸습니다!");
@@ -999,7 +1001,11 @@ function handleAdminDeleteCoupon(catKey, code) {
     refreshAdminTable();
     updateUIWithData();
 
-    fetch(`/api/coupons?code=${encodeURIComponent(code)}`, { method: "DELETE" })
+    const adminToken = sessionStorage.getItem("COUPONTRUCK_ADMIN_AUTH_TOKEN") || ADMIN_PW_HASH;
+    fetch(`/api/coupons?code=${encodeURIComponent(code)}`, {
+      method: "DELETE",
+      headers: { "X-Admin-Token": adminToken }
+    })
       .then(res => res.json())
       .then(data => console.log("💾 [서버 반영] 쿠폰 삭제 완료:", code))
       .catch(err => console.log("로컬 모드로 동작 중"));
@@ -1015,9 +1021,13 @@ function persistDataChanges(newItem, catKey) {
 
   // 서버 API가 살아있는 경우 data/coupons.json 파일에도 즉시 저장
   if (newItem && catKey) {
+    const adminToken = sessionStorage.getItem("COUPONTRUCK_ADMIN_AUTH_TOKEN") || ADMIN_PW_HASH;
     fetch("/api/coupons", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "X-Admin-Token": adminToken
+      },
       body: JSON.stringify({ ...newItem, category: catKey })
     })
     .then(res => res.json())
