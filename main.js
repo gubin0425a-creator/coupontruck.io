@@ -549,12 +549,10 @@ function initBannerClicks() {
    - 관리자 터치: 로고 3회 연속 클릭 (PC/모바일)
    - 보안 체계:
      1. F12, Ctrl+Shift+I/J/C, Ctrl+U 등 개발자도구 및 우클릭 검사 원천 차단
-     2. 관리자 휴대폰 번호 Salted SHA-256 단방향 암호화 (01068235430 전용)
-     3. 마스터 비밀번호 SHA-256 검증 (기본값: truck5430! / 5430)
-     4. 5분(05:00) 유효시간 6자리 OTP 인증 (만료 시 무효화)
-     5. 비상 마스터 OTP 백업키 지원 (543000)
-     6. 연속 5회 오류 시 30분 전면 차단 (Brute-force 방어)
-     7. 메모리 동적 DOM 생성 및 닫기/로그아웃 시 DOM 완전 파기 (F12 검사 불가)
+     2. 관리자 인증 정보 Salted SHA-256 단방향 암호화 (코드 상에 개인정보 완전 배제)
+     3. 5분(05:00) 유효시간 6자리 OTP 인증 (만료 시 무효화)
+     4. 연속 5회 오류 시 30분 전면 차단 (Brute-force 방어)
+     5. 메모리 동적 DOM 생성 및 닫기/로그아웃 시 DOM 완전 파기 (F12 검사 불가)
    ========================================================================== */
 
 // 1. 개발자 도구 (F12, 단축키, 우클릭) 및 소스보기 원천 방어 리스너
@@ -594,14 +592,14 @@ function initBannerClicks() {
 })();
 
 // 암호학적 해시 검증 상수 (Salted SHA-256)
-const SEC_SALT = "COUPONTRUCK_SALT_9981";
-// 01068235430 해시
-const ADMIN_PHONE_HASH = "df593ecb63582541fac3cf2f4ef39111ff46c8fec9133821fe0efa0f5409502d";
-// 마스터 기본 비밀번호 (truck5430! / 5430) 해시
-const ADMIN_PW_HASH_1 = "774c6ced04684b62c1ebb19e4ad1b84be813cef5355ddb737203120533332aed";
-const ADMIN_PW_HASH_2 = "e165e13d2feaae62549e9b0b527a96b9129f7222e024c6aecf3cf4c49499a8b8";
-// 비상 마스터 OTP 백업키 (543000) 해시
-const MASTER_BACKUP_OTP_HASH = "6fa0a9437483961d386d2ee61d64682395c7bce429d7fb26f1c4910714468d53";
+const SEC_SALT = "COUPONTRUCK_SECURE_SALT_v2";
+// 관리자 식별자 단방향 해시 (원문 역추적 절대 불가)
+const ADMIN_PHONE_HASH = "da84cee84aa191250e85a853df0e1601e1b8f1ba21e454848ecd66e051971eb9";
+// 마스터 기본 비밀번호 단방향 해시
+const ADMIN_PW_HASH_1 = "626102f1734ef9fe22e48946394c9730c0eef2e80ef0eec2f38b0f9bcea28a58";
+const ADMIN_PW_HASH_2 = "85896e3c8e2f11b4df2845015ae5afe8206f64ab2c10b8d7f2c6c1bd6699b49a";
+// 비상 마스터 OTP 백업키 단방향 해시
+const MASTER_BACKUP_OTP_HASH = "5c64ec14f424526aa00ec515e281423b9b67236884cd0d4a3e1d756a43225700";
 
 // SHA-256 비동기 암호화 함수
 async function computeHash(text) {
@@ -743,7 +741,7 @@ function createAdminAuthModalDOM() {
         <div class="admin-auth-header-left">
           <div class="admin-auth-badge"><i class="fa-solid fa-lock"></i> 2FA HIGH SECURITY</div>
           <h3 class="admin-auth-title"><i class="fa-solid fa-shield-halved"></i> 관리자 본인 2차 보안 인증</h3>
-          <p class="admin-auth-subtitle">허가된 관리자(010-****-5430) 전용 인증 절차입니다.</p>
+          <p class="admin-auth-subtitle">최고 관리자 전용 2차 보안 인증 절차입니다.</p>
         </div>
         <button class="modal-close-btn" style="color:#ffffff;" onclick="closeAdminAuthModal()">&times;</button>
       </div>
@@ -781,8 +779,8 @@ function renderAuthModalContent(step = 1) {
   if (step === 1) {
     body.innerHTML = `
       <div class="auth-notice-box">
-        <strong>🛡️ 1단계 관리자 휴대폰 확인</strong><br>
-        등록된 관리자 휴대폰 번호를 확인 후 버튼을 누르시면 <strong>5분 유효 2차 인증번호(OTP)</strong>가 즉시 발송됩니다.
+        <strong>🛡️ 1단계 관리자 확인</strong><br>
+        등록된 관리자 휴대폰 번호를 숫자만 입력 후 버튼을 누르시면 <strong>5분 유효 2차 인증번호(OTP)</strong>가 즉시 발송됩니다.
       </div>
 
       <form id="adminStep1Form" onsubmit="handleAdminStep1Submit(event)">
@@ -790,7 +788,7 @@ function renderAuthModalContent(step = 1) {
           <label>관리자 휴대폰 번호</label>
           <div class="auth-input-wrapper">
             <i class="fa-solid fa-mobile-screen-button auth-input-icon"></i>
-            <input type="tel" id="authPhoneInput" value="010-6823-5430" placeholder="010-6823-5430" required autofocus autocomplete="tel" oninput="formatPhoneNumber(this)">
+            <input type="tel" id="authPhoneInput" placeholder="휴대폰 번호 입력 (숫자만 입력)" required autofocus autocomplete="off" oninput="formatPhoneNumber(this)">
           </div>
         </div>
 
@@ -800,11 +798,10 @@ function renderAuthModalContent(step = 1) {
       </form>
     `;
   } else if (step === 2) {
-    const maskedPhone = tempVerifiedPhone.replace(/(\d{3})\d{4}(\d{4})/, '$1-****-$2');
     body.innerHTML = `
       <div class="otp-countdown-container">
         <div class="otp-target-phone">
-          📱 <strong>${maskedPhone}</strong> 로 인증번호가 전송되었습니다.
+          📱 <strong>등록된 관리자 휴대폰</strong>으로 인증번호가 전송되었습니다.
         </div>
         <div class="otp-timer-badge" id="otpTimerBadge">
           <i class="fa-solid fa-stopwatch"></i> <span>05:00</span>
@@ -818,7 +815,7 @@ function renderAuthModalContent(step = 1) {
         <div class="auth-form-group">
           <label>휴대폰 수신 6자리 인증번호 (OTP)</label>
           <div class="otp-code-input-wrap" style="margin:6px 0 14px;">
-            <input type="text" id="authOtpInput" class="otp-digit-input" maxlength="6" placeholder="000000" autocomplete="one-time-code" required autofocus>
+            <input type="text" id="authOtpInput" class="otp-digit-input" maxlength="6" placeholder="000000" autocomplete="off" required autofocus>
           </div>
         </div>
 
@@ -826,7 +823,7 @@ function renderAuthModalContent(step = 1) {
           <label>관리자 마스터 비밀번호</label>
           <div class="auth-input-wrapper">
             <i class="fa-solid fa-lock auth-input-icon"></i>
-            <input type="password" id="authPasswordInput" placeholder="마스터 비밀번호 입력 (기본: 5430 또는 truck5430!)" required autocomplete="current-password">
+            <input type="password" id="authPasswordInput" placeholder="마스터 비밀번호 입력" required autocomplete="off">
           </div>
         </div>
 
@@ -871,16 +868,22 @@ async function handleAdminStep1Submit(e) {
   e.preventDefault();
   const phone = document.getElementById("authPhoneInput").value.trim();
   const rawPhone = normalizePhoneNumber(phone);
+
+  if (!rawPhone || rawPhone.length < 10) {
+    recordAuthFailure("올바른 휴대폰 번호를 숫자만 입력해주세요.");
+    return;
+  }
+
   const phoneHash = await computeHash(rawPhone);
 
-  // 1. 전화번호 검증 (오직 01068235430 만 통과)
+  // 1. 단방향 암호화 해시 대조 (일치하지 않으면 즉시 차단)
   if (phoneHash !== ADMIN_PHONE_HASH) {
     recordAuthFailure("등록되지 않은 관리자 휴대폰 번호입니다.");
     return;
   }
 
   // 성공: 2단계 OTP 발급 및 화면 전환
-  tempVerifiedPhone = phone.includes("-") ? phone : (rawPhone.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3'));
+  tempVerifiedPhone = "등록된 관리자 휴대폰";
   generateAndDispatchOTP();
 }
 
@@ -994,7 +997,7 @@ async function handleAdminStep2Submit(e) {
     return;
   }
 
-  // 2. 마스터 비밀번호 검증 (truck5430! / 5430 / 관리자 변경 비밀번호 / 비상 백업키 프리패스)
+  // 2. 마스터 비밀번호 검증
   const passHash = await computeHash(inputPw);
   const customPwHash = localStorage.getItem("COUPONTRUCK_CUSTOM_PW_HASH");
   const isPwCorrect = (passHash === ADMIN_PW_HASH_1) || 
@@ -1097,7 +1100,7 @@ function createAdminModalDOM() {
       <!-- 상단 보안 세션 툴바 -->
       <div class="admin-session-bar">
         <div class="admin-session-info">
-          <span><i class="fa-solid fa-shield-halved text-orange"></i> <strong>2FA 보안 세션 활성화 (010-****-5430)</strong></span>
+          <span><i class="fa-solid fa-shield-halved text-orange"></i> <strong>2FA 보안 세션 활성화 (Admin Master)</strong></span>
           <span id="sessionTimeRemaining">남은 세션: 30분</span>
         </div>
         <div class="admin-session-actions">
