@@ -919,50 +919,9 @@ function generateAndDispatchOTP() {
     }).catch(err => console.log("Telegram dispatch error"));
   }
 
-  // 화면 상단에 휴대폰 SMS 알림 배너 표시
-  displaySMSNotification(otp, tempVerifiedPhone);
-
-  // 2단계 화면 렌더링
+  // 2단계 화면 렌더링 (화면 상에 인증번호를 절대 노출하지 않음)
   renderAuthModalContent(2);
-}
-
-function displaySMSNotification(otp, phone) {
-  const existing = document.getElementById("smsSimulatorBanner");
-  if (existing) existing.remove();
-
-  const banner = document.createElement("div");
-  banner.id = "smsSimulatorBanner";
-  banner.style.cssText = `
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #0f172a;
-    color: #ffffff;
-    padding: 16px 24px;
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    z-index: 100002;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    border: 2px solid #ea580c;
-    max-width: 92%;
-  `;
-  banner.innerHTML = `
-    <div style="font-size:26px; color:#ea580c;"><i class="fa-solid fa-comment-sms"></i></div>
-    <div>
-      <div style="font-size:12px; color:#94a3b8;">[휴대폰 메시지 수신] ${phone}</div>
-      <div style="font-size:14.5px; font-weight:700; margin-top:2px;">
-        [쿠폰트럭] 인증번호: <span style="color:#f97316; font-size:19px; letter-spacing:2px; font-family:monospace; background:rgba(234,88,12,0.2); padding:2px 8px; border-radius:4px;">${otp}</span> (5분 내 입력)
-      </div>
-    </div>
-    <button style="background:none; border:none; color:#94a3b8; font-size:20px; cursor:pointer; margin-left:8px;" onclick="this.parentElement.remove()">&times;</button>
-  `;
-  document.body.appendChild(banner);
-  setTimeout(() => {
-    if (banner.parentElement) banner.remove();
-  }, 12000);
+  showToast("📱 등록된 관리자 휴대폰으로 5분 인증번호가 발송되었습니다.");
 }
 
 function resendAdminOTP() {
