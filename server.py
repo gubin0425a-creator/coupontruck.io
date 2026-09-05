@@ -45,6 +45,10 @@ class CouponTruckHandler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=BASE_DIR, **kwargs)
 
+    def end_headers(self):
+        self.send_header("Cache-Control", "no-cache, must-revalidate")
+        super().end_headers()
+
     def verify_admin_auth(self):
         """서버 측 마스터 인증 및 Origin 검증 (CSRF 및 외부 무단 호출 100% 방어)"""
         host = self.headers.get("Host", "")
