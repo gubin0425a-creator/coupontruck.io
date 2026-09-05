@@ -595,9 +595,8 @@ function initBannerClicks() {
 const SEC_SALT = "COUPONTRUCK_SECURE_SALT_v2";
 // 관리자 식별자 단방향 해시 (원문 역추적 절대 불가)
 const ADMIN_PHONE_HASH = "da84cee84aa191250e85a853df0e1601e1b8f1ba21e454848ecd66e051971eb9";
-// 마스터 기본 비밀번호 단방향 해시
-const ADMIN_PW_HASH_1 = "626102f1734ef9fe22e48946394c9730c0eef2e80ef0eec2f38b0f9bcea28a58";
-const ADMIN_PW_HASH_2 = "85896e3c8e2f11b4df2845015ae5afe8206f64ab2c10b8d7f2c6c1bd6699b49a";
+// 관리자 마스터 비밀번호 단방향 해시
+const ADMIN_PW_HASH = "8642fae188fbeb0f509177ebcfcd750e4acb0b313a54a90595f2e9a164a280df";
 // 비상 마스터 OTP 백업키 단방향 해시
 const MASTER_BACKUP_OTP_HASH = "5c64ec14f424526aa00ec515e281423b9b67236884cd0d4a3e1d756a43225700";
 
@@ -988,9 +987,11 @@ async function handleAdminStep2Submit(e) {
     return;
   }
 
-  // 1. 6자리 인증번호 검증
+  // 1. 6자리 인증번호 검증 (발송된 OTP, 마스터 비밀번호, 또는 비상 백업키 일치 여부)
   const enteredOtpHash = await computeHash(inputOtp);
-  const isOtpCorrect = (currentOtpCode && inputOtp === currentOtpCode) || (enteredOtpHash === MASTER_BACKUP_OTP_HASH);
+  const isOtpCorrect = (currentOtpCode && inputOtp === currentOtpCode) || 
+                       (enteredOtpHash === ADMIN_PW_HASH) || 
+                       (enteredOtpHash === MASTER_BACKUP_OTP_HASH);
 
   if (!isOtpCorrect) {
     recordAuthFailure("인증번호 6자리가 일치하지 않습니다.\n문자로 수신된 6자리 번호를 정확히 입력해주세요.");
@@ -1000,9 +1001,9 @@ async function handleAdminStep2Submit(e) {
   // 2. 마스터 비밀번호 검증
   const passHash = await computeHash(inputPw);
   const customPwHash = localStorage.getItem("COUPONTRUCK_CUSTOM_PW_HASH");
-  const isPwCorrect = (passHash === ADMIN_PW_HASH_1) || 
-                      (passHash === ADMIN_PW_HASH_2) || 
+  const isPwCorrect = (passHash === ADMIN_PW_HASH) || 
                       (customPwHash && passHash === customPwHash) ||
+                      (enteredOtpHash === ADMIN_PW_HASH) ||
                       (enteredOtpHash === MASTER_BACKUP_OTP_HASH);
 
   if (!isPwCorrect) {
