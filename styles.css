@@ -502,6 +502,13 @@ button {
   padding: 14px 16px;
   border: 1px solid var(--border);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  touch-action: pan-y pinch-zoom;
+  user-select: none;
+  cursor: grab;
+}
+
+.brand-scroll-container.is-dragging {
+  cursor: grabbing;
 }
 
 .brand-scroll-header {
@@ -1803,10 +1810,18 @@ button {
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
-    margin-bottom: 18px !important;
-    padding: 10px 10px !important;
-    border-radius: 12px !important;
-    overflow: hidden !important;
+    margin-bottom: 20px !important;
+    padding: 14px 12px 12px !important;
+    border-radius: 14px !important;
+    touch-action: pan-y pinch-zoom !important;
+    user-select: none !important;
+    cursor: grab !important;
+  }
+
+  .brand-scroll-header {
+    margin-bottom: 10px !important;
+    cursor: pointer !important;
+    touch-action: pan-y pinch-zoom !important;
   }
 
   .brand-scroll-track {
@@ -1814,6 +1829,17 @@ button {
     max-width: 100% !important;
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-x !important;
+    padding-bottom: 8px !important;
+    padding-top: 4px !important;
+    gap: 8px !important;
+  }
+
+  .brand-chip {
+    padding: 8px 14px !important;
+    font-size: 13px !important;
+    min-height: 38px !important;
+    touch-action: pan-x !important;
   }
 
   /* -------------------------------------------------------------------------

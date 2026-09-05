@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   initNoticeTicker();
   initAnimations();
   initBannerClicks();
+  initBrandScrollContainer();
 
   // 쿠폰 데이터 로드
   await loadCouponData();
@@ -536,6 +537,90 @@ function initBannerClicks() {
       }
     }
   });
+}
+
+// 핫딜 브랜드 바: 사진 칸(컨테이너 박스 전체) 좌우 스와이프/스크롤 인식 범위 대폭 확장
+function initBrandScrollContainer() {
+  const container = document.querySelector(".brand-scroll-container");
+  const track = document.querySelector(".brand-scroll-track");
+  if (!container || !track) return;
+
+  let isDown = false;
+  let startX = 0;
+  let startY = 0;
+  let scrollLeft = 0;
+  let hasMoved = false;
+
+  // 1. 모바일 터치 스와이프 (헤더, 제목, 빈 여백 등 박스 어디를 터치하고 밀어도 좌우 스크롤 인식)
+  container.addEventListener("touchstart", (e) => {
+    if (e.touches.length !== 1) return;
+    const touch = e.touches[0];
+    isDown = true;
+    hasMoved = false;
+    startX = touch.pageX;
+    startY = touch.pageY;
+    scrollLeft = track.scrollLeft;
+  }, { passive: true });
+
+  container.addEventListener("touchmove", (e) => {
+    if (!isDown || e.touches.length !== 1) return;
+    const touch = e.touches[0];
+    const dx = touch.pageX - startX;
+    const dy = touch.pageY - startY;
+
+    // 좌우 스와이프 인식이 우선되도록 처리
+    if (Math.abs(dx) > 5) {
+      if (Math.abs(dx) > Math.abs(dy)) {
+        hasMoved = true;
+        track.scrollLeft = scrollLeft - dx;
+        if (e.cancelable) {
+          e.preventDefault(); // 수평 탐색 중 페이지 위아래 흔들림 방지
+        }
+      }
+    }
+  }, { passive: false });
+
+  const endTouch = () => {
+    isDown = false;
+  };
+
+  container.addEventListener("touchend", endTouch, { passive: true });
+  container.addEventListener("touchcancel", endTouch, { passive: true });
+
+  // 2. PC 마우스 드래그 지원
+  container.addEventListener("mousedown", (e) => {
+    if (e.button !== 0) return;
+    isDown = true;
+    hasMoved = false;
+    startX = e.pageX;
+    scrollLeft = track.scrollLeft;
+    container.classList.add("is-dragging");
+  });
+
+  window.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    const dx = e.pageX - startX;
+    if (Math.abs(dx) > 4) {
+      hasMoved = true;
+      track.scrollLeft = scrollLeft - dx;
+    }
+  });
+
+  window.addEventListener("mouseup", () => {
+    if (isDown) {
+      isDown = false;
+      container.classList.remove("is-dragging");
+    }
+  });
+
+  // 3. 스와이프/드래그 중에 손가락을 뗐을 때 칩 버튼이 잘못 클릭되는 현상 방지
+  container.addEventListener("click", (e) => {
+    if (hasMoved) {
+      e.stopPropagation();
+      e.preventDefault();
+      hasMoved = false;
+    }
+  }, true);
 }
 
 /* ==========================================================================
