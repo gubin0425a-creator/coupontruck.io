@@ -259,9 +259,10 @@ function showCouponCode(name, code, url) {
 // 6-1. 겜스고 파트너 링크 원클릭 즉시 이동 & 코드 복사
 function openGamsgoPartner(e) {
   if (e) {
-    e.stopPropagation();
-    if (e.preventDefault) e.preventDefault();
+    if (typeof e.stopPropagation === "function") e.stopPropagation();
+    if (typeof e.preventDefault === "function") e.preventDefault();
   }
+  closeCategoryModal();
   const code = "GAMSGO5";
   const url = "https://www.gamsgo.com/partner/aTqwg";
   try {
@@ -441,8 +442,24 @@ function initAnimations() {
 function initBannerClicks() {
   const cards = document.querySelectorAll(".banner-card");
   cards.forEach(card => {
+    // 0. 겜스고 스포트라이트 카드는 모달 팝업 없이 겜스고 파트너 사이트로 즉시 이동!
+    if (card.classList.contains("banner-spotlight-top")) {
+      card.addEventListener("click", (e) => {
+        if (typeof e.stopPropagation === "function") e.stopPropagation();
+        openGamsgoPartner(e);
+      });
+      const actionBar = card.querySelector(".banner-action-bar");
+      if (actionBar) {
+        actionBar.addEventListener("click", (e) => {
+          if (typeof e.stopPropagation === "function") e.stopPropagation();
+          openGamsgoPartner(e);
+        });
+      }
+      return;
+    }
+
     const cat = card.getAttribute("data-category");
-    if (cat && cat !== "all") {
+    if (cat && cat !== "all" && cat !== "gamsgo") {
       card.addEventListener("click", (e) => {
         // 내부 버튼이 링크 복사 등 다른 액션인 경우 제외
         if (e.target.closest("button") || e.target.closest("a")) return;
@@ -451,7 +468,7 @@ function initBannerClicks() {
       const actionBar = card.querySelector(".banner-action-bar");
       if (actionBar) {
         actionBar.addEventListener("click", (e) => {
-          e.stopPropagation();
+          if (typeof e.stopPropagation === "function") e.stopPropagation();
           openCategoryModal(cat);
         });
       }
