@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://gubin0425a-creator.github.io/coupontruck.io/</loc>
     <lastmod>2026-09-05</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>hourly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://gubin0425a-creator.github.io/coupontruck.io/assets/truck-icon.png</image:loc>
+      <image:title>쿠폰트럭 - 실시간 할인코드 및 핫딜 허브 로고</image:title>
+      <image:caption>유튜브 프리미엄 우회 대안 및 겜스고 할인코드 DASSD 큐레이션</image:caption>
+    </image:image>
   </url>
 </urlset>
