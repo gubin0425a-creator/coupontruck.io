@@ -765,10 +765,13 @@ function renderAuthModalContent(step = 1) {
         <div class="auth-lockout-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
         <h4 class="auth-lockout-title">보안 접근 차단 (Brute-Force 방어)</h4>
         <p style="font-size:13px; color:#64748b; line-height:1.5;">
-          인증 시도 5회 연속 실패로 인해 관리자 모달 접근이 30분간 차단되었습니다.<br>
-          보안을 위해 잠시 후 다시 시도해 주세요.
+          인증 시도 연속 실패로 인해 관리자 모달 접근이 30분간 차단되었습니다.<br>
+          관리자 본인이신 경우 마스터 비밀번호로 즉시 잠금을 해제하실 수 있습니다.
         </p>
         <div class="auth-lockout-timer" id="lockoutCountdown">⏳ ${min}:${sec}</div>
+        <button type="button" class="btn-auth-primary" style="margin-top:14px; background:#475569;" onclick="handleEmergencyUnlock()">
+          <i class="fa-solid fa-key"></i> 마스터 비밀번호로 즉시 잠금 해제
+        </button>
       </div>
     `;
     startLockoutTimer();
@@ -1039,6 +1042,22 @@ function startLockoutTimer() {
       el.textContent = `⏳ ${min}:${sec}`;
     }
   }, 1000);
+}
+
+// 관리자 마스터 비밀번호로 즉시 비상 잠금 해제
+async function handleEmergencyUnlock() {
+  const pw = prompt("관리자 마스터 비밀번호를 입력하세요:");
+  if (!pw) return;
+  const hash = await computeHash(pw);
+  if (hash === ADMIN_PW_HASH) {
+    localStorage.removeItem("COUPONTRUCK_ADMIN_LOCKOUT");
+    localStorage.removeItem("COUPONTRUCK_AUTH_FAILURES");
+    if (lockoutTimerInterval) clearInterval(lockoutTimerInterval);
+    alert("✅ 관리자 확인 완료! 보안 잠금이 즉시 해제되었습니다.");
+    renderAuthModalContent(1);
+  } else {
+    alert("❌ 마스터 비밀번호가 올바르지 않습니다.");
+  }
 }
 
 // 세션 시간 표시 업데이트
