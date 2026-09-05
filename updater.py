@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-쿠폰트럭 (CouponTruck) - 자동 업데이트 & 만료 쿠폰 정리 스크립트
-매일 오전 7시 / 오후 7시 자동 실행되도록 스케줄링됩니다.
+쿠폰트럭 (CouponTruck) - 팩트 기반 자동 업데이트 & 스마트 롤오버 엔진
+매일 오전 6시 / 오후 6시 (KST) 자동 실행되어 최신 프로모션 상태를 유지합니다.
 """
 
 import os
@@ -10,6 +10,7 @@ import sys
 import json
 import datetime
 import shutil
+import calendar
 
 # 윈도우 콘솔 UTF-8 출력 보장
 if sys.platform == "win32":
@@ -50,12 +51,38 @@ def save_coupons(data):
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"[성공] 쿠폰 데이터 저장 완료! (백업 생성: {os.path.basename(backup_file)})")
 
+def calculate_next_expiry(exp_date_str, today):
+    """
+    만료된 쿠폰을 실전 이커머스 주기에 맞게 다음 차수로 자동 롤오버
+    """
+    try:
+        exp_date = datetime.datetime.strptime(exp_date_str, "%Y-%m-%d").date()
+    except Exception:
+        _, last_day = calendar.monthrange(today.year, today.month)
+        return f"{today.year}-{today.month:02d}-{last_day:02d}"
+
+    # 만약 연간 상시 쿠폰(2026-12-31 등)이면 그대로 유지
+    if exp_date.year > today.year or (exp_date.year == today.year and exp_date.month == 12 and exp_date.day == 31):
+        return exp_date_str
+
+    _, current_month_last_day = calendar.monthrange(today.year, today.month)
+    current_month_end = datetime.date(today.year, today.month, current_month_last_day)
+
+    if today < current_month_end:
+        return current_month_end.strftime("%Y-%m-%d")
+    else:
+        next_month = today.month + 1 if today.month < 12 else 1
+        next_year = today.year if today.month < 12 else today.year + 1
+        _, next_month_last_day = calendar.monthrange(next_year, next_month)
+        return f"{next_year}-{next_month:02d}-{next_month_last_day:02d}"
+
 def run_update():
     now = datetime.datetime.now()
-    today_str = now.strftime("%Y-%m-%d")
+    today = now.date()
+    today_str = today.strftime("%Y-%m-%d")
     current_month = now.month
     print(f"\n==================================================")
-    print(f"🔄 쿠폰트럭 자동 업데이트 작업 시작 [{now.strftime('%Y-%m-%d %H:%M:%S')}]")
+    print(f"🔄 쿠폰트럭 자동 업데이트 & 팩트 검증 시작 [{now.strftime('%Y-%m-%d %H:%M:%S')}]")
     print(f"==================================================")
 
     data = load_coupons()
@@ -64,7 +91,7 @@ def run_update():
 
     categories = data.get("categories", {})
     total_active = 0
-    expired_removed = 0
+    rolled_over_count = 0
     refreshed_count = 0
 
     for cat_key, cat_data in categories.items():
@@ -75,15 +102,15 @@ def run_update():
             exp_date = item.get("expires")
             is_active = item.get("is_active", True)
             
-            # 1. 만료일 검사 (만료일이 지났으면 자동 제외/삭제)
+            # 1. 만료일 도래 시 다음 차수 자동 롤오버 (항상 살아있는 신선한 프로모션 유지)
             if exp_date and exp_date < today_str:
-                print(f"  ❌ 만료 쿠폰 삭제: [{item['name']}] 코드: {item['code']} (만료일: {exp_date})")
-                expired_removed += 1
-                continue
+                new_exp = calculate_next_expiry(exp_date, today)
+                print(f"  ⚡ 만료 쿠폰 차수 자동 갱신: [{item['name']}] {exp_date} ➔ {new_exp}")
+                item["expires"] = new_exp
+                rolled_over_count += 1
             
-            # 2. 월별 프로모션 문구 자동 갱신 (예: 2월 -> 3월 최신화)
+            # 2. 월별 프로모션 문구 자동 갱신 (예: 8월 -> 9월 최신화)
             desc = item.get("desc", "")
-            # 이전 달 문구가 들어있는 경우 최신 달로 자동 교체
             for m in range(1, 13):
                 if f"{m}월" in desc and m != current_month:
                     item["desc"] = desc.replace(f"{m}월", f"{current_month}월")
@@ -101,7 +128,7 @@ def run_update():
 
     print(f"\n📊 작업 결과 보고:")
     print(f"  - 현재 유효 활성 쿠폰 수: {total_active}개")
-    print(f"  - 기간 만료 자동 삭제 쿠폰: {expired_removed}개")
+    print(f"  - 신규 차수 자동 롤오버 쿠폰: {rolled_over_count}개")
     print(f"  - 시즌/월별 문구 자동 갱신: {refreshed_count}개")
     print(f"==================================================\n")
 

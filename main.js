@@ -913,13 +913,25 @@ function refreshAdminTable() {
   Object.keys(COUPON_DATA.categories).forEach(catKey => {
     const cat = COUPON_DATA.categories[catKey];
     (cat.items || []).forEach(item => {
+      const exp = item.expires || "상시";
+      let expBadge = `<span style="font-size:12px; color:#475569;">${exp}</span>`;
+      if (exp.startsWith("2026-09-1")) {
+        expBadge = `<span style="color:#ef4444; font-weight:700; background:#fef2f2; border:1px solid #fecaca; padding:2px 7px; border-radius:6px; font-size:11.5px; white-space:nowrap;">🔥 ${exp} (마감임박)</span>`;
+      } else if (exp.startsWith("2026-09-20") || exp.startsWith("2026-09-30")) {
+        expBadge = `<span style="color:#2563eb; font-weight:600; background:#eff6ff; border:1px solid #bfdbfe; padding:2px 7px; border-radius:6px; font-size:11.5px; white-space:nowrap;">📅 ${exp} (9월한정)</span>`;
+      } else if (exp.startsWith("2026-10")) {
+        expBadge = `<span style="color:#d97706; font-weight:600; background:#fffbeb; border:1px solid #fde68a; padding:2px 7px; border-radius:6px; font-size:11.5px; white-space:nowrap;">🍂 ${exp} (가을시즌)</span>`;
+      } else if (exp.startsWith("2026-12-31") || exp.startsWith("2029")) {
+        expBadge = `<span style="color:#059669; font-weight:600; background:#ecfdf5; border:1px solid #a7f3d0; padding:2px 7px; border-radius:6px; font-size:11.5px; white-space:nowrap;">👑 상시 제휴</span>`;
+      }
+
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td><span class="badge-cat">${catKey}</span></td>
         <td><strong>${item.name}</strong></td>
         <td><code>${item.code}</code></td>
         <td class="cell-desc">${item.desc}</td>
-        <td>${item.expires || '무기한'}</td>
+        <td>${expBadge}</td>
         <td>
           <button class="btn-del-mini" onclick="handleAdminDeleteCoupon('${catKey}', '${item.code}')">
             <i class="fa-solid fa-trash-can"></i> 삭제
