@@ -254,7 +254,12 @@ function getAllCouponsList() {
         });
       }
     }
-  });
+  // 겜스고(GamsGo)가 항상 전체 목록 1행 1열(1위 카드)로 오도록 최상단 배치 보장
+  const gamsgoIdx = list.findIndex(item => item.id === "off-gamsgo-01" || (item.name && item.name.includes("겜스고")));
+  if (gamsgoIdx > 0) {
+    const [gamsgoItem] = list.splice(gamsgoIdx, 1);
+    list.unshift(gamsgoItem);
+  }
 
   return list;
 }

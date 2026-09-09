@@ -3693,131 +3693,284 @@ button {
   color: #38bdf8;
 }
 
-/* 2. 오늘의 TOP 1 슈퍼 핫딜 (겜스고 슬림 히어로) */
-.super-deal-hero {
-  margin: 10px 0 28px 0;
-}
-
-.super-deal-inner {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  border: 1px solid #334155;
-  border-radius: 16px;
-  padding: 22px 28px;
+/* 2. 최상단 1행: 실시간 OTT 구독료 절약 비교 & 겜스고 특가 */
+.ott-compare-hero {
+  margin: 14px 0 32px 0;
+  background: linear-gradient(145deg, #0b1329 0%, #111e38 50%, #0d172e 100%);
+  border: 1px solid #1e293b;
+  border-radius: 20px;
+  padding: 24px 24px 20px 24px;
   color: #ffffff;
+  box-shadow: 0 12px 36px rgba(2, 6, 23, 0.35);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.2);
 }
 
-.super-deal-inner::before {
+.ott-compare-hero::before {
   content: '';
   position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(249, 115, 22, 0.18) 0%, transparent 70%);
+  top: -120px;
+  right: -80px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(234, 88, 12, 0.15) 0%, rgba(37, 99, 235, 0.1) 50%, transparent 70%);
   pointer-events: none;
 }
 
-.super-deal-badge {
+.ott-compare-header {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.ott-header-badge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: rgba(249, 115, 22, 0.2);
-  border: 1px solid rgba(249, 115, 22, 0.5);
+  gap: 7px;
+  background: rgba(249, 115, 22, 0.16);
+  border: 1px solid rgba(249, 115, 22, 0.4);
   color: #fb923c;
   font-size: 12px;
   font-weight: 700;
-  padding: 3px 10px;
+  padding: 4px 12px;
   border-radius: 20px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
-.super-deal-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-
-.super-deal-left {
-  flex: 1;
-  min-width: 280px;
-}
-
-.deal-brand {
-  font-size: 13px;
-  font-weight: 600;
-  color: #94a3b8;
-  display: block;
-  margin-bottom: 4px;
-}
-
-.deal-title {
-  font-size: 19px;
+.ott-header-title {
+  font-size: 22px;
   font-weight: 800;
   color: #ffffff;
-  line-height: 1.4;
+  line-height: 1.35;
   margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.deal-desc {
+.ott-badge-save {
+  display: inline-block;
+  font-size: 12.5px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+  color: #ffffff;
+  padding: 2px 10px;
+  border-radius: 6px;
+  vertical-align: middle;
+}
+
+.ott-header-sub {
   font-size: 13.5px;
-  color: #cbd5e1;
+  color: #94a3b8;
   line-height: 1.5;
 }
 
-.super-deal-right {
+.ott-header-sub strong {
+  color: #f97316;
+  font-weight: 800;
+  background: rgba(249, 115, 22, 0.15);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+/* 4대 OTT 비교 카드 그리드 */
+.ott-compare-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.ott-card {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  padding: 18px 15px 16px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+}
+
+.ott-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(249, 115, 22, 0.6);
+  background: rgba(30, 41, 59, 0.9);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+.ott-card-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.ott-card-badge.tag-red {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.ott-card-badge.tag-blue {
+  background: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+.ott-card-badge.tag-green {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.ott-card-brand {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 8px;
+  margin-bottom: 6px;
+  padding-right: 60px;
+}
+
+.ott-icon {
+  font-size: 20px;
   flex-shrink: 0;
 }
 
-.deal-code-box {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px dashed rgba(255, 255, 255, 0.25);
-  border-radius: 10px;
-  padding: 8px 14px;
-  text-align: center;
+.youtube-icon { color: #ef4444; }
+.netflix-icon { color: #e50914; }
+.disney-icon { color: #38bdf8; }
+.gpt-icon { color: #10b981; }
+
+.ott-name {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #f8fafc;
 }
 
-.deal-code-box .code-label {
-  display: block;
-  font-size: 11px;
+.ott-feature-tag {
+  font-size: 11.5px;
+  color: #38bdf8;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.ott-price-block {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 12px;
+}
+
+.ott-official-price {
+  font-size: 11.5px;
   color: #94a3b8;
-  font-weight: 500;
+  text-decoration: line-through;
+  margin-bottom: 2px;
 }
 
-.deal-code-box .code-val {
-  display: block;
-  font-size: 17px;
-  font-weight: 800;
+.ott-deal-price {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.ott-deal-price .price-val {
+  font-size: 20px;
+  font-weight: 900;
   color: #f97316;
-  letter-spacing: 1px;
 }
 
-.btn-super-deal {
+.ott-benefit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  color: #cbd5e1;
+}
+
+.ott-benefit-list li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ott-benefit-list li i {
+  color: #22c55e;
+  font-size: 10px;
+}
+
+.btn-ott-deal {
+  width: 100%;
   background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
   color: #ffffff;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 700;
-  padding: 13px 22px;
-  border-radius: 10px;
-  display: inline-flex;
+  padding: 10px 12px;
+  border-radius: 8px;
+  display: flex;
   align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35);
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 3px 10px rgba(234, 88, 12, 0.3);
   transition: all 0.2s;
-  white-space: nowrap;
+  cursor: pointer;
 }
 
-.btn-super-deal:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(234, 88, 12, 0.45);
+.ott-card:hover .btn-ott-deal {
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(234, 88, 12, 0.5);
+}
+
+/* 신뢰도 및 법적 고지 푸터 */
+.ott-trust-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ott-trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+.ott-trust-badges span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ott-legal-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 11px;
+  color: #64748b;
+  line-height: 1.5;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.ott-legal-disclaimer i {
+  margin-top: 2px;
+  flex-shrink: 0;
+  color: #94a3b8;
 }
 
 /* 3. 실시간 쿠폰 카드 그리드 (메인 핵심) */
@@ -4133,16 +4286,12 @@ button {
     font-size: 13px;
     padding: 8px 14px;
   }
-  .super-deal-content {
-    flex-direction: column;
-    align-items: stretch;
+  .ott-header-title {
+    font-size: 19px;
   }
-  .super-deal-right {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .btn-super-deal {
-    justify-content: center;
+  .ott-compare-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
   .coupon-grid {
     grid-template-columns: 1fr;

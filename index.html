@@ -226,7 +226,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=20260905_v16">
+  <link rel="stylesheet" href="styles.css?v=20260909_ott1">
 </head>
 <body>
 
@@ -288,25 +288,118 @@
       <span><strong>제휴 고지:</strong> 본 사이트는 제휴 파트너스 활동의 일환으로 링크 경유 시 소정의 수수료를 제공받을 수 있으며, 구매자에게는 추가 부담 없이 검증된 최저가 혜택이 적용됩니다.</span>
     </div>
 
-    <!-- 2. 오늘의 TOP 1 슈퍼 핫딜 (겜스고 슬림 하이라이트) -->
-    <section class="super-deal-hero" id="heroSuperDeal">
-      <div class="super-deal-inner">
-        <div class="super-deal-badge"><i class="fa-solid fa-crown text-yellow"></i> 오늘의 추천 1위</div>
-        <div class="super-deal-content">
-          <div class="super-deal-left">
-            <span class="deal-brand">겜스고 (GamsGo) · 글로벌 1위 OTT 공유</span>
-            <h2 class="deal-title">유튜브 프리미엄 & 넷플릭스 4K 월 4천원대 (최대 85% 할인)</h2>
-            <p class="deal-desc">VPN 우회 정지 위험 0%! 내 원래 구글 계정 그대로 100% 정품 가족 멤버십 이용</p>
+    <!-- 2. 최상단 1행: 실시간 OTT 구독료 절약 비교 & 겜스고 특가 (합법적 정보제공 & 가격비교) -->
+    <section class="ott-compare-hero" id="heroOttCompare">
+      <div class="ott-compare-header">
+        <div class="ott-header-badge">
+          <span class="pulse-dot"></span>
+          <i class="fa-solid fa-crown text-yellow"></i> 2026 실시간 가격 비교 · 공식 파트너 프로모션
+        </div>
+        <h2 class="ott-header-title">🔥 주요 OTT 구독료 실시간 가격 비교 <span class="ott-badge-save">최대 75% 절약</span></h2>
+        <p class="ott-header-sub">넷플릭스·유튜브·디즈니·ChatGPT 정가 대비 월 최대 14,000원 절약! 프로모션 코드 <strong>DASSD</strong> 입력 시 추가 할인</p>
+      </div>
+
+      <!-- 4대 OTT 비교 카드 그리드 (1행 4열 / 반응형) -->
+      <div class="ott-compare-grid">
+        <!-- 1. 유튜브 프리미엄 -->
+        <div class="ott-card" onclick="openGamsgoPartner(event)">
+          <div class="ott-card-badge tag-red">-67% 특가</div>
+          <div class="ott-card-brand">
+            <i class="fa-brands fa-youtube ott-icon youtube-icon"></i>
+            <span class="ott-name">유튜브 프리미엄</span>
           </div>
-          <div class="super-deal-right">
-            <div class="deal-code-box">
-              <span class="code-label">전용 프로모션 코드</span>
-              <span class="code-val">DASSD</span>
-            </div>
-            <button class="btn-super-deal" onclick="openGamsgoPartner(event)">
-              <i class="fa-regular fa-copy"></i> 코드 복사 & 바로가기
-            </button>
+          <div class="ott-feature-tag">내 원래 구글 계정 100% 유지</div>
+          <div class="ott-price-block">
+            <div class="ott-official-price">정가 월 14,900원</div>
+            <div class="ott-deal-price">월 <span class="price-val">4,900</span>원대</div>
           </div>
+          <ul class="ott-benefit-list">
+            <li><i class="fa-solid fa-check"></i> 광고 없는 무제한 영상</li>
+            <li><i class="fa-solid fa-check"></i> 백그라운드 재생 & 오프라인</li>
+            <li><i class="fa-solid fa-check"></i> 유튜브 뮤직 정품 무료 포함</li>
+          </ul>
+          <button type="button" class="btn-ott-deal">
+            <i class="fa-solid fa-bolt"></i> DASSD 복사 & 바로가기
+          </button>
+        </div>
+
+        <!-- 2. 넷플릭스 4K -->
+        <div class="ott-card" onclick="openGamsgoPartner(event)">
+          <div class="ott-card-badge tag-red">-70% 특가</div>
+          <div class="ott-card-brand">
+            <i class="fa-solid fa-film ott-icon netflix-icon"></i>
+            <span class="ott-name">넷플릭스 4K UHD</span>
+          </div>
+          <div class="ott-feature-tag">개인 전용 PIN 잠금 프로필</div>
+          <div class="ott-price-block">
+            <div class="ott-official-price">정가 월 17,000원</div>
+            <div class="ott-deal-price">월 <span class="price-val">5,000</span>원대</div>
+          </div>
+          <ul class="ott-benefit-list">
+            <li><i class="fa-solid fa-check"></i> 최고화질 4K UHD + HDR</li>
+            <li><i class="fa-solid fa-check"></i> 전용 개인 프로필 시청기록</li>
+            <li><i class="fa-solid fa-check"></i> TV·스마트폰·태블릿 완벽지원</li>
+          </ul>
+          <button type="button" class="btn-ott-deal">
+            <i class="fa-solid fa-bolt"></i> DASSD 복사 & 바로가기
+          </button>
+        </div>
+
+        <!-- 3. 디즈니 플러스 -->
+        <div class="ott-card" onclick="openGamsgoPartner(event)">
+          <div class="ott-card-badge tag-blue">-80% 특가</div>
+          <div class="ott-card-brand">
+            <i class="fa-solid fa-sparkles ott-icon disney-icon"></i>
+            <span class="ott-name">디즈니 플러스</span>
+          </div>
+          <div class="ott-feature-tag">프리미엄 4K UHD 지원</div>
+          <div class="ott-price-block">
+            <div class="ott-official-price">정가 월 13,900원</div>
+            <div class="ott-deal-price">월 <span class="price-val">2,700</span>원대</div>
+          </div>
+          <ul class="ott-benefit-list">
+            <li><i class="fa-solid fa-check"></i> 마블, 스타워즈, 디즈니 전편</li>
+            <li><i class="fa-solid fa-check"></i> 돌비 애트모스 입체 사운드</li>
+            <li><i class="fa-solid fa-check"></i> 최신 오리지널 시리즈 무제한</li>
+          </ul>
+          <button type="button" class="btn-ott-deal">
+            <i class="fa-solid fa-bolt"></i> DASSD 복사 & 바로가기
+          </button>
+        </div>
+
+        <!-- 4. ChatGPT Plus -->
+        <div class="ott-card" onclick="openGamsgoPartner(event)">
+          <div class="ott-card-badge tag-green">-60% 특가</div>
+          <div class="ott-card-brand">
+            <i class="fa-solid fa-robot ott-icon gpt-icon"></i>
+            <span class="ott-name">ChatGPT Plus (AI)</span>
+          </div>
+          <div class="ott-feature-tag">GPT-4o & DALL-E 3</div>
+          <div class="ott-price-block">
+            <div class="ott-official-price">정가 월 29,000원</div>
+            <div class="ott-deal-price">월 <span class="price-val">11,500</span>원대</div>
+          </div>
+          <ul class="ott-benefit-list">
+            <li><i class="fa-solid fa-check"></i> 최신 GPT-4o 무제한 우선권</li>
+            <li><i class="fa-solid fa-check"></i> DALL-E 고화질 이미지 생성</li>
+            <li><i class="fa-solid fa-check"></i> 웹 검색 & 고급 데이터 분석</li>
+          </ul>
+          <button type="button" class="btn-ott-deal">
+            <i class="fa-solid fa-bolt"></i> DASSD 복사 & 바로가기
+          </button>
+        </div>
+      </div>
+
+      <!-- 신뢰도 보증 바 & 공정위 필수 법적 고지 -->
+      <div class="ott-trust-footer">
+        <div class="ott-trust-badges">
+          <span><i class="fa-solid fa-shield-halved text-green"></i> 5년 연속 글로벌 1위 (50만+ 회원)</span>
+          <span><i class="fa-solid fa-credit-card text-blue"></i> 카카오페이 · 토스 · 국내카드 간편결제</span>
+          <span><i class="fa-solid fa-rotate-left text-orange"></i> 24시간 고객센터 & 미작동 시 100% 환불 지원</span>
+        </div>
+        <div class="ott-legal-disclaimer">
+          <i class="fa-solid fa-circle-info"></i>
+          <span>본 가격 비교표는 겜스고(GamsGo) 공식 파트너 프로모션 정보를 바탕으로 제공되며, 링크 경유 결제 시 소정의 수수료를 제공받을 수 있습니다. 이용 중 계정 문의 및 환불은 겜스고 24시간 실시간 고객센터를 통해 신속히 지원됩니다.</span>
         </div>
       </div>
     </section>
@@ -422,6 +515,6 @@
   </div>
 
   <!-- Javascript -->
-  <script src="main.js?v=20260909_v2"></script>
+  <script src="main.js?v=20260909_ott1"></script>
 </body>
 </html>
