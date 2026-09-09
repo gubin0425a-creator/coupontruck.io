@@ -3315,10 +3315,10 @@
     "brand_id": "steam",
     "category": "game",
     "type": "COUPON",
-    "title": "스팀 (Steam)",
-    "description": "스팀 계절 정기 세일 및 주말 특가 최대 90% 할인",
-    "coupon_code": "STEAMSALE",
-    "discount_percent": 90,
+    "title": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 38% OFF)",
+    "description": "실시간 인기 특가: 붉은사막 Enhanced(-20%), Wanderburg 완더버그(-35%), BOMBANANA!(-38%) 등 수천 개 정품 게임 공식 할인",
+    "coupon_code": "자동할인",
+    "discount_percent": 38,
     "max_discount_percent": 90,
     "is_up_to": true,
     "end_date": "2026-09-12",
@@ -3331,7 +3331,7 @@
     "source_url": "https://store.steampowered.com",
     "source_kind": "MANUAL",
     "target_url": "https://store.steampowered.com",
-    "verified_at": "2026-09-09T04:36:57.144Z",
+    "verified_at": "2026-09-09T05:03:31.854Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
@@ -3339,7 +3339,7 @@
       "domain_allowed": true,
       "affiliate_matched": false,
       "notes": [
-        "초기 레거시 데이터 검증 시드 마이그레이션"
+        "Steam Web API 실시간 특가 피드 수집: 붉은사막 Enhanced(-20%), Wanderburg 완더버그(-35%), BOMBANANA!(-38%)"
       ]
     },
     "confidence": 96,
@@ -3424,12 +3424,12 @@
     "brand_id": "epicgames",
     "category": "game",
     "type": "COUPON",
-    "title": "에픽게임즈 (Epic Games)",
-    "description": "매주 목요일 업데이트되는 인기 PC 게임 100% 무료 배포",
-    "coupon_code": "EPICFREE",
+    "title": "에픽게임즈 주간 100% 무료 게임 배포 (Alone With You)",
+    "description": "[지금 무료] Alone With You 무료 다운로드 및 영구 소장 가능 (매주 신규 타이틀 갱신)",
+    "coupon_code": "100% 무료",
     "discount_percent": 100,
     "is_up_to": false,
-    "end_date": "2026-09-11",
+    "end_date": "2026-09-10",
     "conditions": [
       "온라인 결제 시 적용 가능"
     ],
@@ -3439,7 +3439,7 @@
     "source_url": "https://store.epicgames.com",
     "source_kind": "MANUAL",
     "target_url": "https://store.epicgames.com",
-    "verified_at": "2026-09-09T04:36:57.144Z",
+    "verified_at": "2026-09-09T05:03:31.854Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
@@ -3447,7 +3447,7 @@
       "domain_allowed": true,
       "affiliate_matched": false,
       "notes": [
-        "초기 레거시 데이터 검증 시드 마이그레이션"
+        "Epic Games 공식 API 실시간 수집 완료: Alone With You"
       ]
     },
     "confidence": 96,

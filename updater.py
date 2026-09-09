@@ -85,6 +85,13 @@ def run_update():
     print(f"🔄 쿠폰트럭 자동 업데이트 & 팩트 검증 시작 [{now.strftime('%Y-%m-%d %H:%M:%S')}]")
     print(f"==================================================")
 
+    # 실시간 공개 API & RSS 수집기(에픽게임즈, 스팀 등) 실행
+    try:
+        import subprocess
+        subprocess.run(["npx", "tsx", "src/collectors/feed-collector.ts"], cwd=BASE_DIR, timeout=30, shell=True)
+    except Exception as e:
+        print(f"⚠️ 라이브 피드 수집기 실행 건너뜀: {e}")
+
     data = load_coupons()
     if not data:
         return

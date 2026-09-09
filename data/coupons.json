@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-09T04:56:53.740Z",
+  "last_updated": "2026-09-09T14:03:32.050554",
   "version": "2.1.0",
   "total_active_offers": 103,
   "categories": {
@@ -1044,14 +1044,14 @@
       "items": [
         {
           "id": "gam-01",
-          "name": "스팀 (Steam)",
-          "code": "STEAMSALE",
-          "desc": "스팀 계절 정기 세일 및 주말 특가 최대 90% 할인",
+          "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 38% OFF)",
+          "code": "자동할인",
+          "desc": "실시간 인기 특가: 붉은사막 Enhanced(-20%), Wanderburg 완더버그(-35%), BOMBANANA!(-38%) 등 수천 개 정품 게임 공식 할인",
           "url": "https://store.steampowered.com",
           "expires": "2026-09-12",
           "is_active": true,
           "badge": "스팀특가",
-          "verified_at": "2026-09-09T04:36:57.144Z",
+          "verified_at": "2026-09-09T05:03:31.854Z",
           "type": "COUPON"
         },
         {
@@ -1080,14 +1080,14 @@
         },
         {
           "id": "gam-04",
-          "name": "에픽게임즈 (Epic Games)",
-          "code": "EPICFREE",
-          "desc": "매주 목요일 업데이트되는 인기 PC 게임 100% 무료 배포",
+          "name": "에픽게임즈 주간 100% 무료 게임 배포 (Alone With You)",
+          "code": "100% 무료",
+          "desc": "[지금 무료] Alone With You 무료 다운로드 및 영구 소장 가능 (매주 신규 타이틀 갱신)",
           "url": "https://store.epicgames.com",
-          "expires": "2026-09-11",
+          "expires": "2026-09-10",
           "is_active": true,
           "badge": "매주무료",
-          "verified_at": "2026-09-09T04:36:57.144Z",
+          "verified_at": "2026-09-09T05:03:31.854Z",
           "type": "COUPON"
         },
         {

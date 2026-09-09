@@ -982,23 +982,19 @@ function initAdminShortcuts() {
     });
   }
 
-  // 3. 주소창에 #admin 입력 시 즉시 관리자 모달 오픈
+  // 3. 주소창에 #admin 입력 시 즉시 관리자 전체 페이지로 이동
   function checkAdminHash() {
     if (window.location.hash.toLowerCase() === "#admin") {
-      setTimeout(() => openAdminModal(), 100);
+      window.location.href = "admin.html";
     }
   }
   checkAdminHash();
   window.addEventListener("hashchange", checkAdminHash);
 }
 
-// 관리자 모달 진입점
+// 관리자 전체 페이지 진입점 (admin.html 전체 화면으로 이동)
 function openAdminModal() {
-  if (!isAdminSessionValid()) {
-    openLocalAdminLoginModal();
-    return;
-  }
-  showAdminDashboard();
+  window.location.href = "admin.html";
 }
 
 // 관리자 대시보드 화면 렌더링

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>쿠폰트럭 관리자 센터 (Admin Studio) - 실시간 프로모션 코드 & 핫딜 관리</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  <!-- Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Admin Stylesheet -->
+  <link rel="stylesheet" href="admin.css?v=20260909_v1">
+</head>
+<body>
+
+  <!-- 1. 미인증 시 표시되는 관리자 보안 로그인 게이트 -->
+  <div id="adminLoginGate" class="admin-login-view" style="display: none;">
+    <div class="admin-login-card">
+      <div class="admin-login-header">
+        <div class="admin-login-icon">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <h2 class="admin-login-title">쿠폰트럭 관리자 센터</h2>
+        <p class="admin-login-subtitle">CouponTruck Admin Studio</p>
+      </div>
+      <div class="admin-login-body">
+        <div class="login-notice">
+          <strong>🔒 관리자 보안 인증 필요</strong><br>
+          프로젝트의 <code>.admin_token</code> 파일에 저장된 보안 토큰 또는 환경변수 마스터 키를 입력하여 대시보드에 접근하세요.
+        </div>
+        <form id="adminLoginForm" onsubmit="handleAdminLogin(event)">
+          <div class="form-group">
+            <label for="adminTokenInput">관리자 마스터 토큰</label>
+            <div class="input-with-action">
+              <input type="password" id="adminTokenInput" class="form-control" placeholder="보안 토큰 입력 (.admin_token)" required autofocus autocomplete="off">
+            </div>
+          </div>
+          <button type="submit" class="btn-login-submit">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i> 관리자 대시보드 입장
+          </button>
+        </form>
+        <div style="margin-top: 16px; text-align: center;">
+          <a href="./" style="font-size: 12.5px; color: #64748b; text-decoration: none;">
+            <i class="fa-solid fa-arrow-left"></i> 쇼핑몰 메인 페이지로 돌아가기
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. 인증 성공 시 표시되는 전체 화면 관리자 대시보드 -->
+  <div id="adminMainDashboard" style="display: none;">
+    <!-- 상단 내비게이션 바 -->
+    <header class="admin-navbar">
+      <div class="admin-nav-inner">
+        <a href="admin.html" class="admin-nav-brand">
+          <div class="admin-nav-logo-box">
+            <img src="assets/truck-icon.png" alt="쿠폰트럭 로고">
+          </div>
+          <div class="admin-nav-title-group">
+            <div class="admin-nav-title">
+              쿠폰트럭 Admin Studio
+              <span class="admin-badge-pro">PRO MASTER</span>
+            </div>
+            <span class="admin-nav-desc">실시간 프로모션 코드 & 핫딜 올인원 관제 센터</span>
+          </div>
+        </a>
+
+        <div class="admin-nav-meta">
+          <div id="serverStatusBadge" class="status-badge">
+            <span class="status-dot-pulse"></span>
+            <span id="serverStatusText">로컬 서버(8000) 연동 중</span>
+          </div>
+          <span style="font-size: 12px; color: #94a3b8;" id="systemScheduleInfo">
+            <i class="fa-regular fa-clock"></i> 매일 07:00 / 19:00 자동 갱신
+          </span>
+          <a href="./" target="_blank" class="btn-nav-action" title="새 탭에서 사이트 열기">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> 메인 사이트
+          </a>
+          <button type="button" class="btn-nav-action btn-nav-logout" onclick="handleAdminLogout()">
+            <i class="fa-solid fa-right-from-bracket"></i> 로그아웃
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- 대시보드 메인 본문 -->
+    <main class="admin-container">
+
+      <!-- KPI 통계 요약 카드 그리드 -->
+      <section class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <span class="kpi-label">전체 등록 혜택</span>
+            <span class="kpi-value" id="kpiTotalCoupons">0</span>
+            <span class="kpi-sub" id="kpiLastUpdated">최근 업데이트: 확인 중</span>
+          </div>
+          <div class="kpi-icon-wrap icon-blue">
+            <i class="fa-solid fa-tags"></i>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <span class="kpi-label">활성 프로모션 코드</span>
+            <span class="kpi-value" id="kpiActiveCoupons" style="color: #059669;">0</span>
+            <span class="kpi-sub">정상 노출 중인 코드</span>
+          </div>
+          <div class="kpi-icon-wrap icon-green">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <span class="kpi-label">마감 임박 혜택</span>
+            <span class="kpi-value" id="kpiExpiringCoupons" style="color: #ea580c;">0</span>
+            <span class="kpi-sub">7일 이내 또는 당월 마감</span>
+          </div>
+          <div class="kpi-icon-wrap icon-orange">
+            <i class="fa-solid fa-fire-flame-curved"></i>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <span class="kpi-label">운영 카테고리</span>
+            <span class="kpi-value" id="kpiCategoriesCount">0</span>
+            <span class="kpi-sub">여행·쇼핑·OTT·패션·게임</span>
+          </div>
+          <div class="kpi-icon-wrap icon-purple">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+        </div>
+      </section>
+
+      <!-- 🌟 프로모션 코드 직접 등록 & 편집 섹션 (핵심 기능) -->
+      <section class="admin-card" id="promoFormSection">
+        <div class="admin-card-header">
+          <div class="card-title-group">
+            <div class="card-icon">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <div>
+              <h2 class="card-title" id="formHeaderTitle">프로모션 코드 직접 등록</h2>
+              <p class="card-desc">신규 프로모션 코드를 직접 생성하거나 기존 쿠폰 정보를 수정하여 즉시 발행합니다.</p>
+            </div>
+          </div>
+          <div class="card-header-actions">
+            <button type="button" class="btn-secondary-action" onclick="resetPromoForm()" style="padding: 6px 12px; font-size: 12.5px;">
+              <i class="fa-solid fa-rotate-left"></i> 폼 초기화
+            </button>
+          </div>
+        </div>
+
+        <!-- 인기 브랜드 원클릭 프리셋 바 -->
+        <div class="preset-bar">
+          <span class="preset-label"><i class="fa-solid fa-bolt text-yellow"></i> 인기 브랜드 원클릭 입력:</span>
+          <button type="button" class="preset-chip" onclick="applyBrandPreset('gamsgo')">
+            <i class="fa-solid fa-play text-red"></i> 겜스고 (GamsGo)
+          </button>
+          <button type="button" class="preset-chip" onclick="applyBrandPreset('agoda')">
+            <i class="fa-solid fa-plane text-blue"></i> 아고다 (Agoda)
+          </button>
+          <button type="button" class="preset-chip" onclick="applyBrandPreset('aliexpress')">
+            <i class="fa-solid fa-cart-shopping text-orange"></i> 알리익스프레스
+          </button>
+          <button type="button" class="preset-chip" onclick="applyBrandPreset('trip')">
+            <i class="fa-solid fa-ticket"></i> 트립닷컴
+          </button>
+          <button type="button" class="preset-chip" onclick="applyBrandPreset('klook')">
+            <i class="fa-solid fa-compass"></i> 클룩 (Klook)
+          </button>
+          <button type="button" class="preset-chip" onclick="applyBrandPreset('hotels')">
+            <i class="fa-solid fa-hotel"></i> 호텔스닷컴
+          </button>
+          <button type="button" class="preset-chip" onclick="applyBrandPreset('coupang')">
+            <i class="fa-solid fa-box"></i> 쿠팡 (Coupang)
+          </button>
+          <button type="button" class="preset-chip" onclick="applyBrandPreset('temu')">
+            <i class="fa-solid fa-bag-shopping"></i> 테무 (Temu)
+          </button>
+        </div>
+
+        <!-- 폼 본체 -->
+        <form id="promoCodeForm" onsubmit="handleSavePromoCode(event)">
+          <input type="hidden" id="formEditId" value="">
+
+          <div class="promo-form-body">
+            <!-- 좌측 필드 그리드 -->
+            <div class="promo-form-fields">
+              <div class="form-row-grid-3">
+                <!-- 카테고리 -->
+                <div class="form-group">
+                  <label for="formCategory">카테고리</label>
+                  <select id="formCategory" class="form-control" required onchange="updateLivePreview()">
+                    <option value="sub">📺 OTT · 구독 · AI</option>
+                    <option value="travel">✈️ 여행 · 숙소 · 항공권</option>
+                    <option value="shopping">🛍️ 쇼핑 · 해외직구</option>
+                    <option value="fashion">👗 패션 · 명품 · 뷰티</option>
+                    <option value="game">🎮 게임 · 소프트웨어</option>
+                    <option value="guide">💡 절약 꿀팁 · 가이드</option>
+                  </select>
+                </div>
+
+                <!-- 브랜드명 -->
+                <div class="form-group">
+                  <label for="formBrand">브랜드명 <span class="form-label-badge">(쇼핑몰/서비스)</span></label>
+                  <input type="text" id="formBrand" class="form-control" placeholder="예: 겜스고 (GamsGo)" required oninput="updateLivePreview()">
+                </div>
+
+                <!-- 🌟 프로모션 코드 입력란 (핵심) -->
+                <div class="form-group">
+                  <label for="formCode">
+                    <span>프로모션 코드</span>
+                    <span class="form-label-badge">대문자 자동 변환</span>
+                  </label>
+                  <div class="input-with-action">
+                    <input type="text" id="formCode" class="form-control code-input" placeholder="예: DASSD" required oninput="handleCodeInput(this)" autocomplete="off">
+                    <button type="button" class="input-action-btn" onclick="generateRandomCode()" title="랜덤 코드 생성">
+                      <i class="fa-solid fa-dice"></i> 랜덤
+                    </button>
+                  </div>
+                  <span id="codeCheckMsg" class="code-check-msg"></span>
+                </div>
+              </div>
+
+              <!-- 혜택 설명 -->
+              <div class="form-group">
+                <label for="formDesc">할인 혜택 / 상세 설명</label>
+                <input type="text" id="formDesc" class="form-control" placeholder="예: 유튜브 프리미엄 & 넷플릭스 4K 월 4천원대 + 추가 즉시할인" required oninput="updateLivePreview()">
+              </div>
+
+              <!-- 제휴/공식 URL -->
+              <div class="form-group">
+                <label for="formUrl">
+                  <span>제휴 / 공식 링크 (URL)</span>
+                  <span class="form-label-badge">클릭 시 이동할 주소</span>
+                </label>
+                <div class="input-with-action">
+                  <input type="url" id="formUrl" class="form-control" placeholder="https://www.gamsgo.com/partner/..." required oninput="updateLivePreview()">
+                  <button type="button" class="input-action-btn" onclick="testTargetUrl()">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> 링크 테스트
+                  </button>
+                </div>
+              </div>
+
+              <div class="form-row-grid-3">
+                <!-- 만료일자 설정 -->
+                <div class="form-group">
+                  <label for="formExpires">만료일 (YYYY-MM-DD)</label>
+                  <input type="date" id="formExpires" class="form-control" value="2026-12-31" onchange="updateLivePreview()">
+                  <div class="quick-chips-group">
+                    <button type="button" class="quick-chip" onclick="setExpiryPreset('always')">상시 무제한</button>
+                    <button type="button" class="quick-chip" onclick="setExpiryPreset('month-end')">이달 말</button>
+                    <button type="button" class="quick-chip" onclick="setExpiryPreset('plus30')">+30일</button>
+                    <button type="button" class="quick-chip" onclick="setExpiryPreset('plus90')">+90일</button>
+                  </div>
+                </div>
+
+                <!-- 강조 배지 태그 -->
+                <div class="form-group">
+                  <label for="formBadge">강조 배지 (Tag)</label>
+                  <input type="text" id="formBadge" class="form-control" placeholder="예: 인기 1위" value="인기 1위" oninput="updateLivePreview()">
+                  <div class="quick-chips-group">
+                    <button type="button" class="quick-chip" onclick="setBadgePreset('인기 1위')">인기 1위</button>
+                    <button type="button" class="quick-chip" onclick="setBadgePreset('🔥 단독특가')">단독특가</button>
+                    <button type="button" class="quick-chip" onclick="setBadgePreset('⚡ NEW')">NEW</button>
+                    <button type="button" class="quick-chip" onclick="setBadgePreset('8% OFF')">8% OFF</button>
+                    <button type="button" class="quick-chip" onclick="setBadgePreset('마감임박')">마감임박</button>
+                  </div>
+                </div>
+
+                <!-- 노출 유형 및 활성화 상태 -->
+                <div class="form-group">
+                  <label for="formType">혜택 유형 & 노출</label>
+                  <select id="formType" class="form-control" onchange="updateLivePreview()">
+                    <option value="COUPON">🎟️ COUPON (코드 복사형)</option>
+                    <option value="DEAL">🔥 DEAL (할인 링크형)</option>
+                  </select>
+                  <div class="switch-group">
+                    <label class="toggle-switch">
+                      <input type="checkbox" id="formIsActive" checked onchange="updateLivePreview()">
+                      <span class="slider"></span>
+                    </label>
+                    <span class="switch-label" id="switchLabelText">웹사이트 즉시 노출 (활성)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 폼 액션 버튼들 -->
+              <div class="form-actions-row">
+                <button type="submit" id="btnSubmitForm" class="btn-primary-action">
+                  <i class="fa-solid fa-plus"></i> <span id="btnSubmitText">프로모션 코드 즉시 등록하기</span>
+                </button>
+                <button type="button" id="btnCancelEdit" class="btn-secondary-action" onclick="resetPromoForm()" style="display: none;">
+                  수정 취소
+                </button>
+              </div>
+            </div>
+
+            <!-- 우측 실시간 카드 미리보기 패널 -->
+            <div class="promo-preview-panel">
+              <span class="preview-panel-title">
+                <i class="fa-solid fa-eye text-blue"></i> 실시간 메인 노출 카드 미리보기
+              </span>
+              <div class="live-card-mockup">
+                <div class="mockup-header">
+                  <span class="mockup-cat" id="previewCategory">📺 OTT · 구독</span>
+                  <span class="mockup-badge" id="previewBadge">인기 1위</span>
+                </div>
+                <h4 class="mockup-brand" id="previewBrand">겜스고 (GamsGo)</h4>
+                <p class="mockup-desc" id="previewDesc">유튜브 프리미엄 & 넷플릭스 4K 월 4천원대 (최대 85% 할인)</p>
+                <div class="mockup-code-box">
+                  <span style="font-size: 11px; color: #64748b;">프로모션 코드</span>
+                  <span class="mockup-code-text" id="previewCode">DASSD</span>
+                </div>
+                <div class="mockup-exp" id="previewExpires">
+                  <i class="fa-regular fa-calendar"></i> 2026-12-31 까지 (상시 제휴)
+                </div>
+              </div>
+              <div style="font-size: 11.5px; color: #94a3b8; line-height: 1.4;">
+                ※ 입력한 정보는 저장 즉시 <code>data/coupons.json</code> 파일 및 메인 웹페이지에 실시간 반영됩니다.
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- 전체 쿠폰 및 프로모션 코드 목록 관리 테이블 -->
+      <section class="admin-card">
+        <div class="admin-card-header">
+          <div class="card-title-group">
+            <div class="card-icon" style="background: #ecfdf5; color: #059669;">
+              <i class="fa-solid fa-list-check"></i>
+            </div>
+            <div>
+              <h2 class="card-title">등록된 프로모션 코드 및 쿠폰 목록 (<span id="tableTotalCount">0</span>개)</h2>
+              <p class="card-desc">검색, 실시간 활성화 토글, 정보 수정 및 일괄 삭제가 가능합니다.</p>
+            </div>
+          </div>
+          <div class="card-header-actions">
+            <button type="button" class="btn-secondary-action" onclick="refreshCouponList()" style="padding: 6px 12px; font-size: 12.5px;">
+              <i class="fa-solid fa-arrows-rotate"></i> 새로고침
+            </button>
+          </div>
+        </div>
+
+        <!-- 상단 필터 & 검색 툴바 -->
+        <div class="filter-toolbar">
+          <div class="search-input-wrap">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="tableSearchInput" placeholder="브랜드, 코드, 설명 검색..." oninput="handleTableFilter()">
+          </div>
+
+          <div class="filter-pills-row" id="categoryFilterPills">
+            <button class="filter-pill-btn active" data-cat="all" onclick="setCategoryFilter('all', this)">전체</button>
+            <button class="filter-pill-btn" data-cat="sub" onclick="setCategoryFilter('sub', this)">📺 OTT·구독</button>
+            <button class="filter-pill-btn" data-cat="travel" onclick="setCategoryFilter('travel', this)">✈️ 여행·숙소</button>
+            <button class="filter-pill-btn" data-cat="shopping" onclick="setCategoryFilter('shopping', this)">🛍️ 쇼핑·직구</button>
+            <button class="filter-pill-btn" data-cat="fashion" onclick="setCategoryFilter('fashion', this)">👗 패션·명품</button>
+            <button class="filter-pill-btn" data-cat="game" onclick="setCategoryFilter('game', this)">🎮 게임</button>
+            <button class="filter-pill-btn" data-cat="guide" onclick="setCategoryFilter('guide', this)">💡 절약팁</button>
+          </div>
+
+          <div style="display: flex; gap: 8px;">
+            <select id="statusFilterSelect" class="filter-select" onchange="handleTableFilter()">
+              <option value="all">모든 상태</option>
+              <option value="active">🟢 활성만 보기</option>
+              <option value="expiring">🔥 마감임박만 보기</option>
+              <option value="inactive">⚪ 비활성만 보기</option>
+            </select>
+
+            <select id="sortSelect" class="filter-select" onchange="handleTableFilter()">
+              <option value="newest">최신 등록순</option>
+              <option value="brand">브랜드 가나다순</option>
+              <option value="expiry">만료일 임박순</option>
+              <option value="code">코드 알파벳순</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 다중 선택 일괄 작업 툴바 (선택 시 노출) -->
+        <div id="batchToolbar" class="batch-toolbar" style="display: none;">
+          <div>
+            <i class="fa-solid fa-check-double"></i> <strong id="selectedItemsCount">0</strong>개 항목 선택됨
+          </div>
+          <div class="batch-btn-group">
+            <button type="button" class="btn-batch" onclick="handleBatchStatus(true)">
+              <i class="fa-solid fa-circle-check"></i> 일괄 활성화
+            </button>
+            <button type="button" class="btn-batch" onclick="handleBatchStatus(false)">
+              <i class="fa-solid fa-circle-xmark"></i> 일괄 비활성화
+            </button>
+            <button type="button" class="btn-batch btn-batch-danger" onclick="handleBatchDelete()">
+              <i class="fa-solid fa-trash-can"></i> 선택 일괄 삭제
+            </button>
+          </div>
+        </div>
+
+        <!-- 데이터 테이블 본체 -->
+        <div class="table-responsive">
+          <table class="admin-data-table">
+            <thead>
+              <tr>
+                <th style="width: 40px; text-align: center;">
+                  <input type="checkbox" id="selectAllCheckbox" onchange="toggleSelectAll(this)">
+                </th>
+                <th style="width: 70px;">노출</th>
+                <th style="width: 100px;">카테고리</th>
+                <th style="width: 150px;">브랜드명</th>
+                <th style="width: 150px;">프로모션 코드</th>
+                <th>혜택 및 설명</th>
+                <th style="width: 130px;">만료일 (D-Day)</th>
+                <th style="width: 90px;">배지</th>
+                <th style="width: 60px; text-align: center;">링크</th>
+                <th style="width: 100px; text-align: center;">관리</th>
+              </tr>
+            </thead>
+            <tbody id="couponTableBody">
+              <!-- JS 동적 생성 -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 데이터 도구 및 시스템 유틸리티 -->
+      <section class="admin-card">
+        <div class="admin-card-header">
+          <div class="card-title-group">
+            <div class="card-icon" style="background: #fdf4ff; color: #a855f7;">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <div>
+              <h2 class="card-title">데이터 및 시스템 관리 도구</h2>
+              <p class="card-desc">자동 크롤링 갱신 수동 실행, JSON 데이터 백업 및 복원 기능을 제공합니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="system-tools-grid">
+          <!-- 1. 즉시 업데이트 -->
+          <div class="tool-card">
+            <div class="tool-header">
+              <div class="tool-icon" style="background: #eff6ff; color: #2563eb;">
+                <i class="fa-solid fa-arrows-rotate"></i>
+              </div>
+              <div>
+                <div class="tool-title">즉시 수집 & 만료 갱신</div>
+              </div>
+            </div>
+            <p class="tool-desc">스케줄러와 동일한 만료일 롤오버 및 팩트체크 엔진(updater.py)을 즉시 가동합니다.</p>
+            <button type="button" class="btn-tool" id="btnRunUpdate" onclick="triggerRunUpdate()">
+              <i class="fa-solid fa-play"></i> 즉시 갱신 실행
+            </button>
+          </div>
+
+          <!-- 2. JSON 백업 다운로드 -->
+          <div class="tool-card">
+            <div class="tool-header">
+              <div class="tool-icon" style="background: #ecfdf5; color: #059669;">
+                <i class="fa-solid fa-download"></i>
+              </div>
+              <div>
+                <div class="tool-title">JSON 백업 다운로드</div>
+              </div>
+            </div>
+            <p class="tool-desc">현재 활성화된 모든 쿠폰과 프로모션 코드 데이터를 <code>coupons.json</code> 파일로 내보냅니다.</p>
+            <button type="button" class="btn-tool" onclick="exportCouponsJSON()">
+              <i class="fa-solid fa-file-arrow-down"></i> 백업 다운로드
+            </button>
+          </div>
+
+          <!-- 3. JSON 데이터 복원/가져오기 -->
+          <div class="tool-card">
+            <div class="tool-header">
+              <div class="tool-icon" style="background: #fff7ed; color: #ea580c;">
+                <i class="fa-solid fa-upload"></i>
+              </div>
+              <div>
+                <div class="tool-title">JSON 파일 복원</div>
+              </div>
+            </div>
+            <p class="tool-desc">백업해 둔 JSON 파일을 업로드하여 서버 및 데이터베이스에 즉시 복원합니다.</p>
+            <input type="file" id="importJsonFileInput" accept=".json" style="display: none;" onchange="handleImportJsonFile(event)">
+            <button type="button" class="btn-tool" onclick="document.getElementById('importJsonFileInput').click()">
+              <i class="fa-solid fa-file-arrow-up"></i> JSON 업로드 복원
+            </button>
+          </div>
+
+          <!-- 4. 기본값 복원 -->
+          <div class="tool-card">
+            <div class="tool-header">
+              <div class="tool-icon" style="background: #fee2e2; color: #dc2626;">
+                <i class="fa-solid fa-trash-arrow-up"></i>
+              </div>
+              <div>
+                <div class="tool-title">데이터 리셋 & 동기화</div>
+              </div>
+            </div>
+            <p class="tool-desc">로컬 브라우저 캐시 및 오버라이드를 정리하고 원본 데이터베이스와 재동기화합니다.</p>
+            <button type="button" class="btn-tool" onclick="resetFactoryData()">
+              <i class="fa-solid fa-rotate-left"></i> 캐시 정리 & 동기화
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- 토스트 알림창 -->
+  <div id="adminToast" class="admin-toast" style="display: none;">
+    <i class="fa-solid fa-circle-check text-green" id="adminToastIcon"></i>
+    <span id="adminToastMsg">알림 메시지</span>
+  </div>
+
+  <!-- Admin JavaScript -->
+  <script src="admin.js?v=20260909_v1"></script>
+</body>
+</html>

@@ -98,6 +98,13 @@ class CouponTruckHandler(SimpleHTTPRequestHandler):
         return False
 
     def do_GET(self):
+        # /admin 또는 /admin/ 접속 시 관리자 전체 페이지로 리다이렉트
+        if self.path in ("/admin", "/admin/"):
+            self.send_response(302)
+            self.send_header("Location", "/admin.html")
+            self.end_headers()
+            return
+
         # 쿠폰 데이터 API
         if self.path.startswith("/api/coupons"):
             self.send_response(200)
@@ -153,6 +160,132 @@ class CouponTruckHandler(SimpleHTTPRequestHandler):
             self.wfile.write(json.dumps({"authenticated": False, "error": "Invalid admin token"}).encode("utf-8"))
             return
 
+        # 활성 상태 원클릭 토글 API
+        if self.path.startswith("/api/coupons/toggle"):
+            if not self.verify_admin_auth():
+                self.send_response(403)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(b'{"error": "Forbidden: Admin authentication required"}')
+                return
+
+            content_length = int(self.headers.get('Content-Length', 0))
+            body = self.rfile.read(content_length).decode('utf-8')
+            try:
+                req_data = json.loads(body)
+                target_code = req_data.get("code", "").strip().upper()
+                target_id = req_data.get("id", "").strip()
+                new_state = bool(req_data.get("is_active", True))
+
+                with open(DATA_FILE, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+
+                found = False
+                for cat in data["categories"].values():
+                    for item in cat.get("items", []):
+                        if (target_code and item.get("code", "").strip().upper() == target_code) or (target_id and item.get("id") == target_id):
+                            item["is_active"] = new_state
+                            found = True
+
+                if found:
+                    data["last_updated"] = datetime.datetime.now().isoformat()
+                    with open(DATA_FILE, "w", encoding="utf-8") as f:
+                        json.dump(data, f, ensure_ascii=False, indent=2)
+
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(json.dumps({"success": found, "is_active": new_state}).encode("utf-8"))
+                return
+            except Exception as e:
+                self.send_response(500)
+                self.end_headers()
+                self.wfile.write(str(e).encode("utf-8"))
+                return
+
+        # 일괄 작업 API (bulk delete / bulk status)
+        if self.path.startswith("/api/coupons/bulk"):
+            if not self.verify_admin_auth():
+                self.send_response(403)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(b'{"error": "Forbidden: Admin authentication required"}')
+                return
+
+            content_length = int(self.headers.get('Content-Length', 0))
+            body = self.rfile.read(content_length).decode('utf-8')
+            try:
+                req_data = json.loads(body)
+                action = req_data.get("action")
+                codes = [c.strip().upper() for c in req_data.get("codes", []) if c]
+
+                with open(DATA_FILE, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+
+                affected_count = 0
+                if action == "delete":
+                    for cat in data["categories"].values():
+                        orig_len = len(cat["items"])
+                        cat["items"] = [item for item in cat["items"] if item.get("code", "").strip().upper() not in codes]
+                        affected_count += (orig_len - len(cat["items"]))
+                elif action in ("activate", "deactivate"):
+                    is_active = (action == "activate")
+                    for cat in data["categories"].values():
+                        for item in cat.get("items", []):
+                            if item.get("code", "").strip().upper() in codes:
+                                item["is_active"] = is_active
+                                affected_count += 1
+
+                if affected_count > 0:
+                    data["last_updated"] = datetime.datetime.now().isoformat()
+                    with open(DATA_FILE, "w", encoding="utf-8") as f:
+                        json.dump(data, f, ensure_ascii=False, indent=2)
+
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(json.dumps({"success": True, "affected": affected_count}).encode("utf-8"))
+                return
+            except Exception as e:
+                self.send_response(500)
+                self.end_headers()
+                self.wfile.write(str(e).encode("utf-8"))
+                return
+
+        # 전체 JSON 데이터 복원/가져오기 API
+        if self.path.startswith("/api/coupons/import"):
+            if not self.verify_admin_auth():
+                self.send_response(403)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(b'{"error": "Forbidden: Admin authentication required"}')
+                return
+
+            content_length = int(self.headers.get('Content-Length', 0))
+            body = self.rfile.read(content_length).decode('utf-8')
+            try:
+                imported_data = json.loads(body)
+                if "categories" in imported_data:
+                    imported_data["last_updated"] = datetime.datetime.now().isoformat()
+                    with open(DATA_FILE, "w", encoding="utf-8") as f:
+                        json.dump(imported_data, f, ensure_ascii=False, indent=2)
+                    self.send_response(200)
+                    self.send_header("Content-Type", "application/json; charset=utf-8")
+                    self.end_headers()
+                    self.wfile.write(json.dumps({"success": True, "message": "데이터 복원 완료"}).encode("utf-8"))
+                    return
+                else:
+                    self.send_response(400)
+                    self.send_header("Content-Type", "application/json; charset=utf-8")
+                    self.end_headers()
+                    self.wfile.write(json.dumps({"error": "잘못된 데이터 구조 (categories 필드 필요)"}).encode("utf-8"))
+                    return
+            except Exception as e:
+                self.send_response(500)
+                self.end_headers()
+                self.wfile.write(str(e).encode("utf-8"))
+                return
+
         # 쿠폰 추가/수정 API
         if self.path.startswith("/api/coupons"):
             if not self.verify_admin_auth():
@@ -166,42 +299,66 @@ class CouponTruckHandler(SimpleHTTPRequestHandler):
             body = self.rfile.read(content_length).decode('utf-8')
             try:
                 item_data = json.loads(body)
-                cat_key = item_data.get("category")
+                cat_key = item_data.get("category", "shopping")
                 
                 with open(DATA_FILE, "r", encoding="utf-8") as f:
                     data = json.load(f)
-                
-                if cat_key in data["categories"]:
-                    items = data["categories"][cat_key]["items"]
-                    # 기존 코드 확인
-                    existing_idx = next((i for i, item in enumerate(items) if item["code"].upper() == item_data["code"].upper()), -1)
-                    
-                    new_item = {
-                        "id": item_data.get("id", f"{cat_key[:3]}-{int(time.time())}"),
-                        "name": item_data["name"],
-                        "code": item_data["code"],
-                        "desc": item_data["desc"],
-                        "url": item_data["url"],
-                        "expires": item_data.get("expires", "2026-12-31"),
-                        "is_active": True,
-                        "badge": item_data.get("badge", "NEW")
+
+                # 카테고리가 없는 경우 기본 생성
+                if cat_key not in data["categories"]:
+                    cat_titles = {
+                        "travel": "✈️ 여행 · 항공권 · 호텔 숙소 할인코드",
+                        "shopping": "🛍️ 종합쇼핑 · 직구 · 생활 커머스 할인코드",
+                        "sub": "📺 OTT 스트리밍 · AI · VPN 구독 할인코드",
+                        "fashion": "👗 패션 · 뷰티 · 명품 편집샵 할인코드",
+                        "game": "🎮 게임 · 디지털 소프트웨어 프로모션",
+                        "guide": "💡 스마트 쇼핑 실전 꿀팁 & 직구 절약 가이드"
                     }
+                    data["categories"][cat_key] = {
+                        "title": cat_titles.get(cat_key, f"📌 {cat_key} 혜택"),
+                        "badge": "특가",
+                        "items": []
+                    }
+                
+                items = data["categories"][cat_key]["items"]
+                target_code = item_data.get("code", "").strip()
+                target_id = item_data.get("id")
+
+                # 기존 항목 검색 (id 일치 우선, 그 후 code 일치)
+                existing_idx = -1
+                if target_id:
+                    existing_idx = next((i for i, item in enumerate(items) if item.get("id") == target_id), -1)
+                if existing_idx < 0 and target_code:
+                    existing_idx = next((i for i, item in enumerate(items) if item.get("code", "").strip().upper() == target_code.upper()), -1)
+                
+                new_item = {
+                    "id": target_id or f"{cat_key[:3]}-{int(time.time())}",
+                    "name": item_data.get("name", "").strip(),
+                    "code": target_code,
+                    "desc": item_data.get("desc", "").strip(),
+                    "url": item_data.get("url", "").strip(),
+                    "expires": item_data.get("expires", "2026-12-31"),
+                    "is_active": item_data.get("is_active", True),
+                    "badge": item_data.get("badge", "NEW"),
+                    "verified_at": item_data.get("verified_at", datetime.datetime.now().isoformat()),
+                    "type": item_data.get("type", "COUPON")
+                }
+                
+                if existing_idx >= 0:
+                    items[existing_idx] = new_item
+                else:
+                    items.insert(0, new_item)
                     
-                    if existing_idx >= 0:
-                        items[existing_idx] = new_item
-                    else:
-                        items.insert(0, new_item)
-                        
-                    data["last_updated"] = datetime.datetime.now().isoformat()
-                    with open(DATA_FILE, "w", encoding="utf-8") as f:
-                        json.dump(data, f, ensure_ascii=False, indent=2)
-                    
-                    self.send_response(200)
-                    self.send_header("Content-Type", "application/json; charset=utf-8")
-                    self.end_headers()
-                    self.wfile.write(json.dumps({"success": True, "message": "쿠폰 저장 완료"}).encode("utf-8"))
-                    print(f"⚡ [API] 쿠폰 등록/수정 완료: [{new_item['name']}] {new_item['code']}")
-                    return
+                data["last_updated"] = datetime.datetime.now().isoformat()
+                with open(DATA_FILE, "w", encoding="utf-8") as f:
+                    json.dump(data, f, ensure_ascii=False, indent=2)
+                
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(json.dumps({"success": True, "message": "쿠폰 저장 완료", "item": new_item}).encode("utf-8"))
+                print(f"⚡ [API] 쿠폰 등록/수정 완료: [{new_item['name']}] {new_item['code']}")
+                return
             except Exception as e:
                 self.send_response(500)
                 self.end_headers()
@@ -221,7 +378,7 @@ class CouponTruckHandler(SimpleHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")
             self.end_headers()
-            self.wfile.write(json.dumps({"success": True, "message": "업데이트 완료"}).encode("utf-8"))
+            self.wfile.write(json.dumps({"success": True, "message": "자동 업데이트 및 만료 갱신 완료"}).encode("utf-8"))
             return
 
         self.send_response(404)
@@ -240,15 +397,22 @@ class CouponTruckHandler(SimpleHTTPRequestHandler):
             parsed = urllib.parse.urlparse(self.path)
             query = urllib.parse.parse_qs(parsed.query)
             code = query.get("code", [None])[0]
+            target_id = query.get("id", [None])[0]
             
-            if code:
+            if code or target_id:
                 with open(DATA_FILE, "r", encoding="utf-8") as f:
                     data = json.load(f)
                 
                 deleted = False
                 for cat in data["categories"].values():
                     orig_len = len(cat["items"])
-                    cat["items"] = [item for item in cat["items"] if item["code"].upper() != code.upper()]
+                    cat["items"] = [
+                        item for item in cat["items"]
+                        if not (
+                            (code and item.get("code", "").strip().upper() == code.strip().upper()) or
+                            (target_id and item.get("id") == target_id)
+                        )
+                    ]
                     if len(cat["items"]) < orig_len:
                         deleted = True
                 

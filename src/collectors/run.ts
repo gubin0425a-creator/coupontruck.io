@@ -5,6 +5,7 @@ import { detectContentChange, loadSourceState, saveSourceState } from "./base.js
 import { isDomainAllowed } from "../security/url-policy.js";
 import { evaluateOfferConfidence } from "../validators/confidence.js";
 import { buildPublicCoupons } from "../publishing/build.js";
+import { collectLiveGameFeeds } from "./feed-collector.js";
 
 const BASE_DIR = process.cwd();
 const BRANDS_DIR = path.join(BASE_DIR, "config", "brands");
@@ -12,6 +13,13 @@ const OFFERS_FILE = path.join(BASE_DIR, "data", "offers.json");
 const REVIEW_FILE = path.join(BASE_DIR, "data", "review-queue.json");
 
 export async function runCollectionPipeline() {
+  // 0. 실시간 공개 게임/세일 공식 API & RSS 피드 수집
+  try {
+    await collectLiveGameFeeds();
+  } catch (err) {
+    console.warn("Live feed collection error:", err);
+  }
+
   console.log("\n=======================================================");
   console.log("🚀 CouponTruck Automated Collection & Validation Engine");
   console.log("=======================================================");
