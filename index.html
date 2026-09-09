@@ -210,12 +210,12 @@
   <link rel="preload" as="image" href="assets/truck-icon.png">
 
   <!-- Standard Favicons for Google Search & All Browsers -->
-  <link rel="icon" type="image/x-icon" href="https://gubin0425a-creator.github.io/coupontruck.io/favicon.ico">
-  <link rel="icon" type="image/png" sizes="48x48" href="https://gubin0425a-creator.github.io/coupontruck.io/assets/truck-icon-48.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="https://gubin0425a-creator.github.io/coupontruck.io/assets/truck-icon-96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="https://gubin0425a-creator.github.io/coupontruck.io/assets/truck-icon-192.png">
-  <link rel="shortcut icon" href="https://gubin0425a-creator.github.io/coupontruck.io/favicon.ico">
-  <link rel="apple-touch-icon" sizes="192x192" href="https://gubin0425a-creator.github.io/coupontruck.io/assets/truck-icon-192.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/truck-icon-48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/truck-icon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/truck-icon-192.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="192x192" href="assets/truck-icon-192.png">
   
   <!-- Web Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -230,28 +230,14 @@
 </head>
 <body>
 
-  <!-- 상단 실시간 핫딜 알림 바 -->
-  <div id="top-notification-bar">
-    <div class="noti-container grid-container">
-      <div class="noti-left">
-        <span class="live-pulse"></span>
-        <span class="noti-badge">실시간 업데이트</span>
-        <span class="noti-text" id="rollingNotice">100+ 브랜드 검증 할인코드 실시간 배달</span>
-      </div>
-      <a href="#quick-coupons" class="noti-cta-btn">쿠폰 받기 <i class="fa-solid fa-chevron-right"></i></a>
-    </div>
-  </div>
-
   <!-- 사이트 헤더 -->
   <header class="site-header" id="masthead">
-    <div class="inside-header grid-container">
-      
-      <!-- 독자 브랜드 로고: 쿠폰트럭 (CouponTruck) -->
+    <div class="inside-header container">
       <div class="site-logo">
-        <a href="./" class="logo-link" title="쿠폰트럭 (쿠폰 트럭) 공식 홈">
+        <a href="./" class="logo-link" title="쿠폰트럭 공식 홈">
           <div class="logo-box">
             <div class="logo-icon-wrap logo-truck-wrap">
-              <img src="assets/truck-icon.png" alt="쿠폰트럭 (쿠폰 트럭) 공식 로고" class="logo-truck-img">
+              <img src="assets/truck-icon.png" alt="쿠폰트럭 로고" class="logo-truck-img">
             </div>
             <div class="logo-text-group">
               <span class="logo-title">쿠폰트럭<span class="logo-dot">.</span></span>
@@ -260,1000 +246,134 @@
         </a>
       </div>
 
-      <!-- 모바일 햄버거 토글 버튼 -->
-      <nav class="mobile-menu-control-wrapper">
-        <button class="menu-toggle" id="menuToggleBtn" aria-label="메뉴 열기" aria-expanded="false">
-          <i class="fa-solid fa-bars icon-open"></i>
-          <i class="fa-solid fa-xmark icon-close"></i>
-        </button>
-      </nav>
-
-      <!-- 주 내비게이션 (금융 규제 리스크 완전 배제, 고수익 제휴 카테고리 중심) -->
-      <nav class="main-navigation" id="site-navigation" aria-label="메인 메뉴">
-        <div class="inside-navigation">
-          <ul id="primary-menu" class="menu">
-            
-            <li class="menu-item active">
-              <a href="#quick-coupons"><span><i class="fa-solid fa-house"></i> 홈</span></a>
-            </li>
-
-            <!-- 여행 & 숙소 -->
-            <li class="menu-item menu-item-has-children">
-              <a href="#travel-section">
-                <span><i class="fa-solid fa-plane-departure"></i> 여행·숙소</span>
-                <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
-              </a>
-              <ul class="sub-menu">
-                <li><a href="javascript:void(0)" onclick="openCategoryModal('travel')">전체 여행 쿠폰</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('아고다')">아고다 (Agoda)</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('트립닷컴')">트립닷컴 (Trip.com)</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('클룩')">클룩 (Klook)</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('호텔스닷컴')">호텔스닷컴</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('마이리얼트립')">마이리얼트립</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('유심사')">eSIM 유심사</a></li>
-              </ul>
-            </li>
-
-            <!-- 쇼핑 & 직구 -->
-            <li class="menu-item menu-item-has-children">
-              <a href="#shopping-section">
-                <span><i class="fa-solid fa-bag-shopping"></i> 쇼핑·직구</span>
-                <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
-              </a>
-              <ul class="sub-menu">
-                <li><a href="javascript:void(0)" onclick="openCategoryModal('shopping')">전체 쇼핑 할인코드</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('알리익스프레스')">알리익스프레스</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('테무')">테무 (Temu)</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('아이허브')">아이허브 (iHerb)</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('오늘의집')">오늘의집</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('쿠팡')">쿠팡 기획전</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('아마존')">아마존 (Amazon)</a></li>
-              </ul>
-            </li>
-
-            <!-- OTT & 구독 -->
-            <li class="menu-item menu-item-has-children">
-              <a href="#sub-section">
-                <span><i class="fa-solid fa-film"></i> OTT·구독</span>
-                <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
-              </a>
-              <ul class="sub-menu">
-                <li><a href="javascript:void(0)" onclick="openCategoryModal('sub')">전체 구독 할인</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('겜스고')">겜스고 (유튜브/넷플)</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('스픽')">스픽 AI 영어회화</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('노드VPN')">노드VPN (NordVPN)</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('서프샤크')">서프샤크 VPN</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('어도비')">어도비 CC 할인</a></li>
-              </ul>
-            </li>
-
-            <!-- 게임 & 기어 -->
-            <li class="menu-item menu-item-has-children">
-              <a href="#game-section">
-                <span><i class="fa-solid fa-gamepad"></i> 게임·기어</span>
-                <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
-              </a>
-              <ul class="sub-menu">
-                <li><a href="javascript:void(0)" onclick="openCategoryModal('game')">전체 게임 혜택</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('스팀')">스팀 (Steam 세일)</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('엑시트랙')">엑시트랙 (ExitLag)</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('에픽게임즈')">에픽게임즈 무료게임</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('레이저')">레이저 (Razer) 기어</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('로지텍 G')">로지텍 G 기어</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('그린맨게이밍')">그린맨게임 CD키</a></li>
-              </ul>
-            </li>
-
-            <!-- 패션 & 럭셔리 -->
-            <li class="menu-item menu-item-has-children">
-              <a href="#fashion-section">
-                <span><i class="fa-solid fa-gem"></i> 패션·브랜드</span>
-                <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
-              </a>
-              <ul class="sub-menu">
-                <li><a href="javascript:void(0)" onclick="openCategoryModal('fashion')">전체 패션 쿠폰</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('파페치')">파페치 (Farfetch)</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('마이테레사')">마이테레사</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('룰루레몬')">룰루레몬</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('COS')">COS 코스</a></li>
-                <li><a href="javascript:void(0)" onclick="quickSelectBrand('무신사')">무신사</a></li>
-              </ul>
-            </li>
-
-            <!-- 절약 꿀팁 -->
-            <li class="menu-item">
-              <a href="javascript:void(0)" onclick="openCategoryModal('guide')">
-                <span><i class="fa-regular fa-lightbulb"></i> 절약 팁</span>
-              </a>
-            </li>
-
-          </ul>
+      <div class="header-right-meta">
+        <div class="verification-meta-badge">
+          <span class="pulse-dot"></span>
+          <span id="lastVerifiedStatus">최근 검증: 2026-09-09 실시간 (신뢰도 95+)</span>
         </div>
-      </nav>
-
+      </div>
     </div>
   </header>
 
-  <!-- 메인 본문 레이아웃 -->
-  <div class="site grid-container container" id="page">
-    <div class="site-content" id="content">
+  <!-- 메인 컨테이너 (깔끔한 1열 집중 레이아웃) -->
+  <main class="site-main container" id="main">
+
+    <!-- 1. 검색 & 카테고리 탭 영역 -->
+    <section class="search-hero-section">
+      <h1 class="hero-heading">오늘 바로 쓸 수 있는 <span class="highlight-text">할인코드</span></h1>
+      <p class="hero-subheading">결제 직전 1초 만에 복사하여 즉시 할인을 챙기세요.</p>
       
-      <!-- 좌측 메인 영역 -->
-      <div class="content-area" id="primary">
-        <main class="site-main" id="main">
-          
-          <article class="page-card">
-            <div class="inside-article">
-
-              <!-- 상단 검색 및 인트로 -->
-              <div class="entry-header-custom">
-                <div class="header-left">
-                  <span class="header-tag">쿠폰트럭 · 실시간 공식 큐레이션</span>
-                  <h1 class="entry-title">오늘의 검증된 <span class="highlight-text">할인코드</span></h1>
-                  <p class="entry-subtitle">국내외 100+ 인기 브랜드 검증 프로모션 모음</p>
-                  <div class="verification-meta-badge">
-                    <span class="pulse-dot"></span>
-                    <span id="lastVerifiedStatus">최근 검증 완료: 2026-09-09 13:00 KST (신뢰도 95+ 규칙 통과)</span>
-                  </div>
-                </div>
-                
-                <!-- 브랜드 검색창 -->
-                <div class="search-box-wrap">
-                  <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                  <input type="text" id="couponSearchInput" placeholder="브랜드 검색 (예: 아고다, 알리, 겜스고)" autocomplete="off">
-                  <button id="searchClearBtn" class="clear-btn" style="display:none;"><i class="fa-solid fa-circle-xmark"></i></button>
-                </div>
-              </div>
-
-              <!-- 경제적 이해관계 고지 & 면책 안내 (공정위 가이드라인 준수) -->
-              <div class="affiliate-disclosure-banner">
-                <i class="fa-solid fa-circle-info"></i>
-                <div><strong>제휴 고지:</strong> 본 서비스는 제휴 파트너스 활동의 일환으로 링크 경유 시 소정의 수수료를 제공받을 수 있으며, 사용자에게는 추가 부담 없이 검증된 최저가 혜택이 적용됩니다.</div>
-              </div>
-
-              <!-- 검색 안내 -->
-              <div id="searchNotice" class="search-notice" style="display: none;"></div>
-
-              <!-- 좌우 스크롤 퀵 브랜드 & 게임 핫딜 바 -->
-              <div class="brand-scroll-container">
-                <div class="brand-scroll-header">
-                  <span class="scroll-title"><i class="fa-solid fa-fire text-orange"></i> 실시간 인기 핫딜 & 브랜드</span>
-                  <span class="scroll-hint"><i class="fa-solid fa-arrows-left-right"></i> 좌우로 밀어서 탐색</span>
-                </div>
-                <div class="brand-scroll-track">
-                  <button class="brand-chip chip-hero-top" onclick="openGamsgoPartner(event)">
-                    <span class="chip-emoji">👑</span>
-                    <span class="chip-name"><strong>겜스고 (운영자 TOP 1 픽)</strong></span>
-                    <span class="chip-badge badge-crown">85% OFF</span>
-                  </button>
-                  <button class="brand-chip chip-hot" onclick="showCouponCode('아고다', 'AGODAHUB05', 'https://www.agoda.com')">
-                    <span class="chip-emoji">🏨</span>
-                    <span class="chip-name">아고다</span>
-                    <span class="chip-badge">7%</span>
-                  </button>
-                  <button class="brand-chip chip-game" onclick="showCouponCode('스팀', 'STEAMSALE', 'https://store.steampowered.com')">
-                    <span class="chip-emoji">🎮</span>
-                    <span class="chip-name">스팀 세일</span>
-                    <span class="chip-badge">최대90%</span>
-                  </button>
-                  <button class="brand-chip chip-game" onclick="showCouponCode('엑시트랙', 'EXITLAG20', 'https://www.exitlag.com')">
-                    <span class="chip-emoji">⚡</span>
-                    <span class="chip-name">엑시트랙 핑VPN</span>
-                    <span class="chip-badge">20%</span>
-                  </button>
-                  <button class="brand-chip chip-hot" onclick="showCouponCode('알리익스프레스', 'ALI26SAVE', 'https://ko.aliexpress.com')">
-                    <span class="chip-emoji">🛍️</span>
-                    <span class="chip-name">알리익스프레스</span>
-                    <span class="chip-badge">$15</span>
-                  </button>
-                  <button class="brand-chip chip-game" onclick="showCouponCode('에픽게임즈', 'EPICFREE', 'https://store.epicgames.com')">
-                    <span class="chip-emoji">🎁</span>
-                    <span class="chip-name">에픽게임즈</span>
-                    <span class="chip-badge">무료배포</span>
-                  </button>
-                  <button class="brand-chip chip-sub" onclick="showCouponCode('스픽', 'SPEAKSAVE', 'https://www.usespeak.com')">
-                    <span class="chip-emoji">🗣️</span>
-                    <span class="chip-name">스픽 AI영어</span>
-                    <span class="chip-badge">-2만</span>
-                  </button>
-                  <button class="brand-chip chip-game" onclick="showCouponCode('레이저', 'RAZER10KR', 'https://www.razer.com/kr-kr')">
-                    <span class="chip-emoji">🕹️</span>
-                    <span class="chip-name">레이저 (Razer)</span>
-                    <span class="chip-badge">10%</span>
-                  </button>
-                  <button class="brand-chip chip-fashion" onclick="showCouponCode('파페치', 'FARFETCH10', 'https://farfetch.com')">
-                    <span class="chip-emoji">👗</span>
-                    <span class="chip-name">파페치 명품</span>
-                    <span class="chip-badge">10%</span>
-                  </button>
-                  <button class="brand-chip chip-hot" onclick="showCouponCode('클룩', 'KLOOKBHUB', 'https://klook.com')">
-                    <span class="chip-emoji">🎡</span>
-                    <span class="chip-name">클룩 액티비티</span>
-                    <span class="chip-badge">-5천</span>
-                  </button>
-                  <button class="brand-chip chip-game" onclick="showCouponCode('로지텍 G', 'LOGITECHG', 'https://www.logitechg.com/ko-kr')">
-                    <span class="chip-emoji">🎧</span>
-                    <span class="chip-name">로지텍 G</span>
-                    <span class="chip-badge">특가</span>
-                  </button>
-                  <button class="brand-chip" onclick="showCouponCode('아이허브', 'HUB9999', 'https://kr.iherb.com')">
-                    <span class="chip-emoji">💊</span>
-                    <span class="chip-name">아이허브</span>
-                    <span class="chip-badge">10%</span>
-                  </button>
-                  <button class="brand-chip" onclick="showCouponCode('테무', 'TEMU90OFF', 'https://temu.com')">
-                    <span class="chip-emoji">📦</span>
-                    <span class="chip-name">테무 (Temu)</span>
-                    <span class="chip-badge">90%</span>
-                  </button>
-                  <button class="brand-chip chip-game" onclick="showCouponCode('Xbox Game Pass', 'XBOXPASS', 'https://www.xbox.com')">
-                    <span class="chip-emoji">💚</span>
-                    <span class="chip-name">Xbox 게임패스</span>
-                    <span class="chip-badge">첫달1천</span>
-                  </button>
-                  <button class="brand-chip chip-sub" onclick="showCouponCode('노드VPN', 'NORD70OFF', 'https://nordvpn.com')">
-                    <span class="chip-emoji">🛡️</span>
-                    <span class="chip-name">노드VPN</span>
-                    <span class="chip-badge">72%</span>
-                  </button>
-                  <button class="brand-chip chip-fashion" onclick="showCouponCode('룰루레몬', 'LULU10KR', 'https://lululemon.co.kr')">
-                    <span class="chip-emoji">🧘</span>
-                    <span class="chip-name">룰루레몬</span>
-                    <span class="chip-badge">무료배송</span>
-                  </button>
-                  <button class="brand-chip" onclick="showCouponCode('올리브영', 'OLIVEBIG', 'https://oliveyoung.co.kr')">
-                    <span class="chip-emoji">💄</span>
-                    <span class="chip-name">올리브영</span>
-                    <span class="chip-badge">올영세일</span>
-                  </button>
-                  <button class="brand-chip" onclick="showCouponCode('제주패스', 'JEJUPASSRENT', 'https://jejupass.com')">
-                    <span class="chip-emoji">🚗</span>
-                    <span class="chip-name">제주패스</span>
-                    <span class="chip-badge">렌터카</span>
-                  </button>
-                  <button class="brand-chip chip-game" onclick="showCouponCode('그린맨게이밍', 'GMG15OFF', 'https://www.greenmangaming.com')">
-                    <span class="chip-emoji">🔑</span>
-                    <span class="chip-name">그린맨게임</span>
-                    <span class="chip-badge">정품15%</span>
-                  </button>
-                  <button class="brand-chip" onclick="showCouponCode('다이슨', 'DYSONSPECIAL', 'https://dyson.co.kr')">
-                    <span class="chip-emoji">💨</span>
-                    <span class="chip-name">다이슨 에어랩</span>
-                    <span class="chip-badge">사은품</span>
-                  </button>
-                </div>
-              </div>
-
-              <!-- 메인 배너 카드 목록 (신용카드 완전 제거, 합법 제휴 모델에 집중) -->
-              <div class="banners-container" id="quick-coupons">
-                
-                <!-- 0. [운영자 & 개발자 최고의 TOP 1 픽] 겜스고 스포트라이트 카드 -->
-                <div class="banner-card banner-spotlight-top animate-card" data-category="gamsgo" data-tags="겜스고 유튜브 넷플릭스 OTT 챗GPT 챗지피티 스포티파이 공유 구독 최저가" onclick="openGamsgoPartner(event);">
-                  <div class="spotlight-top-badge">
-                    <i class="fa-solid fa-crown text-yellow"></i> 👑 운영자 & 개발자 강력 추천! 최고의 TOP 1 픽
-                  </div>
-                  <div class="banner-inner">
-                    <div class="banner-visual gamsgo-hero-gradient">
-                      <div class="visual-inner">
-                        <div class="visual-icon visual-icon-gamsgo"><i class="fa-solid fa-fire"></i></div>
-                        <div class="visual-text">
-                          <div class="spotlight-label-group">
-                            <span class="sub-label">월 4천원대 특가 · 5년 검증 플랫폼</span>
-                            <span class="spotlight-pulse-tag">실시간 최다 신청 🔥</span>
-                          </div>
-                          <h2 class="banner-title">유튜브 프리미엄 & 넷플릭스 85% 할인 (겜스고)</h2>
-                          <p class="banner-desc">100% 정품 계정공유! 유튜브·넷플릭스·ChatGPT 최대 85% 할인</p>
-                        </div>
-                      </div>
-                      <div class="gamsgo-benefit-highlights">
-                        <div class="benefit-tag-item"><i class="fa-solid fa-circle-check"></i> 유튜브 프리미엄 월 4천원대</div>
-                        <div class="benefit-tag-item"><i class="fa-solid fa-circle-check"></i> 넷플릭스 4K 프리미엄 85% 절약</div>
-                        <div class="benefit-tag-item"><i class="fa-solid fa-circle-check"></i> 챗GPT Plus / 스포티파이 반값</div>
-                        <div class="benefit-tag-item"><i class="fa-solid fa-circle-check"></i> 추가 즉시할인 코드 [DASSD]</div>
-                      </div>
-                      <div class="tag-chips">
-                        <span class="chip-white">#유튜브 월4천원대</span>
-                        <span class="chip-white">#최대 85%할인</span>
-                        <span class="chip-white">#정품 자동갱신</span>
-                        <span class="chip-white">#프로모션코드: DASSD</span>
-                        <span class="chip-white">#환불보장</span>
-                      </div>
-                    </div>
-                    <div class="banner-action-bar action-bar-spotlight" onclick="openGamsgoPartner(event);">
-                      <div class="spotlight-cta-left">
-                        <span class="action-text-bold">👉 겜스고 최저가 바로가기</span>
-                        <span class="action-subtext">할인코드 'DASSD' 자동 복사 & 공식몰 이동 🚀</span>
-                      </div>
-                      <a href="https://www.gamsgo.com/partner/aTqwg" target="_blank" rel="sponsored nofollow noopener noreferrer" class="spotlight-direct-btn" onclick="openGamsgoPartner(event);">
-                        겜스고 바로가기 <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 1. 여행 쿠폰 모음집 -->
-                <div class="banner-card banner-travel animate-card" id="travel-section" data-category="travel" data-tags="여행 아고다 트립닷컴 클룩 kkday 호텔스닷컴 마이리얼트립 익스피디아 야놀자 부킹닷컴 유심사 돈키호테">
-                  <div class="banner-inner" onclick="openCategoryModal('travel');">
-                    <div class="banner-badge badge-blue">인기 여행 혜택</div>
-                    <div class="banner-visual travel-gradient">
-                      <div class="visual-inner">
-                        <div class="visual-icon"><i class="fa-solid fa-plane-departure"></i></div>
-                        <div class="visual-text">
-                          <span class="sub-label">호텔 · 항공권 · 액티비티</span>
-                          <h2 class="banner-title">국내·해외 여행 할인코드</h2>
-                          <p class="banner-desc">아고다, 트립닷컴, 클룩 즉시할인 및 eSIM 특가</p>
-                        </div>
-                      </div>
-                      <div class="tag-chips">
-                        <span>#아고다 7%</span>
-                        <span>#트립닷컴 호텔</span>
-                        <span>#클룩 투어</span>
-                        <span>#eSIM 할인</span>
-                        <span>#돈키호테 쿠폰</span>
-                      </div>
-                    </div>
-                    <div class="banner-action-bar">
-                      <span class="action-text">여행 할인코드 보기</span>
-                      <span class="action-arrow"><i class="fa-solid fa-arrow-right"></i></span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 2. 쇼핑 할인코드 모음집 -->
-                <div class="banner-card banner-shopping animate-card" id="shopping-section" data-category="shopping" data-tags="쇼핑 알리익스프레스 알리 테무 오늘의집 아이허브 쿠팡 아마존 크림 올리브영 케이스티파이 레고 레노버">
-                  <div class="banner-inner" onclick="openCategoryModal('shopping');">
-                    <div class="banner-badge badge-orange">직구 & 이커머스</div>
-                    <div class="banner-visual shopping-gradient">
-                      <div class="visual-inner">
-                        <div class="visual-icon"><i class="fa-solid fa-bag-shopping"></i></div>
-                        <div class="visual-text">
-                          <span class="sub-label">글로벌 직구 & 국내 쇼핑몰</span>
-                          <h2 class="banner-title">쇼핑 할인코드 모음</h2>
-                          <p class="banner-desc">알리익스프레스, 테무, 아이허브 영양제 할인 쿠폰</p>
-                        </div>
-                      </div>
-                      <div class="tag-chips">
-                        <span>#알리 특가</span>
-                        <span>#테무 쿠폰팩</span>
-                        <span>#아이허브 10%</span>
-                        <span>#오늘의집 만원</span>
-                        <span>#케이스티파이 15%</span>
-                      </div>
-                    </div>
-                    <div class="banner-action-bar">
-                      <span class="action-text">쇼핑 할인코드 확인</span>
-                      <span class="action-arrow"><i class="fa-solid fa-arrow-right"></i></span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 3. 구독 서비스 할인 모음집 -->
-                <div class="banner-card banner-sub animate-card" id="sub-section" data-category="sub" data-tags="구독 겜스고 스픽 틱톡라이트 VPN 노드VPN 서프샤크 익스프레스VPN 어도비 크몽 우버택시">
-                  <div class="banner-inner" onclick="openCategoryModal('sub');">
-                    <div class="banner-badge badge-purple">OTT & SW 구독</div>
-                    <div class="banner-visual sub-gradient">
-                      <div class="visual-inner">
-                        <div class="visual-icon"><i class="fa-solid fa-play"></i></div>
-                        <div class="visual-text">
-                          <span class="sub-label">OTT 계정공유 · VPN · AI 어학</span>
-                          <h2 class="banner-title">OTT & VPN 구독 할인</h2>
-                          <p class="banner-desc">유튜브·넷플릭스 85% 할인 겜스고 & 노드VPN 최저가</p>
-                        </div>
-                      </div>
-                      <div class="tag-chips">
-                        <span>#겜스고 85%</span>
-                        <span>#스픽 2만원 할인</span>
-                        <span>#노드VPN 특가</span>
-                        <span>#어도비 학생할인</span>
-                        <span>#우버택시 50%</span>
-                      </div>
-                    </div>
-                    <div class="banner-action-bar">
-                      <span class="action-text">구독 할인 혜택 보기</span>
-                      <span class="action-arrow"><i class="fa-solid fa-arrow-right"></i></span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 4. 게임 & 게이밍 기어 할인 모음집 -->
-                <div class="banner-card banner-game animate-card" id="game-section" data-category="game" data-tags="게임 게이밍 스팀 엑시트랙 에픽게임즈 레이저 로지텍G 닌텐도 엑스박스 험블번들 미꾸라지">
-                  <div class="banner-inner" onclick="openCategoryModal('game');">
-                    <div class="banner-badge badge-game">게임 특가</div>
-                    <div class="banner-visual game-gradient">
-                      <div class="visual-inner">
-                        <div class="visual-icon"><i class="fa-solid fa-gamepad"></i></div>
-                        <div class="visual-text">
-                          <span class="sub-label">스팀 키 · 핑 VPN · 기어 할인</span>
-                          <h2 class="banner-title">게임 & 기어 할인</h2>
-                          <p class="banner-desc">스팀 최대 90% 세일, 엑시트랙 핑 VPN, 에픽 무료게임</p>
-                        </div>
-                      </div>
-                      <div class="tag-chips">
-                        <span>#스팀 세일</span>
-                        <span>#엑시트랙 20%</span>
-                        <span>#에픽 무료배포</span>
-                        <span>#레이저 기어</span>
-                        <span>#Xbox 게임패스</span>
-                      </div>
-                    </div>
-                    <div class="banner-action-bar">
-                      <span class="action-text">게임 할인 혜택 보기</span>
-                      <span class="action-arrow"><i class="fa-solid fa-arrow-right"></i></span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 5. 패션 할인코드 모음집 -->
-                <div class="banner-card banner-fashion animate-card" id="fashion-section" data-category="fashion" data-tags="패션 파페치 마이테레사 룰루레몬 COS 띠어리 무신사 지그재그 에이블리 세타이어 W컨셉">
-                  <div class="banner-inner" onclick="openCategoryModal('fashion');">
-                    <div class="banner-badge badge-dark">디자이너 & 명품</div>
-                    <div class="banner-visual fashion-gradient">
-                      <div class="visual-inner">
-                        <div class="visual-icon"><i class="fa-solid fa-gem"></i></div>
-                        <div class="visual-text">
-                          <span class="sub-label">럭셔리 편집숍 & 공식몰</span>
-                          <h2 class="banner-title">패션 브랜드 할인코드</h2>
-                          <p class="banner-desc">파페치, 마이테레사, 룰루레몬, COS 신규 할인</p>
-                        </div>
-                      </div>
-                      <div class="tag-chips">
-                        <span>#파페치 10%</span>
-                        <span>#마이테레사 직구</span>
-                        <span>#룰루레몬 무료배송</span>
-                        <span>#COS 신규할인</span>
-                        <span>#무신사 쿠폰</span>
-                      </div>
-                    </div>
-                    <div class="banner-action-bar">
-                      <span class="action-text">패션 할인코드 보기</span>
-                      <span class="action-arrow"><i class="fa-solid fa-arrow-right"></i></span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 5. 절약 백서 가이드 -->
-                <div class="banner-card banner-guide animate-card" id="guide-section" data-category="guide" data-tags="가이드 꿀팁 캐시백 직구 관부가세 환율 절약 팁">
-                  <div class="banner-inner" onclick="openCategoryModal('guide');">
-                    <div class="banner-badge badge-emerald">절약 팁 백서</div>
-                    <div class="banner-visual guide-gradient">
-                      <div class="visual-inner">
-                        <div class="visual-icon"><i class="fa-solid fa-lightbulb"></i></div>
-                        <div class="visual-text">
-                          <span class="sub-label">해외직구 & 스마트 결제</span>
-                          <h2 class="banner-title">돈이 되는 절약 꿀팁</h2>
-                          <p class="banner-desc">관부가세 면제 한도와 해외 원화결제(DCC) 차단법</p>
-                        </div>
-                      </div>
-                      <div class="tag-chips">
-                        <span>#DCC원화결제차단</span>
-                        <span>#관세면제한도</span>
-                        <span>#해외직구팁</span>
-                        <span>#캐시백경유</span>
-                      </div>
-                    </div>
-                    <div class="banner-action-bar">
-                      <span class="action-text">절약 꿀팁 확인하기</span>
-                      <span class="action-arrow"><i class="fa-solid fa-arrow-right"></i></span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 6. 공유 및 친구 초대 배너 -->
-                <div class="banner-card banner-share animate-card" data-category="all" data-tags="공유 링크 복사">
-                  <div class="banner-visual share-gradient">
-                    <div class="share-content">
-                      <span class="share-pill"><i class="fa-solid fa-share-nodes"></i> 즐겨찾기 필수</span>
-                      <h3 class="share-title">쿠폰트럭 링크를 저장하고 쇼핑할 때마다 할인받으세요</h3>
-                      <p class="share-desc">결제 직전 쿠폰트럭에서 할인코드를 검색해 입력하면 결제 금액이 즉시 할인됩니다.</p>
-                    </div>
-                    <button class="btn-share-hub" onclick="copySiteUrl()">
-                      <i class="fa-regular fa-copy"></i> 사이트 링크 복사하기
-                    </button>
-                  </div>
-                </div>
-
-              </div>
-
-              <!-- 💡 겜스고 완벽 가이드 & 가격 비교 & FAQ SEO 섹션 -->
-              <section class="seo-feature-section" id="gamsgo-guide-faq">
-                <div class="seo-section-header">
-                  <span class="seo-pill"><i class="fa-solid fa-fire"></i> 2026 필독 가이드</span>
-                  <h2 class="seo-section-title">유튜브 프리미엄 월 4천원대? 겜스고 할인코드 & 완벽 절약 가이드</h2>
-                  <p class="seo-section-sub">공식 정가(월 14,900원) 대비 연간 13만 원 이상 절약하는 가장 안전한 검증 비법</p>
-                </div>
-
-                <!-- 1. 4단계 요금 비교 테이블 -->
-                <div class="table-scroll-hint"><i class="fa-solid fa-arrows-left-right"></i> 표를 좌우(↔)로 밀어서 4대 요금제를 비교하세요</div>
-                <div class="seo-price-table-wrap">
-                  <table class="seo-price-table">
-                    <thead>
-                      <tr>
-                        <th>구분</th>
-                        <th>월 요금 (원화)</th>
-                        <th>연간 총 비용</th>
-                        <th>안전성 / 특징</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><strong>유튜브 공식 정가</strong></td>
-                        <td>월 14,900원</td>
-                        <td>178,800원</td>
-                        <td><span class="status-bad">매우 비쌈 (구독플레이션)</span></td>
-                      </tr>
-                      <tr>
-                        <td><strong>통신사 제휴 요금제</strong></td>
-                        <td>월 9,900원~11,900원</td>
-                        <td>약 120,000원</td>
-                        <td><span class="status-warning">고가 5G 요금제 유지 필수</span></td>
-                      </tr>
-                      <tr>
-                        <td><strong>터키·인도 VPN 우회</strong></td>
-                        <td>월 3~4천원 (환율)</td>
-                        <td>약 45,000원</td>
-                        <td><span class="status-bad">계정 정지 99% / 결제 즉시 차단</span></td>
-                      </tr>
-                      <tr class="highlight-row">
-                        <td><strong>👑 겜스고 + [DASSD]</strong></td>
-                        <td><strong>월 4천원대</strong></td>
-                        <td><strong>약 45,000원</strong></td>
-                        <td><span class="status-good">100% 안전 정품 / 일할 환불 보장</span></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <!-- 2. 프로모션 코드 사용법 4스텝 -->
-                <div class="seo-howto-grid">
-                  <div class="howto-card">
-                    <div class="howto-step">STEP 1</div>
-                    <h4>겜스고 링크 클릭</h4>
-                    <p>쿠폰트럭 배너를 누르면 프로모션 코드 <code>DASSD</code>가 자동으로 복사됩니다.</p>
-                  </div>
-                  <div class="howto-card">
-                    <div class="howto-step">STEP 2</div>
-                    <h4>서비스 선택</h4>
-                    <p>유튜브 프리미엄, 넷플릭스 4K, ChatGPT Plus 등 원하는 상품과 이용 기간을 선택합니다.</p>
-                  </div>
-                  <div class="howto-card">
-                    <div class="howto-step">STEP 3</div>
-                    <h4>코드란에 DASSD 적용</h4>
-                    <p>결제창에서 '프로모션 코드나 쿠폰이 있나요?' 클릭 후 <code>DASSD</code>를 붙여넣어 추가 할인을 받습니다.</p>
-                  </div>
-                  <div class="howto-card">
-                    <div class="howto-step">STEP 4</div>
-                    <h4>즉시 프리미엄 이용</h4>
-                    <p>카카오페이/토스/카드로 안전 결제 후 내 구글 계정 그대로 혜택을 누립니다.</p>
-                  </div>
-                </div>
-
-                <!-- 3. 자주 묻는 질문 (FAQ Accordion) -->
-                <div class="seo-faq-wrap">
-                  <h3 class="seo-faq-heading"><i class="fa-solid fa-circle-question text-orange"></i> 자주 묻는 질문 (FAQ)</h3>
-                  
-                  <div class="faq-item">
-                    <button type="button" class="faq-question" onclick="toggleFaq(this)">
-                      <span>Q1. 겜스고(GamsGo)는 믿을 수 있는 안전한 사이트인가요?</span>
-                      <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                      <p>겜스고는 2019년부터 5년 이상 전 세계 150개국 50만 명 이상의 회원이 이용 중인 글로벌 1위 정식 계정 공유 플랫폼입니다. SSL 보안 암호화 결제와 카카오페이/토스 등 국내 간편결제를 공식 지원합니다.</p>
-                    </div>
-                  </div>
-
-                  <div class="faq-item">
-                    <button type="button" class="faq-question" onclick="toggleFaq(this)">
-                      <span>Q2. 유튜브 계정 정지나 기존 시청 기록/플레이리스트가 날아가나요?</span>
-                      <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                      <p>전혀 아닙니다. 겜스고 유튜브 프리미엄은 본인이 평소 쓰던 구글 이메일을 입력하여 가족 요금제 그룹에 합류하는 방식입니다. 시청 기록, 알고리즘, 구독 채널이 100% 그대로 유지됩니다.</p>
-                    </div>
-                  </div>
-
-                  <div class="faq-item">
-                    <button type="button" class="faq-question" onclick="toggleFaq(this)">
-                      <span>Q3. 사용 중 문제가 생기면 환불받을 수 있나요?</span>
-                      <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                      <p>네! 겜스고는 24시간 실시간 온라인 고객센터를 운영하며, 만에 하나 이용 중 장애나 서비스 중단이 발생할 경우 남은 기간에 대해 100% 일할 계산하여 환불해 주는 공식 보증 정책을 시행하고 있습니다.</p>
-                    </div>
-                  </div>
-
-                  <div class="faq-item">
-                    <button type="button" class="faq-question" onclick="toggleFaq(this)">
-                      <span>Q4. 넷플릭스 4K와 챗GPT(ChatGPT Plus)도 할인되나요?</span>
-                      <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                      <p>네! 넷플릭스 4K UHD 전용 프로필(개인 PIN 비밀번호 보장)과 OpenAI 공식 챗GPT 유료 모델(Plus)도 정가 대비 50~80% 저렴하게 이용하실 수 있으며, 결제 시 <code>DASSD</code> 코드로 추가 할인이 적용됩니다.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 바로가기 하단 CTA -->
-                <div class="seo-cta-banner">
-                  <div class="seo-cta-text">
-                    <strong>지금 바로 월 4천원대에 유튜브 프리미엄을 시작하세요!</strong>
-                    <span>프로모션 코드 <code>DASSD</code> 입력 시 추가 즉시할인 혜택 제공</span>
-                  </div>
-                  <a href="https://www.gamsgo.com/partner/aTqwg" target="_blank" rel="sponsored nofollow noopener noreferrer" class="btn-seo-gamsgo" onclick="openGamsgoPartner(event)">
-                    <i class="fa-solid fa-crown"></i> 겜스고 최저가 바로가기 <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </a>
-                </div>
-              </section>
-              <!-- 🚚 구글 AI 개요(Google AI Overview / SGE) 대응 공식 브랜드 정의 섹션 -->
-              <section class="brand-definition-card" id="about-coupontruck">
-                <div class="def-header">
-                  <span class="def-badge"><i class="fa-solid fa-certificate"></i> 쿠폰트럭 (쿠폰 트럭) 공식 안내</span>
-                  <h2 class="def-title">쿠폰트럭(쿠폰 트럭, CouponTruck)이란 무엇인가요?</h2>
-                </div>
-                <div class="def-body">
-                  <p class="def-lead">
-                    <strong>쿠폰트럭(쿠폰 트럭, CouponTruck)</strong>은 유튜브 프리미엄, 넷플릭스 등 OTT 구독 서비스와 아고다, 트립닷컴, 알리익스프레스의 
-                    <strong>실시간 할인코드 및 프로모션 혜택을 365일 24시간 무료로 배달하는 공식 온라인 큐레이션 웹 플랫폼</strong>입니다.
-                  </p>
-                  <p class="def-note">
-                    ※ 과거 배달의민족 등에서 진행했던 오프라인 팝업 이벤트 트럭과 다른 <strong>독자적인 공식 온라인 웹사이트</strong>이며, 
-                    복잡한 가입 없이 누구나 최신 프로모션 코드를 1초 만에 복사하여 결제 할인을 받으실 수 있습니다.
-                  </p>
-                </div>
-                <div class="def-facts-grid">
-                  <div class="def-fact-item">
-                    <div class="fact-icon-box"><i class="fa-solid fa-truck-fast"></i></div>
-                    <div class="fact-text">
-                      <strong>365일 24시간 온라인 플랫폼</strong>
-                      <p>오프라인 현장을 찾아갈 필요 없이, 결제 직전 스마트폰이나 PC에서 할인코드를 즉시 복사해 사용합니다.</p>
-                    </div>
-                  </div>
-                  <div class="def-fact-item">
-                    <div class="fact-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
-                    <div class="fact-text">
-                      <strong>100% 안전 검증 할인코드</strong>
-                      <p>계정 정지 위험이 높은 VPN 우회 결제 대신, 겜스고(GamsGo) 정품 패밀리 공유 코드 <code>DASSD</code> 등 안전한 혜택만 선별합니다.</p>
-                    </div>
-                  </div>
-                  <div class="def-fact-item">
-                    <div class="fact-icon-box"><i class="fa-solid fa-gift"></i></div>
-                    <div class="fact-text">
-                      <strong>전국민 100% 무료 제공</strong>
-                      <p>유료 멤버십이나 회원가입 절차 없이, 여행·쇼핑·OTT 100+개 브랜드의 할인코드를 완전 무료로 제공합니다.</p>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              <!-- 인터랙티브 쿠폰 팝업 모달창 -->
-              <div id="couponModal" class="modal-overlay" style="display: none;">
-                <div class="modal-window">
-                  <div class="modal-header">
-                    <div>
-                      <span class="modal-category-label">COUPON TRUCK</span>
-                      <h3 id="modalCategoryTitle" class="modal-title">할인 혜택 목록</h3>
-                    </div>
-                    <button class="modal-close-btn" onclick="closeCategoryModal()" aria-label="닫기">&times;</button>
-                  </div>
-                  <div class="modal-search-sub">
-                    <input type="text" id="modalSubSearch" placeholder="팝업 내 브랜드 필터링..." oninput="filterModalItems(this.value)">
-                  </div>
-                  <div class="modal-body" id="modalCouponList">
-                    <!-- JS 동적 생성 -->
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </article>
-        </main>
+      <!-- 통합 검색창 -->
+      <div class="search-box-wrap modern-search-wrap">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="couponSearchInput" placeholder="브랜드 또는 쇼핑몰 검색 (예: 겜스고, 아고다, 알리, 스픽)" autocomplete="off">
+        <button id="searchClearBtn" class="clear-btn" style="display:none;"><i class="fa-solid fa-circle-xmark"></i></button>
       </div>
 
-      <!-- 우측 사이드바 영역 -->
-      <aside class="widget-area sidebar is-right-sidebar" id="right-sidebar">
-        <div class="inside-right-sidebar">
+      <!-- 카테고리 필터 탭 (원터치 전환) -->
+      <div class="category-tabs-nav" id="categoryTabs">
+        <button class="category-pill active" data-category="all"><i class="fa-solid fa-border-all"></i> 전체 혜택</button>
+        <button class="category-pill" data-category="sub"><i class="fa-solid fa-play"></i> OTT·구독</button>
+        <button class="category-pill" data-category="travel"><i class="fa-solid fa-plane"></i> 여행·숙소</button>
+        <button class="category-pill" data-category="shopping"><i class="fa-solid fa-cart-shopping"></i> 쇼핑·직구</button>
+        <button class="category-pill" data-category="fashion"><i class="fa-solid fa-gem"></i> 패션·명품</button>
+        <button class="category-pill" data-category="game"><i class="fa-solid fa-gamepad"></i> 게임</button>
+        <button class="category-pill" data-category="guide"><i class="fa-solid fa-lightbulb"></i> 절약팁</button>
+      </div>
+    </section>
 
-          <!-- 사이드바 위젯 1: 이번 주 TOP 5 베스트 핫딜 -->
-          <div class="widget widget-top-deals">
-            <h3 class="widget-title"><i class="fa-solid fa-fire text-orange"></i> 이달의 실시간 베스트 TOP 5</h3>
-            <ul class="top-deal-list">
-              <li onclick="openGamsgoPartner(event)" class="top-deal-hero">
-                <span class="rank-num rank-1"><i class="fa-solid fa-crown"></i> 1</span>
-                <div class="deal-info">
-                  <strong>[1위] 겜스고 유튜브·OTT</strong>
-                  <span>월 4천원대 최대 85% 할인</span>
-                </div>
-                <span class="badge-discount badge-discount-hero">85%+5%</span>
-              </li>
-              <li onclick="showCouponCode('아고다', 'AGODAHUB05', 'https://www.agoda.com')">
-                <span class="rank-num rank-2">2</span>
-                <div class="deal-info">
-                  <strong>아고다 전세계 호텔</strong>
-                  <span>전 객실 5~7% 즉시할인</span>
-                </div>
-                <span class="badge-discount">7%</span>
-              </li>
-              <li onclick="showCouponCode('알리익스프레스', 'ALI26SAVE', 'https://ko.aliexpress.com')">
-                <span class="rank-num rank-3">3</span>
-                <div class="deal-info">
-                  <strong>알리 익스프레스</strong>
-                  <span>$50 결제 시 $6 할인</span>
-                </div>
-                <span class="badge-discount">$6</span>
-              </li>
-              <li onclick="showCouponCode('트립닷컴', 'TRIPNEW26', 'https://kr.trip.com')">
-                <span class="rank-num">4</span>
-                <div class="deal-info">
-                  <strong>트립닷컴 항공·호텔</strong>
-                  <span>패키지 최대 8% 할인</span>
-                </div>
-                <span class="badge-discount">8%</span>
-              </li>
-              <li onclick="showCouponCode('스픽', 'SPEAKSAVE', 'https://www.usespeak.com')">
-                <span class="rank-num">5</span>
-                <div class="deal-info">
-                  <strong>스픽 AI 영어회화</strong>
-                  <span>연간권 20,000원 할인</span>
-                </div>
-                <span class="badge-discount">-2만</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- 사이드바 위젯 2: 브랜드 태그 아코디언 -->
-          <div class="widget widget_nav_menu">
-            <h3 class="widget-title"><i class="fa-solid fa-layer-group"></i> 카테고리별 빠른 쿠폰</h3>
-            
-            <div class="accordion-group">
-              
-              <!-- 1. 여행·호텔 -->
-              <div class="accordion-item active">
-                <button class="accordion-trigger">
-                  <span><i class="fa-solid fa-plane"></i> 여행 & 호텔 숙소</span>
-                  <i class="fa-solid fa-chevron-down arrow"></i>
-                </button>
-                <div class="accordion-content">
-                  <div class="tag-cloud">
-                    <button class="tag-btn" onclick="showCouponCode('아고다', 'AGODAHUB05', 'https://www.agoda.com')">아고다</button>
-                    <button class="tag-btn" onclick="showCouponCode('트립닷컴', 'TRIPNEW26', 'https://kr.trip.com')">트립닷컴</button>
-                    <button class="tag-btn" onclick="showCouponCode('클룩', 'KLOOKBHUB', 'https://www.klook.com')">클룩</button>
-                    <button class="tag-btn" onclick="showCouponCode('KKday', 'KKDAYSPRING', 'https://www.kkday.com')">KKday</button>
-                    <button class="tag-btn" onclick="showCouponCode('호텔스닷컴', 'HOTELLP08', 'https://kr.hotels.com')">호텔스닷컴</button>
-                    <button class="tag-btn" onclick="showCouponCode('익스피디아', 'EXPEDIA8', 'https://www.expedia.co.kr')">익스피디아</button>
-                    <button class="tag-btn" onclick="showCouponCode('마이리얼트립', 'MYREAL2026', 'https://www.myrealtrip.com')">마이리얼트립</button>
-                    <button class="tag-btn" onclick="showCouponCode('부킹닷컴', 'BOOK10SAVE', 'https://www.booking.com')">부킹닷컴</button>
-                    <button class="tag-btn" onclick="showCouponCode('트래블로카', 'TVLKSPRING', 'https://www.traveloka.com')">트래블로카</button>
-                    <button class="tag-btn" onclick="showCouponCode('라쿠텐 트래블', 'RAKUTENJP', 'https://travel.rakuten.com')">라쿠텐</button>
-                    <button class="tag-btn" onclick="showCouponCode('돈키호테', 'DONKI5OFF', 'https://www.donki.com')">돈키호테</button>
-                    <button class="tag-btn" onclick="showCouponCode('유심사', 'USIMSA2026', 'https://www.usimsa.com')">유심사</button>
-                    <button class="tag-btn" onclick="showCouponCode('에어알로', 'AIRALO3OFF', 'https://www.airalo.com')">에어알로</button>
-                    <button class="tag-btn" onclick="showCouponCode('로밍도깨비', 'ROAMINGDOK', 'https://rokebi.com')">로밍도깨비</button>
-                    <button class="tag-btn" onclick="showCouponCode('와이파이도시락', 'DOSIRAK10', 'https://www.wifidosirak.com')">도시락</button>
-                    <button class="tag-btn" onclick="showCouponCode('야놀자', 'NOLYJ2026', 'https://www.yanolja.com')">야놀자</button>
-                    <button class="tag-btn" onclick="showCouponCode('여기어때', 'YEOGIPRO26', 'https://www.goodchoice.kr')">여기어때</button>
-                    <button class="tag-btn" onclick="showCouponCode('제주패스', 'JEJUPASSRENT', 'https://www.jejupass.com')">제주패스</button>
-                    <button class="tag-btn" onclick="showCouponCode('인터파크투어', 'INTPARKTOUR', 'https://tour.interpark.com')">인터파크</button>
-                    <button class="tag-btn" onclick="showCouponCode('트립비토즈', 'TRIPBTOZ5', 'https://www.tripbtoz.com')">트립비토즈</button>
-                    <button class="tag-btn" onclick="showCouponCode('와그', 'WAUGNEW', 'https://www.waug.com')">와그</button>
-                    <button class="tag-btn" onclick="showCouponCode('민다', 'MINDASTAY', 'https://www.theminda.com')">민다</button>
-                    <button class="tag-btn" onclick="showCouponCode('오미오', 'OMIOEUROPE', 'https://www.omio.com')">오미오(기차)</button>
-                    <button class="tag-btn" onclick="showCouponCode('IHG 호텔', 'IHGDIRECT', 'https://www.ihg.com')">IHG</button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 2. 쇼핑·직구 -->
-              <div class="accordion-item">
-                <button class="accordion-trigger">
-                  <span><i class="fa-solid fa-cart-shopping"></i> 직구 & 쇼핑몰</span>
-                  <i class="fa-solid fa-chevron-down arrow"></i>
-                </button>
-                <div class="accordion-content">
-                  <div class="tag-cloud">
-                    <button class="tag-btn" onclick="showCouponCode('알리익스프레스', 'ALI26SAVE', 'https://ko.aliexpress.com')">알리익스프레스</button>
-                    <button class="tag-btn" onclick="showCouponCode('테무', 'TEMU90OFF', 'https://www.temu.com')">테무</button>
-                    <button class="tag-btn" onclick="showCouponCode('아이허브', 'HUB9999', 'https://kr.iherb.com')">아이허브</button>
-                    <button class="tag-btn" onclick="showCouponCode('오늘의집', 'OHOU10000', 'https://ohou.se')">오늘의집</button>
-                    <button class="tag-btn" onclick="showCouponCode('쿠팡', 'COUPANGWOW', 'https://www.coupang.com')">쿠팡</button>
-                    <button class="tag-btn" onclick="showCouponCode('아마존', 'AMZKR20', 'https://www.amazon.com')">아마존</button>
-                    <button class="tag-btn" onclick="showCouponCode('케이스티파이', 'CASEVIP15', 'https://www.casetify.com')">케이스티파이</button>
-                    <button class="tag-btn" onclick="showCouponCode('올리브영', 'OLIVEBIG', 'https://www.oliveyoung.co.kr')">올리브영</button>
-                    <button class="tag-btn" onclick="showCouponCode('크림', 'KREAMSPRING', 'https://kream.co.kr')">크림</button>
-                    <button class="tag-btn" onclick="showCouponCode('큐텐', 'QOO10GLOBAL', 'https://www.qoo10.com')">큐텐</button>
-                    <button class="tag-btn" onclick="showCouponCode('11번가 아마존', '11STAMZ', 'https://www.11st.co.kr')">11번가</button>
-                    <button class="tag-btn" onclick="showCouponCode('마켓컬리', 'KURLY5000', 'https://www.kurly.com')">마켓컬리</button>
-                    <button class="tag-btn" onclick="showCouponCode('CJ더마켓', 'CJMARKET40', 'https://www.cjthemarket.com')">CJ더마켓</button>
-                    <button class="tag-btn" onclick="showCouponCode('풀무원', 'PULMUONE10', 'https://shop.pulmuone.co.kr')">풀무원</button>
-                    <button class="tag-btn" onclick="showCouponCode('미트리', 'METREESAVE', 'https://metree.co.kr')">미트리</button>
-                    <button class="tag-btn" onclick="showCouponCode('랭킹닭컴', 'RANKINGDAK', 'https://www.rankingdak.com')">랭킹닭컴</button>
-                    <button class="tag-btn" onclick="showCouponCode('펫프렌즈', 'PETFRIENDS', 'https://pet-friends.co.kr')">펫프렌즈</button>
-                    <button class="tag-btn" onclick="showCouponCode('레고', 'LEGOBRICKS', 'https://www.lego.com/ko-kr')">레고</button>
-                    <button class="tag-btn" onclick="showCouponCode('레노버', 'LENOVO8', 'https://www.lenovo.com/kr')">레노버</button>
-                    <button class="tag-btn" onclick="showCouponCode('다이슨', 'DYSONSPECIAL', 'https://www.dyson.co.kr')">다이슨</button>
-                    <button class="tag-btn" onclick="showCouponCode('예스24', 'YES24BOOKS', 'https://www.yes24.com')">YES24</button>
-                    <button class="tag-btn" onclick="showCouponCode('교보문고', 'KYOBO2026', 'https://www.kyobobook.co.kr')">교보문고</button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 3. OTT & 소프트웨어 -->
-              <div class="accordion-item">
-                <button class="accordion-trigger">
-                  <span><i class="fa-solid fa-film"></i> OTT & VPN 구독</span>
-                  <i class="fa-solid fa-chevron-down arrow"></i>
-                </button>
-                <div class="accordion-content">
-                  <div class="tag-cloud">
-                    <button class="tag-btn" onclick="openGamsgoPartner(event)">겜스고</button>
-                    <button class="tag-btn" onclick="showCouponCode('스픽', 'SPEAKSAVE', 'https://www.usespeak.com')">스픽</button>
-                    <button class="tag-btn" onclick="showCouponCode('노드VPN', 'NORD70OFF', 'https://nordvpn.com')">노드VPN</button>
-                    <button class="tag-btn" onclick="showCouponCode('서프샤크', 'SURF85OFF', 'https://surfshark.com')">서프샤크</button>
-                    <button class="tag-btn" onclick="showCouponCode('익스프레스VPN', 'EXPRESS3M', 'https://www.expressvpn.com')">익스프레스VPN</button>
-                    <button class="tag-btn" onclick="showCouponCode('프로톤VPN', 'PROTONSAVE', 'https://protonvpn.com')">프로톤VPN</button>
-                    <button class="tag-btn" onclick="showCouponCode('어도비', 'ADOBE60', 'https://www.adobe.com/kr')">어도비</button>
-                    <button class="tag-btn" onclick="showCouponCode('우버택시', 'UBERKR2026', 'https://www.uber.com/kr')">우버택시</button>
-                    <button class="tag-btn" onclick="showCouponCode('틱톡 라이트', 'TIKTOKLITE', 'https://www.tiktok.com')">틱톡라이트</button>
-                    <button class="tag-btn" onclick="showCouponCode('크몽', 'KMONG10000', 'https://kmong.com')">크몽</button>
-                    <button class="tag-btn" onclick="showCouponCode('숨고', 'SOOMGO5000', 'https://soomgo.com')">숨고</button>
-                    <button class="tag-btn" onclick="showCouponCode('밀리의 서재', 'MILLIEFIRST', 'https://www.millie.co.kr')">밀리의서재</button>
-                    <button class="tag-btn" onclick="showCouponCode('윌라', 'WELAAROCKS', 'https://www.welaaa.com')">윌라</button>
-                    <button class="tag-btn" onclick="showCouponCode('링글', 'RINGLEPOINT', 'https://www.ringleplus.com')">링글</button>
-                    <button class="tag-btn" onclick="showCouponCode('캔바 프로', 'CANVAPRO30', 'https://www.canva.com')">캔바</button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 4. 게임 & 기어 특가 -->
-              <div class="accordion-item">
-                <button class="accordion-trigger">
-                  <span><i class="fa-solid fa-gamepad text-orange"></i> 게임 & 기어 특가</span>
-                  <i class="fa-solid fa-chevron-down arrow"></i>
-                </button>
-                <div class="accordion-content">
-                  <div class="tag-cloud">
-                    <button class="tag-btn" onclick="showCouponCode('스팀', 'STEAMSALE', 'https://store.steampowered.com')">스팀 세일</button>
-                    <button class="tag-btn" onclick="showCouponCode('엑시트랙', 'EXITLAG20', 'https://www.exitlag.com')">엑시트랙 (ExitLag)</button>
-                    <button class="tag-btn" onclick="showCouponCode('그린맨게이밍', 'GMG15OFF', 'https://www.greenmangaming.com')">그린맨게임</button>
-                    <button class="tag-btn" onclick="showCouponCode('에픽게임즈', 'EPICFREE', 'https://store.epicgames.com')">에픽게임즈</button>
-                    <button class="tag-btn" onclick="showCouponCode('레이저', 'RAZER10KR', 'https://www.razer.com/kr-kr')">레이저 (Razer)</button>
-                    <button class="tag-btn" onclick="showCouponCode('로지텍 G', 'LOGITECHG', 'https://www.logitechg.com/ko-kr')">로지텍 G</button>
-                    <button class="tag-btn" onclick="showCouponCode('Xbox Game Pass', 'XBOXPASS', 'https://www.xbox.com')">Xbox 게임패스</button>
-                    <button class="tag-btn" onclick="showCouponCode('닌텐도', 'NINTENDOJP', 'https://www.nintendo.co.kr')">닌텐도 e숍</button>
-                    <button class="tag-btn" onclick="showCouponCode('험블번들', 'HUMBLECHOICE', 'https://www.humblebundle.com')">험블번들</button>
-                    <button class="tag-btn" onclick="showCouponCode('미꾸라지', 'MUDFISHBOOST', 'https://mudfish.net')">미꾸라지 VPN</button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 5. 패션 & 명품 -->
-              <div class="accordion-item">
-                <button class="accordion-trigger">
-                  <span><i class="fa-solid fa-shirt"></i> 패션 & 명품 편집숍</span>
-                  <i class="fa-solid fa-chevron-down arrow"></i>
-                </button>
-                <div class="accordion-content">
-                  <div class="tag-cloud">
-                    <button class="tag-btn" onclick="showCouponCode('파페치', 'FARFETCH10', 'https://www.farfetch.com')">파페치</button>
-                    <button class="tag-btn" onclick="showCouponCode('마이테레사', 'MYT15FIRST', 'https://www.mytheresa.com')">마이테레사</button>
-                    <button class="tag-btn" onclick="showCouponCode('세타이어', 'CETTIRE10', 'https://www.cettire.com')">세타이어</button>
-                    <button class="tag-btn" onclick="showCouponCode('룰루레몬', 'LULU10KR', 'https://www.lululemon.co.kr')">룰루레몬</button>
-                    <button class="tag-btn" onclick="showCouponCode('COS', 'COSHELLO10', 'https://cos.com/ko-kr')">COS</button>
-                    <button class="tag-btn" onclick="showCouponCode('아르켓', 'ARKET10HELLO', 'https://www.arket.com/ko-kr')">아르켓</button>
-                    <button class="tag-btn" onclick="showCouponCode('W컨셉', 'WCONCEPT10', 'https://www.wconcept.co.kr')">W컨셉</button>
-                    <button class="tag-btn" onclick="showCouponCode('무신사', 'MUSINSA7', 'https://musinsa.com')">무신사</button>
-                    <button class="tag-btn" onclick="showCouponCode('지그재그', 'ZIGZAG20', 'https://zigzag.kr')">지그재그</button>
-                    <button class="tag-btn" onclick="showCouponCode('에이블리', 'ABLYSAVE', 'https://a-bly.com')">에이블리</button>
-                    <button class="tag-btn" onclick="showCouponCode('SSENSE', 'SSENSESALE', 'https://www.ssense.com')">SSENSE</button>
-                    <button class="tag-btn" onclick="showCouponCode('24S', '24SFIRST15', 'https://www.24s.com')">24S</button>
-                    <button class="tag-btn" onclick="showCouponCode('조마샵', 'JOMAFAST20', 'https://www.jomashop.com')">조마샵</button>
-                    <button class="tag-btn" onclick="showCouponCode('조말론', 'JOMALONEGIFT', 'https://www.jomalone.co.kr')">조말론</button>
-                    <button class="tag-btn" onclick="showCouponCode('띠어리', 'THEORY15', 'https://www.theory.com')">띠어리</button>
-                    <button class="tag-btn" onclick="showCouponCode('알로요가', 'ALOYOGA15', 'https://www.aloyoga.com')">알로요가</button>
-                    <button class="tag-btn" onclick="showCouponCode('크록스', 'CROCS20KR', 'https://www.crocs.co.kr')">크록스</button>
-                    <button class="tag-btn" onclick="showCouponCode('H&M', 'HMAPP15', 'https://www2.hm.com/ko_kr')">H&M</button>
-                    <button class="tag-btn" onclick="showCouponCode('스와로브스키', 'SWAROVSKI10', 'https://www.swarovski.com')">스와로브스키</button>
-                    <button class="tag-btn" onclick="showCouponCode('나이키', 'NIKEWELCOME', 'https://www.nike.com/kr')">나이키</button>
-                    <button class="tag-btn" onclick="showCouponCode('아디다스', 'ADICLUB10', 'https://www.adidas.co.kr')">아디다스</button>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 사이드바 위젯 3: 배너 바로가기 -->
-          <div class="widget side-promo-widget">
-            <div class="promo-card blue-card" onclick="openCategoryModal('travel')">
-              <span class="promo-badge">HOT TRAVEL</span>
-              <h4>항공 & 호텔 프로모션</h4>
-              <p>아고다·트립닷컴 실시간 쿠폰</p>
-              <i class="fa-solid fa-hotel bg-icon"></i>
-            </div>
-            <div class="promo-card purple-card" onclick="openCategoryModal('sub')">
-              <span class="promo-badge">최대 85% OFF</span>
-              <h4>OTT & VPN 할인센터</h4>
-              <p>유튜브 프리미엄·노드VPN</p>
-              <i class="fa-solid fa-shield-halved bg-icon"></i>
-            </div>
-          </div>
-
-        </div>
-      </aside>
-
+    <!-- 제휴 고지 배너 (컴팩트 1줄) -->
+    <div class="affiliate-disclosure-banner">
+      <i class="fa-solid fa-circle-info"></i>
+      <span><strong>제휴 고지:</strong> 본 사이트는 제휴 파트너스 활동의 일환으로 링크 경유 시 소정의 수수료를 제공받을 수 있으며, 구매자에게는 추가 부담 없이 검증된 최저가 혜택이 적용됩니다.</span>
     </div>
-  </div>
 
-  <!-- 모바일 하단 플로팅 독 네비게이션 (카드 메뉴 제외, 핵심 4대 혜택으로 재구성) -->
-  <nav class="mobile-bottom-bar" id="mobileBottomBar" aria-label="모바일 하단 메뉴">
-    <a href="javascript:void(0)" class="dock-item" onclick="openCategoryModal('travel')">
-      <i class="fa-solid fa-plane-departure"></i>
-      <span>여행·숙소</span>
-    </a>
-    <a href="javascript:void(0)" class="dock-item" onclick="openCategoryModal('shopping')">
-      <i class="fa-solid fa-cart-shopping"></i>
-      <span>쇼핑·직구</span>
-    </a>
-    <a href="javascript:void(0)" class="dock-item" onclick="openCategoryModal('sub')">
-      <i class="fa-solid fa-play"></i>
-      <span>OTT·구독</span>
-    </a>
-    <a href="javascript:void(0)" class="dock-item" onclick="openCategoryModal('fashion')">
-      <i class="fa-solid fa-shirt"></i>
-      <span>패션·명품</span>
-    </a>
-  </nav>
-
-  <!-- 사이트 푸터 (공정위 대가성 고지 & 법적 보호 완비) -->
-  <footer class="site-footer">
-    <div class="footer-container grid-container">
-      
-      <!-- 3컬럼 블록 -->
-      <div class="footer-columns">
-        
-        <!-- 컬럼 1: 서비스 안내 -->
-        <div class="footer-col">
-          <h4 class="footer-col-title">About CouponTruck</h4>
-          <div class="footer-col-content">
-            <p>쿠폰트럭(CouponTruck)은 전 세계 주요 온라인 쇼핑몰, 여행 예약 사이트, 구독 서비스, 게임·기어의 공식 프로모션 정보를 실시간으로 큐레이션하여 배달하는 할인 정보 전문 플랫폼입니다.</p>
-            <p>이용자에게 별도의 회원가입이나 개인정보 입력을 요구하지 않으며, 모든 할인코드는 100% 무료로 이용하실 수 있습니다.</p>
+    <!-- 2. 오늘의 TOP 1 슈퍼 핫딜 (겜스고 슬림 하이라이트) -->
+    <section class="super-deal-hero" id="heroSuperDeal">
+      <div class="super-deal-inner">
+        <div class="super-deal-badge"><i class="fa-solid fa-crown text-yellow"></i> 오늘의 추천 1위</div>
+        <div class="super-deal-content">
+          <div class="super-deal-left">
+            <span class="deal-brand">겜스고 (GamsGo) · 글로벌 1위 OTT 공유</span>
+            <h2 class="deal-title">유튜브 프리미엄 & 넷플릭스 4K 월 4천원대 (최대 85% 할인)</h2>
+            <p class="deal-desc">VPN 우회 정지 위험 0%! 내 원래 구글 계정 그대로 100% 정품 가족 멤버십 이용</p>
           </div>
-        </div>
-
-        <!-- 컬럼 2: 공정위 대가성 고지 & 면책 안내 (법적 필수) -->
-        <div class="footer-col">
-          <h4 class="footer-col-title">공정위 고지 & 면책 안내</h4>
-          <div class="footer-col-content">
-            <p class="transparency-notice">
-              <i class="fa-solid fa-circle-info"></i> <strong>경제적 이해관계 표시:</strong><br>
-              본 사이트의 일부 링크는 파트너스/제휴 마케팅 활동의 일환으로 링크를 통한 예약 또는 구매 시 서비스 운영자가 소정의 수수료를 제공받을 수 있으며, 이는 서비스 유지 및 양질의 할인 정보 제공에 사용됩니다.
-            </p>
-            <p class="disclaimer-notice" style="margin-top: 10px; font-size: 12.5px; color: #94a3b8; line-height: 1.55;">
-              <i class="fa-solid fa-triangle-exclamation" style="color: #f59e0b;"></i> <strong>할인코드 유의사항:</strong><br>
-              각 브랜드의 프로모션 코드 및 할인 혜택은 제휴사 사정에 따라 예고 없이 조기 마감되거나 변경될 수 있습니다. 해외 서비스 결제 시 환율 변동에 따라 원화 청구 금액에 일부 차이가 발생할 수 있습니다.
-            </p>
-          </div>
-        </div>
-
-        <!-- 컬럼 3: 문의 및 피드백 -->
-        <div class="footer-col">
-          <h4 class="footer-col-title">문의 & 제휴</h4>
-          <div class="footer-col-content">
-            <p>오타 제보, 신규 할인코드 등록 및 제휴 문의는 아래 이메일로 편하게 연락주세요.</p>
-            <a href="mailto:gubin0425@icloud.com" class="footer-email-link">
-              <i class="fa-regular fa-envelope"></i> gubin0425@icloud.com
-            </a>
-            <div class="footer-meta-info">
-              <span>운영: 쿠폰트럭 (개인 운영)</span> · <span>개인정보 수집 및 회원가입 없음</span>
+          <div class="super-deal-right">
+            <div class="deal-code-box">
+              <span class="code-label">전용 프로모션 코드</span>
+              <span class="code-val">DASSD</span>
             </div>
+            <button class="btn-super-deal" onclick="openGamsgoPartner(event)">
+              <i class="fa-regular fa-copy"></i> 코드 복사 & 바로가기
+            </button>
           </div>
         </div>
-
       </div>
+    </section>
 
-      <!-- 최하단 저작권 표시 바 -->
-      <div class="footer-bottom-bar">
-        <p>© 2026 쿠폰트럭 (CouponTruck). All rights reserved.</p>
+    <!-- 3. 실시간 쿠폰 카드 그리드 (핵심 메인 영역) -->
+    <section class="coupon-section">
+      <div class="section-title-row">
+        <h3 class="section-title" id="gridSectionTitle">🔥 실시간 할인 혜택 (<span id="couponCountBadge">103</span>개)</h3>
+        <span class="section-meta-hint">클릭 시 코드가 복사되고 제휴몰로 안전하게 연결됩니다</span>
       </div>
+      
+      <!-- 검색 결과 안내 -->
+      <div id="searchNotice" class="search-notice" style="display: none;"></div>
 
+      <!-- 동적 쿠폰 카드 그리드 -->
+      <div class="coupon-grid" id="couponGrid">
+        <!-- JS로 실시간 렌더링 -->
+      </div>
+    </section>
+
+    <!-- 4. 컴팩트 자주 묻는 질문 (FAQ) -->
+    <section class="compact-faq-section" id="faq">
+      <h3 class="faq-section-title"><i class="fa-solid fa-circle-question text-orange"></i> 자주 묻는 질문 (FAQ)</h3>
+      <div class="faq-accordion-group">
+        <div class="faq-card">
+          <button type="button" class="faq-btn" onclick="toggleFaqCard(this)">
+            <span>Q. 쿠폰트럭은 어떤 서비스인가요? 비용이 드나요?</span>
+            <i class="fa-solid fa-chevron-down faq-arrow"></i>
+          </button>
+          <div class="faq-answer-box">
+            <p>쿠폰트럭은 국내외 100+개 인기 브랜드의 검증된 실시간 할인코드와 프로모션을 365일 무료로 제공하는 공식 큐레이션 웹 플랫폼입니다. 회원가입이나 유료 결제 없이 누구나 100% 무료로 이용하실 수 있습니다.</p>
+          </div>
+        </div>
+        <div class="faq-card">
+          <button type="button" class="faq-btn" onclick="toggleFaqCard(this)">
+            <span>Q. 겜스고 유튜브 프리미엄 월 4천원대는 안전한가요?</span>
+            <i class="fa-solid fa-chevron-down faq-arrow"></i>
+          </button>
+          <div class="faq-answer-box">
+            <p>겜스고는 5년 이상 전 세계 150개국 50만 명 이상의 회원이 검증한 정식 계정 공유 플랫폼입니다. 계정 정지 위험이 높은 VPN 우회 결제와 달리 안전하며, 문제 발생 시 24시간 고객센터를 통해 100% 일할 환불을 보장합니다.</p>
+          </div>
+        </div>
+        <div class="faq-card">
+          <button type="button" class="faq-btn" onclick="toggleFaqCard(this)">
+            <span>Q. 할인코드 적용 방법은 어떻게 되나요?</span>
+            <i class="fa-solid fa-chevron-down faq-arrow"></i>
+          </button>
+          <div class="faq-answer-box">
+            <p>원하는 쿠폰의 [복사 & 바로가기] 버튼을 누르면 할인코드가 자동으로 복사되고 해당 공식 사이트로 연결됩니다. 결제 화면의 프로모션 코드 입력란에 붙여넣기(Ctrl+V)하시면 즉시 할인이 적용됩니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 푸터 -->
+  <footer class="site-footer">
+    <div class="footer-container container">
+      <div class="footer-brand-info">
+        <span class="footer-logo">쿠폰트럭<span class="logo-dot">.</span></span>
+        <p class="footer-copy">© 2026 CouponTruck. 실시간 검증 할인코드 & 프로모션 큐레이션</p>
+      </div>
+      <div class="footer-meta-text">
+        <p>※ 본 사이트의 일부 링크는 파트너스 활동의 일환으로 수수료를 제공받을 수 있으며, 구매자에게는 추가 비용이 발생하지 않습니다.</p>
+        <p>문의: <a href="mailto:gubin0425@icloud.com">gubin0425@icloud.com</a> · 개인정보 수집 및 회원가입 없음</p>
+      </div>
     </div>
   </footer>
 
@@ -1263,7 +383,7 @@
     <div class="toast-text" id="toastMessage">쿠폰 코드가 복사되었습니다!</div>
   </div>
 
-  <!-- 스마트 홈 화면 추가 유도 플로팅 독 (PWA) -->
+  <!-- 스마트 홈 화면 추가 플로팅 독 (PWA) -->
   <aside class="pwa-smart-dock" id="pwaSmartDock" aria-label="홈 화면 추가 안내">
     <div class="pwa-dock-inner">
       <div class="pwa-dock-left">
@@ -1282,7 +402,26 @@
     </div>
   </aside>
 
+  <!-- 인터랙티브 쿠폰 팝업 모달창 (호환성 보장) -->
+  <div id="couponModal" class="modal-overlay" style="display: none;">
+    <div class="modal-window">
+      <div class="modal-header">
+        <div>
+          <span class="modal-category-label">COUPON TRUCK</span>
+          <h3 id="modalCategoryTitle" class="modal-title">할인 혜택 목록</h3>
+        </div>
+        <button class="modal-close-btn" onclick="closeCategoryModal()" aria-label="닫기">&times;</button>
+      </div>
+      <div class="modal-search-sub">
+        <input type="text" id="modalSubSearch" placeholder="팝업 내 브랜드 필터링..." oninput="filterModalItems(this.value)">
+      </div>
+      <div class="modal-body" id="modalCouponList">
+        <!-- JS 동적 생성 -->
+      </div>
+    </div>
+  </div>
+
   <!-- Javascript -->
-  <script src="main.js?v=20260905_v15"></script>
+  <script src="main.js?v=20260909_v2"></script>
 </body>
 </html>

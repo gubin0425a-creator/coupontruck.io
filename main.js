@@ -83,6 +83,9 @@ function updateUIWithData() {
     } catch (e) {}
   }
 
+  // 실시간 1열 집중형 쿠폰 카드 그리드 렌더링
+  applyCouponFilters();
+
   // 사이드바 TOP 5 갱신 (겜스고 1위 고정 및 대표 딜 유지)
   const topListEl = document.querySelector(".top-deal-list");
   if (topListEl) {
@@ -188,75 +191,261 @@ function initSidebarAccordion() {
   });
 }
 
+// 3. 1열 집중형 쿠폰 필터 & 검색 상태
+let activeCategoryFilter = "all";
+let activeSearchKeyword = "";
+
+function escapeHtml(str) {
+  if (typeof str !== "string") return str || "";
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function getCategoryBadgeLabel(catKey) {
+  const map = {
+    sub: "OTT·구독",
+    travel: "여행·숙소",
+    shopping: "쇼핑·직구",
+    fashion: "패션·명품",
+    game: "게임",
+    guide: "절약팁"
+  };
+  return map[catKey] || catKey;
+}
+
+// 전체 활성 쿠폰 리스트 추출
+function getAllCouponsList() {
+  if (!COUPON_DATA || !COUPON_DATA.categories) return [];
+  const list = [];
+  const categoryOrder = ["sub", "travel", "shopping", "fashion", "game", "guide"];
+
+  categoryOrder.forEach(catKey => {
+    const cat = COUPON_DATA.categories[catKey];
+    if (cat && Array.isArray(cat.items)) {
+      cat.items.forEach(item => {
+        if (item.is_active !== false) {
+          list.push({
+            ...item,
+            categoryKey: catKey,
+            categoryTitle: cat.title
+          });
+        }
+      });
+    }
+  });
+
+  // 누락된 카테고리가 있다면 추가 수집
+  Object.keys(COUPON_DATA.categories).forEach(catKey => {
+    if (!categoryOrder.includes(catKey)) {
+      const cat = COUPON_DATA.categories[catKey];
+      if (cat && Array.isArray(cat.items)) {
+        cat.items.forEach(item => {
+          if (item.is_active !== false) {
+            list.push({
+              ...item,
+              categoryKey: catKey,
+              categoryTitle: cat.title
+            });
+          }
+        });
+      }
+    }
+  });
+
+  return list;
+}
+
+// 쿠폰 카드 그리드 동적 렌더링
+function renderCouponGrid(items) {
+  const gridEl = document.getElementById("couponGrid");
+  const countBadge = document.getElementById("couponCountBadge");
+  if (!gridEl) return;
+
+  if (countBadge) {
+    countBadge.textContent = items.length;
+  }
+
+  if (items.length === 0) {
+    gridEl.innerHTML = `
+      <div class="coupon-empty-state">
+        <i class="fa-solid fa-face-frown-open"></i>
+        <p>조건에 일치하는 할인 혜택을 찾지 못했습니다.</p>
+        <button type="button" onclick="resetCouponFilters()">전체 혜택 보기</button>
+      </div>
+    `;
+    return;
+  }
+
+  gridEl.innerHTML = items.map(item => {
+    const isGamsgo = item.name && item.name.includes("겜스고");
+    const isGuide = item.categoryKey === "guide" || (item.code && item.code.startsWith("TIP-")) || item.url === "#";
+    const badgeLabel = getCategoryBadgeLabel(item.categoryKey);
+    const expiresText = item.expires ? `~${item.expires}` : "실시간 상시 할인";
+    const safeName = escapeHtml(item.name || "");
+    const safeDesc = escapeHtml(item.desc || "");
+    const safeCode = escapeHtml(item.code || "");
+    const safeUrl = escapeHtml(item.url || "");
+
+    let actionButtonHtml = "";
+    if (isGamsgo) {
+      actionButtonHtml = `
+        <button type="button" class="btn-copy-clean" onclick="openGamsgoPartner(event)">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> 이동 & 할인
+        </button>
+      `;
+    } else if (isGuide) {
+      actionButtonHtml = `
+        <button type="button" class="btn-copy-clean" onclick="showToast('💡 [절약팁] ${safeName}: ${safeDesc}')">
+          <i class="fa-solid fa-lightbulb"></i> 팁 확인
+        </button>
+      `;
+    } else {
+      actionButtonHtml = `
+        <button type="button" class="btn-copy-clean" onclick="showCouponCode('${safeName}', '${safeCode}', '${safeUrl}')">
+          <i class="fa-regular fa-copy"></i> 복사 & 바로가기
+        </button>
+      `;
+    }
+
+    return `
+      <div class="clean-coupon-card" data-category="${escapeHtml(item.categoryKey)}" data-id="${escapeHtml(item.id || '')}">
+        <div class="card-top">
+          <span class="card-brand-name" title="${safeName}">${safeName}</span>
+          <span class="card-cat-badge cat-${escapeHtml(item.categoryKey)}">${escapeHtml(badgeLabel)}</span>
+        </div>
+        <div class="card-desc" title="${safeDesc}">${safeDesc}</div>
+        <div class="card-meta">
+          <span class="card-meta-expires"><i class="fa-regular fa-clock"></i> ${escapeHtml(expiresText)}</span>
+          <span class="card-meta-status"><i class="fa-solid fa-circle-check"></i> 검증 완료</span>
+        </div>
+        <div class="card-action">
+          <div class="card-code-preview" title="클릭 시 코드 복사" onclick="showCouponCode('${safeName}', '${safeCode}', '${safeUrl}')">${safeCode}</div>
+          ${actionButtonHtml}
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+// 필터링 적용 (카테고리 + 검색어)
+function applyCouponFilters() {
+  const all = getAllCouponsList();
+  const q = (activeSearchKeyword || "").trim().toLowerCase();
+
+  const filtered = all.filter(item => {
+    // 1. 카테고리 필터
+    const matchesCategory = (activeCategoryFilter === "all" || item.categoryKey === activeCategoryFilter);
+    if (!matchesCategory) return false;
+
+    // 2. 검색어 필터
+    if (!q) return true;
+    const nameMatch = (item.name || "").toLowerCase().includes(q);
+    const descMatch = (item.desc || "").toLowerCase().includes(q);
+    const codeMatch = (item.code || "").toLowerCase().includes(q);
+    const catMatch = (item.categoryKey || "").toLowerCase().includes(q);
+    const catLabelMatch = getCategoryBadgeLabel(item.categoryKey).toLowerCase().includes(q);
+    return nameMatch || descMatch || codeMatch || catMatch || catLabelMatch;
+  });
+
+  // 검색 안내 표시 제어
+  const searchNotice = document.getElementById("searchNotice");
+  if (searchNotice) {
+    if (q.length > 0) {
+      searchNotice.style.display = "block";
+      searchNotice.innerHTML = `검색어 <strong>'${escapeHtml(q)}'</strong> 결과: <strong>${filtered.length}개</strong> 할인 혜택이 일치합니다.`;
+    } else {
+      searchNotice.style.display = "none";
+    }
+  }
+
+  renderCouponGrid(filtered);
+}
+
+function resetCouponFilters() {
+  activeCategoryFilter = "all";
+  activeSearchKeyword = "";
+
+  const searchInput = document.getElementById("couponSearchInput");
+  if (searchInput) searchInput.value = "";
+  const clearBtn = document.getElementById("searchClearBtn");
+  if (clearBtn) clearBtn.style.display = "none";
+
+  const pills = document.querySelectorAll(".category-pill");
+  pills.forEach(pill => {
+    if (pill.dataset.category === "all") {
+      pill.classList.add("active");
+    } else {
+      pill.classList.remove("active");
+    }
+  });
+
+  applyCouponFilters();
+}
+window.resetCouponFilters = resetCouponFilters;
+
 // 3. 실시간 브랜드 검색 기능
 function initSearch() {
   const searchInput = document.getElementById("couponSearchInput");
   const clearBtn = document.getElementById("searchClearBtn");
-  const notice = document.getElementById("searchNotice");
-  const cards = document.querySelectorAll(".banner-card");
 
   if (!searchInput) return;
 
   searchInput.addEventListener("input", () => {
-    const query = searchInput.value.trim().toLowerCase();
-    
-    if (query.length > 0) {
-      clearBtn.style.display = "block";
-      let matchCount = 0;
-
-      cards.forEach(card => {
-        const tags = (card.getAttribute("data-tags") || "").toLowerCase();
-        const text = card.innerText.toLowerCase();
-
-        if (tags.includes(query) || text.includes(query)) {
-          card.style.display = "block";
-          matchCount++;
-        } else {
-          card.style.display = "none";
-        }
-      });
-
-      notice.style.display = "block";
-      notice.innerHTML = `검색어 <strong>'${query}'</strong>에 대한 결과: <strong>${matchCount}개</strong> 카테고리가 일치합니다.`;
-    } else {
-      clearBtn.style.display = "none";
-      cards.forEach(card => card.style.display = "block");
-      notice.style.display = "none";
+    activeSearchKeyword = searchInput.value;
+    if (clearBtn) {
+      clearBtn.style.display = activeSearchKeyword.trim().length > 0 ? "block" : "none";
     }
+    applyCouponFilters();
   });
 
-  clearBtn.addEventListener("click", () => {
-    searchInput.value = "";
-    clearBtn.style.display = "none";
-    cards.forEach(card => card.style.display = "block");
-    notice.style.display = "none";
-    searchInput.focus();
-  });
+  if (clearBtn) {
+    clearBtn.addEventListener("click", () => {
+      searchInput.value = "";
+      activeSearchKeyword = "";
+      clearBtn.style.display = "none";
+      applyCouponFilters();
+      searchInput.focus();
+    });
+  }
 }
 
 // 4. 빠른 카테고리 필터 탭
 function initFilterTabs() {
-  const tabs = document.querySelectorAll(".filter-tab");
-  const cards = document.querySelectorAll(".banner-card");
+  const pills = document.querySelectorAll(".category-pill");
+  pills.forEach(pill => {
+    pill.addEventListener("click", () => {
+      pills.forEach(p => p.classList.remove("active"));
+      pill.classList.add("active");
+      activeCategoryFilter = pill.dataset.category || "all";
+      applyCouponFilters();
+    });
+  });
 
-  tabs.forEach(tab => {
+  // 하위 호환 .filter-tab 지원
+  const oldTabs = document.querySelectorAll(".filter-tab");
+  oldTabs.forEach(tab => {
     tab.addEventListener("click", () => {
-      tabs.forEach(t => t.classList.remove("active"));
+      oldTabs.forEach(t => t.classList.remove("active"));
       tab.classList.add("active");
-
-      const filter = tab.getAttribute("data-filter");
-
-      cards.forEach(card => {
-        const cat = card.getAttribute("data-category");
-        if (filter === "all" || cat === filter || cat === "all") {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
-      });
+      activeCategoryFilter = tab.getAttribute("data-filter") || "all";
+      applyCouponFilters();
     });
   });
 }
+
+// FAQ 아코디언 토글
+function toggleFaqCard(btn) {
+  if (!btn) return;
+  const card = btn.closest(".faq-card");
+  if (card) {
+    card.classList.toggle("open");
+  }
+}
+window.toggleFaqCard = toggleFaqCard;
 
 // 5. 상단 롤링 알림 티커 (실시간 현재 월 동적 반영)
 function initNoticeTicker() {
