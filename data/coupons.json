@@ -1,24 +1,12 @@
 {
-  "last_updated": "2026-09-09T07:08:50.654Z",
+  "last_updated": "2026-09-09T08:19:33.737Z",
   "version": "2.1.0",
-  "total_active_offers": 104,
+  "total_active_offers": 103,
   "categories": {
     "travel": {
       "title": "✈️ 여행 · 항공권 · 호텔 숙소 할인코드",
       "badge": "여행 특가",
       "items": [
-        {
-          "id": "trv-01",
-          "name": "아고다 (Agoda)",
-          "code": "AGODAHUB05",
-          "desc": "전 세계 호텔 및 리조트 예약 5%~7% 전용 즉시할인 코드",
-          "url": "https://www.agoda.com",
-          "expires": "2026-09-30",
-          "is_active": true,
-          "badge": "인기 1위",
-          "verified_at": "2026-09-09T04:36:57.144Z",
-          "type": "COUPON"
-        },
         {
           "id": "trv-02",
           "name": "트립닷컴 (Trip.com)",
@@ -27,7 +15,7 @@
           "url": "https://kr.trip.com/?Allianceid=10493743&SID=330736834&trip_sub1=&trip_sub3=D19750299",
           "expires": "2026-09-20",
           "is_active": true,
-          "badge": "항공+호텔",
+          "badge": "인기 1위",
           "verified_at": "2026-09-09T07:05:00.000Z",
           "type": "COUPON"
         },

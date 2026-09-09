@@ -1,41 +1,5 @@
 [
   {
-    "id": "trv-01",
-    "brand": "아고다 (Agoda)",
-    "brand_id": "agoda",
-    "category": "travel",
-    "type": "COUPON",
-    "title": "아고다 (Agoda)",
-    "description": "전 세계 호텔 및 리조트 예약 5%~7% 전용 즉시할인 코드",
-    "coupon_code": "AGODAHUB05",
-    "discount_percent": 5,
-    "is_up_to": false,
-    "end_date": "2026-09-30",
-    "conditions": [
-      "온라인 결제 시 적용 가능"
-    ],
-    "countries": [
-      "KR"
-    ],
-    "source_url": "https://www.agoda.com",
-    "source_kind": "MANUAL",
-    "target_url": "https://www.agoda.com",
-    "verified_at": "2026-09-09T04:36:57.144Z",
-    "evidence": {
-      "code_in_source": true,
-      "discount_in_source": true,
-      "expiry_in_source": true,
-      "domain_allowed": true,
-      "affiliate_matched": false,
-      "notes": [
-        "초기 레거시 데이터 검증 시드 마이그레이션"
-      ]
-    },
-    "confidence": 96,
-    "status": "PUBLISHED",
-    "badge": "인기 1위"
-  },
-  {
     "id": "trv-02",
     "brand": "트립닷컴 (Trip.com)",
     "brand_id": "tripcom",
@@ -70,7 +34,7 @@
     },
     "confidence": 100,
     "status": "PUBLISHED",
-    "badge": "항공+호텔",
+    "badge": "인기 1위",
     "affiliate_url": "https://kr.trip.com/?Allianceid=10493743&SID=330736834&trip_sub1=&trip_sub3=D19750299"
   },
   {

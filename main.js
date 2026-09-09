@@ -99,25 +99,25 @@ function updateUIWithData() {
         isHero: true
       },
       {
-        name: "아고다 전세계 호텔",
-        desc: "전 객실 5~7% 즉시할인",
-        code: "AGODAHUB05",
-        url: "https://www.agoda.com",
-        badge: "7%"
-      },
-      {
-        name: "알리 익스프레스",
-        desc: "$50 결제 시 $6 할인",
-        code: "ALI26SAVE",
-        url: "https://ko.aliexpress.com",
-        badge: "$6"
+        name: "테무 (Temu 초특가)",
+        desc: "신규 가입 즉시 1.5만원 혜택 & 최대 90% 할인",
+        code: "aly598867",
+        url: "https://temu.to/k/gbeee65wq0f",
+        badge: "쇼핑"
       },
       {
         name: "트립닷컴 항공·호텔",
-        desc: "패키지 최대 8% 할인",
+        desc: "국내외 항공권 & 호텔 최대 8% 할인",
         code: "TRIPNEW26",
-        url: "https://kr.trip.com",
+        url: "https://kr.trip.com/?Allianceid=10493743&SID=330736834&trip_sub1=&trip_sub3=D19750299",
         badge: "8%"
+      },
+      {
+        name: "G2A 글로벌 게임키",
+        desc: "스팀 최신 대작 게임 최대 90% 할인",
+        code: "G2ASAVE26",
+        url: "https://www.g2a.com/n/reflink-e5e4379872",
+        badge: "게임"
       },
       {
         name: "스픽 AI 영어회화",
@@ -1427,24 +1427,14 @@ function getFallbackData() {
       "badge": "여행 특가",
       "items": [
         {
-          "id": "trv-01",
-          "name": "아고다 (Agoda)",
-          "code": "AGODAHUB05",
-          "desc": "전 세계 호텔 및 리조트 예약 5%~7% 전용 즉시할인 코드",
-          "url": "https://www.agoda.com",
-          "expires": "2026-12-31",
-          "is_active": true,
-          "badge": "인기 1위"
-        },
-        {
           "id": "trv-02",
           "name": "트립닷컴 (Trip.com)",
           "code": "TRIPNEW26",
           "desc": "국내외 항공권 및 제휴 호텔 패키지 최대 8% 즉시할인",
-          "url": "https://kr.trip.com",
+          "url": "https://kr.trip.com/?Allianceid=10493743&SID=330736834&trip_sub1=&trip_sub3=D19750299",
           "expires": "2026-12-31",
           "is_active": true,
-          "badge": "항공+호텔"
+          "badge": "인기 1위"
         },
         {
           "id": "trv-03",
