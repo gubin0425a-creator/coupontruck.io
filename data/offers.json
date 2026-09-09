@@ -56,21 +56,22 @@
     ],
     "source_url": "https://kr.trip.com",
     "source_kind": "MANUAL",
-    "target_url": "https://kr.trip.com",
-    "verified_at": "2026-09-09T04:36:57.144Z",
+    "target_url": "https://kr.trip.com/?Allianceid=10493743&SID=330736834&trip_sub1=&trip_sub3=D19750299",
+    "verified_at": "2026-09-09T07:05:00.000Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
       "expiry_in_source": true,
       "domain_allowed": true,
-      "affiliate_matched": false,
+      "affiliate_matched": true,
       "notes": [
-        "초기 레거시 데이터 검증 시드 마이그레이션"
+        "트립닷컴 공식 제휴 파트너스 트래킹 링크(최대 8% 수수료) 연동 완료"
       ]
     },
-    "confidence": 96,
+    "confidence": 100,
     "status": "PUBLISHED",
-    "badge": "항공+호텔"
+    "badge": "항공+호텔",
+    "affiliate_url": "https://kr.trip.com/?Allianceid=10493743&SID=330736834&trip_sub1=&trip_sub3=D19750299"
   },
   {
     "id": "trv-03",

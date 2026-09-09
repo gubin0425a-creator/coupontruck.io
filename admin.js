@@ -258,7 +258,7 @@ const BRAND_PRESETS = {
     brand: "트립닷컴 (Trip.com)",
     code: "TRIPNEW26",
     desc: "국내외 항공권 및 제휴 호텔 패키지 최대 8% 즉시할인",
-    url: "https://kr.trip.com",
+    url: "https://kr.trip.com/?Allianceid=10493743&SID=330736834&trip_sub1=&trip_sub3=D19750299",
     badge: "항공+호텔",
     expires: "2026-09-30",
     type: "COUPON"

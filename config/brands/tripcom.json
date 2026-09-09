@@ -1,0 +1,37 @@
+{
+  "brand_id": "tripcom",
+  "name": "트립닷컴 (Trip.com)",
+  "category": "travel",
+  "type": "COUPON",
+  "allowed_domains": [
+    "trip.com",
+    "kr.trip.com",
+    "www.trip.com"
+  ],
+  "sources": [
+    {
+      "type": "OFFERS_PAGE",
+      "url": "https://kr.trip.com",
+      "priority": 1,
+      "country": "KR"
+    }
+  ],
+  "affiliate_mapping": {
+    "network": "trip_affiliate",
+    "tracking_url": "https://kr.trip.com/?Allianceid=10493743&SID=330736834&trip_sub1=&trip_sub3=D19750299",
+    "disclosure_text": "트립닷컴 제휴 파트너스 활동의 일환으로 일정 수수료를 제공받을 수 있습니다."
+  },
+  "country": "KR",
+  "check_interval_hours": 12,
+  "publication_policy": {
+    "min_confidence": 95,
+    "auto_publish_types": [
+      "COUPON",
+      "PROMOTION",
+      "REFERRAL"
+    ],
+    "require_evidence": [
+      "domain_allowed"
+    ]
+  }
+}

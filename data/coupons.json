@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-09T06:51:34.154Z",
+  "last_updated": "2026-09-09T07:08:50.654Z",
   "version": "2.1.0",
   "total_active_offers": 104,
   "categories": {
@@ -24,11 +24,11 @@
           "name": "트립닷컴 (Trip.com)",
           "code": "TRIPNEW26",
           "desc": "국내외 항공권 및 제휴 호텔 패키지 최대 8% 즉시할인",
-          "url": "https://kr.trip.com",
+          "url": "https://kr.trip.com/?Allianceid=10493743&SID=330736834&trip_sub1=&trip_sub3=D19750299",
           "expires": "2026-09-20",
           "is_active": true,
           "badge": "항공+호텔",
-          "verified_at": "2026-09-09T04:36:57.144Z",
+          "verified_at": "2026-09-09T07:05:00.000Z",
           "type": "COUPON"
         },
         {
