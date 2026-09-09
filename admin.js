@@ -223,15 +223,15 @@ const BRAND_PRESETS = {
     expires: "2026-12-31",
     type: "REFERRAL"
   },
-  agoda: {
-    category: "travel",
-    brand: "아고다 (Agoda)",
-    code: "AGODAHUB05",
-    desc: "전 세계 호텔 및 리조트 예약 5%~7% 전용 즉시할인 코드",
-    url: "https://www.agoda.com",
-    badge: "인기 1위",
-    expires: "2026-09-30",
-    type: "COUPON"
+  iherb: {
+    category: "shopping",
+    brand: "아이허브 (iHerb)",
+    code: "RKB1777",
+    desc: "영양제, 유산균, 보충제, 웰니스 전 품목 상시 5%~10% 즉시할인 공식 리워드",
+    url: "https://kr.iherb.com/?rcode=RKB1777",
+    badge: "영양제 1위",
+    expires: "2026-12-31",
+    type: "REFERRAL"
   },
   aliexpress: {
     category: "shopping",

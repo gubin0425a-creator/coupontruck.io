@@ -936,12 +936,12 @@
     "brand": "아이허브 (iHerb)",
     "brand_id": "iherb",
     "category": "shopping",
-    "type": "COUPON",
+    "type": "REFERRAL",
     "title": "아이허브 (iHerb)",
-    "description": "영양제, 오메가3, 보충제, 웰니스 전 품목 5%~10% 상시할인",
-    "coupon_code": "HUB9999",
-    "discount_percent": 5,
-    "is_up_to": false,
+    "description": "영양제, 유산균, 보충제, 웰니스 전 품목 5%~10% 즉시할인 공식 리워드 코드",
+    "coupon_code": "RKB1777",
+    "discount_percent": 10,
+    "is_up_to": true,
     "end_date": "2026-09-30",
     "conditions": [
       "온라인 결제 시 적용 가능"
@@ -951,21 +951,22 @@
     ],
     "source_url": "https://kr.iherb.com",
     "source_kind": "MANUAL",
-    "target_url": "https://kr.iherb.com",
-    "verified_at": "2026-09-09T04:36:57.144Z",
+    "target_url": "https://kr.iherb.com/?rcode=RKB1777",
+    "verified_at": "2026-09-09T09:05:00.000Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
       "expiry_in_source": true,
       "domain_allowed": true,
-      "affiliate_matched": false,
+      "affiliate_matched": true,
       "notes": [
-        "초기 레거시 데이터 검증 시드 마이그레이션"
+        "아이허브 공식 리워드 제휴 코드(RKB1777) 및 트래킹 링크 연동 완료"
       ]
     },
-    "confidence": 96,
+    "confidence": 100,
     "status": "PUBLISHED",
-    "badge": "영양제필수"
+    "badge": "영양제 1위",
+    "affiliate_url": "https://kr.iherb.com/?rcode=RKB1777"
   },
   {
     "id": "shp-04",

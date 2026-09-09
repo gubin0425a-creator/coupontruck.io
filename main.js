@@ -1685,9 +1685,9 @@ function getFallbackData() {
         {
           "id": "shp-02",
           "name": "테무 (Temu)",
-          "code": "TEMU90OFF",
-          "desc": "신규 앱 설치 & 가입 시 최대 90% 할인 및 13만원 쿠폰세트",
-          "url": "https://www.temu.com",
+          "code": "aly598867",
+          "desc": "신규 앱 설치 & 가입 시 1.5만원 혜택 + 최대 90% 할인",
+          "url": "https://temu.to/k/gbeee65wq0f",
           "expires": "2026-12-31",
           "is_active": true,
           "badge": "초특가"
@@ -1695,12 +1695,12 @@ function getFallbackData() {
         {
           "id": "shp-03",
           "name": "아이허브 (iHerb)",
-          "code": "HUB9999",
-          "desc": "영양제, 오메가3, 보충제, 웰니스 전 품목 5%~10% 상시할인",
-          "url": "https://kr.iherb.com",
+          "code": "RKB1777",
+          "desc": "영양제, 유산균, 보충제, 웰니스 전 품목 5%~10% 즉시할인",
+          "url": "https://kr.iherb.com/?rcode=RKB1777",
           "expires": "2026-12-31",
           "is_active": true,
-          "badge": "영양제필수"
+          "badge": "영양제 1위"
         },
         {
           "id": "shp-04",
