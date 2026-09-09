@@ -7,6 +7,8 @@ const BASE_DIR = process.cwd();
 const PUBLIC_FILES = [
   path.join(BASE_DIR, "index.html"),
   path.join(BASE_DIR, "main.js"),
+  path.join(BASE_DIR, "admin.html"),
+  path.join(BASE_DIR, "admin.js"),
   path.join(BASE_DIR, "styles.css"),
   path.join(BASE_DIR, "data", "coupons.json")
 ];
@@ -14,6 +16,7 @@ const PUBLIC_FILES = [
 // 검사할 위험 시크릿 패턴 정규식
 const FORBIDDEN_PATTERNS: { name: string; regex: RegExp }[] = [
   { name: "하드코딩 마스터 비밀번호 (635835)", regex: /\b635835\b/ },
+  { name: "하드코딩 구형 관리자 토큰 (coupontruck_admin_2026)", regex: /coupontruck_admin_\d+/i },
   { name: "Google API Key (AIzaSy...)", regex: /AIzaSy[0-9A-Za-z-_]{33}/ },
   { name: "GitHub Personal Access Token (ghp_...)", regex: /ghp_[0-9A-Za-z]{36}/ },
   { name: "OpenAI Secret Key (sk-...)", regex: /sk-[a-zA-Z0-9]{20,}/ },

@@ -1356,7 +1356,7 @@ function handleAdminDeleteCoupon(catKey, code) {
     refreshAdminTable();
     updateUIWithData();
 
-    const adminToken = sessionStorage.getItem("COUPONTRUCK_ADMIN_AUTH_TOKEN") || ADMIN_PW_HASH;
+    const adminToken = sessionStorage.getItem("COUPONTRUCK_ADMIN_AUTH_TOKEN") || "";
     fetch(`/api/coupons?code=${encodeURIComponent(code)}`, {
       method: "DELETE",
       headers: { "X-Admin-Token": adminToken }
@@ -1376,7 +1376,7 @@ function persistDataChanges(newItem, catKey) {
 
   // 서버 API가 살아있는 경우 data/coupons.json 파일에도 즉시 저장
   if (newItem && catKey) {
-    const adminToken = sessionStorage.getItem("COUPONTRUCK_ADMIN_AUTH_TOKEN") || ADMIN_PW_HASH;
+    const adminToken = sessionStorage.getItem("COUPONTRUCK_ADMIN_AUTH_TOKEN") || "";
     fetch("/api/coupons", {
       method: "POST",
       headers: {

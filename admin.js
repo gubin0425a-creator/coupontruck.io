@@ -20,6 +20,23 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 // 관리자 인증 상태 확인
 async function checkAdminAuth() {
+  // 보안: 로컬 환경(127.0.0.1 또는 localhost)이 아닐 경우 관리자 대시보드 접근 원천 차단
+  const host = window.location.hostname;
+  if (host !== "localhost" && host !== "127.0.0.1") {
+    document.body.innerHTML = `
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;background:#090d16;color:#fff;font-family:-apple-system,BlinkMacSystemFont,sans-serif;text-align:center;padding:24px;">
+        <div style="font-size:48px;margin-bottom:16px;">🔒</div>
+        <h2 style="color:#ef4444;font-size:22px;font-weight:700;margin-bottom:10px;">관리자 전용 페이지 접근 제한</h2>
+        <p style="color:#94a3b8;font-size:14px;max-width:460px;line-height:1.6;margin-bottom:24px;">
+          쿠폰트럭 관리자 페이지는 보안 격리를 위해 <strong>내 PC 로컬 서버(127.0.0.1:8000)</strong>에서만 실행 가능합니다.<br>
+          외부 공개 웹(GitHub Pages 등)에서는 실행되지 않습니다.
+        </p>
+        <a href="index.html" style="padding:10px 22px;background:#2563eb;color:#fff;text-decoration:none;border-radius:8px;font-size:14px;font-weight:600;">메인 홈으로 이동</a>
+      </div>
+    `;
+    return;
+  }
+
   const isAuth = sessionStorage.getItem("COUPONTRUCK_LOCAL_ADMIN_AUTH") === "true";
   const loginGate = document.getElementById("adminLoginGate");
   const mainDash = document.getElementById("adminMainDashboard");
@@ -69,6 +86,11 @@ async function checkServerStatus() {
   }
 }
 
+// 안전한 관리자 토큰 조회 헬퍼 (하드코딩 폴백 없음)
+function getAdminToken() {
+  return sessionStorage.getItem("COUPONTRUCK_ADMIN_AUTH_TOKEN") || "";
+}
+
 // 로그인 제출 처리
 async function handleAdminLogin(e) {
   e.preventDefault();
@@ -94,16 +116,7 @@ async function handleAdminLogin(e) {
     console.warn("인증 API 호출 실패:", err);
   }
 
-  // 서버가 응답하지 않을 때의 비상 로컬 fallback (개발 편의)
-  if (token === "coupontruck_admin_2026") {
-    sessionStorage.setItem("COUPONTRUCK_LOCAL_ADMIN_AUTH", "true");
-    sessionStorage.setItem("COUPONTRUCK_ADMIN_AUTH_TOKEN", token);
-    showToast("🔓 관리자 인증 성공");
-    checkAdminAuth();
-    return;
-  }
-
-  alert("❌ 관리자 보안 토큰이 올바르지 않습니다. (.admin_token 파일 확인)");
+  alert("❌ 관리자 보안 토큰이 올바르지 않거나 로컬 서버(8000)에 연결할 수 없습니다. (.admin_token 파일 확인)");
   if (inputEl) {
     inputEl.value = "";
     inputEl.focus();
@@ -471,7 +484,7 @@ async function handleSavePromoCode(e) {
     verified_at: new Date().toISOString()
   };
 
-  const adminToken = sessionStorage.getItem("COUPONTRUCK_ADMIN_AUTH_TOKEN") || "coupontruck_admin_2026";
+  const adminToken = getAdminToken();
   let savedToServer = false;
 
   try {
@@ -710,7 +723,7 @@ function loadItemForEdit(catKey, code, id) {
 async function deleteItem(catKey, code, id) {
   if (!confirm(`'${code}' 쿠폰을 정말 삭제하시겠습니까?`)) return;
 
-  const adminToken = sessionStorage.getItem("COUPONTRUCK_ADMIN_AUTH_TOKEN") || "coupontruck_admin_2026";
+  const adminToken = getAdminToken();
   try {
     await fetch(`/api/coupons?code=${encodeURIComponent(code)}&id=${encodeURIComponent(id)}`, {
       method: "DELETE",
@@ -736,7 +749,7 @@ async function deleteItem(catKey, code, id) {
 
 // 원클릭 활성/비활성 스위치 토글
 async function toggleItemStatus(catKey, code, id, newState) {
-  const adminToken = sessionStorage.getItem("COUPONTRUCK_ADMIN_AUTH_TOKEN") || "coupontruck_admin_2026";
+  const adminToken = getAdminToken();
 
   if (COUPON_DATA.categories[catKey]) {
     const item = COUPON_DATA.categories[catKey].items.find(i => (id && i.id === id) || i.code === code);
@@ -836,7 +849,7 @@ async function handleBatchDelete() {
   if (selectedItemCodes.size === 0) return;
   if (!confirm(`선택한 ${selectedItemCodes.size}개 쿠폰을 모두 영구 삭제하시겠습니까?`)) return;
 
-  const adminToken = sessionStorage.getItem("COUPONTRUCK_ADMIN_AUTH_TOKEN") || "coupontruck_admin_2026";
+  const adminToken = getAdminToken();
   const codesArray = Array.from(selectedItemCodes);
 
   try {
@@ -869,7 +882,7 @@ async function handleBatchDelete() {
 async function handleBatchStatus(isActive) {
   if (selectedItemCodes.size === 0) return;
 
-  const adminToken = sessionStorage.getItem("COUPONTRUCK_ADMIN_AUTH_TOKEN") || "coupontruck_admin_2026";
+  const adminToken = getAdminToken();
   const codesArray = Array.from(selectedItemCodes);
 
   try {
@@ -912,7 +925,7 @@ async function triggerRunUpdate() {
     btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> 갱신 실행 중...`;
   }
 
-  const adminToken = sessionStorage.getItem("COUPONTRUCK_ADMIN_AUTH_TOKEN") || "coupontruck_admin_2026";
+  const adminToken = getAdminToken();
 
   try {
     const res = await fetch("/api/run-update", {
@@ -965,7 +978,7 @@ function handleImportJsonFile(event) {
 
       if (!confirm("업로드한 파일의 내용으로 전체 쿠폰 데이터를 복원하시겠습니까?")) return;
 
-      const adminToken = sessionStorage.getItem("COUPONTRUCK_ADMIN_AUTH_TOKEN") || "coupontruck_admin_2026";
+      const adminToken = getAdminToken();
       try {
         await fetch("/api/coupons/import", {
           method: "POST",
