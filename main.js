@@ -900,16 +900,16 @@ function createLocalAdminAuthModalDOM() {
       </div>
       <div class="admin-auth-body">
         <div class="auth-notice-box">
-          <strong>🔑 로컬 관리자 마스터 로그인</strong><br>
-          마스터 비밀번호를 입력하시면 즉시 쿠폰 추가/삭제 관리자 대시보드가 열립니다.
+          <strong>🔑 로컬 관리자 로그인</strong><br>
+          .admin_token에 설정된 관리자 보안 토큰을 입력하시면 대시보드가 열립니다.
         </div>
 
         <form id="localAdminLoginForm" onsubmit="handleLocalAdminLoginSubmit(event)">
           <div class="auth-form-group">
-            <label>관리자 마스터 비밀번호</label>
+            <label>관리자 보안 토큰</label>
             <div class="auth-input-wrapper">
               <i class="fa-solid fa-key auth-input-icon"></i>
-              <input type="password" id="localAdminPasswordInput" placeholder="마스터 비밀번호 입력" required autofocus autocomplete="off">
+              <input type="password" id="localAdminPasswordInput" placeholder="보안 토큰 입력 (.admin_token)" required autofocus autocomplete="off">
             </div>
           </div>
 
