@@ -3310,6 +3310,44 @@
     "badge": "환전꿀팁"
   },
   {
+    "id": "gam-g2a-01",
+    "brand": "G2A (글로벌 1위 게임키 마켓)",
+    "brand_id": "g2a",
+    "category": "game",
+    "type": "REFERRAL",
+    "title": "G2A (글로벌 1위 게임키 & 소프트웨어 마켓)",
+    "description": "스팀·닌텐도·플레이스테이션 게임키, 기프트카드, 윈도우 키 전 품목 실시간 최저가 할인",
+    "coupon_code": "PROMO-APPLIED",
+    "discount_percent": 5,
+    "is_up_to": true,
+    "end_date": "2026-12-31",
+    "conditions": [
+      "G2A Goldmine 공식 링크 접속 시 전 품목 실시간 할인가 적용"
+    ],
+    "countries": [
+      "KR",
+      "GLOBAL"
+    ],
+    "source_url": "https://www.g2a.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.g2a.com/n/reflink-e5e4379872",
+    "affiliate_url": "https://www.g2a.com/n/reflink-e5e4379872",
+    "verified_at": "2026-09-09T06:00:00.000Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": true,
+      "notes": [
+        "G2A Goldmine 공식 파트너스 리프링크 적용 완료 (5% 캐시백 / 글로벌 최저가)"
+      ]
+    },
+    "confidence": 100,
+    "status": "PUBLISHED",
+    "badge": "글로벌 1위"
+  },
+  {
     "id": "gam-01",
     "brand": "스팀 (Steam)",
     "brand_id": "steam",

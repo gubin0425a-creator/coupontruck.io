@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-09-09T05:40:44.176Z",
+  "last_updated": "2026-09-09T06:06:54.902Z",
   "version": "2.1.0",
-  "total_active_offers": 103,
+  "total_active_offers": 104,
   "categories": {
     "travel": {
       "title": "✈️ 여행 · 항공권 · 호텔 숙소 할인코드",
@@ -1042,6 +1042,18 @@
       "title": "🎮 게임 · 디지털 소프트웨어 프로모션",
       "badge": "게임 혜택",
       "items": [
+        {
+          "id": "gam-g2a-01",
+          "name": "G2A (글로벌 1위 게임키 & 소프트웨어 마켓)",
+          "code": "PROMO-APPLIED",
+          "desc": "스팀·닌텐도·플레이스테이션 게임키, 기프트카드, 윈도우 키 전 품목 실시간 최저가 할인",
+          "url": "https://www.g2a.com/n/reflink-e5e4379872",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "글로벌 1위",
+          "verified_at": "2026-09-09T06:00:00.000Z",
+          "type": "REFERRAL"
+        },
         {
           "id": "gam-01",
           "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 38% OFF)",

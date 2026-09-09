@@ -213,6 +213,16 @@ const BRAND_PRESETS = {
     expires: "2026-12-31",
     type: "COUPON"
   },
+  g2a: {
+    category: "game",
+    brand: "G2A (글로벌 1위 게임키 마켓)",
+    code: "PROMO-APPLIED",
+    desc: "스팀·닌텐도·플레이스테이션 게임키, 기프트카드, 윈도우 키 전 품목 실시간 최저가 할인",
+    url: "https://www.g2a.com/n/reflink-e5e4379872",
+    badge: "글로벌 1위",
+    expires: "2026-12-31",
+    type: "REFERRAL"
+  },
   agoda: {
     category: "travel",
     brand: "아고다 (Agoda)",
