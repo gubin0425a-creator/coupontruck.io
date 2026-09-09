@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-09T06:06:54.902Z",
+  "last_updated": "2026-09-09T06:51:34.154Z",
   "version": "2.1.0",
   "total_active_offers": 104,
   "categories": {
@@ -313,6 +313,18 @@
       "badge": "쇼핑 핫딜",
       "items": [
         {
+          "id": "shop-temu-01",
+          "name": "테무 (Temu) 웰컴 쿠폰팩 & 최대 30% 신규 할인코드",
+          "code": "aly598867",
+          "desc": "신규 앱 가입 시 웰컴 쿠폰팩 증정 + 검색창에 'aly598867' 입력 시 즉시할인 적용 (최소 주문 13,000원 적용)",
+          "url": "https://temu.to/k/gbeee65wq0f",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "최대 30%",
+          "verified_at": "2026-09-09T06:50:00.000Z",
+          "type": "REFERRAL"
+        },
+        {
           "id": "shp-01",
           "name": "알리익스프레스 (AliExpress)",
           "code": "ALI26SAVE",
@@ -321,18 +333,6 @@
           "expires": "2026-09-10",
           "is_active": true,
           "badge": "직구 1위",
-          "verified_at": "2026-09-09T04:36:57.144Z",
-          "type": "COUPON"
-        },
-        {
-          "id": "shp-02",
-          "name": "테무 (Temu)",
-          "code": "TEMU90OFF",
-          "desc": "신규 앱 설치 & 가입 시 최대 90% 할인 및 13만원 쿠폰세트",
-          "url": "https://www.temu.com",
-          "expires": "2026-09-30",
-          "is_active": true,
-          "badge": "초특가",
           "verified_at": "2026-09-09T04:36:57.144Z",
           "type": "COUPON"
         },

@@ -893,6 +893,45 @@
     "badge": "특급호텔"
   },
   {
+    "id": "shop-temu-01",
+    "brand": "테무 (Temu)",
+    "brand_id": "temu",
+    "category": "shopping",
+    "type": "REFERRAL",
+    "title": "테무 (Temu) 웰컴 쿠폰팩 & 최대 30% 신규 할인코드",
+    "description": "신규 앱 가입 시 웰컴 쿠폰팩 증정 + 검색창에 'aly598867' 입력 시 즉시할인 적용 (최소 주문 13,000원 적용)",
+    "coupon_code": "aly598867",
+    "discount_percent": 30,
+    "is_up_to": true,
+    "end_date": "2026-12-31",
+    "conditions": [
+      "Temu 앱 검색창에서 aly598867 검색 또는 링크 경유 시 혜택 적용",
+      "한국 내 신규 앱 사용자 대상"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.temu.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://temu.to/k/gbeee65wq0f",
+    "affiliate_url": "https://temu.to/k/gbeee65wq0f",
+    "referral_code": "aly598867",
+    "verified_at": "2026-09-09T06:50:00.000Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": true,
+      "notes": [
+        "테무 공식 제휴 파트너스 링크 & 전용 프로모션 코드 연동 완료"
+      ]
+    },
+    "confidence": 100,
+    "status": "PUBLISHED",
+    "badge": "최대 30%"
+  },
+  {
     "id": "shp-01",
     "brand": "알리익스프레스 (AliExpress)",
     "brand_id": "aliexpress",
@@ -926,43 +965,6 @@
     "confidence": 96,
     "status": "PUBLISHED",
     "badge": "직구 1위"
-  },
-  {
-    "id": "shp-02",
-    "brand": "테무 (Temu)",
-    "brand_id": "temu",
-    "category": "shopping",
-    "type": "COUPON",
-    "title": "테무 (Temu)",
-    "description": "신규 앱 설치 & 가입 시 최대 90% 할인 및 13만원 쿠폰세트",
-    "coupon_code": "TEMU90OFF",
-    "discount_percent": 90,
-    "max_discount_percent": 90,
-    "is_up_to": true,
-    "end_date": "2026-09-30",
-    "conditions": [
-      "온라인 결제 시 적용 가능"
-    ],
-    "countries": [
-      "KR"
-    ],
-    "source_url": "https://www.temu.com",
-    "source_kind": "MANUAL",
-    "target_url": "https://www.temu.com",
-    "verified_at": "2026-09-09T04:36:57.144Z",
-    "evidence": {
-      "code_in_source": true,
-      "discount_in_source": true,
-      "expiry_in_source": true,
-      "domain_allowed": true,
-      "affiliate_matched": false,
-      "notes": [
-        "초기 레거시 데이터 검증 시드 마이그레이션"
-      ]
-    },
-    "confidence": 96,
-    "status": "PUBLISHED",
-    "badge": "초특가"
   },
   {
     "id": "shp-03",

@@ -243,6 +243,16 @@ const BRAND_PRESETS = {
     expires: "2026-09-30",
     type: "COUPON"
   },
+  temu: {
+    category: "shopping",
+    brand: "테무 (Temu)",
+    code: "aly598867",
+    desc: "신규 앱 가입 시 웰컴 쿠폰팩 증정 + 검색창에 'aly598867' 입력 시 최대 30% 즉시할인",
+    url: "https://temu.to/k/gbeee65wq0f",
+    badge: "최대 30%",
+    expires: "2026-12-31",
+    type: "REFERRAL"
+  },
   trip: {
     category: "travel",
     brand: "트립닷컴 (Trip.com)",
