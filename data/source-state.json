@@ -1,0 +1,17 @@
+{
+  "https://www.agoda.com": {
+    "url": "https://www.agoda.com",
+    "last_checked": "2026-09-09T04:37:41.344Z",
+    "content_hash": "d8bb3aacaaf370405cf590cb2ebb4be4f9746b8abfce60b07ce0eeb9cf1d3887"
+  },
+  "https://ko.aliexpress.com": {
+    "url": "https://ko.aliexpress.com",
+    "last_checked": "2026-09-09T04:37:41.346Z",
+    "content_hash": "39ee957e08aebe6e71f9afa55dcd0fdcd7ada004ce62dc1b034d490e39780646"
+  },
+  "https://www.gamsgo.com": {
+    "url": "https://www.gamsgo.com",
+    "last_checked": "2026-09-09T04:37:41.347Z",
+    "content_hash": "0969d170b60ab727c8c9ffce3f73796d4a8f1ab0a23886df4277201a87b2fa93"
+  }
+}

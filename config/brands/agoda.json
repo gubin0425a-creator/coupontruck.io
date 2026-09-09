@@ -1,0 +1,31 @@
+{
+  "brand_id": "agoda",
+  "name": "아고다 (Agoda)",
+  "category": "travel",
+  "type": "COUPON",
+  "allowed_domains": [
+    "agoda.com",
+    "www.agoda.com",
+    "partner.agoda.com"
+  ],
+  "sources": [
+    {
+      "type": "OFFERS_PAGE",
+      "url": "https://www.agoda.com",
+      "priority": 1,
+      "country": "KR"
+    }
+  ],
+  "affiliate_mapping": {
+    "network": "agoda_partners",
+    "tracking_url": "https://www.agoda.com",
+    "disclosure_text": "아고다 제휴 파트너스 활동의 일환으로 예약 시 수수료를 제공받을 수 있습니다."
+  },
+  "country": "KR",
+  "check_interval_hours": 6,
+  "publication_policy": {
+    "min_confidence": 95,
+    "auto_publish_types": ["COUPON", "PROMOTION", "SALE"],
+    "require_evidence": ["domain_allowed"]
+  }
+}

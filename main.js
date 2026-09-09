@@ -73,6 +73,16 @@ async function loadCouponData() {
 function updateUIWithData() {
   if (!COUPON_DATA || !COUPON_DATA.categories) return;
 
+  // 최근 검증 시간 동적 표시
+  const verifiedEl = document.getElementById("lastVerifiedStatus");
+  if (verifiedEl && COUPON_DATA.last_updated) {
+    try {
+      const d = new Date(COUPON_DATA.last_updated);
+      const dateStr = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')} KST`;
+      verifiedEl.textContent = `최근 검증 완료: ${dateStr} (신뢰도 95+ 규칙 통과)`;
+    } catch (e) {}
+  }
+
   // 사이드바 TOP 5 갱신 (겜스고 1위 고정 및 대표 딜 유지)
   const topListEl = document.querySelector(".top-deal-list");
   if (topListEl) {
@@ -280,13 +290,13 @@ function showCouponCode(name, code, url) {
     showToast(`[${name}] 할인코드 '${code}'가 복사되었습니다! 결제창에 붙여넣으세요.`);
     if (url && url !== "#") {
       setTimeout(() => {
-        window.open(url, "_blank");
+        safeOpenUrl(url);
       }, 500);
     }
   }).catch(() => {
     prompt(`[${name}] 할인코드입니다. Ctrl+C로 복사하세요:`, code);
     if (url && url !== "#") {
-      window.open(url, "_blank");
+      safeOpenUrl(url);
     }
   });
 }
@@ -304,7 +314,7 @@ function openGamsgoPartner(e) {
     navigator.clipboard.writeText(code);
   } catch (err) {}
   showToast("🎉 겜스고 프로모션 코드 [DASSD]가 복사되었습니다! 겜스고로 이동합니다 🚀");
-  window.open(url, "_blank");
+  safeOpenUrl(url);
 }
 window.openGamsgoPartner = openGamsgoPartner;
 
@@ -452,12 +462,12 @@ function copyAndRedirect(name, code, url) {
     showToast(`'${code}' 복사 완료! 공식 사이트로 이동합니다.`);
     if (url && url !== "#") {
       setTimeout(() => {
-        window.open(url, "_blank");
+        safeOpenUrl(url);
       }, 500);
     }
   }).catch(() => {
     prompt(`[${name}] 할인코드입니다:`, code);
-    if (url && url !== "#") window.open(url, "_blank");
+    if (url && url !== "#") safeOpenUrl(url);
   });
 }
 
@@ -709,7 +719,6 @@ function initBrandScrollContainer() {
    - 배포된 공개 웹사이트(GitHub Pages 등)에서는 관리자 기능/단축키를 전면 비활성화
    - 관리자 단축키: Ctrl + Shift + A (로컬 PC 전용)
    - 관리자 터치: 로고 3회 연속 클릭 (로컬 PC 전용)
-   - 마스터 비밀번호: 635835
    ========================================================================== */
 
 // 0. 로컬 관리자 환경 판별 (localhost 또는 127.0.0.1)
@@ -718,57 +727,19 @@ function isLocalAdminEnvironment() {
   return host === "localhost" || host === "127.0.0.1" || host === "0.0.0.0";
 }
 
-// 이전 잠금/차단 잔여 데이터 즉시 영구 제거
-try {
-  localStorage.removeItem("COUPONTRUCK_ADMIN_LOCKOUT");
-  localStorage.removeItem("COUPONTRUCK_AUTH_FAILURES");
-} catch (e) {}
-
-// 1. 배포 사이트 소스 검사 방어 리스너 (로컬 환경에서는 개발 편의를 위해 차단 해제)
-(function initSecurityGuards() {
-  if (isLocalAdminEnvironment()) {
-    // 로컬 환경에서는 개발자 도구(F12) 및 우클릭 검사를 자유롭게 허용
-    return;
+// 안전한 외부 URL 열기 (프로토콜 검증 및 noopener/noreferrer 적용)
+function safeOpenUrl(url) {
+  if (!url || url === "#") return;
+  try {
+    const parsed = new URL(url, window.location.origin);
+    if (parsed.protocol !== "http:" && parsed.protocol !== "https:") {
+      console.warn("차단된 안전하지 않은 프로토콜:", parsed.protocol);
+      return;
+    }
+    window.open(parsed.href, "_blank", "noopener,noreferrer");
+  } catch (e) {
+    console.error("잘못된 URL 형식:", url);
   }
-
-  // 배포된 공개 웹사이트(GitHub Pages 등)에서는 소스 검사 및 F12 차단
-  document.addEventListener("contextmenu", (e) => {
-    if (e.target.tagName !== "INPUT" && e.target.tagName !== "TEXTAREA") {
-      e.preventDefault();
-    }
-  });
-
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "F12" || e.keyCode === 123) {
-      e.preventDefault();
-      showToast("⚠️ 보안 정책에 따라 소스 검사 및 개발자 도구 접근이 제한됩니다.");
-      return false;
-    }
-    if (e.ctrlKey && e.shiftKey && ["I", "i", "J", "j", "C", "c"].includes(e.key)) {
-      e.preventDefault();
-      showToast("⚠️ 보안 정책에 따라 소스 검사 및 개발자 도구 접근이 제한됩니다.");
-      return false;
-    }
-    if (e.ctrlKey && (e.key === "u" || e.key === "U")) {
-      e.preventDefault();
-      showToast("⚠️ 보안 정책에 따라 소스 검사가 제한됩니다.");
-      return false;
-    }
-  }, true);
-})();
-
-// 암호학적 해시 검증 상수 (Salted SHA-256)
-const SEC_SALT = "COUPONTRUCK_SECURE_SALT_v2";
-const ADMIN_PW_HASH = "8642fae188fbeb0f509177ebcfcd750e4acb0b313a54a90595f2e9a164a280df";
-
-// SHA-256 비동기 암호화 함수
-async function computeHash(text) {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(SEC_SALT + text);
-  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-  return Array.from(new Uint8Array(hashBuffer))
-    .map(b => b.toString(16).padStart(2, "0"))
-    .join("");
 }
 
 // 로컬 관리자 세션 유효성 검사
@@ -956,26 +927,32 @@ function createLocalAdminAuthModalDOM() {
 async function handleLocalAdminLoginSubmit(e) {
   e.preventDefault();
   const inputPw = (document.getElementById("localAdminPasswordInput")?.value || "").trim();
-  const inputHash = await computeHash(inputPw);
-  const customPwHash = localStorage.getItem("COUPONTRUCK_CUSTOM_PW_HASH");
+  if (!inputPw) return;
 
-  const isMasterPw = (inputPw === "635835") || 
-                     (inputHash === ADMIN_PW_HASH) || 
-                     (customPwHash && inputHash === customPwHash);
-
-  if (isMasterPw) {
-    sessionStorage.setItem("COUPONTRUCK_LOCAL_ADMIN_AUTH", "true");
-    sessionStorage.setItem("COUPONTRUCK_ADMIN_AUTH_TOKEN", inputHash);
-    closeAdminAuthModal();
-    showAdminDashboard();
-    showToast("🔓 관리자 대시보드가 열렸습니다!");
-  } else {
-    alert("❌ 마스터 비밀번호가 올바르지 않습니다.");
-    const inputEl = document.getElementById("localAdminPasswordInput");
-    if (inputEl) {
-      inputEl.value = "";
-      inputEl.focus();
+  try {
+    const res = await fetch("/api/auth", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token: inputPw })
+    });
+    const data = await res.json();
+    if (res.ok && data.authenticated) {
+      sessionStorage.setItem("COUPONTRUCK_LOCAL_ADMIN_AUTH", "true");
+      sessionStorage.setItem("COUPONTRUCK_ADMIN_AUTH_TOKEN", inputPw);
+      closeAdminAuthModal();
+      showAdminDashboard();
+      showToast("🔓 관리자 대시보드가 열렸습니다!");
+      return;
     }
+  } catch (err) {
+    console.warn("로컬 서버 인증 통신 실패:", err);
+  }
+
+  alert("❌ 관리자 토큰이 올바르지 않거나 로컬 서버(http://127.0.0.1:8000)가 실행 중이지 않습니다.");
+  const inputEl = document.getElementById("localAdminPasswordInput");
+  if (inputEl) {
+    inputEl.value = "";
+    inputEl.focus();
   }
 }
 
@@ -986,21 +963,10 @@ function updateSessionBar() {
   timeEl.textContent = "· data/coupons.json 실시간 영구 연동 중 (로컬 전용)";
 }
 
-// 로컬 관리자 비밀번호 변경
-async function openAdminSecuritySettings() {
+// 로컬 관리자 설정 안내
+function openAdminSecuritySettings() {
   if (!isAdminSessionValid()) return;
-
-  const changePw = confirm("로컬 관리자 마스터 비밀번호를 변경하시겠습니까?");
-  if (changePw) {
-    const newPw = prompt("새로운 관리자 비밀번호를 입력하세요 (4자리 이상):");
-    if (newPw && newPw.length >= 4) {
-      const newHash = await computeHash(newPw);
-      localStorage.setItem("COUPONTRUCK_CUSTOM_PW_HASH", newHash);
-      showToast("관리자 비밀번호가 성공적으로 변경되었습니다.");
-    } else if (newPw !== null) {
-      alert("비밀번호는 4자리 이상이어야 합니다.");
-    }
-  }
+  alert("관리자 토큰은 로컬 환경변수(COUPONTRUCK_ADMIN_TOKEN) 또는 프로젝트 루트의 .admin_token 파일에서 안전하게 관리됩니다.");
 }
 
 // 관리자 DOM 동적 생성 (인증된 경우에만 메모리에 생성)

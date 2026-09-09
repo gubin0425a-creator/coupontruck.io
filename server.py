@@ -34,9 +34,29 @@ DATA_FILE = os.path.join(BASE_DIR, "data", "coupons.json")
 BIND_HOST = "127.0.0.1"  # 🔒 오직 내 PC(루프백)에서만 수신 (외부 IP 접근 원천 차단)
 PORT = 8000
 
-# 보안 마스터 토큰 검증 상수
-SEC_SALT = "COUPONTRUCK_SECURE_SALT_v2"
-ADMIN_PW_HASH = "8642fae188fbeb0f509177ebcfcd750e4acb0b313a54a90595f2e9a164a280df"
+ADMIN_TOKEN_FILE = os.path.join(BASE_DIR, ".admin_token")
+
+def get_configured_admin_tokens():
+    tokens = set()
+    env_token = os.environ.get("COUPONTRUCK_ADMIN_TOKEN")
+    if env_token:
+        tokens.add(env_token.strip())
+    if os.path.exists(ADMIN_TOKEN_FILE):
+        try:
+            with open(ADMIN_TOKEN_FILE, "r", encoding="utf-8") as f:
+                t = f.read().strip()
+                if t:
+                    tokens.add(t)
+        except Exception:
+            pass
+    if not tokens:
+        import secrets
+        gen_token = secrets.token_hex(16)
+        with open(ADMIN_TOKEN_FILE, "w", encoding="utf-8") as f:
+            f.write(gen_token)
+        tokens.add(gen_token)
+        print(f"🔑 [보안] 새 로컬 관리자 토큰이 생성되어 .admin_token에 보관되었습니다: {gen_token}")
+    return tokens
 
 
 class CouponTruckHandler(SimpleHTTPRequestHandler):
@@ -70,11 +90,8 @@ class CouponTruckHandler(SimpleHTTPRequestHandler):
             print("🚨 [보안 차단] 관리자 인증 토큰 누락")
             return False
 
-        if token == "635835":
-            return True
-        if hashlib.sha256((SEC_SALT + token).encode("utf-8")).hexdigest() == ADMIN_PW_HASH:
-            return True
-        if token == ADMIN_PW_HASH:
+        valid_tokens = get_configured_admin_tokens()
+        if token in valid_tokens:
             return True
 
         print(f"🚨 [보안 차단] 유효하지 않은 관리자 토큰: {token[:8]}...")
@@ -114,6 +131,28 @@ class CouponTruckHandler(SimpleHTTPRequestHandler):
         super().do_GET()
 
     def do_POST(self):
+        # 관리자 토큰 검증 API (프론트엔드 연동)
+        if self.path.startswith("/api/auth"):
+            content_length = int(self.headers.get('Content-Length', 0))
+            body = self.rfile.read(content_length).decode('utf-8')
+            try:
+                auth_data = json.loads(body)
+                candidate_token = auth_data.get("token", "").strip()
+                valid_tokens = get_configured_admin_tokens()
+                if candidate_token and candidate_token in valid_tokens:
+                    self.send_response(200)
+                    self.send_header("Content-Type", "application/json; charset=utf-8")
+                    self.end_headers()
+                    self.wfile.write(json.dumps({"authenticated": True}).encode("utf-8"))
+                    return
+            except Exception:
+                pass
+            self.send_response(401)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.end_headers()
+            self.wfile.write(json.dumps({"authenticated": False, "error": "Invalid admin token"}).encode("utf-8"))
+            return
+
         # 쿠폰 추가/수정 API
         if self.path.startswith("/api/coupons"):
             if not self.verify_admin_auth():

@@ -1,6 +1,7 @@
 {
-  "last_updated": "2026-09-08T23:09:17.269329",
-  "version": "2.0.0",
+  "last_updated": "2026-09-09T04:39:20.973Z",
+  "version": "2.1.0",
+  "total_active_offers": 103,
   "categories": {
     "travel": {
       "title": "✈️ 여행 · 항공권 · 호텔 숙소 할인코드",
@@ -14,7 +15,9 @@
           "url": "https://www.agoda.com",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "인기 1위"
+          "badge": "인기 1위",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "trv-02",
@@ -24,7 +27,9 @@
           "url": "https://kr.trip.com",
           "expires": "2026-09-20",
           "is_active": true,
-          "badge": "항공+호텔"
+          "badge": "항공+호텔",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "trv-03",
@@ -34,7 +39,9 @@
           "url": "https://www.klook.com",
           "expires": "2026-09-15",
           "is_active": true,
-          "badge": "액티비티"
+          "badge": "액티비티",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "trv-04",
@@ -44,7 +51,9 @@
           "url": "https://www.kkday.com",
           "expires": "2026-09-18",
           "is_active": true,
-          "badge": "해외교통"
+          "badge": "해외교통",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "trv-05",
@@ -54,7 +63,9 @@
           "url": "https://kr.hotels.com",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "8% OFF"
+          "badge": "8% OFF",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "trv-06",
@@ -64,7 +75,9 @@
           "url": "https://www.expedia.co.kr",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "호텔할인"
+          "badge": "호텔할인",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "trv-07",
@@ -74,7 +87,9 @@
           "url": "https://www.myrealtrip.com",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "국내외투어"
+          "badge": "국내외투어",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "trv-08",
@@ -84,7 +99,9 @@
           "url": "https://www.booking.com",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "15% 혜택"
+          "badge": "15% 혜택",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "trv-09",
@@ -94,7 +111,9 @@
           "url": "https://www.traveloka.com",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "동남아특화"
+          "badge": "동남아특화",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "trv-10",
@@ -104,7 +123,9 @@
           "url": "https://travel.rakuten.com",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "일본료칸"
+          "badge": "일본료칸",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "trv-11",
@@ -114,7 +135,9 @@
           "url": "https://www.donki.com",
           "expires": "2026-12-31",
           "is_active": true,
-          "badge": "면세+5%"
+          "badge": "면세+5%",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "trv-12",
@@ -124,7 +147,9 @@
           "url": "https://www.usimsa.com",
           "expires": "2026-10-15",
           "is_active": true,
-          "badge": "eSIM추천"
+          "badge": "eSIM추천",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "REFERRAL"
         },
         {
           "id": "trv-13",
@@ -134,7 +159,9 @@
           "url": "https://www.airalo.com",
           "expires": "2026-10-15",
           "is_active": true,
-          "badge": "글로벌eSIM"
+          "badge": "글로벌eSIM",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "trv-14",
@@ -144,7 +171,9 @@
           "url": "https://rokebi.com",
           "expires": "2026-10-15",
           "is_active": true,
-          "badge": "eSIM할인"
+          "badge": "eSIM할인",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "trv-15",
@@ -154,7 +183,9 @@
           "url": "https://www.wifidosirak.com",
           "expires": "2026-10-15",
           "is_active": true,
-          "badge": "포켓와이파이"
+          "badge": "포켓와이파이",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "trv-16",
@@ -164,7 +195,9 @@
           "url": "https://tour.interpark.com",
           "expires": "2026-09-14",
           "is_active": true,
-          "badge": "땡처리항공"
+          "badge": "땡처리항공",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "trv-17",
@@ -174,7 +207,9 @@
           "url": "https://www.yanolja.com",
           "expires": "2026-09-14",
           "is_active": true,
-          "badge": "국내숙박"
+          "badge": "국내숙박",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "trv-18",
@@ -184,7 +219,9 @@
           "url": "https://www.goodchoice.kr",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": "해외/국내"
+          "badge": "해외/국내",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "trv-19",
@@ -194,7 +231,9 @@
           "url": "https://www.jejupass.com",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": "제주렌터카"
+          "badge": "제주렌터카",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "trv-20",
@@ -204,7 +243,9 @@
           "url": "https://www.tripbtoz.com",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": null
+          "badge": "5% OFF",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "trv-21",
@@ -214,7 +255,8 @@
           "url": "https://www.waug.com",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": null
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "trv-22",
@@ -224,7 +266,9 @@
           "url": "https://www.theminda.com",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": "한인민박"
+          "badge": "한인민박",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "trv-23",
@@ -234,7 +278,9 @@
           "url": "https://www.omio.com",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": "유럽교통"
+          "badge": "유럽교통",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "trv-24",
@@ -244,7 +290,9 @@
           "url": "https://www.rentalcars.com",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": null
+          "badge": "5% OFF",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "trv-25",
@@ -254,13 +302,15 @@
           "url": "https://www.ihg.com",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": "특급호텔"
+          "badge": "특급호텔",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         }
       ]
     },
     "shopping": {
-      "title": "🛍️ 해외직구 & 국내 쇼핑몰 할인코드",
-      "badge": "쇼핑 특가",
+      "title": "🛍️ 종합쇼핑 · 직구 · 생활 커머스 할인코드",
+      "badge": "쇼핑 핫딜",
       "items": [
         {
           "id": "shp-01",
@@ -270,7 +320,9 @@
           "url": "https://ko.aliexpress.com",
           "expires": "2026-09-10",
           "is_active": true,
-          "badge": "직구 1위"
+          "badge": "직구 1위",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "shp-02",
@@ -280,7 +332,9 @@
           "url": "https://www.temu.com",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "초특가"
+          "badge": "초특가",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "shp-03",
@@ -290,7 +344,9 @@
           "url": "https://kr.iherb.com",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "영양제필수"
+          "badge": "영양제필수",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "shp-04",
@@ -300,7 +356,9 @@
           "url": "https://ohou.se",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "인테리어"
+          "badge": "인테리어",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "shp-05",
@@ -310,7 +368,9 @@
           "url": "https://www.coupang.com",
           "expires": "2026-09-15",
           "is_active": true,
-          "badge": "로켓배송"
+          "badge": "로켓배송",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "shp-06",
@@ -320,7 +380,9 @@
           "url": "https://www.amazon.com",
           "expires": "2026-10-15",
           "is_active": true,
-          "badge": "미국직구"
+          "badge": "미국직구",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "shp-07",
@@ -330,7 +392,9 @@
           "url": "https://www.casetify.com",
           "expires": "2026-10-15",
           "is_active": true,
-          "badge": "15% 할인"
+          "badge": "15% 할인",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "shp-08",
@@ -340,7 +404,9 @@
           "url": "https://www.oliveyoung.co.kr",
           "expires": "2026-09-12",
           "is_active": true,
-          "badge": "K-뷰티"
+          "badge": "K-뷰티",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "shp-09",
@@ -350,7 +416,9 @@
           "url": "https://kream.co.kr",
           "expires": "2026-09-20",
           "is_active": true,
-          "badge": "스니커즈"
+          "badge": "스니커즈",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "shp-10",
@@ -360,7 +428,9 @@
           "url": "https://www.qoo10.com",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "아시아직구"
+          "badge": "아시아직구",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "shp-11",
@@ -370,7 +440,9 @@
           "url": "https://www.11st.co.kr",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "우주패스"
+          "badge": "우주패스",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "shp-12",
@@ -380,7 +452,9 @@
           "url": "https://www.kurly.com",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "신규100원"
+          "badge": "신규100원",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "shp-13",
@@ -390,7 +464,9 @@
           "url": "https://www.cjthemarket.com",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "비비고할인"
+          "badge": "비비고할인",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "shp-14",
@@ -400,7 +476,8 @@
           "url": "https://shop.pulmuone.co.kr",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": null
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "shp-15",
@@ -410,7 +487,9 @@
           "url": "https://metree.co.kr",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "닭가슴살"
+          "badge": "닭가슴살",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "shp-16",
@@ -420,7 +499,8 @@
           "url": "https://www.rankingdak.com",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": null
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "shp-17",
@@ -430,7 +510,9 @@
           "url": "https://pet-friends.co.kr",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "반려동물"
+          "badge": "반려동물",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "shp-18",
@@ -440,7 +522,8 @@
           "url": "https://www.lego.com/ko-kr",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": null
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "shp-19",
@@ -450,7 +533,9 @@
           "url": "https://www.lenovo.com/kr",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": "노트북"
+          "badge": "노트북",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "shp-20",
@@ -460,7 +545,9 @@
           "url": "https://www.dyson.co.kr",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": "에어랩"
+          "badge": "에어랩",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "shp-21",
@@ -470,7 +557,9 @@
           "url": "https://www.yes24.com",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": "도서할인"
+          "badge": "도서할인",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "shp-22",
@@ -480,7 +569,8 @@
           "url": "https://www.kyobobook.co.kr",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": null
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "shp-23",
@@ -490,23 +580,26 @@
           "url": "https://www.soldout.co.kr",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": null
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         }
       ]
     },
     "sub": {
-      "title": "🎬 OTT 계정공유 · VPN · 소프트웨어 구독 할인",
-      "badge": "초특가 구독",
+      "title": "📺 OTT 스트리밍 · AI · VPN 구독 할인코드",
+      "badge": "구독 절약",
       "items": [
         {
-          "id": "sub-01",
-          "name": "겜스고 (GamsGo)",
+          "id": "off-gamsgo-01",
+          "name": "겜스고 (GamsGo) 공식 프로모션 & 전용 할인코드",
           "code": "DASSD",
-          "desc": "유튜브 프리미엄, 넷플릭스 최대 85% 할인 계정공유 + 프로모션 코드 DASSD (월 4천원대)",
+          "desc": "프로모션 코드 [DASSD] 입력 시 즉시할인 적용",
           "url": "https://www.gamsgo.com/partner/aTqwg",
           "expires": "2026-12-31",
           "is_active": true,
-          "badge": "인기 1위"
+          "badge": "추천인",
+          "verified_at": "2026-09-09T04:37:41.347Z",
+          "type": "REFERRAL"
         },
         {
           "id": "sub-02",
@@ -516,7 +609,9 @@
           "url": "https://www.usespeak.com",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "2만원 할인"
+          "badge": "2만원 할인",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "sub-03",
@@ -526,7 +621,9 @@
           "url": "https://nordvpn.com",
           "expires": "2026-12-31",
           "is_active": true,
-          "badge": "72% OFF"
+          "badge": "72% OFF",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "sub-04",
@@ -536,7 +633,9 @@
           "url": "https://surfshark.com",
           "expires": "2026-12-31",
           "is_active": true,
-          "badge": "85% OFF"
+          "badge": "85% OFF",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "sub-05",
@@ -546,7 +645,9 @@
           "url": "https://www.expressvpn.com",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": "+3개월"
+          "badge": "+3개월",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "sub-06",
@@ -556,7 +657,9 @@
           "url": "https://protonvpn.com",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": "보안최강"
+          "badge": "보안최강",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "sub-07",
@@ -566,7 +669,9 @@
           "url": "https://www.adobe.com/kr",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "학생60%"
+          "badge": "학생60%",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "sub-08",
@@ -576,7 +681,9 @@
           "url": "https://www.uber.com/kr",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "50% 할인"
+          "badge": "50% 할인",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "sub-09",
@@ -586,7 +693,9 @@
           "url": "https://www.tiktok.com",
           "expires": "2026-09-20",
           "is_active": true,
-          "badge": "포인트증정"
+          "badge": "포인트증정",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "sub-10",
@@ -596,7 +705,9 @@
           "url": "https://kmong.com",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "1만원 할인"
+          "badge": "1만원 할인",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "sub-11",
@@ -606,7 +717,8 @@
           "url": "https://soomgo.com",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": null
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "sub-12",
@@ -616,7 +728,9 @@
           "url": "https://www.millie.co.kr",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": "첫달무료"
+          "badge": "첫달무료",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "sub-13",
@@ -626,7 +740,9 @@
           "url": "https://www.welaaa.com",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": null
+          "badge": "50% OFF",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "sub-14",
@@ -636,7 +752,9 @@
           "url": "https://www.ringleplus.com",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": "아이비리그"
+          "badge": "아이비리그",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "sub-15",
@@ -646,7 +764,9 @@
           "url": "https://www.canva.com",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": "무료체험"
+          "badge": "무료체험",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "sub-16",
@@ -656,12 +776,13 @@
           "url": "https://www.microsoft.com",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": null
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         }
       ]
     },
     "fashion": {
-      "title": "👗 해외 럭셔리 & 패션 브랜드 할인코드",
+      "title": "👗 패션 · 뷰티 · 명품 편집샵 할인코드",
       "badge": "패션 특가",
       "items": [
         {
@@ -672,7 +793,9 @@
           "url": "https://www.farfetch.com",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "명품1위"
+          "badge": "명품1위",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "fas-02",
@@ -682,7 +805,9 @@
           "url": "https://www.mytheresa.com",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "15% 할인"
+          "badge": "15% 할인",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "fas-03",
@@ -692,7 +817,9 @@
           "url": "https://www.lululemon.co.kr",
           "expires": "2026-10-15",
           "is_active": true,
-          "badge": "요가복"
+          "badge": "요가복",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "fas-04",
@@ -702,7 +829,9 @@
           "url": "https://www.cettire.com",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "추가10%"
+          "badge": "추가10%",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "fas-05",
@@ -712,7 +841,9 @@
           "url": "https://www.cos.com/ko-kr",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "10% 쿠폰"
+          "badge": "10% 쿠폰",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "fas-06",
@@ -722,7 +853,9 @@
           "url": "https://www.arket.com/ko-kr",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": null
+          "badge": "10% OFF",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "fas-07",
@@ -732,7 +865,9 @@
           "url": "https://www.wconcept.co.kr",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "디자이너몰"
+          "badge": "디자이너몰",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "fas-08",
@@ -742,7 +877,9 @@
           "url": "https://www.musinsa.com",
           "expires": "2026-09-15",
           "is_active": true,
-          "badge": "국내 1위"
+          "badge": "국내 1위",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "fas-09",
@@ -752,7 +889,9 @@
           "url": "https://zigzag.kr",
           "expires": "2026-09-14",
           "is_active": true,
-          "badge": "쿠폰팩"
+          "badge": "쿠폰팩",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "fas-10",
@@ -762,7 +901,8 @@
           "url": "https://a-bly.com",
           "expires": "2026-09-14",
           "is_active": true,
-          "badge": null
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "fas-11",
@@ -772,7 +912,9 @@
           "url": "https://www.ssense.com",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": "스트릿명품"
+          "badge": "스트릿명품",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "fas-12",
@@ -782,7 +924,9 @@
           "url": "https://www.24s.com",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": "LVMH공식"
+          "badge": "LVMH공식",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "fas-13",
@@ -792,7 +936,9 @@
           "url": "https://www.jomashop.com",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": "명품시계"
+          "badge": "명품시계",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "fas-14",
@@ -802,7 +948,9 @@
           "url": "https://www.jomalone.co.kr",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": "향수증정"
+          "badge": "향수증정",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "fas-15",
@@ -812,7 +960,9 @@
           "url": "https://www.theory.com",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": null
+          "badge": "15% OFF",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "fas-16",
@@ -822,7 +972,9 @@
           "url": "https://www.aloyoga.com",
           "expires": "2026-10-15",
           "is_active": true,
-          "badge": "셀럽애슬레저"
+          "badge": "셀럽애슬레저",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "fas-17",
@@ -832,7 +984,9 @@
           "url": "https://www.crocs.co.kr",
           "expires": "2026-10-15",
           "is_active": true,
-          "badge": "20% 할인"
+          "badge": "20% 할인",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "fas-18",
@@ -842,7 +996,9 @@
           "url": "https://www2.hm.com/ko_kr",
           "expires": "2026-10-15",
           "is_active": true,
-          "badge": null
+          "badge": "15% OFF",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "fas-19",
@@ -852,7 +1008,9 @@
           "url": "https://www.swarovski.com",
           "expires": "2026-10-31",
           "is_active": true,
-          "badge": "주얼리"
+          "badge": "주얼리",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "fas-20",
@@ -862,7 +1020,9 @@
           "url": "https://www.nike.com/kr",
           "expires": "2026-10-15",
           "is_active": true,
-          "badge": "무료반품"
+          "badge": "무료반품",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "fas-21",
@@ -872,99 +1032,15 @@
           "url": "https://www.adidas.co.kr",
           "expires": "2026-10-15",
           "is_active": true,
-          "badge": null
-        }
-      ]
-    },
-    "guide": {
-      "title": "💡 스마트 소비 & 직구 절약 백서",
-      "badge": "절약 가이드",
-      "items": [
-        {
-          "id": "gde-01",
-          "name": "해외 원화결제(DCC) 차단법",
-          "code": "TIP-DCC",
-          "desc": "해외 결제 시 3~8% 불필요한 이중 환전 수수료 아끼는 카드사 세팅 방법",
-          "url": "#",
-          "expires": "2029-12-31",
-          "is_active": true,
-          "badge": "필독"
-        },
-        {
-          "id": "gde-02",
-          "name": "해외직구 관부가세 면세 한도 계산법",
-          "code": "TIP-TAX",
-          "desc": "미국 $200(목록통관), 일반 국가 $150 관세 면제 기준과 합산과세 주의사항",
-          "url": "#",
-          "expires": "2029-12-31",
-          "is_active": true,
-          "badge": "세금절약"
-        },
-        {
-          "id": "gde-03",
-          "name": "호텔 최저가 예약 노하우 5가지",
-          "code": "TIP-HOTEL",
-          "desc": "브라우저 시크릿 모드 검색, 통화 설정(현지통화 vs USD) 비교법",
-          "url": "#",
-          "expires": "2029-12-31",
-          "is_active": true,
-          "badge": "여행꿀팁"
-        },
-        {
-          "id": "gde-04",
-          "name": "제휴 캐시백 사이트 중복 적립법",
-          "code": "TIP-CASHBACK",
-          "desc": "할인코드 적용 후 추가로 결제액의 3~5% 캐시백 돌려받는 노하우",
-          "url": "#",
-          "expires": "2029-12-31",
-          "is_active": true,
-          "badge": "페이백"
-        },
-        {
-          "id": "gde-05",
-          "name": "항공권 가장 저렴하게 예매하는 요일/시간",
-          "code": "TIP-FLIGHT",
-          "desc": "출발 6주 전 화요일/수요일 예매가 가장 저렴한 데이터 분석 결과",
-          "url": "#",
-          "expires": "2029-12-31",
-          "is_active": true,
-          "badge": "항공권"
-        },
-        {
-          "id": "gde-06",
-          "name": "해외여행자보험 5분 만에 최저가 가입 팁",
-          "code": "TIP-INSUR",
-          "desc": "항공기 지연, 휴대품 파손 보장 필수 특약만 골라 반값에 가입하는 법",
-          "url": "#",
-          "expires": "2029-12-31",
-          "is_active": true,
-          "badge": "여행자보험"
-        },
-        {
-          "id": "gde-07",
-          "name": "글로벌 직구 블랙프라이데이 세일 캘린더",
-          "code": "TIP-SALE-CAL",
-          "desc": "알리 광군제, 미국 블프, 사이버먼데이, 여름 정기 세일 일정 총정리",
-          "url": "#",
-          "expires": "2029-12-31",
-          "is_active": true,
-          "badge": "세일캘린더"
-        },
-        {
-          "id": "gde-08",
-          "name": "환전 수수료 100% 우대받는 트래블로그/트래블월렛 비교",
-          "code": "TIP-FXCARD",
-          "desc": "해외 ATM 출금 수수료 무료 및 환전 수수료 0원 혜택 카드 완벽 분석",
-          "url": "#",
-          "expires": "2029-12-31",
-          "is_active": true,
-          "badge": "환전꿀팁"
+          "badge": "10% OFF",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         }
       ]
     },
     "game": {
-      "title": "🎮 게임 · 기어 · 스팀 할인",
-      "badge": "게임특가",
+      "title": "🎮 게임 · 디지털 소프트웨어 프로모션",
+      "badge": "게임 혜택",
       "items": [
         {
           "id": "gam-01",
@@ -974,7 +1050,9 @@
           "url": "https://store.steampowered.com",
           "expires": "2026-09-12",
           "is_active": true,
-          "badge": "스팀특가"
+          "badge": "스팀특가",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "gam-02",
@@ -984,7 +1062,9 @@
           "url": "https://www.exitlag.com",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "핑VPN 1위"
+          "badge": "핑VPN 1위",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "gam-03",
@@ -994,7 +1074,9 @@
           "url": "https://www.greenmangaming.com",
           "expires": "2026-09-20",
           "is_active": true,
-          "badge": "정품키 15%"
+          "badge": "정품키 15%",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "gam-04",
@@ -1004,7 +1086,9 @@
           "url": "https://store.epicgames.com",
           "expires": "2026-09-11",
           "is_active": true,
-          "badge": "매주무료"
+          "badge": "매주무료",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "gam-05",
@@ -1014,7 +1098,9 @@
           "url": "https://www.razer.com/kr-kr",
           "expires": "2026-10-15",
           "is_active": true,
-          "badge": "기어특가"
+          "badge": "기어특가",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "gam-06",
@@ -1024,7 +1110,9 @@
           "url": "https://www.logitechg.com/ko-kr",
           "expires": "2026-10-15",
           "is_active": true,
-          "badge": "G-PRO"
+          "badge": "G-PRO",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "gam-07",
@@ -1034,7 +1122,9 @@
           "url": "https://www.xbox.com/ko-KR/xbox-game-pass",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "첫달천원"
+          "badge": "첫달천원",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "gam-08",
@@ -1044,7 +1134,9 @@
           "url": "https://www.nintendo.co.kr",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "스위치"
+          "badge": "스위치",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "gam-09",
@@ -1054,7 +1146,9 @@
           "url": "https://www.humblebundle.com",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "번들세일"
+          "badge": "번들세일",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
         },
         {
           "id": "gam-10",
@@ -1064,7 +1158,111 @@
           "url": "https://mudfish.net",
           "expires": "2026-09-30",
           "is_active": true,
-          "badge": "종량제VPN"
+          "badge": "종량제VPN",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "COUPON"
+        }
+      ]
+    },
+    "guide": {
+      "title": "💡 스마트 쇼핑 실전 꿀팁 & 직구 절약 가이드",
+      "badge": "절약 가이드",
+      "items": [
+        {
+          "id": "gde-01",
+          "name": "해외 원화결제(DCC) 차단법",
+          "code": "TIP-DCC",
+          "desc": "해외 결제 시 3~8% 불필요한 이중 환전 수수료 아끼는 카드사 세팅 방법",
+          "url": "https://coupontruck.io",
+          "expires": "2029-12-31",
+          "is_active": true,
+          "badge": "필독",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "PROMOTION"
+        },
+        {
+          "id": "gde-02",
+          "name": "해외직구 관부가세 면세 한도 계산법",
+          "code": "TIP-TAX",
+          "desc": "미국 $200(목록통관), 일반 국가 $150 관세 면제 기준과 합산과세 주의사항",
+          "url": "https://coupontruck.io",
+          "expires": "2029-12-31",
+          "is_active": true,
+          "badge": "세금절약",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "PROMOTION"
+        },
+        {
+          "id": "gde-03",
+          "name": "호텔 최저가 예약 노하우 5가지",
+          "code": "TIP-HOTEL",
+          "desc": "브라우저 시크릿 모드 검색, 통화 설정(현지통화 vs USD) 비교법",
+          "url": "https://coupontruck.io",
+          "expires": "2029-12-31",
+          "is_active": true,
+          "badge": "여행꿀팁",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "PROMOTION"
+        },
+        {
+          "id": "gde-04",
+          "name": "제휴 캐시백 사이트 중복 적립법",
+          "code": "TIP-CASHBACK",
+          "desc": "할인코드 적용 후 추가로 결제액의 3~5% 캐시백 돌려받는 노하우",
+          "url": "https://coupontruck.io",
+          "expires": "2029-12-31",
+          "is_active": true,
+          "badge": "페이백",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "PROMOTION"
+        },
+        {
+          "id": "gde-05",
+          "name": "항공권 가장 저렴하게 예매하는 요일/시간",
+          "code": "TIP-FLIGHT",
+          "desc": "출발 6주 전 화요일/수요일 예매가 가장 저렴한 데이터 분석 결과",
+          "url": "https://coupontruck.io",
+          "expires": "2029-12-31",
+          "is_active": true,
+          "badge": "항공권",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "PROMOTION"
+        },
+        {
+          "id": "gde-06",
+          "name": "해외여행자보험 5분 만에 최저가 가입 팁",
+          "code": "TIP-INSUR",
+          "desc": "항공기 지연, 휴대품 파손 보장 필수 특약만 골라 반값에 가입하는 법",
+          "url": "https://coupontruck.io",
+          "expires": "2029-12-31",
+          "is_active": true,
+          "badge": "여행자보험",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "PROMOTION"
+        },
+        {
+          "id": "gde-07",
+          "name": "글로벌 직구 블랙프라이데이 세일 캘린더",
+          "code": "TIP-SALE-CAL",
+          "desc": "알리 광군제, 미국 블프, 사이버먼데이, 여름 정기 세일 일정 총정리",
+          "url": "https://coupontruck.io",
+          "expires": "2029-12-31",
+          "is_active": true,
+          "badge": "세일캘린더",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "PROMOTION"
+        },
+        {
+          "id": "gde-08",
+          "name": "환전 수수료 100% 우대받는 트래블로그/트래블월렛 비교",
+          "code": "TIP-FXCARD",
+          "desc": "해외 ATM 출금 수수료 무료 및 환전 수수료 0원 혜택 카드 완벽 분석",
+          "url": "https://coupontruck.io",
+          "expires": "2029-12-31",
+          "is_active": true,
+          "badge": "환전꿀팁",
+          "verified_at": "2026-09-09T04:36:57.144Z",
+          "type": "PROMOTION"
         }
       ]
     }

@@ -1,3 +1,31 @@
-﻿__pycache__/
-*.pyc
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+.env
+.env.*
+.admin_token
+
+# Node & Build
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Scrapes & Logs
+temp_scrapes/
+*.log
+logs/
 data/backups/
+
+# Private / Revenue Hub Boundary
+private/
+revenue_private/
+shorts_studio/output/
+shorts_studio/assets/cache/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp

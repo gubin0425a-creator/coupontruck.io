@@ -1,0 +1,3668 @@
+[
+  {
+    "id": "trv-01",
+    "brand": "아고다 (Agoda)",
+    "brand_id": "agoda",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "아고다 (Agoda)",
+    "description": "전 세계 호텔 및 리조트 예약 5%~7% 전용 즉시할인 코드",
+    "coupon_code": "AGODAHUB05",
+    "discount_percent": 5,
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.agoda.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.agoda.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "인기 1위"
+  },
+  {
+    "id": "trv-02",
+    "brand": "트립닷컴 (Trip.com)",
+    "brand_id": "tripcom",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "트립닷컴 (Trip.com)",
+    "description": "국내외 항공권 및 제휴 호텔 패키지 최대 8% 즉시할인",
+    "coupon_code": "TRIPNEW26",
+    "discount_percent": 8,
+    "max_discount_percent": 8,
+    "is_up_to": true,
+    "end_date": "2026-09-20",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://kr.trip.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://kr.trip.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "항공+호텔"
+  },
+  {
+    "id": "trv-03",
+    "brand": "클룩 (Klook)",
+    "brand_id": "klook",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "클룩 (Klook)",
+    "description": "전세계 투어, 액티비티, 유심/교통패스 5,000원 즉시할인",
+    "coupon_code": "KLOOKBHUB",
+    "is_up_to": false,
+    "end_date": "2026-09-15",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.klook.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.klook.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "액티비티"
+  },
+  {
+    "id": "trv-04",
+    "brand": "KKday (케이케이데이)",
+    "brand_id": "kkday",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "KKday (케이케이데이)",
+    "description": "일본/대만/동남아 필수 입장권 및 공항철도 즉시할인 바우처",
+    "coupon_code": "KKDAYSPRING",
+    "is_up_to": false,
+    "end_date": "2026-09-18",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.kkday.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.kkday.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "해외교통"
+  },
+  {
+    "id": "trv-05",
+    "brand": "호텔스닷컴 (Hotels.com)",
+    "brand_id": "hotelscom",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "호텔스닷컴 (Hotels.com)",
+    "description": "국내 및 해외 인기 호텔 예약 시 8% 할인코드 (10박 적립)",
+    "coupon_code": "HOTELLP08",
+    "discount_percent": 8,
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://kr.hotels.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://kr.hotels.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "8% OFF"
+  },
+  {
+    "id": "trv-06",
+    "brand": "익스피디아 (Expedia)",
+    "brand_id": "expedia",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "익스피디아 (Expedia)",
+    "description": "전 세계 엄선된 숙소 예약 시 8% 추가 할인 프로모션",
+    "coupon_code": "EXPEDIA8",
+    "discount_percent": 8,
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.expedia.co.kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.expedia.co.kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "호텔할인"
+  },
+  {
+    "id": "trv-07",
+    "brand": "마이리얼트립",
+    "brand_id": "generic",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "마이리얼트립",
+    "description": "국내외 투어, 항공권, 숙소 첫 결제 시 3,000원 즉시할인",
+    "coupon_code": "MYREAL2026",
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.myrealtrip.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.myrealtrip.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "국내외투어"
+  },
+  {
+    "id": "trv-08",
+    "brand": "부킹닷컴 (Booking.com)",
+    "brand_id": "bookingcom",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "부킹닷컴 (Booking.com)",
+    "description": "Genius 회원 전 세계 숙박 최대 15% 전용 혜택",
+    "coupon_code": "BOOK10SAVE",
+    "discount_percent": 15,
+    "max_discount_percent": 15,
+    "is_up_to": true,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.booking.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.booking.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "15% 혜택"
+  },
+  {
+    "id": "trv-09",
+    "brand": "트래블로카 (Traveloka)",
+    "brand_id": "traveloka",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "트래블로카 (Traveloka)",
+    "description": "동남아 항공권 및 인기 리조트 예약 특별 프로모션 코드",
+    "coupon_code": "TVLKSPRING",
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.traveloka.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.traveloka.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "동남아특화"
+  },
+  {
+    "id": "trv-10",
+    "brand": "라쿠텐 트래블 (Rakuten)",
+    "brand_id": "rakuten",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "라쿠텐 트래블 (Rakuten)",
+    "description": "일본 전역 료칸, 특급 호텔 예약 5%~10% 전용 쿠폰",
+    "coupon_code": "RAKUTENJP",
+    "discount_percent": 5,
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://travel.rakuten.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://travel.rakuten.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "일본료칸"
+  },
+  {
+    "id": "trv-11",
+    "brand": "돈키호테 (Don Quijote)",
+    "brand_id": "donquijote",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "돈키호테 (Don Quijote)",
+    "description": "일본 돈키호테 매장 면세 10% + 추가 5% 모바일 바코드 쿠폰",
+    "coupon_code": "DONKI5OFF",
+    "discount_percent": 10,
+    "is_up_to": false,
+    "end_date": "2026-12-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.donki.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.donki.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "면세+5%"
+  },
+  {
+    "id": "trv-12",
+    "brand": "유심사 (USIMSA)",
+    "brand_id": "usimsa",
+    "category": "travel",
+    "type": "REFERRAL",
+    "title": "유심사 (USIMSA)",
+    "description": "전세계 무제한 로밍 eSIM 전 국가 10% 즉시할인 코드",
+    "coupon_code": "USIMSA2026",
+    "discount_percent": 10,
+    "is_up_to": false,
+    "end_date": "2026-10-15",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.usimsa.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.usimsa.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "eSIM추천"
+  },
+  {
+    "id": "trv-13",
+    "brand": "에어알로 (Airalo)",
+    "brand_id": "airalo",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "에어알로 (Airalo)",
+    "description": "글로벌 200+ 국가 지원 1위 eSIM 첫 구매 $3 즉시할인",
+    "coupon_code": "AIRALO3OFF",
+    "is_up_to": false,
+    "end_date": "2026-10-15",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.airalo.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.airalo.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "글로벌eSIM"
+  },
+  {
+    "id": "trv-14",
+    "brand": "로밍도깨비 (Ggabi eSIM)",
+    "brand_id": "ggabiesim",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "로밍도깨비 (Ggabi eSIM)",
+    "description": "일본/동남아/미주 로밍도깨비 eSIM 1,000원 할인 쿠폰",
+    "coupon_code": "ROAMINGDOK",
+    "is_up_to": false,
+    "end_date": "2026-10-15",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://rokebi.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://rokebi.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "eSIM할인"
+  },
+  {
+    "id": "trv-15",
+    "brand": "와이파이도시락",
+    "brand_id": "generic",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "와이파이도시락",
+    "description": "해외 포켓와이파이 및 도시락eSIM 상시 10% 할인 예약",
+    "coupon_code": "DOSIRAK10",
+    "discount_percent": 10,
+    "is_up_to": false,
+    "end_date": "2026-10-15",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.wifidosirak.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.wifidosirak.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "포켓와이파이"
+  },
+  {
+    "id": "trv-16",
+    "brand": "인터파크투어 (Interpark)",
+    "brand_id": "interpark",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "인터파크투어 (Interpark)",
+    "description": "국내외 패키지, 땡처리 항공권, 호텔 전용 할인 바우처",
+    "coupon_code": "INTPARKTOUR",
+    "is_up_to": false,
+    "end_date": "2026-09-14",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://tour.interpark.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://tour.interpark.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "땡처리항공"
+  },
+  {
+    "id": "trv-17",
+    "brand": "야놀자 (NOL)",
+    "brand_id": "nol",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "야놀자 (NOL)",
+    "description": "국내 호텔, 풀빌라, 레저, KTX 최대 10% 쿠폰팩",
+    "coupon_code": "NOLYJ2026",
+    "discount_percent": 10,
+    "max_discount_percent": 10,
+    "is_up_to": true,
+    "end_date": "2026-09-14",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.yanolja.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.yanolja.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "국내숙박"
+  },
+  {
+    "id": "trv-18",
+    "brand": "여기어때",
+    "brand_id": "generic",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "여기어때",
+    "description": "해외숙소 최대 8% 즉시할인 + 국내 숙박 10만원 쿠폰팩",
+    "coupon_code": "YEOGIPRO26",
+    "discount_percent": 8,
+    "max_discount_percent": 8,
+    "is_up_to": true,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.goodchoice.kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.goodchoice.kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "해외/국내"
+  },
+  {
+    "id": "trv-19",
+    "brand": "제주패스 (JEJUPASS)",
+    "brand_id": "jejupass",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "제주패스 (JEJUPASS)",
+    "description": "제주도 렌터카 가격비교 최저가 예약 + 5% 추가할인",
+    "coupon_code": "JEJUPASSRENT",
+    "discount_percent": 5,
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.jejupass.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.jejupass.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "제주렌터카"
+  },
+  {
+    "id": "trv-20",
+    "brand": "트립비토즈 (Tripbtoz)",
+    "brand_id": "tripbtoz",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "트립비토즈 (Tripbtoz)",
+    "description": "영상 리뷰 기반 국내외 호텔 예약 5% 즉시할인 코드",
+    "coupon_code": "TRIPBTOZ5",
+    "discount_percent": 5,
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.tripbtoz.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.tripbtoz.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": null
+  },
+  {
+    "id": "trv-21",
+    "brand": "와그 (WAUG)",
+    "brand_id": "waug",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "와그 (WAUG)",
+    "description": "국내외 테마파크, 뮤지컬 티켓, 투어 액티비티 첫구매 할인",
+    "coupon_code": "WAUGNEW",
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.waug.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.waug.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": null
+  },
+  {
+    "id": "trv-22",
+    "brand": "민다 (Minda)",
+    "brand_id": "minda",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "민다 (Minda)",
+    "description": "유럽, 미주 전세계 검증된 한인민박 예약 5,000원 할인",
+    "coupon_code": "MINDASTAY",
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.theminda.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.theminda.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "한인민박"
+  },
+  {
+    "id": "trv-23",
+    "brand": "오미오 (Omio)",
+    "brand_id": "omio",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "오미오 (Omio)",
+    "description": "유럽 기차(유로스타/이탈로/TGV), 플릭스버스 예약 10유로 할인",
+    "coupon_code": "OMIOEUROPE",
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.omio.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.omio.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "유럽교통"
+  },
+  {
+    "id": "trv-24",
+    "brand": "렌터카스닷컴",
+    "brand_id": "generic",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "렌터카스닷컴",
+    "description": "전세계 글로벌 렌터카 Hertz, Avis, Enterprise 5% 할인",
+    "coupon_code": "RENTALCARS",
+    "discount_percent": 5,
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.rentalcars.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.rentalcars.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": null
+  },
+  {
+    "id": "trv-25",
+    "brand": "IHG 호텔 & 리조트",
+    "brand_id": "ihg",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "IHG 호텔 & 리조트",
+    "description": "인터컨티넨탈, 홀리데이인 공식 홈페이지 직영 최저가 보장",
+    "coupon_code": "IHGDIRECT",
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.ihg.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.ihg.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "특급호텔"
+  },
+  {
+    "id": "shp-01",
+    "brand": "알리익스프레스 (AliExpress)",
+    "brand_id": "aliexpress",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "알리익스프레스 (AliExpress)",
+    "description": "$50 이상 결제 시 $6, $100 이상 결제 시 $15 프로모션 코드",
+    "coupon_code": "ALI26SAVE",
+    "is_up_to": false,
+    "end_date": "2026-09-10",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://ko.aliexpress.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://ko.aliexpress.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "직구 1위"
+  },
+  {
+    "id": "shp-02",
+    "brand": "테무 (Temu)",
+    "brand_id": "temu",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "테무 (Temu)",
+    "description": "신규 앱 설치 & 가입 시 최대 90% 할인 및 13만원 쿠폰세트",
+    "coupon_code": "TEMU90OFF",
+    "discount_percent": 90,
+    "max_discount_percent": 90,
+    "is_up_to": true,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.temu.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.temu.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "초특가"
+  },
+  {
+    "id": "shp-03",
+    "brand": "아이허브 (iHerb)",
+    "brand_id": "iherb",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "아이허브 (iHerb)",
+    "description": "영양제, 오메가3, 보충제, 웰니스 전 품목 5%~10% 상시할인",
+    "coupon_code": "HUB9999",
+    "discount_percent": 5,
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://kr.iherb.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://kr.iherb.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "영양제필수"
+  },
+  {
+    "id": "shp-04",
+    "brand": "오늘의집",
+    "brand_id": "generic",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "오늘의집",
+    "description": "가구, 조명, 인테리어 소품 첫 결제 10,000원 웰컴 쿠폰",
+    "coupon_code": "OHOU10000",
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://ohou.se",
+    "source_kind": "MANUAL",
+    "target_url": "https://ohou.se",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "인테리어"
+  },
+  {
+    "id": "shp-05",
+    "brand": "쿠팡 (Coupang)",
+    "brand_id": "coupang",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "쿠팡 (Coupang)",
+    "description": "로켓와우 골든박스 단독특가 및 로켓직구 무료배송",
+    "coupon_code": "COUPANGWOW",
+    "is_up_to": false,
+    "end_date": "2026-09-15",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.coupang.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.coupang.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "로켓배송"
+  },
+  {
+    "id": "shp-06",
+    "brand": "아마존 (Amazon)",
+    "brand_id": "amazon",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "아마존 (Amazon)",
+    "description": "한국 직배송 $100 이상 결제 시 $15 즉시할인 프로모션",
+    "coupon_code": "AMZKR20",
+    "is_up_to": false,
+    "end_date": "2026-10-15",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.amazon.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.amazon.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "미국직구"
+  },
+  {
+    "id": "shp-07",
+    "brand": "케이스티파이 (CASETiFY)",
+    "brand_id": "casetify",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "케이스티파이 (CASETiFY)",
+    "description": "아이폰 & 갤럭시 케이스, 테크 액세서리 전 품목 15% VIP 할인",
+    "coupon_code": "CASEVIP15",
+    "discount_percent": 15,
+    "is_up_to": false,
+    "end_date": "2026-10-15",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.casetify.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.casetify.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "15% 할인"
+  },
+  {
+    "id": "shp-08",
+    "brand": "올리브영 (Olive Young)",
+    "brand_id": "oliveyoung",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "올리브영 (Olive Young)",
+    "description": "올영세일 인기 뷰티, 스킨케어 10% 장바구니 보너스 쿠폰",
+    "coupon_code": "OLIVEBIG",
+    "discount_percent": 10,
+    "is_up_to": false,
+    "end_date": "2026-09-12",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.oliveyoung.co.kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.oliveyoung.co.kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "K-뷰티"
+  },
+  {
+    "id": "shp-09",
+    "brand": "크림 (KREAM)",
+    "brand_id": "kream",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "크림 (KREAM)",
+    "description": "한정판 스니커즈, 스트릿웨어, 럭셔리 배송비 무료 쿠폰",
+    "coupon_code": "KREAMSPRING",
+    "is_up_to": false,
+    "end_date": "2026-09-20",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://kream.co.kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://kream.co.kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "스니커즈"
+  },
+  {
+    "id": "shp-10",
+    "brand": "큐텐 (Qoo10)",
+    "brand_id": "qoo10",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "큐텐 (Qoo10)",
+    "description": "일본/아시아 직구 화장품 및 전자기기 $10 장바구니 쿠폰",
+    "coupon_code": "QOO10GLOBAL",
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.qoo10.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.qoo10.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "아시아직구"
+  },
+  {
+    "id": "shp-11",
+    "brand": "11번가 아마존",
+    "brand_id": "11",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "11번가 아마존",
+    "description": "우주패스 전용 5,000원 장바구니 쿠폰 + 무료배송",
+    "coupon_code": "11STAMZ",
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.11st.co.kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.11st.co.kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "우주패스"
+  },
+  {
+    "id": "shp-12",
+    "brand": "마켓컬리 (Kurly)",
+    "brand_id": "kurly",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "마켓컬리 (Kurly)",
+    "description": "샛별배송 첫 주문 100원딜 혜택 + 5,000원 할인 쿠폰",
+    "coupon_code": "KURLY5000",
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.kurly.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.kurly.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "신규100원"
+  },
+  {
+    "id": "shp-13",
+    "brand": "CJ더마켓 (CJ Market)",
+    "brand_id": "cjcjmarket",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "CJ더마켓 (CJ Market)",
+    "description": "비비고, 햇반, 고메 등 가공식품 공식몰 최대 45% 쿠폰",
+    "coupon_code": "CJMARKET40",
+    "discount_percent": 45,
+    "max_discount_percent": 45,
+    "is_up_to": true,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.cjthemarket.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.cjthemarket.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "비비고할인"
+  },
+  {
+    "id": "shp-14",
+    "brand": "풀무원 공식몰 (#풀무원)",
+    "brand_id": "generic",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "풀무원 공식몰 (#풀무원)",
+    "description": "바른먹거리 풀무원 신선식품 신규가입 1만원 쿠폰팩",
+    "coupon_code": "PULMUONE10",
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://shop.pulmuone.co.kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://shop.pulmuone.co.kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": null
+  },
+  {
+    "id": "shp-15",
+    "brand": "미트리 (Metree)",
+    "brand_id": "metree",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "미트리 (Metree)",
+    "description": "닭가슴살, 식단 도시락, 소고기 VIP 추천인 특가 (최대 56% 할인)",
+    "coupon_code": "METREESAVE",
+    "discount_percent": 56,
+    "max_discount_percent": 56,
+    "is_up_to": true,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://metree.co.kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://metree.co.kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "닭가슴살"
+  },
+  {
+    "id": "shp-16",
+    "brand": "랭킹닭컴 (Rankingdak)",
+    "brand_id": "rankingdak",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "랭킹닭컴 (Rankingdak)",
+    "description": "맛있닭, 잇메이트 닭가슴살 특급배송 전용 5,000원 쿠폰",
+    "coupon_code": "RANKINGDAK",
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.rankingdak.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.rankingdak.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": null
+  },
+  {
+    "id": "shp-17",
+    "brand": "펫프렌즈 (Pet Friends)",
+    "brand_id": "petfriends",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "펫프렌즈 (Pet Friends)",
+    "description": "강아지/고양이 사료, 간식, 용품 첫구매 5,000원 쿠폰",
+    "coupon_code": "PETFRIENDS",
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://pet-friends.co.kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://pet-friends.co.kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "반려동물"
+  },
+  {
+    "id": "shp-18",
+    "brand": "레고 공식몰 (LEGO)",
+    "brand_id": "lego",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "레고 공식몰 (LEGO)",
+    "description": "공식 스토어 한정판 브릭 세트 사은품 증정 프로모션",
+    "coupon_code": "LEGOBRICKS",
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.lego.com/ko-kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.lego.com/ko-kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": null
+  },
+  {
+    "id": "shp-19",
+    "brand": "레노버 (Lenovo)",
+    "brand_id": "lenovo",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "레노버 (Lenovo)",
+    "description": "ThinkPad, Legion 고성능 노트북 공식몰 5% 추가할인",
+    "coupon_code": "LENOVO8",
+    "discount_percent": 5,
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.lenovo.com/kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.lenovo.com/kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "노트북"
+  },
+  {
+    "id": "shp-20",
+    "brand": "다이슨 공식몰 (Dyson)",
+    "brand_id": "dyson",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "다이슨 공식몰 (Dyson)",
+    "description": "에어랩, 청소기, 공기청정기 공식몰 전용 거치대 사은품 혜택",
+    "coupon_code": "DYSONSPECIAL",
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.dyson.co.kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.dyson.co.kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "에어랩"
+  },
+  {
+    "id": "shp-21",
+    "brand": "예스24 (YES24)",
+    "brand_id": "24yes24",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "예스24 (YES24)",
+    "description": "도서, 음반, e-book 장바구니 3,000원 상품권",
+    "coupon_code": "YES24BOOKS",
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.yes24.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.yes24.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "도서할인"
+  },
+  {
+    "id": "shp-22",
+    "brand": "교보문고",
+    "brand_id": "generic",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "교보문고",
+    "description": "온라인 교보문고 도서 결제 2,000원 앱 다운로드 쿠폰",
+    "coupon_code": "KYOBO2026",
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.kyobobook.co.kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.kyobobook.co.kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": null
+  },
+  {
+    "id": "shp-23",
+    "brand": "솔드아웃 (sold out)",
+    "brand_id": "soldout",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "솔드아웃 (sold out)",
+    "description": "무신사 한정판 거래 플랫폼 수수료 무료 쿠폰",
+    "coupon_code": "SOLDOUT50",
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.soldout.co.kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.soldout.co.kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": null
+  },
+  {
+    "id": "off-gamsgo-01",
+    "brand": "겜스고 (GamsGo)",
+    "brand_id": "gamsgo",
+    "category": "sub",
+    "type": "REFERRAL",
+    "title": "겜스고 (GamsGo) 공식 프로모션 & 전용 할인코드",
+    "description": "프로모션 코드 [DASSD] 입력 시 즉시할인 적용",
+    "coupon_code": "DASSD",
+    "discount_percent": 10,
+    "is_up_to": false,
+    "end_date": "2026-12-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.gamsgo.com",
+    "source_kind": "OFFERS_PAGE",
+    "target_url": "https://www.gamsgo.com/partner/aTqwg",
+    "affiliate_url": "https://www.gamsgo.com/partner/aTqwg",
+    "referral_code": "DASSD",
+    "verified_at": "2026-09-09T04:37:41.347Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": true,
+      "notes": [
+        "자동 감시 엔진 규칙 검증 (OFFERS_PAGE)"
+      ]
+    },
+    "confidence": 100,
+    "status": "PUBLISHED",
+    "badge": "추천인"
+  },
+  {
+    "id": "sub-02",
+    "brand": "스픽 (Speak)",
+    "brand_id": "speak",
+    "category": "sub",
+    "type": "COUPON",
+    "title": "스픽 (Speak)",
+    "description": "AI 영어회화 1위 스픽 프리미엄 연간 구독권 20,000원 즉시할인",
+    "coupon_code": "SPEAKSAVE",
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.usespeak.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.usespeak.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "2만원 할인"
+  },
+  {
+    "id": "sub-03",
+    "brand": "노드VPN (NordVPN)",
+    "brand_id": "vpnnordvpn",
+    "category": "sub",
+    "type": "COUPON",
+    "title": "노드VPN (NordVPN)",
+    "description": "보안 1위 VPN 2년 플랜 최대 72% 할인 + 3개월 추가 무료 증정",
+    "coupon_code": "NORD70OFF",
+    "discount_percent": 72,
+    "max_discount_percent": 72,
+    "is_up_to": true,
+    "end_date": "2026-12-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://nordvpn.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://nordvpn.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "72% OFF"
+  },
+  {
+    "id": "sub-04",
+    "brand": "서프샤크 (Surfshark VPN)",
+    "brand_id": "surfsharkvpn",
+    "category": "sub",
+    "type": "COUPON",
+    "title": "서프샤크 (Surfshark VPN)",
+    "description": "무제한 기기 동시접속 가성비 VPN 85% 특별할인 + 2개월 무료",
+    "coupon_code": "SURF85OFF",
+    "discount_percent": 85,
+    "is_up_to": false,
+    "end_date": "2026-12-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://surfshark.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://surfshark.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "85% OFF"
+  },
+  {
+    "id": "sub-05",
+    "brand": "익스프레스VPN (ExpressVPN)",
+    "brand_id": "vpnexpressvpn",
+    "category": "sub",
+    "type": "COUPON",
+    "title": "익스프레스VPN (ExpressVPN)",
+    "description": "초고속 스트리밍 최적화 VPN 12개월 결제 시 3개월 무료 연장",
+    "coupon_code": "EXPRESS3M",
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.expressvpn.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.expressvpn.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "+3개월"
+  },
+  {
+    "id": "sub-06",
+    "brand": "프로톤VPN (ProtonVPN)",
+    "brand_id": "vpnprotonvpn",
+    "category": "sub",
+    "type": "COUPON",
+    "title": "프로톤VPN (ProtonVPN)",
+    "description": "스위스 기반 강력한 개인정보 보호 VPN 50% 할인 프로모션",
+    "coupon_code": "PROTONSAVE",
+    "discount_percent": 50,
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://protonvpn.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://protonvpn.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "보안최강"
+  },
+  {
+    "id": "sub-07",
+    "brand": "어도비 (Adobe CC)",
+    "brand_id": "adobecc",
+    "category": "sub",
+    "type": "COUPON",
+    "title": "어도비 (Adobe CC)",
+    "description": "포토샵, 일러스트레이터, 프리미어 프로 학생/교직원 60% 특별할인",
+    "coupon_code": "ADOBE60",
+    "discount_percent": 60,
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.adobe.com/kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.adobe.com/kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "학생60%"
+  },
+  {
+    "id": "sub-08",
+    "brand": "우버택시 (Uber)",
+    "brand_id": "uber",
+    "category": "sub",
+    "type": "COUPON",
+    "title": "우버택시 (Uber)",
+    "description": "첫 탑승 요금 50% 즉시 할인쿠폰 (최대 10,000원 할인)",
+    "coupon_code": "UBERKR2026",
+    "discount_percent": 50,
+    "max_discount_percent": 50,
+    "is_up_to": true,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.uber.com/kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.uber.com/kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "50% 할인"
+  },
+  {
+    "id": "sub-09",
+    "brand": "틱톡 라이트 (TikTok Lite)",
+    "brand_id": "tiktoklite",
+    "category": "sub",
+    "type": "COUPON",
+    "title": "틱톡 라이트 (TikTok Lite)",
+    "description": "친구 초대 신규 가입 시 현금 출금 가능한 포인트 즉시 지급",
+    "coupon_code": "TIKTOKLITE",
+    "is_up_to": false,
+    "end_date": "2026-09-20",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.tiktok.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.tiktok.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "포인트증정"
+  },
+  {
+    "id": "sub-10",
+    "brand": "크몽 (Kmong)",
+    "brand_id": "kmong",
+    "category": "sub",
+    "type": "COUPON",
+    "title": "크몽 (Kmong)",
+    "description": "디자인, 프로그래밍, 번역 등 전문가 외주 첫 의뢰 1만원 할인",
+    "coupon_code": "KMONG10000",
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://kmong.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://kmong.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "1만원 할인"
+  },
+  {
+    "id": "sub-11",
+    "brand": "숨고 (Soomgo)",
+    "brand_id": "soomgo",
+    "category": "sub",
+    "type": "COUPON",
+    "title": "숨고 (Soomgo)",
+    "description": "생활 서비스, 인테리어, 과외 견적 요청 5,000원 쿠폰",
+    "coupon_code": "SOOMGO5000",
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://soomgo.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://soomgo.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": null
+  },
+  {
+    "id": "sub-12",
+    "brand": "밀리의 서재",
+    "brand_id": "generic",
+    "category": "sub",
+    "type": "COUPON",
+    "title": "밀리의 서재",
+    "description": "전자책 16만 권 무제한 첫 달 무료 구독 혜택",
+    "coupon_code": "MILLIEFIRST",
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.millie.co.kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.millie.co.kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "첫달무료"
+  },
+  {
+    "id": "sub-13",
+    "brand": "윌라 오디오북",
+    "brand_id": "generic",
+    "category": "sub",
+    "type": "COUPON",
+    "title": "윌라 오디오북",
+    "description": "베스트셀러 오디오북 & 클래스 2주 무료 체험 + 3개월 50%",
+    "coupon_code": "WELAAROCKS",
+    "discount_percent": 50,
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.welaaa.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.welaaa.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": null
+  },
+  {
+    "id": "sub-14",
+    "brand": "링글 (Ringle)",
+    "brand_id": "ringle",
+    "category": "sub",
+    "type": "COUPON",
+    "title": "링글 (Ringle)",
+    "description": "아이비리그 튜터 1:1 화상영어 20분 무료 수업권 + 포인트",
+    "coupon_code": "RINGLEPOINT",
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.ringleplus.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.ringleplus.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "아이비리그"
+  },
+  {
+    "id": "sub-15",
+    "brand": "캔바 프로 (Canva Pro)",
+    "brand_id": "canvapro",
+    "category": "sub",
+    "type": "COUPON",
+    "title": "캔바 프로 (Canva Pro)",
+    "description": "디자인 템플릿 & AI 도구 30일 무료 체험 프로모션",
+    "coupon_code": "CANVAPRO30",
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.canva.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.canva.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "무료체험"
+  },
+  {
+    "id": "sub-16",
+    "brand": "마이크로소프트 365",
+    "brand_id": "365",
+    "category": "sub",
+    "type": "COUPON",
+    "title": "마이크로소프트 365",
+    "description": "Word, Excel, PowerPoint 1개월 무료체험 + 1TB 클라우드",
+    "coupon_code": "MS365FAMILY",
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.microsoft.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.microsoft.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": null
+  },
+  {
+    "id": "fas-01",
+    "brand": "파페치 (Farfetch)",
+    "brand_id": "farfetch",
+    "category": "fashion",
+    "type": "COUPON",
+    "title": "파페치 (Farfetch)",
+    "description": "글로벌 디자이너 명품 브랜드 첫 구매 10% 정가품 할인코드",
+    "coupon_code": "FARFETCH10",
+    "discount_percent": 10,
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.farfetch.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.farfetch.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "명품1위"
+  },
+  {
+    "id": "fas-02",
+    "brand": "마이테레사 (Mytheresa)",
+    "brand_id": "mytheresa",
+    "category": "fashion",
+    "type": "COUPON",
+    "title": "마이테레사 (Mytheresa)",
+    "description": "독일 명품 직구 공식몰 첫 주문 10%~15% 웰컴 바우처",
+    "coupon_code": "MYT15FIRST",
+    "discount_percent": 10,
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.mytheresa.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.mytheresa.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "15% 할인"
+  },
+  {
+    "id": "fas-03",
+    "brand": "룰루레몬 (Lululemon)",
+    "brand_id": "lululemon",
+    "category": "fashion",
+    "type": "COUPON",
+    "title": "룰루레몬 (Lululemon)",
+    "description": "요가복 & 프리미엄 애슬레저 공식 스토어 전 상품 무료배송",
+    "coupon_code": "LULU10KR",
+    "is_up_to": false,
+    "end_date": "2026-10-15",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.lululemon.co.kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.lululemon.co.kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "요가복"
+  },
+  {
+    "id": "fas-04",
+    "brand": "세타이어 (Cettire)",
+    "brand_id": "cettire",
+    "category": "fashion",
+    "type": "COUPON",
+    "title": "세타이어 (Cettire)",
+    "description": "호주 명품 플랫폼 세일 상품 추가 10% 프로모션 코드",
+    "coupon_code": "CETTIRE10",
+    "discount_percent": 10,
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.cettire.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.cettire.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "추가10%"
+  },
+  {
+    "id": "fas-05",
+    "brand": "COS (코스)",
+    "brand_id": "cos",
+    "category": "fashion",
+    "type": "COUPON",
+    "title": "COS (코스)",
+    "description": "미니멀 패션 COS 공식 온라인몰 신규 가입 10% 웰컴 쿠폰",
+    "coupon_code": "COSHELLO10",
+    "discount_percent": 10,
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.cos.com/ko-kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.cos.com/ko-kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "10% 쿠폰"
+  },
+  {
+    "id": "fas-06",
+    "brand": "아르켓 (ARKET)",
+    "brand_id": "arket",
+    "category": "fashion",
+    "type": "COUPON",
+    "title": "아르켓 (ARKET)",
+    "description": "노르딕 라이프스타일 브랜드 ARKET 첫 구매 10% 할인코드",
+    "coupon_code": "ARKET10HELLO",
+    "discount_percent": 10,
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.arket.com/ko-kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.arket.com/ko-kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": null
+  },
+  {
+    "id": "fas-07",
+    "brand": "W컨셉 (W Concept)",
+    "brand_id": "wwconcept",
+    "category": "fashion",
+    "type": "COUPON",
+    "title": "W컨셉 (W Concept)",
+    "description": "국내 최고 디자이너 편집몰 10% 앱 전용 장바구니 쿠폰",
+    "coupon_code": "WCONCEPT10",
+    "discount_percent": 10,
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.wconcept.co.kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.wconcept.co.kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "디자이너몰"
+  },
+  {
+    "id": "fas-08",
+    "brand": "무신사 (Musinsa)",
+    "brand_id": "musinsa",
+    "category": "fashion",
+    "type": "COUPON",
+    "title": "무신사 (Musinsa)",
+    "description": "무신사 스토어 전 브랜드 7% 쿠폰 및 회원등급 추가할인",
+    "coupon_code": "MUSINSA7",
+    "discount_percent": 7,
+    "is_up_to": false,
+    "end_date": "2026-09-15",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.musinsa.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.musinsa.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "국내 1위"
+  },
+  {
+    "id": "fas-09",
+    "brand": "지그재그 (Zigzag)",
+    "brand_id": "zigzag",
+    "category": "fashion",
+    "type": "COUPON",
+    "title": "지그재그 (Zigzag)",
+    "description": "2030 여성 쇼핑몰 통합 첫 구매 20,000원 웰컴 쿠폰팩",
+    "coupon_code": "ZIGZAG20",
+    "is_up_to": false,
+    "end_date": "2026-09-14",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://zigzag.kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://zigzag.kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "쿠폰팩"
+  },
+  {
+    "id": "fas-10",
+    "brand": "에이블리 (ABLY)",
+    "brand_id": "ably",
+    "category": "fashion",
+    "type": "COUPON",
+    "title": "에이블리 (ABLY)",
+    "description": "전 상품 무료배송 스타일 커머스 첫 쇼핑 지원금 쿠폰",
+    "coupon_code": "ABLYSAVE",
+    "is_up_to": false,
+    "end_date": "2026-09-14",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://a-bly.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://a-bly.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": null
+  },
+  {
+    "id": "fas-11",
+    "brand": "SSENSE (에센스)",
+    "brand_id": "ssense",
+    "category": "fashion",
+    "type": "COUPON",
+    "title": "SSENSE (에센스)",
+    "description": "캐나다 명품 편집숍 스트릿웨어 & 하이엔드 시즌 오프 세일",
+    "coupon_code": "SSENSESALE",
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.ssense.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.ssense.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "스트릿명품"
+  },
+  {
+    "id": "fas-12",
+    "brand": "24S (24세브르)",
+    "brand_id": "24s24",
+    "category": "fashion",
+    "type": "COUPON",
+    "title": "24S (24세브르)",
+    "description": "LVMH 루이비통 모회사 공식 럭셔리몰 첫 구매 15% 할인",
+    "coupon_code": "24SFIRST15",
+    "discount_percent": 15,
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.24s.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.24s.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "LVMH공식"
+  },
+  {
+    "id": "fas-13",
+    "brand": "조마샵 (Jomashop)",
+    "brand_id": "jomashop",
+    "category": "fashion",
+    "type": "COUPON",
+    "title": "조마샵 (Jomashop)",
+    "description": "명품 시계, 선글라스, 향수 직구 $200 이상 결제 시 $20 할인",
+    "coupon_code": "JOMAFAST20",
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.jomashop.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.jomashop.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "명품시계"
+  },
+  {
+    "id": "fas-14",
+    "brand": "조말론 런던 (Jo Malone)",
+    "brand_id": "jomalone",
+    "category": "fashion",
+    "type": "COUPON",
+    "title": "조말론 런던 (Jo Malone)",
+    "description": "공식 온라인 부티크 향수 구매 시 미니어처 코롱 증정",
+    "coupon_code": "JOMALONEGIFT",
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.jomalone.co.kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.jomalone.co.kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "향수증정"
+  },
+  {
+    "id": "fas-15",
+    "brand": "띠어리 (Theory)",
+    "brand_id": "theory",
+    "category": "fashion",
+    "type": "COUPON",
+    "title": "띠어리 (Theory)",
+    "description": "미니멀 컨템포러리 브랜드 띠어리 공식몰 신규 15% 바우처",
+    "coupon_code": "THEORY15",
+    "discount_percent": 15,
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.theory.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.theory.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": null
+  },
+  {
+    "id": "fas-16",
+    "brand": "알로요가 (Alo Yoga)",
+    "brand_id": "aloyoga",
+    "category": "fashion",
+    "type": "COUPON",
+    "title": "알로요가 (Alo Yoga)",
+    "description": "글로벌 셀럽들의 워너비 애슬레저 첫 주문 15% 할인코드",
+    "coupon_code": "ALOYOGA15",
+    "discount_percent": 15,
+    "is_up_to": false,
+    "end_date": "2026-10-15",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.aloyoga.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.aloyoga.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "셀럽애슬레저"
+  },
+  {
+    "id": "fas-17",
+    "brand": "크록스 공식몰 (Crocs)",
+    "brand_id": "crocs",
+    "category": "fashion",
+    "type": "COUPON",
+    "title": "크록스 공식몰 (Crocs)",
+    "description": "클로그, 샌들, 지비츠 참 공식몰 클럽 회원 20% 할인",
+    "coupon_code": "CROCS20KR",
+    "discount_percent": 20,
+    "is_up_to": false,
+    "end_date": "2026-10-15",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.crocs.co.kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.crocs.co.kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "20% 할인"
+  },
+  {
+    "id": "fas-18",
+    "brand": "H&M 공식 온라인스토어",
+    "brand_id": "hm",
+    "category": "fashion",
+    "type": "COUPON",
+    "title": "H&M 공식 온라인스토어",
+    "description": "H&M 멤버십 신규 가입 & 앱 첫 구매 시 15% 즉시할인",
+    "coupon_code": "HMAPP15",
+    "discount_percent": 15,
+    "is_up_to": false,
+    "end_date": "2026-10-15",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www2.hm.com/ko_kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www2.hm.com/ko_kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": null
+  },
+  {
+    "id": "fas-19",
+    "brand": "스와로브스키 (Swarovski)",
+    "brand_id": "swarovski",
+    "category": "fashion",
+    "type": "COUPON",
+    "title": "스와로브스키 (Swarovski)",
+    "description": "크리스털 주얼리, 목걸이, 귀걸이 클럽 회원 10% 바우처",
+    "coupon_code": "SWAROVSKI10",
+    "discount_percent": 10,
+    "is_up_to": false,
+    "end_date": "2026-10-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.swarovski.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.swarovski.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "주얼리"
+  },
+  {
+    "id": "fas-20",
+    "brand": "나이키 공식몰 (Nike)",
+    "brand_id": "nike",
+    "category": "fashion",
+    "type": "COUPON",
+    "title": "나이키 공식몰 (Nike)",
+    "description": "나이키 멤버 가입 시 웰컴 1만원 쿠폰 및 전 상품 무료배송/반품",
+    "coupon_code": "NIKEWELCOME",
+    "is_up_to": false,
+    "end_date": "2026-10-15",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.nike.com/kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.nike.com/kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "무료반품"
+  },
+  {
+    "id": "fas-21",
+    "brand": "아디다스 공식몰 (Adidas)",
+    "brand_id": "adidas",
+    "category": "fashion",
+    "type": "COUPON",
+    "title": "아디다스 공식몰 (Adidas)",
+    "description": "아디클럽 신규 가입 시 10% 웰컴 쿠폰 및 한정판 래플 응모",
+    "coupon_code": "ADICLUB10",
+    "discount_percent": 10,
+    "is_up_to": false,
+    "end_date": "2026-10-15",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.adidas.co.kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.adidas.co.kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": null
+  },
+  {
+    "id": "gde-01",
+    "brand": "해외 원화결제(DCC) 차단법",
+    "brand_id": "dcc",
+    "category": "guide",
+    "type": "PROMOTION",
+    "title": "해외 원화결제(DCC) 차단법",
+    "description": "해외 결제 시 3~8% 불필요한 이중 환전 수수료 아끼는 카드사 세팅 방법",
+    "coupon_code": "TIP-DCC",
+    "discount_percent": 8,
+    "is_up_to": false,
+    "end_date": "2029-12-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://coupontruck.io",
+    "source_kind": "MANUAL",
+    "target_url": "https://coupontruck.io",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "필독"
+  },
+  {
+    "id": "gde-02",
+    "brand": "해외직구 관부가세 면세 한도 계산법",
+    "brand_id": "generic",
+    "category": "guide",
+    "type": "PROMOTION",
+    "title": "해외직구 관부가세 면세 한도 계산법",
+    "description": "미국 $200(목록통관), 일반 국가 $150 관세 면제 기준과 합산과세 주의사항",
+    "coupon_code": "TIP-TAX",
+    "is_up_to": false,
+    "end_date": "2029-12-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://coupontruck.io",
+    "source_kind": "MANUAL",
+    "target_url": "https://coupontruck.io",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "세금절약"
+  },
+  {
+    "id": "gde-03",
+    "brand": "호텔 최저가 예약 노하우 5가지",
+    "brand_id": "5",
+    "category": "guide",
+    "type": "PROMOTION",
+    "title": "호텔 최저가 예약 노하우 5가지",
+    "description": "브라우저 시크릿 모드 검색, 통화 설정(현지통화 vs USD) 비교법",
+    "coupon_code": "TIP-HOTEL",
+    "is_up_to": false,
+    "end_date": "2029-12-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://coupontruck.io",
+    "source_kind": "MANUAL",
+    "target_url": "https://coupontruck.io",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "여행꿀팁"
+  },
+  {
+    "id": "gde-04",
+    "brand": "제휴 캐시백 사이트 중복 적립법",
+    "brand_id": "generic",
+    "category": "guide",
+    "type": "PROMOTION",
+    "title": "제휴 캐시백 사이트 중복 적립법",
+    "description": "할인코드 적용 후 추가로 결제액의 3~5% 캐시백 돌려받는 노하우",
+    "coupon_code": "TIP-CASHBACK",
+    "discount_percent": 5,
+    "is_up_to": false,
+    "end_date": "2029-12-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://coupontruck.io",
+    "source_kind": "MANUAL",
+    "target_url": "https://coupontruck.io",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "페이백"
+  },
+  {
+    "id": "gde-05",
+    "brand": "항공권 가장 저렴하게 예매하는 요일/시간",
+    "brand_id": "generic",
+    "category": "guide",
+    "type": "PROMOTION",
+    "title": "항공권 가장 저렴하게 예매하는 요일/시간",
+    "description": "출발 6주 전 화요일/수요일 예매가 가장 저렴한 데이터 분석 결과",
+    "coupon_code": "TIP-FLIGHT",
+    "is_up_to": false,
+    "end_date": "2029-12-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://coupontruck.io",
+    "source_kind": "MANUAL",
+    "target_url": "https://coupontruck.io",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "항공권"
+  },
+  {
+    "id": "gde-06",
+    "brand": "해외여행자보험 5분 만에 최저가 가입 팁",
+    "brand_id": "5",
+    "category": "guide",
+    "type": "PROMOTION",
+    "title": "해외여행자보험 5분 만에 최저가 가입 팁",
+    "description": "항공기 지연, 휴대품 파손 보장 필수 특약만 골라 반값에 가입하는 법",
+    "coupon_code": "TIP-INSUR",
+    "is_up_to": false,
+    "end_date": "2029-12-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://coupontruck.io",
+    "source_kind": "MANUAL",
+    "target_url": "https://coupontruck.io",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "여행자보험"
+  },
+  {
+    "id": "gde-07",
+    "brand": "글로벌 직구 블랙프라이데이 세일 캘린더",
+    "brand_id": "generic",
+    "category": "guide",
+    "type": "PROMOTION",
+    "title": "글로벌 직구 블랙프라이데이 세일 캘린더",
+    "description": "알리 광군제, 미국 블프, 사이버먼데이, 여름 정기 세일 일정 총정리",
+    "coupon_code": "TIP-SALE-CAL",
+    "is_up_to": false,
+    "end_date": "2029-12-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://coupontruck.io",
+    "source_kind": "MANUAL",
+    "target_url": "https://coupontruck.io",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "세일캘린더"
+  },
+  {
+    "id": "gde-08",
+    "brand": "환전 수수료 100% 우대받는 트래블로그/트래블월렛 비교",
+    "brand_id": "100",
+    "category": "guide",
+    "type": "PROMOTION",
+    "title": "환전 수수료 100% 우대받는 트래블로그/트래블월렛 비교",
+    "description": "해외 ATM 출금 수수료 무료 및 환전 수수료 0원 혜택 카드 완벽 분석",
+    "coupon_code": "TIP-FXCARD",
+    "is_up_to": false,
+    "end_date": "2029-12-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://coupontruck.io",
+    "source_kind": "MANUAL",
+    "target_url": "https://coupontruck.io",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "환전꿀팁"
+  },
+  {
+    "id": "gam-01",
+    "brand": "스팀 (Steam)",
+    "brand_id": "steam",
+    "category": "game",
+    "type": "COUPON",
+    "title": "스팀 (Steam)",
+    "description": "스팀 계절 정기 세일 및 주말 특가 최대 90% 할인",
+    "coupon_code": "STEAMSALE",
+    "discount_percent": 90,
+    "max_discount_percent": 90,
+    "is_up_to": true,
+    "end_date": "2026-09-12",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://store.steampowered.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://store.steampowered.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "스팀특가"
+  },
+  {
+    "id": "gam-02",
+    "brand": "엑시트랙 (ExitLag)",
+    "brand_id": "exitlag",
+    "category": "game",
+    "type": "COUPON",
+    "title": "엑시트랙 (ExitLag)",
+    "description": "배그/롤 해외서버 핑(Ping) 렉 감소 VPN 20% 즉시할인",
+    "coupon_code": "EXITLAG20",
+    "discount_percent": 20,
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.exitlag.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.exitlag.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "핑VPN 1위"
+  },
+  {
+    "id": "gam-03",
+    "brand": "그린맨게임 (GMG)",
+    "brand_id": "gmg",
+    "category": "game",
+    "type": "COUPON",
+    "title": "그린맨게임 (GMG)",
+    "description": "정품 스팀 CD키 공식 리셀러 신작 및 예약구매 15% 할인",
+    "coupon_code": "GMG15OFF",
+    "discount_percent": 15,
+    "is_up_to": false,
+    "end_date": "2026-09-20",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.greenmangaming.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.greenmangaming.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "정품키 15%"
+  },
+  {
+    "id": "gam-04",
+    "brand": "에픽게임즈 (Epic Games)",
+    "brand_id": "epicgames",
+    "category": "game",
+    "type": "COUPON",
+    "title": "에픽게임즈 (Epic Games)",
+    "description": "매주 목요일 업데이트되는 인기 PC 게임 100% 무료 배포",
+    "coupon_code": "EPICFREE",
+    "discount_percent": 100,
+    "is_up_to": false,
+    "end_date": "2026-09-11",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://store.epicgames.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://store.epicgames.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "매주무료"
+  },
+  {
+    "id": "gam-05",
+    "brand": "레이저 (Razer)",
+    "brand_id": "razer",
+    "category": "game",
+    "type": "COUPON",
+    "title": "레이저 (Razer)",
+    "description": "프로 게이머 마우스, 기계식 키보드 공식몰 첫 구매 10% 쿠폰",
+    "coupon_code": "RAZER10KR",
+    "discount_percent": 10,
+    "is_up_to": false,
+    "end_date": "2026-10-15",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.razer.com/kr-kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.razer.com/kr-kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "기어특가"
+  },
+  {
+    "id": "gam-06",
+    "brand": "로지텍 G (Logitech G)",
+    "brand_id": "glogitechg",
+    "category": "game",
+    "type": "COUPON",
+    "title": "로지텍 G (Logitech G)",
+    "description": "G PRO 무선 마우스, 헤드셋 공식 인증 스토어 특가 쿠폰",
+    "coupon_code": "LOGITECHG",
+    "is_up_to": false,
+    "end_date": "2026-10-15",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.logitechg.com/ko-kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.logitechg.com/ko-kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "G-PRO"
+  },
+  {
+    "id": "gam-07",
+    "brand": "Xbox Game Pass",
+    "brand_id": "xboxgamepass",
+    "category": "game",
+    "type": "COUPON",
+    "title": "Xbox Game Pass",
+    "description": "PC 및 콘솔 수백 개 명작 게임 첫 달 1,000원 무제한 플레이",
+    "coupon_code": "XBOXPASS",
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.xbox.com/ko-KR/xbox-game-pass",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.xbox.com/ko-KR/xbox-game-pass",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "첫달천원"
+  },
+  {
+    "id": "gam-08",
+    "brand": "닌텐도 e숍 (Nintendo)",
+    "brand_id": "enintendo",
+    "category": "game",
+    "type": "COUPON",
+    "title": "닌텐도 e숍 (Nintendo)",
+    "description": "닌텐도 스위치 디지털 다운로드 타이틀 정기 골드포인트 적립",
+    "coupon_code": "NINTENDOJP",
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.nintendo.co.kr",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.nintendo.co.kr",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "스위치"
+  },
+  {
+    "id": "gam-09",
+    "brand": "험블번들 (Humble Bundle)",
+    "brand_id": "humblebundle",
+    "category": "game",
+    "type": "COUPON",
+    "title": "험블번들 (Humble Bundle)",
+    "description": "인기 게임 패키지 초특가 번들 구매 + 자선 기부",
+    "coupon_code": "HUMBLECHOICE",
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.humblebundle.com",
+    "source_kind": "MANUAL",
+    "target_url": "https://www.humblebundle.com",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "번들세일"
+  },
+  {
+    "id": "gam-10",
+    "brand": "미꾸라지 VPN (Mudfish)",
+    "brand_id": "vpnmudfish",
+    "category": "game",
+    "type": "COUPON",
+    "title": "미꾸라지 VPN (Mudfish)",
+    "description": "종량제 최저가 게임 가속 VPN 종량제 크레딧 충전 혜택",
+    "coupon_code": "MUDFISHBOOST",
+    "is_up_to": false,
+    "end_date": "2026-09-30",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://mudfish.net",
+    "source_kind": "MANUAL",
+    "target_url": "https://mudfish.net",
+    "verified_at": "2026-09-09T04:36:57.144Z",
+    "evidence": {
+      "code_in_source": true,
+      "discount_in_source": false,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": false,
+      "notes": [
+        "초기 레거시 데이터 검증 시드 마이그레이션"
+      ]
+    },
+    "confidence": 96,
+    "status": "PUBLISHED",
+    "badge": "종량제VPN"
+  }
+]

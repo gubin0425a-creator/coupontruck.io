@@ -1,0 +1,22 @@
+{
+  "name": "coupontruck",
+  "version": "2.1.0",
+  "description": "CouponTruck automated coupon, affiliate, and referral curation platform",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsx src/publishing/build.ts",
+    "collect": "tsx src/collectors/run.ts",
+    "validate": "tsx src/validators/test-validator.ts",
+    "secret-lint": "tsx src/security/secret-lint.ts",
+    "test": "npm run validate && npm run secret-lint"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.4.5"
+  }
+}

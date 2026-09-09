@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WonkaShorts Studio | 원카 AI 건축/지식 숏폼 원클릭 풀 자동화</title>
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <link rel="shortcut icon" href="/static/favicon.ico">
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- 사이드바 / 헤더 -->
+    <header class="top-nav">
+      <div class="logo-group">
+        <img src="/static/app_icon.png" class="logo-icon-img" alt="WonkaShorts Logo">
+        <div>
+          <h1 class="logo-title">WonkaShorts Studio</h1>
+          <p class="logo-subtitle">원카AI '신비한 건축사전' 스타일 30일치 원클릭 풀 자동화</p>
+        </div>
+      </div>
+      <div class="header-badges">
+        <span class="badge badge-free">⚡ API 비용 0원 (Edge-TTS + Pollinations)</span>
+        <span class="badge badge-seo">🎯 SEO 100점 최적화</span>
+        <span class="badge badge-schedule">📅 주 3회 30일치 자동 예약</span>
+      </div>
+    </header>
+
+    <!-- 메인 컨텐츠 영역 -->
+    <main class="main-content">
+      <!-- 1. 원클릭 제작 컨트롤 패널 -->
+      <section class="card control-card">
+        <div class="card-header">
+          <h2>🚀 30일치(14편) 원클릭 대량 제작</h2>
+          <span class="status-indicator" id="global-status-badge">대기 중</span>
+        </div>
+
+        <div class="control-grid">
+          <div class="form-group">
+            <label for="theme-select">🎯 숏폼 테마 선택</label>
+            <select id="theme-select" class="form-control">
+              <option value="신비한 세계 건축과 토목의 비밀">🏢 신비한 세계 건축과 토목의 비밀 (기본 베스트셀러)</option>
+              <option value="해저터널과 초대형 교량의 공학 기적">🌊 해저터널과 초대형 교량의 공학 기적</option>
+              <option value="지진과 태풍을 이기는 극한의 방재 기술">🌪️ 지진과 태풍을 이기는 극한의 방재 기술</option>
+              <option value="사막과 바다 위에 세운 인공 도시의 미스터리">🏜️ 사막과 바다 위에 세운 인공 도시의 미스터리</option>
+              <option value="custom">✏️ 사용자 정의 테마 직접 입력...</option>
+            </select>
+            <input type="text" id="custom-theme-input" class="form-control mt-2 hidden" placeholder="예: 대한민국 10대 불가사의 토목 프로젝트">
+          </div>
+
+          <div class="form-group">
+            <label for="voice-select">🎙️ 나레이션 성우 (Edge-TTS 100% 무료)</label>
+            <select id="voice-select" class="form-control">
+              <option value="ko-KR-InJoonNeural" selected>인준 (중저음 남성 - 신비한 건축사전 시그니처 보이스)</option>
+              <option value="ko-KR-SunHiNeural">선희 (또렷하고 신뢰감 있는 여성 보이스)</option>
+              <option value="ko-KR-BongJinNeural">봉진 (차분하고 묵직한 남성 보이스)</option>
+              <option value="ko-KR-HyunsuNeural">현수 (젊고 박진감 넘치는 남성 보이스)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 3분할 컷씬 및 연출 스타일 선택 -->
+        <div class="form-group style-group mb-4">
+          <label for="style-select">📐 연출 기술: 한 이미지 3분할 컷씬(3-Panel Multi-Angle) 스타일</label>
+          <select id="style-select" class="form-control highlight-border">
+            <option value="hybrid" selected>✨ 스마트 3분할 컷씬 믹스 (도입: 풀스크린, 문제/해결: 3분할 다각도 컷씬, 요약: 풀스크린) [원카AI 추천]</option>
+            <option value="3split">🎬 전 씬 3분할 다각도 컷씬 모드 (상: 광각외경 / 중: 단면도해&치수선 / 하: 메커니즘)</option>
+            <option value="fullscreen">🖼️ 클래식 풀스크린 인포그래픽 모드 (단일 화면 + HUD 오버레이)</option>
+          </select>
+          <span class="form-hint">💡 3분할 컷씬은 한 화면에 3개의 앵글(CAM 01~03)을 동시 노출하여 시청자의 이탈을 방지하고 정보 전달력을 극대화합니다.</span>
+        </div>
+
+        <!-- 고급 옵션 토글 -->
+        <details class="advanced-settings">
+          <summary>⚙️ 상세 설정 (제작 편수, 업로드 스케줄, Gemini API 키)</summary>
+          <div class="settings-grid">
+            <div class="form-group">
+              <label for="count-input">제작 에피소드 수 (기본: 30일치 14편)</label>
+              <input type="number" id="count-input" class="form-control" value="14" min="1" max="30">
+            </div>
+            <div class="form-group">
+              <label for="api-key-input">Gemini API 키 (선택사항 - 미입력 시 100% 무료 내장 데이터베이스 사용)</label>
+              <input type="password" id="api-key-input" class="form-control" placeholder="AIzaSy... (비워두면 크레딧 0원으로 즉시 구동)">
+            </div>
+          </div>
+        </details>
+
+        <!-- 원클릭 실행 버튼 -->
+        <div class="action-row">
+          <button id="btn-start-batch" class="btn btn-primary btn-large">
+            <span class="btn-icon">⚡</span> 30일치(14편) 원클릭 풀 자동화 제작 시작
+          </button>
+        </div>
+
+        <!-- 실시간 진행 상태 바 -->
+        <div id="progress-container" class="progress-container hidden">
+          <div class="progress-info">
+            <span id="progress-step-text">작업을 준비하고 있습니다...</span>
+            <span id="progress-percent-text">0%</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div id="progress-bar-fill" class="progress-bar-fill" style="width: 0%"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 💡 원카AI 영상 분석 조언 & 시크릿 꿀팁 -->
+      <section class="card playbook-card">
+        <div class="card-header">
+          <h2>💡 원카AI 영상 심층 분석: '신비한 건축사전' 숏폼 바이블 & 시크릿 꿀팁</h2>
+          <span class="badge badge-seo">🎯 알고리즘 AVD 85%+ 공략법</span>
+        </div>
+        <div class="playbook-summary-text">
+          원카AI 강좌(<code>ObvCtB1ATnA</code>)에서 강조된 <b>"구조는 완벽히 차용하되 내용은 100% 독창적으로 재구성"</b>하는 핵심 공식과 <b>한 이미지 3분할 컷씬</b> 연출 노하우를 프로그램에 그대로 내장했습니다.
+        </div>
+        <div class="playbook-grid" id="playbook-rules-container">
+          <div class="rule-card">
+            <div class="rule-header"><span class="rule-num">RULE 01</span> <b>구조 차용의 법칙 (ลอกโครง ไม่ลอกเนื้อ)</b></div>
+            <p>검증된 4단 서사(0초 Hook ➔ 7초 Problem ➔ 20초 Solution ➔ 45초 Punchline)의 전개 템포만 빌려오고 소재는 자체 지식베이스로 100% 독창적 창작하여 저작권 제재를 완벽 회피합니다.</p>
+          </div>
+          <div class="rule-card">
+            <div class="rule-header"><span class="rule-num">RULE 02</span> <b>초반 3초 훅 & 3분할 컷씬</b></div>
+            <p>시청자는 3초 안에 스크롤을 결정합니다. 단일 정지 이미지가 아닌 3개 다각도 컷씬을 동시 노출하여 시각적 정보 밀도를 3배로 높여 이탈률을 15% 미만으로 방어합니다.</p>
+          </div>
+          <div class="rule-card">
+            <div class="rule-header"><span class="rule-num">RULE 03</span> <b>3분할 컷씬 공간 배치 공식</b></div>
+            <p><b>CAM 01(상단 외경)</b> ➔ <b>CAM 02(중앙 구조단면 & ↔ 치수선/타겟링)</b> ➔ <b>CAM 03(하단 디테일 메커니즘)</b>의 수직 시선 이동이 다큐멘터리적 몰입감을 극대화합니다.</p>
+          </div>
+          <div class="rule-card">
+            <div class="rule-header"><span class="rule-num">RULE 04</span> <b>신비한 건축사전 색상 심리학</b></div>
+            <p>위기/난관은 <b>네온 레드(#FF3B30)</b>, 해결/공학은 <b>네온 사이언(#38BDF8)</b>, 핵심 치수선/수치는 <b>세이프티 옐로우(#FFE600)</b>를 일관되게 사용하여 1초 만에 인지시킵니다.</p>
+          </div>
+          <div class="rule-card">
+            <div class="rule-header"><span class="rule-num">RULE 05</span> <b>무공백(Tight Pacing) 텐션</b></div>
+            <p>문장 간 공백은 0.2초 이하로 타이트하게 편집하며, 중저음 신경망 성우(인준) 나레이션 100%에 딥 베이스 앰비언트 긴장감 BGM을 10% 자동 사이드체인 믹싱합니다.</p>
+          </div>
+          <div class="rule-card">
+            <div class="rule-header"><span class="rule-num">RULE 06</span> <b>유튜브 100점 SEO 자동화</b></div>
+            <p>CTR 극대화 제목 3종 A/B 테스트 + 설명란 타임스탬프(구글 검색 노출) + 500자 태그셋 + 시청자 참여를 유도하는 질문형 고정 댓글로 초반 알고리즘 부스팅을 유도합니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. 결과물 브라우저 & 30일치 스케줄러 -->
+      <section class="card results-card">
+        <div class="card-header">
+          <div class="header-left">
+            <h2>📅 30일치 예약 스케줄 및 완성 영상 갤러리</h2>
+            <select id="batch-selector" class="form-control batch-select">
+              <option value="">생성된 배치 로딩 중...</option>
+            </select>
+          </div>
+          <div class="header-actions">
+            <button id="btn-download-csv" class="btn btn-outline" disabled>
+              📥 유튜브 일괄 예약 CSV 다운로드
+            </button>
+            <button id="btn-youtube-upload" class="btn btn-youtube" disabled>
+              🚀 YouTube 일괄 자동 예약 업로드
+            </button>
+          </div>
+        </div>
+
+        <!-- 30일 스케줄 테이블 / 타임라인 -->
+        <div class="schedule-summary-bar">
+          <div class="stat-box">
+            <span class="stat-label">총 에피소드</span>
+            <span class="stat-val" id="stat-total-eps">0 편</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label">업로드 주기</span>
+            <span class="stat-val">주 3회 (월/수/금 18:00)</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label">소요 API 크레딧</span>
+            <span class="stat-val highlight-free">₩0 (완전 무료)</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label">SEO 최적화 점수</span>
+            <span class="stat-val highlight-seo">100 / 100 점</span>
+          </div>
+        </div>
+
+        <div class="episodes-container">
+          <!-- 좌측: 에피소드 리스트 & 캘린더 -->
+          <div class="episodes-sidebar" id="episodes-list">
+            <div class="empty-state">제작된 영상이 없습니다. 위의 '원클릭 제작 시작' 버튼을 눌러주세요!</div>
+          </div>
+
+          <!-- 우측: 선택된 에피소드 상세 스튜디오 -->
+          <div class="episode-studio" id="episode-studio">
+            <div class="studio-empty">왼쪽 목록에서 에피소드를 선택하면 영상 미리보기와 SEO 100점 메타데이터가 표시됩니다.</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="app-footer">
+      <p>WonkaShorts Studio &copy; 2026. 원카AI & 신비한 건축사전 지식형 숏폼 풀 오토메이션 시스템.</p>
+    </footer>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

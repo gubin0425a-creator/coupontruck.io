@@ -22,13 +22,25 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: 1. Factual Coupon Validation & Expired Cleanup (Zero Hallucination)
-        run: python updater.py
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
 
-      - name: 2. Update Sitemap & Call Search Engine Bots (Google / Bing / Naver IndexNow)
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: 1. Run Automated Coupon & Offer Collection Pipeline
+        run: npm run collect
+
+      - name: 2. Run Deterministic Security & Secret Lint
+        run: npm test
+
+      - name: 3. Update Sitemap & Call Search Engine Bots (Google / Bing / Naver IndexNow)
         run: python seo_automation.py
 
-      - name: 3. Commit and Push Verified Updates to GitHub Pages
+      - name: 4. Commit and Push Verified Updates to GitHub Pages
         run: |
           git config --global user.name "CouponTruck-Verified-Bot"
           git config --global user.email "bot@coupontruck.io"

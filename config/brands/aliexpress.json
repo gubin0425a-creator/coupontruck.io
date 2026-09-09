@@ -1,0 +1,32 @@
+{
+  "brand_id": "aliexpress",
+  "name": "알리익스프레스 (AliExpress)",
+  "category": "shopping",
+  "type": "COUPON",
+  "allowed_domains": [
+    "aliexpress.com",
+    "ko.aliexpress.com",
+    "best.aliexpress.com",
+    "s.click.aliexpress.com"
+  ],
+  "sources": [
+    {
+      "type": "AFFILIATE_FEED",
+      "url": "https://ko.aliexpress.com",
+      "priority": 1,
+      "country": "KR"
+    }
+  ],
+  "affiliate_mapping": {
+    "network": "aliexpress_portals",
+    "tracking_url": "https://s.click.aliexpress.com",
+    "disclosure_text": "알리익스프레스 어필리에이트 파트너 활동으로 수수료를 제공받을 수 있습니다."
+  },
+  "country": "KR",
+  "check_interval_hours": 6,
+  "publication_policy": {
+    "min_confidence": 95,
+    "auto_publish_types": ["COUPON", "PROMOTION", "SALE"],
+    "require_evidence": ["domain_allowed", "code_in_source"]
+  }
+}

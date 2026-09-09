@@ -1,0 +1,74 @@
+[
+  {
+    "id": "off-agoda-01",
+    "brand": "아고다 (Agoda)",
+    "brand_id": "agoda",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "아고다 (Agoda) 공식 프로모션 & 전용 할인코드",
+    "description": "공식 프로모션 혜택 적용",
+    "discount_percent": 10,
+    "is_up_to": false,
+    "end_date": "2026-12-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.agoda.com",
+    "source_kind": "OFFERS_PAGE",
+    "target_url": "https://www.agoda.com",
+    "affiliate_url": "https://www.agoda.com",
+    "verified_at": "2026-09-09T04:37:41.345Z",
+    "evidence": {
+      "code_in_source": false,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": true,
+      "notes": [
+        "자동 감시 엔진 규칙 검증 (OFFERS_PAGE)"
+      ]
+    },
+    "confidence": 80,
+    "status": "REVIEW",
+    "badge": "검증완료"
+  },
+  {
+    "id": "off-aliexpress-01",
+    "brand": "알리익스프레스 (AliExpress)",
+    "brand_id": "aliexpress",
+    "category": "shopping",
+    "type": "COUPON",
+    "title": "알리익스프레스 (AliExpress) 공식 프로모션 & 전용 할인코드",
+    "description": "공식 프로모션 혜택 적용",
+    "discount_percent": 10,
+    "is_up_to": false,
+    "end_date": "2026-12-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://ko.aliexpress.com",
+    "source_kind": "AFFILIATE_FEED",
+    "target_url": "https://s.click.aliexpress.com",
+    "affiliate_url": "https://s.click.aliexpress.com",
+    "verified_at": "2026-09-09T04:37:41.346Z",
+    "evidence": {
+      "code_in_source": false,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": true,
+      "notes": [
+        "자동 감시 엔진 규칙 검증 (AFFILIATE_FEED)"
+      ]
+    },
+    "confidence": 80,
+    "status": "REVIEW",
+    "badge": "검증완료"
+  }
+]
