@@ -158,11 +158,11 @@ if coupons_data:
     record_test("UI시뮬레이션", "실시간 브랜드/코드 검색엔진 시뮬레이션", search_ok, 
                 f"테스트 검색어({', '.join(keywords)}) 전원 일치 결과 도출 완료")
 
-    # 코드 복사 시뮬레이션 (gubin0425a 복사 여부)
-    sample_gubin = gubin_items[0] if gubin_items else {}
-    copied_code = sample_gubin.get("code")
-    record_test("UI시뮬레이션", "원클릭 쿠폰코드 복사 시뮬레이션", copied_code == "gubin0425a", 
-                f"샘플 브랜드[{sample_gubin.get('name')}] 클릭 시 'gubin0425a' 정확히 복사 클립보드 페이로드 반환")
+    # 코드 복사 시뮬레이션 (gubin0425a 추천인 코드 복사 여부)
+    sample_item = airalo or usimsa or {}
+    copied_code = sample_item.get("code")
+    record_test("UI시뮬레이션", "원클릭 추천인 코드 복사 시뮬레이션", copied_code == "gubin0425a", 
+                f"샘플 브랜드[{sample_item.get('name')}] 클릭 시 'gubin0425a' 정확히 복사 클립보드 페이로드 반환")
 
 
 # -------------------------------------------------------------
