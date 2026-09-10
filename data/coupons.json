@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-10T17:41:14.228227",
+  "last_updated": "2026-09-10T08:59:37.969Z",
   "version": "2.1.0",
   "total_active_offers": 103,
   "categories": {
@@ -130,7 +130,7 @@
         {
           "id": "trv-12",
           "name": "유심사 (USIMSA)",
-          "code": "USIMSA2026",
+          "code": "GUBIN0425A",
           "desc": "전세계 무제한 로밍 eSIM 전 국가 10% 즉시할인 코드",
           "url": "https://www.usimsa.com",
           "expires": "2026-10-15",
@@ -142,10 +142,10 @@
         {
           "id": "trv-13",
           "name": "에어알로 (Airalo)",
-          "code": "AIRALO3OFF",
+          "code": "GUBIN0425A",
           "desc": "글로벌 200+ 국가 지원 1위 eSIM 첫 구매 $3 즉시할인",
-          "url": "https://www.airalo.com",
-          "expires": "2026-10-15",
+          "url": "https://www.airalo.com/ko?r=GUBIN0425A",
+          "expires": "2026-12-31",
           "is_active": true,
           "badge": "글로벌eSIM",
           "verified_at": "2026-09-09T04:36:57.144Z",

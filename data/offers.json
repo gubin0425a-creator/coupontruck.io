@@ -367,7 +367,7 @@
     "type": "REFERRAL",
     "title": "유심사 (USIMSA)",
     "description": "전세계 무제한 로밍 eSIM 전 국가 10% 즉시할인 코드",
-    "coupon_code": "USIMSA2026",
+    "coupon_code": "GUBIN0425A",
     "discount_percent": 10,
     "is_up_to": false,
     "end_date": "2026-10-15",
@@ -393,7 +393,8 @@
     },
     "confidence": 96,
     "status": "PUBLISHED",
-    "badge": "eSIM추천"
+    "badge": "eSIM추천",
+    "referral_code": "GUBIN0425A"
   },
   {
     "id": "trv-13",
@@ -403,9 +404,9 @@
     "type": "COUPON",
     "title": "에어알로 (Airalo)",
     "description": "글로벌 200+ 국가 지원 1위 eSIM 첫 구매 $3 즉시할인",
-    "coupon_code": "AIRALO3OFF",
+    "coupon_code": "GUBIN0425A",
     "is_up_to": false,
-    "end_date": "2026-10-15",
+    "end_date": "2026-12-31",
     "conditions": [
       "온라인 결제 시 적용 가능"
     ],
@@ -414,7 +415,7 @@
     ],
     "source_url": "https://www.airalo.com",
     "source_kind": "MANUAL",
-    "target_url": "https://www.airalo.com",
+    "target_url": "https://www.airalo.com/ko?r=GUBIN0425A",
     "verified_at": "2026-09-09T04:36:57.144Z",
     "evidence": {
       "code_in_source": true,
@@ -428,7 +429,9 @@
     },
     "confidence": 96,
     "status": "PUBLISHED",
-    "badge": "글로벌eSIM"
+    "badge": "글로벌eSIM",
+    "referral_code": "GUBIN0425A",
+    "affiliate_url": "https://www.airalo.com/ko?r=GUBIN0425A"
   },
   {
     "id": "trv-14",
