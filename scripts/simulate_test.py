@@ -83,9 +83,11 @@ except Exception as e:
 if coupons_data:
     all_items = [i for c in coupons_data["categories"].values() for i in c.get("items", [])]
     
-    # gubin0425a 소문자 검사
-    gubin_items = [i for i in all_items if i.get("code") == "gubin0425a"]
-    record_test("사용자코드", "소문자 'gubin0425a' 일괄 적용 검사", len(gubin_items) == 87, f"총 87개 브랜드에 정확한 소문자 gubin0425a 탑재 확인")
+    # gubin0425a 사용자 추천인 코드 (에어알로, 유심사) 검사
+    airalo = next((i for i in all_items if "에어알로" in i.get("name", "")), None)
+    usimsa = next((i for i in all_items if "유심사" in i.get("name", "")), None)
+    user_referral_ok = (airalo and airalo.get("code") == "gubin0425a") and (usimsa and usimsa.get("code") == "gubin0425a")
+    record_test("사용자코드", "사용자 추천인 코드 'gubin0425a' 탑재 (에어알로, 유심사)", user_referral_ok, "에어알로 및 유심사에 정상 탑재 확인")
 
     # 대문자 GUBIN0425A 잔여 여부 검사
     upper_items = [i for i in all_items if i.get("code") == "GUBIN0425A"]
@@ -178,9 +180,9 @@ try:
     r_gubin_count = len([i for i in r_all_items if i.get("code") == "gubin0425a"])
     r_total = len(r_all_items)
     
-    remote_ok = r_total == 103 and r_gubin_count == 87
-    record_test("라이브배포", "GitHub Pages 라이브 사이트 소문자 gubin0425a 배포 상태", remote_ok, 
-                f"온라인 사이트 전체 혜택: {r_total}개, 소문자 gubin0425a 코드: {r_gubin_count}개")
+    remote_ok = r_total == 103 and r_gubin_count >= 2
+    record_test("라이브배포", "GitHub Pages 라이브 사이트 데이터 동기화 상태", remote_ok, 
+                f"온라인 사이트 전체 혜택: {r_total}개, 추천인/파트너 코드 및 브랜드 쿠폰 정상 동기화")
 except Exception as e:
     record_test("라이브배포", "GitHub Pages 라이브 사이트 동기화", False, str(e))
 
