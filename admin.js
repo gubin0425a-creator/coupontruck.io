@@ -91,6 +91,31 @@ function getAdminToken() {
   return sessionStorage.getItem("COUPONTRUCK_ADMIN_AUTH_TOKEN") || "";
 }
 
+// 로컬 환경 1초 간편 로그인 (토큰 자동 입력 및 바로 로그인)
+async function quickLocalLogin() {
+  const inputEl = document.getElementById("adminTokenInput");
+  if (inputEl) {
+    try {
+      const res = await fetch("/api/local-token");
+      if (res.ok) {
+        const data = await res.json();
+        if (data && data.token) {
+          inputEl.value = data.token;
+          const form = document.getElementById("adminLoginForm");
+          if (form) {
+            form.dispatchEvent(new Event("submit", { cancelable: true, bubbles: true }));
+          }
+          return;
+        }
+      }
+    } catch (e) {}
+    inputEl.focus();
+    if (typeof showToast === "function") {
+      showToast("⚠️ .admin_token 파일을 열어 토큰을 직접 입력해 주세요.");
+    }
+  }
+}
+
 // 로그인 제출 처리
 async function handleAdminLogin(e) {
   e.preventDefault();
@@ -246,10 +271,10 @@ const BRAND_PRESETS = {
   temu: {
     category: "shopping",
     brand: "테무 (Temu)",
-    code: "aly598867",
-    desc: "신규 앱 가입 시 웰컴 쿠폰팩 증정 + 검색창에 'aly598867' 입력 시 최대 30% 즉시할인",
-    url: "https://temu.to/k/gbeee65wq0f",
-    badge: "최대 30%",
+    code: "alu590849",
+    desc: "신규 가입 150,000원 웰컴 쿠폰팩 증정 + 검색창에 'alu590849' 입력 시 30% 즉시할인",
+    url: "https://temu.to/k/g1cxpg2jjge",
+    badge: "15만원 쿠폰팩",
     expires: "2026-12-31",
     type: "REFERRAL"
   },
@@ -266,12 +291,12 @@ const BRAND_PRESETS = {
   klook: {
     category: "travel",
     brand: "클룩 (Klook)",
-    code: "KLOOKBHUB",
-    desc: "전세계 투어, 액티비티, 유심/교통패스 5,000원 즉시할인",
-    url: "https://www.klook.com",
-    badge: "액티비티",
-    expires: "2026-09-30",
-    type: "COUPON"
+    code: "GUHU8L",
+    desc: "전세계 투어, 액티비티, 유심/교통패스 4,000원 즉시할인 초대코드",
+    url: "https://www.klook.com/ko/invite/GUHU8L?c=KRW",
+    badge: "4,000원 할인",
+    expires: "2026-12-31",
+    type: "REFERRAL"
   },
   hotels: {
     category: "travel",
@@ -291,17 +316,6 @@ const BRAND_PRESETS = {
     url: "https://www.coupang.com",
     badge: "로켓배송",
     expires: "2026-12-31",
-    type: "COUPON"
-  },
-  temu: {
-    category: "shopping",
-    brand: "테무 (Temu)",
-    code: "TEMU2026",
-    desc: "신규 앱 다운로드 회원 전용 30% 즉시할인 번들 쿠폰팩",
-    url: "https://www.temu.com",
-    badge: "신규특가",
-    expires: "2026-09-30",
-    type: "COUPON"
   }
 };
 

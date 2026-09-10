@@ -21,8 +21,6 @@ data/backups/
 # Private / Revenue Hub Boundary
 private/
 revenue_private/
-shorts_studio/output/
-shorts_studio/assets/cache/
 
 # OS / Editor
 .DS_Store

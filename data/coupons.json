@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-09T10:27:39.810Z",
+  "last_updated": "2026-09-10T17:41:14.228227",
   "version": "2.1.0",
   "total_active_offers": 103,
   "categories": {
@@ -22,14 +22,14 @@
         {
           "id": "trv-03",
           "name": "클룩 (Klook)",
-          "code": "KLOOKBHUB",
-          "desc": "전세계 투어, 액티비티, 유심/교통패스 5,000원 즉시할인",
-          "url": "https://www.klook.com",
-          "expires": "2026-09-15",
+          "code": "GUHU8L",
+          "desc": "전세계 투어, 액티비티, 유심/교통패스 4,000원 즉시할인 초대코드",
+          "url": "https://www.klook.com/ko/invite/GUHU8L?c=KRW",
+          "expires": "2026-12-31",
           "is_active": true,
-          "badge": "액티비티",
+          "badge": "4,000원 할인",
           "verified_at": "2026-09-09T04:36:57.144Z",
-          "type": "COUPON"
+          "type": "REFERRAL"
         },
         {
           "id": "trv-04",
@@ -303,12 +303,12 @@
         {
           "id": "shop-temu-01",
           "name": "테무 (Temu) 웰컴 쿠폰팩 & 최대 30% 신규 할인코드",
-          "code": "aly598867",
-          "desc": "신규 앱 가입 시 웰컴 쿠폰팩 증정 + 검색창에 'aly598867' 입력 시 즉시할인 적용 (최소 주문 13,000원 적용)",
-          "url": "https://temu.to/k/gbeee65wq0f",
+          "code": "alu590849",
+          "desc": "신규 가입 150,000원 웰컴 쿠폰팩 증정 + 검색창에 alu590849 입력 시 30% 즉시할인",
+          "url": "https://temu.to/k/g1cxpg2jjge",
           "expires": "2026-12-31",
           "is_active": true,
-          "badge": "최대 30%",
+          "badge": "15만원 쿠폰팩",
           "verified_at": "2026-09-09T06:50:00.000Z",
           "type": "REFERRAL"
         },
@@ -330,9 +330,9 @@
           "code": "RKB1777",
           "desc": "영양제, 유산균, 보충제, 웰니스 전 품목 5%~10% 즉시할인 공식 리워드 코드",
           "url": "https://kr.iherb.com/?rcode=RKB1777",
-          "expires": "2026-09-30",
+          "expires": "2026-12-31",
           "is_active": true,
-          "badge": "영양제 1위",
+          "badge": "10% 적립",
           "verified_at": "2026-09-09T09:05:00.000Z",
           "type": "REFERRAL"
         },
@@ -1044,14 +1044,14 @@
         },
         {
           "id": "gam-01",
-          "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 38% OFF)",
+          "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 50% OFF)",
           "code": "자동할인",
-          "desc": "실시간 인기 특가: 붉은사막 Enhanced(-20%), Wanderburg 완더버그(-35%), BOMBANANA!(-38%) 등 수천 개 정품 게임 공식 할인",
+          "desc": "실시간 인기 특가: Bodycam(-20%), Grand Theft Auto V 인핸스드(-50%), In Falsus(-10%) 등 수천 개 정품 게임 공식 할인",
           "url": "https://store.steampowered.com",
           "expires": "2026-09-12",
           "is_active": true,
           "badge": "스팀특가",
-          "verified_at": "2026-09-09T05:03:31.854Z",
+          "verified_at": "2026-09-10T08:41:13.664Z",
           "type": "COUPON"
         },
         {
@@ -1087,7 +1087,7 @@
           "expires": "2026-09-10",
           "is_active": true,
           "badge": "매주무료",
-          "verified_at": "2026-09-09T05:03:31.854Z",
+          "verified_at": "2026-09-10T08:41:13.664Z",
           "type": "COUPON"
         },
         {

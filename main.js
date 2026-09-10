@@ -44,14 +44,29 @@ function initClientDailySchedule() {
   }, 4000);
 }
 
-// 0. 쿠폰 데이터 불러오기 (캐시 방지 타임스탬프)
+// 0. 쿠폰 데이터 불러오기 (캐시 방지 타임스탬프 및 무결성 검증)
 async function loadCouponData() {
   try {
     // 로컬 스토리지 커스텀 오버라이드 확인
     const localOverride = localStorage.getItem("COUPONTRUCK_DATA_OVERRIDE") || localStorage.getItem("COUPONPICK_DATA_OVERRIDE");
     if (localOverride) {
-      COUPON_DATA = JSON.parse(localOverride);
-      console.log("⚡ [쿠폰트럭] 로컬 관리자 수정 데이터 로드 완료");
+      const parsed = JSON.parse(localOverride);
+      // 안전장치: 실제 카테고리와 쿠폰 아이템이 존재하는지 무결성 검사
+      const hasValidItems = parsed && parsed.categories && Object.values(parsed.categories).some(cat => cat && Array.isArray(cat.items) && cat.items.length > 0);
+      if (hasValidItems) {
+        COUPON_DATA = parsed;
+        console.log("⚡ [쿠폰트럭] 로컬 관리자 수정 데이터 로드 완료");
+      } else {
+        console.warn("⚠️ 로컬 캐시 데이터가 비어 있어 원본 JSON 데이터를 복원합니다.");
+        localStorage.removeItem("COUPONTRUCK_DATA_OVERRIDE");
+        localStorage.removeItem("COUPONPICK_DATA_OVERRIDE");
+        const res = await fetch("data/coupons.json?t=" + Date.now());
+        if (res.ok) {
+          COUPON_DATA = await res.json();
+        } else {
+          throw new Error("HTTP " + res.status);
+        }
+      }
     } else {
       const res = await fetch("data/coupons.json?t=" + Date.now());
       if (res.ok) {
@@ -389,6 +404,16 @@ function resetCouponFilters() {
       pill.classList.remove("active");
     }
   });
+
+  // 쿠폰 목록이 비어있는 상태라면 캐시 정리 후 원본 재로드
+  if (!COUPON_DATA || getAllCouponsList().length === 0) {
+    try {
+      localStorage.removeItem("COUPONTRUCK_DATA_OVERRIDE");
+      localStorage.removeItem("COUPONPICK_DATA_OVERRIDE");
+    } catch (e) {}
+    loadCouponData();
+    return;
+  }
 
   applyCouponFilters();
 }

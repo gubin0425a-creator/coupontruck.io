@@ -42,12 +42,12 @@
     "brand": "클룩 (Klook)",
     "brand_id": "klook",
     "category": "travel",
-    "type": "COUPON",
+    "type": "REFERRAL",
     "title": "클룩 (Klook)",
-    "description": "전세계 투어, 액티비티, 유심/교통패스 5,000원 즉시할인",
-    "coupon_code": "KLOOKBHUB",
+    "description": "전세계 투어, 액티비티, 유심/교통패스 4,000원 즉시할인 초대코드",
+    "coupon_code": "GUHU8L",
     "is_up_to": false,
-    "end_date": "2026-09-15",
+    "end_date": "2026-12-31",
     "conditions": [
       "온라인 결제 시 적용 가능"
     ],
@@ -56,7 +56,7 @@
     ],
     "source_url": "https://www.klook.com",
     "source_kind": "MANUAL",
-    "target_url": "https://www.klook.com",
+    "target_url": "https://www.klook.com/ko/invite/GUHU8L?c=KRW",
     "verified_at": "2026-09-09T04:36:57.144Z",
     "evidence": {
       "code_in_source": true,
@@ -70,7 +70,8 @@
     },
     "confidence": 96,
     "status": "PUBLISHED",
-    "badge": "액티비티"
+    "badge": "4,000원 할인",
+    "affiliate_url": "https://www.klook.com/ko/invite/GUHU8L?c=KRW"
   },
   {
     "id": "trv-04",
@@ -864,8 +865,8 @@
     "category": "shopping",
     "type": "REFERRAL",
     "title": "테무 (Temu) 웰컴 쿠폰팩 & 최대 30% 신규 할인코드",
-    "description": "신규 앱 가입 시 웰컴 쿠폰팩 증정 + 검색창에 'aly598867' 입력 시 즉시할인 적용 (최소 주문 13,000원 적용)",
-    "coupon_code": "aly598867",
+    "description": "신규 가입 150,000원 웰컴 쿠폰팩 증정 + 검색창에 alu590849 입력 시 30% 즉시할인",
+    "coupon_code": "alu590849",
     "discount_percent": 30,
     "is_up_to": true,
     "end_date": "2026-12-31",
@@ -878,8 +879,8 @@
     ],
     "source_url": "https://www.temu.com",
     "source_kind": "MANUAL",
-    "target_url": "https://temu.to/k/gbeee65wq0f",
-    "affiliate_url": "https://temu.to/k/gbeee65wq0f",
+    "target_url": "https://temu.to/k/g1cxpg2jjge",
+    "affiliate_url": "https://temu.to/k/g1cxpg2jjge",
     "referral_code": "aly598867",
     "verified_at": "2026-09-09T06:50:00.000Z",
     "evidence": {
@@ -894,7 +895,7 @@
     },
     "confidence": 100,
     "status": "PUBLISHED",
-    "badge": "최대 30%"
+    "badge": "15만원 쿠폰팩"
   },
   {
     "id": "shp-01",
@@ -942,7 +943,7 @@
     "coupon_code": "RKB1777",
     "discount_percent": 10,
     "is_up_to": true,
-    "end_date": "2026-09-30",
+    "end_date": "2026-12-31",
     "conditions": [
       "온라인 결제 시 적용 가능"
     ],
@@ -965,7 +966,7 @@
     },
     "confidence": 100,
     "status": "PUBLISHED",
-    "badge": "영양제 1위",
+    "badge": "10% 적립",
     "affiliate_url": "https://kr.iherb.com/?rcode=RKB1777"
   },
   {
@@ -3321,10 +3322,10 @@
     "brand_id": "steam",
     "category": "game",
     "type": "COUPON",
-    "title": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 38% OFF)",
-    "description": "실시간 인기 특가: 붉은사막 Enhanced(-20%), Wanderburg 완더버그(-35%), BOMBANANA!(-38%) 등 수천 개 정품 게임 공식 할인",
+    "title": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 50% OFF)",
+    "description": "실시간 인기 특가: Bodycam(-20%), Grand Theft Auto V 인핸스드(-50%), In Falsus(-10%) 등 수천 개 정품 게임 공식 할인",
     "coupon_code": "자동할인",
-    "discount_percent": 38,
+    "discount_percent": 50,
     "max_discount_percent": 90,
     "is_up_to": true,
     "end_date": "2026-09-12",
@@ -3337,7 +3338,7 @@
     "source_url": "https://store.steampowered.com",
     "source_kind": "MANUAL",
     "target_url": "https://store.steampowered.com",
-    "verified_at": "2026-09-09T05:03:31.854Z",
+    "verified_at": "2026-09-10T08:41:13.664Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
@@ -3345,7 +3346,7 @@
       "domain_allowed": true,
       "affiliate_matched": false,
       "notes": [
-        "Steam Web API 실시간 특가 피드 수집: 붉은사막 Enhanced(-20%), Wanderburg 완더버그(-35%), BOMBANANA!(-38%)"
+        "Steam Web API 실시간 특가 피드 수집: Bodycam(-20%), Grand Theft Auto V 인핸스드(-50%), In Falsus(-10%)"
       ]
     },
     "confidence": 96,
@@ -3445,7 +3446,7 @@
     "source_url": "https://store.epicgames.com",
     "source_kind": "MANUAL",
     "target_url": "https://store.epicgames.com",
-    "verified_at": "2026-09-09T05:03:31.854Z",
+    "verified_at": "2026-09-10T08:41:13.664Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,

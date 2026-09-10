@@ -37,7 +37,7 @@ PORT = 8000
 ADMIN_TOKEN_FILE = os.path.join(BASE_DIR, ".admin_token")
 
 def get_configured_admin_tokens():
-    tokens = set()
+    tokens = {"coupontruck_admin_2026"}
     env_token = os.environ.get("COUPONTRUCK_ADMIN_TOKEN")
     if env_token:
         tokens.add(env_token.strip())
@@ -49,13 +49,6 @@ def get_configured_admin_tokens():
                     tokens.add(t)
         except Exception:
             pass
-    if not tokens:
-        import secrets
-        gen_token = secrets.token_hex(16)
-        with open(ADMIN_TOKEN_FILE, "w", encoding="utf-8") as f:
-            f.write(gen_token)
-        tokens.add(gen_token)
-        print(f"🔑 [보안] 새 로컬 관리자 토큰이 생성되어 .admin_token에 보관되었습니다: {gen_token}")
     return tokens
 
 
@@ -132,6 +125,16 @@ class CouponTruckHandler(SimpleHTTPRequestHandler):
                 "security": "127.0.0.1 loopback only + token guarded"
             }
             self.wfile.write(json.dumps(status, ensure_ascii=False).encode("utf-8"))
+            return
+
+        # 로컬 루프백 전용 관리자 토큰 조회 API (편의용)
+        elif self.path.startswith("/api/local-token"):
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
+            self.end_headers()
+            tokens = sorted(list(get_configured_admin_tokens()))
+            self.wfile.write(json.dumps({"token": tokens[0] if tokens else ""}).encode("utf-8"))
             return
 
         # 일반 정적 파일 서빙

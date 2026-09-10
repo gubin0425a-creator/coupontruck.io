@@ -45,8 +45,16 @@
           <button type="submit" class="btn-login-submit">
             <i class="fa-solid fa-arrow-right-to-bracket"></i> 관리자 대시보드 입장
           </button>
+          
+          <!-- 로컬 PC 전용 1초 원클릭 로그인 버튼 -->
+          <button type="button" class="btn-quick-login" onclick="quickLocalLogin()" style="width: 100%; margin-top: 10px; background: #f8fafc; border: 1px solid #cbd5e1; color: #1e293b; font-size: 13px; font-weight: 700; padding: 11px; border-radius: var(--radius-sm); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s;">
+            <i class="fa-solid fa-bolt" style="color: #f59e0b;"></i> 로컬 1초 간편 로그인 (토큰 자동 채움)
+          </button>
         </form>
-        <div style="margin-top: 16px; text-align: center;">
+        <div style="margin-top: 14px; text-align: center; font-size: 11.5px; color: #94a3b8;">
+          보안 토큰 안내: <code style="background:#f1f5f9; padding:2px 6px; border-radius:4px; color:#2563eb; font-weight:700;">.admin_token</code> 파일 참조
+        </div>
+        <div style="margin-top: 14px; text-align: center;">
           <a href="./" style="font-size: 12.5px; color: #64748b; text-decoration: none;">
             <i class="fa-solid fa-arrow-left"></i> 쇼핑몰 메인 페이지로 돌아가기
           </a>
@@ -193,6 +201,25 @@
           <button type="button" class="preset-chip" onclick="applyBrandPreset('temu')">
             <i class="fa-solid fa-bag-shopping"></i> 테무 (Temu)
           </button>
+        </div>
+
+        <!-- 🚀 내 전용 제휴 수익 코드 발급처 원클릭 링크 바 -->
+        <div class="partner-signup-bar" style="padding: 10px 24px; background: #ecfdf5; border-bottom: 1px solid #a7f3d0; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <span style="font-size: 12.5px; font-weight: 800; color: #065f46; display: flex; align-items: center; gap: 6px;">
+            <i class="fa-solid fa-key" style="color: #059669;"></i> 내 추천/제휴코드 발급처 바로가기 (새 탭):
+          </span>
+          <a href="https://kr.iherb.com/account/login?returnurl=https%3A%2F%2Fkr.iherb.com%2Frewards" target="_blank" rel="noopener noreferrer" class="preset-chip" style="background: #ffffff; border-color: #059669; color: #047857; text-decoration: none; font-weight: 700;">
+            <i class="fa-solid fa-leaf" style="color: #10b981;"></i> 1. 아이허브 리워드 가입
+          </a>
+          <a href="https://www.klook.com/ko/invite/" target="_blank" rel="noopener noreferrer" class="preset-chip" style="background: #ffffff; border-color: #2563eb; color: #1d4ed8; text-decoration: none; font-weight: 700;">
+            <i class="fa-solid fa-compass" style="color: #3b82f6;"></i> 2. 클룩 5,000원 코드 발급
+          </a>
+          <a href="https://www.myrealtrip.com/invite" target="_blank" rel="noopener noreferrer" class="preset-chip" style="background: #ffffff; border-color: #0284c7; color: #0369a1; text-decoration: none; font-weight: 700;">
+            <i class="fa-solid fa-ticket" style="color: #0284c7;"></i> 3. 마이리얼트립 초대코드
+          </a>
+          <a href="https://www.temu.com/affiliate.html" target="_blank" rel="noopener noreferrer" class="preset-chip" style="background: #ffffff; border-color: #ea580c; color: #c2410c; text-decoration: none; font-weight: 700;">
+            <i class="fa-solid fa-bag-shopping" style="color: #f97316;"></i> 4. 테무 제휴 파트너스
+          </a>
         </div>
 
         <!-- 폼 본체 -->
