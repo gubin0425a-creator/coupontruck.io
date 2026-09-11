@@ -875,7 +875,7 @@
     "is_up_to": true,
     "end_date": "2026-12-31",
     "conditions": [
-      "Temu 앱 검색창에서 aly598867 검색 또는 링크 경유 시 혜택 적용",
+      "Temu 앱 검색창에서 gubin0425a 검색 또는 링크 경유 시 혜택 적용",
       "한국 내 신규 앱 사용자 대상"
     ],
     "countries": [
@@ -3304,8 +3304,8 @@
     ],
     "source_url": "https://www.g2a.com",
     "source_kind": "MANUAL",
-    "target_url": "https://www.g2a.com/n/reflink-e5e4379872",
-    "affiliate_url": "https://www.g2a.com/n/reflink-e5e4379872",
+    "target_url": "https://www.g2a.com",
+    "affiliate_url": "https://www.g2a.com",
     "verified_at": "2026-09-09T06:00:00.000Z",
     "evidence": {
       "code_in_source": true,

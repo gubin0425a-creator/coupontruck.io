@@ -243,7 +243,7 @@ const BRAND_PRESETS = {
     brand: "G2A (글로벌 1위 게임키 마켓)",
     code: "PROMO-APPLIED",
     desc: "스팀·닌텐도·플레이스테이션 게임키, 기프트카드, 윈도우 키 전 품목 실시간 최저가 할인",
-    url: "https://www.g2a.com/n/reflink-e5e4379872",
+    url: "https://www.g2a.com",
     badge: "글로벌 1위",
     expires: "2026-12-31",
     type: "REFERRAL"
@@ -271,9 +271,9 @@ const BRAND_PRESETS = {
   temu: {
     category: "shopping",
     brand: "테무 (Temu)",
-    code: "alu590849",
-    desc: "신규 가입 150,000원 웰컴 쿠폰팩 증정 + 검색창에 'alu590849' 입력 시 30% 즉시할인",
-    url: "https://temu.to/k/g1cxpg2jjge",
+    code: "gubin0425a",
+    desc: "신규 가입 150,000원 웰컴 쿠폰팩 증정 + 검색창에 'gubin0425a' 입력 시 30% 즉시할인",
+    url: "https://www.temu.com",
     badge: "15만원 쿠폰팩",
     expires: "2026-12-31",
     type: "REFERRAL"
@@ -283,7 +283,7 @@ const BRAND_PRESETS = {
     brand: "트립닷컴 (Trip.com)",
     code: "TRIPNEW26",
     desc: "국내외 항공권 및 제휴 호텔 패키지 최대 8% 즉시할인",
-    url: "https://kr.trip.com/?Allianceid=10493743&SID=330736834&trip_sub1=&trip_sub3=D19750299",
+    url: "https://kr.trip.com",
     badge: "항공+호텔",
     expires: "2026-09-30",
     type: "COUPON"

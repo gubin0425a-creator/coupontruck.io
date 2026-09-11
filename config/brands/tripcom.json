@@ -18,7 +18,7 @@
   ],
   "affiliate_mapping": {
     "network": "trip_affiliate",
-    "tracking_url": "https://kr.trip.com/?Allianceid=10493743&SID=330736834&trip_sub1=&trip_sub3=D19750299",
+    "tracking_url": "https://kr.trip.com",
     "disclosure_text": "트립닷컴 제휴 파트너스 활동의 일환으로 일정 수수료를 제공받을 수 있습니다."
   },
   "country": "KR",

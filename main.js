@@ -116,22 +116,22 @@ function updateUIWithData() {
       {
         name: "테무 (Temu 초특가)",
         desc: "신규 가입 즉시 1.5만원 혜택 & 최대 90% 할인",
-        code: "aly598867",
-        url: "https://temu.to/k/gbeee65wq0f",
+        code: "gubin0425a",
+        url: "https://www.temu.com",
         badge: "쇼핑"
       },
       {
         name: "트립닷컴 항공·호텔",
         desc: "국내외 항공권 & 호텔 최대 8% 할인",
         code: "TRIPNEW26",
-        url: "https://kr.trip.com/?&SID=330736834&trip_sub1=&trip_sub3=D19750299",
+        url: "https://kr.trip.com",
         badge: "8%"
       },
       {
         name: "G2A 글로벌 게임키",
         desc: "스팀 최신 대작 게임 최대 90% 할인",
         code: "G2ASAVE26",
-        url: "https://www.g2a.com/n/reflink-e5e4379872",
+        url: "https://www.g2a.com",
         badge: "게임"
       },
       {
@@ -1463,7 +1463,7 @@ function getFallbackData() {
           "name": "트립닷컴 (Trip.com)",
           "code": "TRIPNEW26",
           "desc": "국내외 항공권 및 제휴 호텔 패키지 최대 8% 즉시할인",
-          "url": "https://kr.trip.com/?&SID=330736834&trip_sub1=&trip_sub3=D19750299",
+          "url": "https://kr.trip.com",
           "expires": "2026-12-31",
           "is_active": true,
           "badge": "인기 1위"
@@ -1471,9 +1471,9 @@ function getFallbackData() {
         {
           "id": "trv-03",
           "name": "클룩 (Klook)",
-          "code": "KLOOKBHUB",
+          "code": "gubin0425a",
           "desc": "전세계 투어, 액티비티, 유심/교통패스 5,000원 즉시할인",
-          "url": "https://www.klook.com",
+          "url": "https://www.klook.com/ko/invite/gubin0425a?c=KRW",
           "expires": "2026-12-31",
           "is_active": true,
           "badge": "액티비티"
@@ -1561,7 +1561,7 @@ function getFallbackData() {
         {
           "id": "trv-12",
           "name": "유심사 (USIMSA)",
-          "code": "USIMSA2026",
+          "code": "gubin0425a",
           "desc": "전세계 무제한 로밍 eSIM 전 국가 10% 즉시할인 코드",
           "url": "https://www.usimsa.com",
           "expires": "2026-12-31",
@@ -1571,9 +1571,9 @@ function getFallbackData() {
         {
           "id": "trv-13",
           "name": "에어알로 (Airalo)",
-          "code": "AIRALO3OFF",
+          "code": "gubin0425a",
           "desc": "글로벌 200+ 국가 지원 1위 eSIM 첫 구매 $3 즉시할인",
-          "url": "https://www.airalo.com",
+          "url": "https://www.airalo.com/ko?r=gubin0425a",
           "expires": "2026-12-31",
           "is_active": true,
           "badge": "글로벌eSIM"
@@ -1717,9 +1717,9 @@ function getFallbackData() {
         {
           "id": "shp-02",
           "name": "테무 (Temu)",
-          "code": "aly598867",
+          "code": "gubin0425a",
           "desc": "신규 앱 설치 & 가입 시 1.5만원 혜택 + 최대 90% 할인",
-          "url": "https://temu.to/k/gbeee65wq0f",
+          "url": "https://www.temu.com",
           "expires": "2026-12-31",
           "is_active": true,
           "badge": "초특가"
