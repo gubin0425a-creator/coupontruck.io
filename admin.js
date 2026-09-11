@@ -251,9 +251,9 @@ const BRAND_PRESETS = {
   iherb: {
     category: "shopping",
     brand: "아이허브 (iHerb)",
-    code: "RKB1777",
+    code: "gubin0425a",
     desc: "영양제, 유산균, 보충제, 웰니스 전 품목 상시 5%~10% 즉시할인 공식 리워드",
-    url: "https://kr.iherb.com/?rcode=RKB1777",
+    url: "https://kr.iherb.com/?rcode=gubin0425a",
     badge: "영양제 1위",
     expires: "2026-12-31",
     type: "REFERRAL"

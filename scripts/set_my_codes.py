@@ -50,8 +50,8 @@ BRAND_DEFAULTS = {
     "iherb": {
         "name": "아이허브 (iHerb)",
         "config": "iherb.json",
-        "current_code": "RKB1777",
-        "current_url": "https://kr.iherb.com/?rcode=RKB1777",
+        "current_code": "gubin0425a",
+        "current_url": "https://kr.iherb.com/?rcode=gubin0425a",
         "target_files": [DATA_COUPONS, DATA_OFFERS]
     },
     "klook": {

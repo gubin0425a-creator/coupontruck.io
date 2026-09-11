@@ -18,15 +18,21 @@
   ],
   "affiliate_mapping": {
     "network": "direct",
-    "tracking_url": "https://www.gamsgo.com/partner/aTqwg",
-    "referral_code": "DASSD",
+    "tracking_url": "https://www.gamsgo.com/?promote=gubin0425a",
+    "referral_code": "gubin0425a",
     "disclosure_text": "겜스고 제휴 파트너스 활동의 일환으로 일정 수수료를 제공받을 수 있습니다."
   },
   "country": "KR",
   "check_interval_hours": 6,
   "publication_policy": {
     "min_confidence": 95,
-    "auto_publish_types": ["REFERRAL", "COUPON", "PROMOTION"],
-    "require_evidence": ["domain_allowed"]
+    "auto_publish_types": [
+      "REFERRAL",
+      "COUPON",
+      "PROMOTION"
+    ],
+    "require_evidence": [
+      "domain_allowed"
+    ]
   }
 }

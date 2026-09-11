@@ -108,8 +108,8 @@ function updateUIWithData() {
       {
         name: "[1위] 겜스고 유튜브·OTT",
         desc: "월 4천원대 최대 85% 할인",
-        code: "DASSD",
-        url: "https://www.gamsgo.com/partner/aTqwg",
+        code: "gubin0425a",
+        url: "https://www.gamsgo.com/partner/gubin0425a",
         badge: "85%",
         isHero: true
       },
@@ -124,7 +124,7 @@ function updateUIWithData() {
         name: "트립닷컴 항공·호텔",
         desc: "국내외 항공권 & 호텔 최대 8% 할인",
         code: "TRIPNEW26",
-        url: "https://kr.trip.com/?Allianceid=10493743&SID=330736834&trip_sub1=&trip_sub3=D19750299",
+        url: "https://kr.trip.com/?&SID=330736834&trip_sub1=&trip_sub3=D19750299",
         badge: "8%"
       },
       {
@@ -486,7 +486,7 @@ function initNoticeTicker() {
 
   const currentMonth = new Date().getMonth() + 1;
   const messages = [
-    "👑 [TOP 1] 겜스고 유튜브 85% 할인 (DASSD)",
+    "👑 [TOP 1] 겜스고 유튜브 85% 할인 (gubin0425a)",
     `아고다 ${currentMonth}월 호텔 5~7% 즉시할인`,
     "스팀 세일 & 엑시트랙 20% 즉시할인",
     "알리익스프레스 $50 결제 $6 할인",
@@ -529,12 +529,12 @@ function openGamsgoPartner(e) {
     if (typeof e.preventDefault === "function") e.preventDefault();
   }
   closeCategoryModal();
-  const code = "DASSD";
-  const url = "https://www.gamsgo.com/partner/aTqwg";
+  const code = "gubin0425a";
+  const url = "https://www.gamsgo.com/?promote=gubin0425a";
   try {
     navigator.clipboard.writeText(code);
   } catch (err) {}
-  showToast("🎉 겜스고 프로모션 코드 [DASSD]가 복사되었습니다! 겜스고로 이동합니다 🚀");
+  showToast("🎉 겜스고 프로모션 코드 [gubin0425a]가 복사되었습니다! 겜스고로 이동합니다 🚀");
   safeOpenUrl(url);
 }
 window.openGamsgoPartner = openGamsgoPartner;
@@ -1463,7 +1463,7 @@ function getFallbackData() {
           "name": "트립닷컴 (Trip.com)",
           "code": "TRIPNEW26",
           "desc": "국내외 항공권 및 제휴 호텔 패키지 최대 8% 즉시할인",
-          "url": "https://kr.trip.com/?Allianceid=10493743&SID=330736834&trip_sub1=&trip_sub3=D19750299",
+          "url": "https://kr.trip.com/?&SID=330736834&trip_sub1=&trip_sub3=D19750299",
           "expires": "2026-12-31",
           "is_active": true,
           "badge": "인기 1위"
@@ -1727,9 +1727,9 @@ function getFallbackData() {
         {
           "id": "shp-03",
           "name": "아이허브 (iHerb)",
-          "code": "RKB1777",
+          "code": "gubin0425a",
           "desc": "영양제, 유산균, 보충제, 웰니스 전 품목 5%~10% 즉시할인",
-          "url": "https://kr.iherb.com/?rcode=RKB1777",
+          "url": "https://kr.iherb.com/?rcode=gubin0425a",
           "expires": "2026-12-31",
           "is_active": true,
           "badge": "영양제 1위"
@@ -1943,9 +1943,9 @@ function getFallbackData() {
         {
           "id": "sub-01",
           "name": "겜스고 (GamsGo)",
-          "code": "DASSD",
-          "desc": "유튜브 프리미엄, 넷플릭스 최대 85% 할인 계정공유 + 프로모션 코드 DASSD (월 4천원대)",
-          "url": "https://www.gamsgo.com/partner/aTqwg",
+          "code": "gubin0425a",
+          "desc": "유튜브 프리미엄, 넷플릭스 최대 85% 할인 계정공유 + 프로모션 코드 gubin0425a (월 4천원대)",
+          "url": "https://www.gamsgo.com/partner/gubin0425a",
           "expires": "2026-12-31",
           "is_active": true,
           "badge": "인기 1위"

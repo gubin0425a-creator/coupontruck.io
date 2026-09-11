@@ -100,20 +100,21 @@ if coupons_data:
     klook = next((i for i in all_items if "클룩" in i.get("name", "")), None)
     trip = next((i for i in all_items if "트립닷컴" in i.get("name", "")), None)
 
-    gamsgo_ok = gamsgo and gamsgo.get("code") == "DASSD" and "aTqwg" in gamsgo.get("url", "")
-    record_test("수익링크", "겜스고 정식 제휴 링크 보존 (DASSD)", gamsgo_ok, f"코드: {gamsgo.get('code')}, URL: {gamsgo.get('url')}")
+    gamsgo_ok = gamsgo and gamsgo.get("code") == "gubin0425a" and "gubin0425a" in gamsgo.get("url", "")
+    record_test("수익링크", "겜스고 사용자 전용 코드 및 링크 탑재 (gubin0425a)", gamsgo_ok, f"코드: {gamsgo.get('code')}, URL: {gamsgo.get('url')}")
 
-    temu_ok = temu and temu.get("code") == "alu590849" and "g1cxpg2jjge" in temu.get("url", "")
-    record_test("수익링크", "테무 30% 정식 제휴 링크 보존 (alu590849)", temu_ok, f"코드: {temu.get('code')}")
+    temu_ok = temu and temu.get("code") == "gubin0425a"
+    record_test("수익링크", "테무 사용자 전용 코드 탑재 (gubin0425a)", temu_ok, f"코드: {temu.get('code')}")
 
-    iherb_ok = iherb and iherb.get("code") == "RKB1777" and "RKB1777" in iherb.get("url", "")
-    record_test("수익링크", "아이허브 정식 리워드 링크 보존 (RKB1777)", iherb_ok, f"코드: {iherb.get('code')}")
+    iherb_ok = iherb and iherb.get("code") == "gubin0425a" and "gubin0425a" in iherb.get("url", "")
+    record_test("수익링크", "아이허브 사용자 전용 리워드 링크 탑재 (gubin0425a)", iherb_ok, f"코드: {iherb.get('code')}")
 
-    klook_ok = klook and klook.get("code") == "GUHU8L" and "GUHU8L" in klook.get("url", "")
-    record_test("수익링크", "클룩 4천원 정식 초대 링크 보존 (GUHU8L)", klook_ok, f"코드: {klook.get('code')}")
+    klook_ok = klook and klook.get("code") == "gubin0425a" and "gubin0425a" in klook.get("url", "")
+    record_test("수익링크", "클룩 사용자 전용 초대 링크 탑재 (gubin0425a)", klook_ok, f"코드: {klook.get('code')}")
 
-    trip_ok = trip and "Allianceid=10493743" in trip.get("url", "")
-    record_test("수익링크", "트립닷컴 정식 파트너스 트래킹 보존", trip_ok, "Allianceid=10493743 확인")
+    trip_clean = trip and "Allianceid=10493743" not in trip.get("url", "")
+    record_test("수익링크", "타인 제휴 파트너스 트래킹 완전 제거 (클린 링크)", trip_clean, "타인 Allianceid 없음 확인")
+
 
 
 # -------------------------------------------------------------

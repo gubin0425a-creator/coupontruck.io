@@ -27,3 +27,5 @@ revenue_private/
 Thumbs.db
 *.swp
 *.tmp
+*.bak*
+scratch/
