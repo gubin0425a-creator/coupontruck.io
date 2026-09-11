@@ -231,9 +231,9 @@ const BRAND_PRESETS = {
   gamsgo: {
     category: "sub",
     brand: "겜스고 (GamsGo)",
-    code: "DASSD",
+    code: "gubin0425a",
     desc: "유튜브 프리미엄 & 넷플릭스 4K 월 4천원대 (최대 85% 할인 + 추가할인)",
-    url: "https://www.gamsgo.com/partner/aTqwg",
+    url: "https://www.gamsgo.com/?promote=gubin0425a",
     badge: "인기 1위",
     expires: "2026-12-31",
     type: "COUPON"
@@ -261,7 +261,7 @@ const BRAND_PRESETS = {
   aliexpress: {
     category: "shopping",
     brand: "알리익스프레스 (AliExpress)",
-    code: "ALIKR26",
+    code: "ALI26SAVE",
     desc: "해외직구 가을맞이 특가 $50 이상 결제 시 $6 즉시할인 프로모션",
     url: "https://ko.aliexpress.com",
     badge: "쇼핑핫딜",
@@ -291,9 +291,9 @@ const BRAND_PRESETS = {
   klook: {
     category: "travel",
     brand: "클룩 (Klook)",
-    code: "GUHU8L",
-    desc: "전세계 투어, 액티비티, 유심/교통패스 4,000원 즉시할인 초대코드",
-    url: "https://www.klook.com/ko/invite/GUHU8L?c=KRW",
+    code: "gubin0425a",
+    desc: "전세계 투어, 액티비티, 유심/교통패스 5,000원 즉시할인 초대코드",
+    url: "https://www.klook.com/ko/invite/gubin0425a?c=KRW",
     badge: "4,000원 할인",
     expires: "2026-12-31",
     type: "REFERRAL"
