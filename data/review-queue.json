@@ -70,5 +70,41 @@
     "confidence": 80,
     "status": "REVIEW",
     "badge": "검증완료"
+  },
+  {
+    "id": "off-tripcom-01",
+    "brand": "트립닷컴 (Trip.com)",
+    "brand_id": "tripcom",
+    "category": "travel",
+    "type": "COUPON",
+    "title": "트립닷컴 (Trip.com) 공식 프로모션 & 전용 할인코드",
+    "description": "공식 프로모션 혜택 적용",
+    "discount_percent": 10,
+    "is_up_to": false,
+    "end_date": "2026-12-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://kr.trip.com",
+    "source_kind": "OFFERS_PAGE",
+    "target_url": "https://kr.trip.com",
+    "affiliate_url": "https://kr.trip.com",
+    "verified_at": "2026-09-11T13:12:25.312Z",
+    "evidence": {
+      "code_in_source": false,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": true,
+      "notes": [
+        "자동 감시 엔진 규칙 검증 (OFFERS_PAGE)"
+      ]
+    },
+    "confidence": 80,
+    "status": "REVIEW",
+    "badge": "검증완료"
   }
 ]

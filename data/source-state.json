@@ -11,7 +11,27 @@
   },
   "https://www.gamsgo.com": {
     "url": "https://www.gamsgo.com",
-    "last_checked": "2026-09-09T04:37:41.347Z",
-    "content_hash": "0969d170b60ab727c8c9ffce3f73796d4a8f1ab0a23886df4277201a87b2fa93"
+    "last_checked": "2026-09-11T13:12:25.310Z",
+    "content_hash": "7e0f6d5d4553dfa9064b93ed9aac894c75b80727fb26896bc593c26680f20837"
+  },
+  "https://www.g2a.com": {
+    "url": "https://www.g2a.com",
+    "last_checked": "2026-09-11T13:12:25.310Z",
+    "content_hash": "674dddff869149f9ca507fefb81853f17e730ebd94b04aabec27de1fb9338580"
+  },
+  "https://kr.iherb.com": {
+    "url": "https://kr.iherb.com",
+    "last_checked": "2026-09-11T13:12:25.311Z",
+    "content_hash": "b20349d1794cc7a021aae1fcb9575e7f01cb7713cda8e116b30ecf86c1af2ad0"
+  },
+  "https://www.temu.com": {
+    "url": "https://www.temu.com",
+    "last_checked": "2026-09-11T13:12:25.311Z",
+    "content_hash": "a90bb873d7ad39fc7652f6440d3ae38a873895be0c474856239c6578428011c6"
+  },
+  "https://kr.trip.com": {
+    "url": "https://kr.trip.com",
+    "last_checked": "2026-09-11T13:12:25.312Z",
+    "content_hash": "67eee3a32fbe519a95352b53e9faf0c0a27349d79382c5a0edb11058dd917e2d"
   }
 }

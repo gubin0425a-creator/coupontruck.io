@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-09-11T02:37:23.337Z",
+  "last_updated": "2026-09-11T13:12:25.321Z",
   "version": "2.1.0",
-  "total_active_offers": 103,
+  "total_active_offers": 104,
   "categories": {
     "travel": {
       "title": "✈️ 여행 · 항공권 · 호텔 숙소 할인코드",
@@ -301,15 +301,15 @@
       "badge": "쇼핑 핫딜",
       "items": [
         {
-          "id": "shop-temu-01",
-          "name": "테무 (Temu) 웰컴 쿠폰팩 & 최대 30% 신규 할인코드",
+          "id": "off-temu-01",
+          "name": "테무 (Temu) 공식 프로모션 & 전용 할인코드",
           "code": "gubin0425a",
-          "desc": "테무 신규 앱 가입 시 30% 할인쿠폰팩 즉시 지급 (전용 프로모션 코드: gubin0425a)",
+          "desc": "프로모션 코드 [gubin0425a] 입력 시 즉시할인 적용",
           "url": "https://www.temu.com",
           "expires": "2026-12-31",
           "is_active": true,
-          "badge": "15만원 쿠폰팩",
-          "verified_at": "2026-09-09T06:50:00.000Z",
+          "badge": "추천인",
+          "verified_at": "2026-09-11T13:12:25.311Z",
           "type": "REFERRAL"
         },
         {
@@ -325,15 +325,15 @@
           "type": "COUPON"
         },
         {
-          "id": "shp-03",
-          "name": "아이허브 (iHerb)",
+          "id": "off-iherb-01",
+          "name": "아이허브 (iHerb) 공식 프로모션 & 전용 할인코드",
           "code": "gubin0425a",
-          "desc": "전 품목 기본 5% 및 첫 구매 10% 추가 리워드 할인코드 (gubin0425a)",
+          "desc": "프로모션 코드 [gubin0425a] 입력 시 즉시할인 적용",
           "url": "https://kr.iherb.com/?rcode=gubin0425a",
           "expires": "2026-12-31",
           "is_active": true,
-          "badge": "10% 적립",
-          "verified_at": "2026-09-09T09:05:00.000Z",
+          "badge": "추천인",
+          "verified_at": "2026-09-11T13:12:25.311Z",
           "type": "REFERRAL"
         },
         {
@@ -579,14 +579,14 @@
       "items": [
         {
           "id": "off-gamsgo-01",
-          "name": "겜스고 (GamsGo) 유튜브 프리미엄 & 넷플릭스 4K 월 4천원대",
+          "name": "겜스고 (GamsGo) 공식 프로모션 & 전용 할인코드",
           "code": "gubin0425a",
-          "desc": "유튜브 프리미엄 & 넷플릭스 4K 월 4천원대 (최대 85% 할인), 전용 코드 [gubin0425a] 즉시할인",
+          "desc": "프로모션 코드 [gubin0425a] 입력 시 즉시할인 적용",
           "url": "https://www.gamsgo.com/?promote=gubin0425a",
           "expires": "2026-12-31",
           "is_active": true,
           "badge": "추천인",
-          "verified_at": "2026-09-09T04:37:41.347Z",
+          "verified_at": "2026-09-11T13:12:25.310Z",
           "type": "REFERRAL"
         },
         {
@@ -1031,6 +1031,18 @@
       "badge": "게임 혜택",
       "items": [
         {
+          "id": "off-g2a-01",
+          "name": "G2A (글로벌 1위 게임키 마켓) 공식 프로모션 & 전용 할인코드",
+          "code": "PROMO-APPLIED",
+          "desc": "공식 프로모션 혜택 적용",
+          "url": "https://www.g2a.com",
+          "expires": "2026-12-31",
+          "is_active": true,
+          "badge": "추천인",
+          "verified_at": "2026-09-11T13:12:25.310Z",
+          "type": "REFERRAL"
+        },
+        {
           "id": "gam-g2a-01",
           "name": "G2A (글로벌 1위 게임키 & 소프트웨어 마켓)",
           "code": "PROMO-APPLIED",
@@ -1044,14 +1056,14 @@
         },
         {
           "id": "gam-01",
-          "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 75% OFF)",
+          "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 60% OFF)",
           "code": "자동할인",
-          "desc": "실시간 인기 특가: Grand Theft Auto V 인핸스드(-50%), PRAGMATA(-20%), Warhammer 40,000: Space Marine 2(-75%) 등 수천 개 정품 게임 공식 할인",
+          "desc": "실시간 인기 특가: No Man's Sky(-60%), Drag'n Wash(-10%), Welcome to Elderfield(-10%) 등 수천 개 정품 게임 공식 할인",
           "url": "https://store.steampowered.com",
           "expires": "2026-09-12",
           "is_active": true,
           "badge": "스팀특가",
-          "verified_at": "2026-09-10T21:00:10.083Z",
+          "verified_at": "2026-09-11T13:12:24.716Z",
           "type": "COUPON"
         },
         {
@@ -1087,7 +1099,7 @@
           "expires": "2026-09-17",
           "is_active": true,
           "badge": "매주무료",
-          "verified_at": "2026-09-10T21:00:10.083Z",
+          "verified_at": "2026-09-11T13:12:24.716Z",
           "type": "COUPON"
         },
         {

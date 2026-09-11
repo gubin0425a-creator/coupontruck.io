@@ -1,5 +1,41 @@
 [
   {
+    "id": "off-g2a-01",
+    "brand": "G2A (글로벌 1위 게임키 마켓)",
+    "brand_id": "g2a",
+    "category": "game",
+    "type": "REFERRAL",
+    "title": "G2A (글로벌 1위 게임키 마켓) 공식 프로모션 & 전용 할인코드",
+    "description": "공식 프로모션 혜택 적용",
+    "discount_percent": 10,
+    "is_up_to": false,
+    "end_date": "2026-12-31",
+    "conditions": [
+      "온라인 결제 시 적용 가능"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "source_url": "https://www.g2a.com",
+    "source_kind": "OFFERS_PAGE",
+    "target_url": "https://www.g2a.com",
+    "affiliate_url": "https://www.g2a.com",
+    "verified_at": "2026-09-11T13:12:25.310Z",
+    "evidence": {
+      "code_in_source": false,
+      "discount_in_source": true,
+      "expiry_in_source": true,
+      "domain_allowed": true,
+      "affiliate_matched": true,
+      "notes": [
+        "자동 감시 엔진 규칙 검증 (OFFERS_PAGE)"
+      ]
+    },
+    "confidence": 95,
+    "status": "PUBLISHED",
+    "badge": "추천인"
+  },
+  {
     "id": "trv-02",
     "brand": "트립닷컴 (Trip.com)",
     "brand_id": "tripcom",
@@ -863,30 +899,29 @@
     "badge": "특급호텔"
   },
   {
-    "id": "shop-temu-01",
+    "id": "off-temu-01",
     "brand": "테무 (Temu)",
     "brand_id": "temu",
     "category": "shopping",
     "type": "REFERRAL",
-    "title": "테무 (Temu) 웰컴 쿠폰팩 & 최대 30% 신규 할인코드",
-    "description": "테무 신규 앱 가입 시 30% 할인쿠폰팩 즉시 지급 (전용 프로모션 코드: gubin0425a)",
+    "title": "테무 (Temu) 공식 프로모션 & 전용 할인코드",
+    "description": "프로모션 코드 [gubin0425a] 입력 시 즉시할인 적용",
     "coupon_code": "gubin0425a",
-    "discount_percent": 30,
-    "is_up_to": true,
+    "discount_percent": 10,
+    "is_up_to": false,
     "end_date": "2026-12-31",
     "conditions": [
-      "Temu 앱 검색창에서 gubin0425a 검색 또는 링크 경유 시 혜택 적용",
-      "한국 내 신규 앱 사용자 대상"
+      "온라인 결제 시 적용 가능"
     ],
     "countries": [
       "KR"
     ],
     "source_url": "https://www.temu.com",
-    "source_kind": "MANUAL",
+    "source_kind": "OFFERS_PAGE",
     "target_url": "https://www.temu.com",
     "affiliate_url": "https://www.temu.com",
     "referral_code": "gubin0425a",
-    "verified_at": "2026-09-09T06:50:00.000Z",
+    "verified_at": "2026-09-11T13:12:25.311Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
@@ -894,12 +929,12 @@
       "domain_allowed": true,
       "affiliate_matched": true,
       "notes": [
-        "테무 공식 제휴 파트너스 링크 & 전용 프로모션 코드 연동 완료"
+        "자동 감시 엔진 규칙 검증 (OFFERS_PAGE)"
       ]
     },
     "confidence": 100,
     "status": "PUBLISHED",
-    "badge": "15만원 쿠폰팩"
+    "badge": "추천인"
   },
   {
     "id": "shp-01",
@@ -937,16 +972,16 @@
     "badge": "직구 1위"
   },
   {
-    "id": "shp-03",
+    "id": "off-iherb-01",
     "brand": "아이허브 (iHerb)",
     "brand_id": "iherb",
     "category": "shopping",
     "type": "REFERRAL",
-    "title": "아이허브 (iHerb)",
-    "description": "전 품목 기본 5% 및 첫 구매 10% 추가 리워드 할인코드 (gubin0425a)",
+    "title": "아이허브 (iHerb) 공식 프로모션 & 전용 할인코드",
+    "description": "프로모션 코드 [gubin0425a] 입력 시 즉시할인 적용",
     "coupon_code": "gubin0425a",
     "discount_percent": 10,
-    "is_up_to": true,
+    "is_up_to": false,
     "end_date": "2026-12-31",
     "conditions": [
       "온라인 결제 시 적용 가능"
@@ -955,9 +990,11 @@
       "KR"
     ],
     "source_url": "https://kr.iherb.com",
-    "source_kind": "MANUAL",
+    "source_kind": "OFFERS_PAGE",
     "target_url": "https://kr.iherb.com/?rcode=gubin0425a",
-    "verified_at": "2026-09-09T09:05:00.000Z",
+    "affiliate_url": "https://kr.iherb.com/?rcode=gubin0425a",
+    "referral_code": "gubin0425a",
+    "verified_at": "2026-09-11T13:12:25.311Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
@@ -965,14 +1002,12 @@
       "domain_allowed": true,
       "affiliate_matched": true,
       "notes": [
-        "아이허브 공식 리워드 제휴 코드(gubin0425a) 및 트래킹 링크 연동 완료"
+        "자동 감시 엔진 규칙 검증 (OFFERS_PAGE)"
       ]
     },
     "confidence": 100,
     "status": "PUBLISHED",
-    "badge": "10% 적립",
-    "affiliate_url": "https://kr.iherb.com/?rcode=gubin0425a",
-    "referral_code": "gubin0425a"
+    "badge": "추천인"
   },
   {
     "id": "shp-04",
@@ -1687,8 +1722,8 @@
     "brand_id": "gamsgo",
     "category": "sub",
     "type": "REFERRAL",
-    "title": "겜스고 (GamsGo) 유튜브 프리미엄 & 넷플릭스 4K 월 4천원대",
-    "description": "유튜브 프리미엄 & 넷플릭스 4K 월 4천원대 (최대 85% 할인), 전용 코드 [gubin0425a] 즉시할인",
+    "title": "겜스고 (GamsGo) 공식 프로모션 & 전용 할인코드",
+    "description": "프로모션 코드 [gubin0425a] 입력 시 즉시할인 적용",
     "coupon_code": "gubin0425a",
     "discount_percent": 10,
     "is_up_to": false,
@@ -1704,7 +1739,7 @@
     "target_url": "https://www.gamsgo.com/?promote=gubin0425a",
     "affiliate_url": "https://www.gamsgo.com/?promote=gubin0425a",
     "referral_code": "gubin0425a",
-    "verified_at": "2026-09-09T04:37:41.347Z",
+    "verified_at": "2026-09-11T13:12:25.310Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
@@ -3327,10 +3362,10 @@
     "brand_id": "steam",
     "category": "game",
     "type": "COUPON",
-    "title": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 75% OFF)",
-    "description": "실시간 인기 특가: Grand Theft Auto V 인핸스드(-50%), PRAGMATA(-20%), Warhammer 40,000: Space Marine 2(-75%) 등 수천 개 정품 게임 공식 할인",
+    "title": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 60% OFF)",
+    "description": "실시간 인기 특가: No Man's Sky(-60%), Drag'n Wash(-10%), Welcome to Elderfield(-10%) 등 수천 개 정품 게임 공식 할인",
     "coupon_code": "자동할인",
-    "discount_percent": 75,
+    "discount_percent": 60,
     "max_discount_percent": 90,
     "is_up_to": true,
     "end_date": "2026-09-12",
@@ -3343,7 +3378,7 @@
     "source_url": "https://store.steampowered.com",
     "source_kind": "MANUAL",
     "target_url": "https://store.steampowered.com",
-    "verified_at": "2026-09-10T21:00:10.083Z",
+    "verified_at": "2026-09-11T13:12:24.716Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
@@ -3351,7 +3386,7 @@
       "domain_allowed": true,
       "affiliate_matched": false,
       "notes": [
-        "Steam Web API 실시간 특가 피드 수집: Grand Theft Auto V 인핸스드(-50%), PRAGMATA(-20%), Warhammer 40,000: Space Marine 2(-75%)"
+        "Steam Web API 실시간 특가 피드 수집: No Man's Sky(-60%), Drag'n Wash(-10%), Welcome to Elderfield(-10%)"
       ]
     },
     "confidence": 96,
@@ -3451,7 +3486,7 @@
     "source_url": "https://store.epicgames.com",
     "source_kind": "MANUAL",
     "target_url": "https://store.epicgames.com",
-    "verified_at": "2026-09-10T21:00:10.083Z",
+    "verified_at": "2026-09-11T13:12:24.716Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
