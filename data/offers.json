@@ -3378,7 +3378,7 @@
     "source_url": "https://store.steampowered.com",
     "source_kind": "MANUAL",
     "target_url": "https://store.steampowered.com",
-    "verified_at": "2026-09-11T13:12:24.716Z",
+    "verified_at": "2026-09-11T22:56:46.968Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
@@ -3486,7 +3486,7 @@
     "source_url": "https://store.epicgames.com",
     "source_kind": "MANUAL",
     "target_url": "https://store.epicgames.com",
-    "verified_at": "2026-09-11T13:12:24.716Z",
+    "verified_at": "2026-09-11T22:56:46.968Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
