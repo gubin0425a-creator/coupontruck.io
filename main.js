@@ -304,6 +304,7 @@ function renderCouponGrid(items) {
 
   gridEl.innerHTML = items.map(item => {
     const isGamsgo = item.name && item.name.includes("겜스고");
+    const isGamsgoOverlap = !isGamsgo && isGamsgoCompeting(item);
     const isGuide = item.categoryKey === "guide" || (item.code && item.code.startsWith("TIP-")) || item.url === "#";
     const badgeLabel = getCategoryBadgeLabel(item.categoryKey);
     const expiresText = item.expires ? `~${item.expires}` : "실시간 상시 할인";
@@ -317,6 +318,12 @@ function renderCouponGrid(items) {
       actionButtonHtml = `
         <button type="button" class="btn-copy-clean" onclick="openGamsgoPartner(event)">
           <i class="fa-solid fa-arrow-up-right-from-square"></i> 이동 & 할인
+        </button>
+      `;
+    } else if (isGamsgoOverlap) {
+      actionButtonHtml = `
+        <button type="button" class="btn-copy-clean btn-gamsgo-alt" onclick="openGamsgoPartner(event)" title="겜스고에서 더 저렴하게 이용 가능!">
+          <i class="fa-solid fa-rocket"></i> 겜스고로 더 저렴하게
         </button>
       `;
     } else if (isGuide) {
@@ -523,6 +530,23 @@ function showCouponCode(name, code, url) {
 }
 
 // 6-1. 겜스고 파트너 링크 원클릭 즉시 이동 & 코드 복사
+// 겜스고와 겹치는 서비스 키워드 (이 서비스들은 겜스고 버튼으로 대체)
+const GAMSGO_COMPETING_KEYWORDS = [
+  '유튜브', 'youtube', 'netflix', '넷플릭스', 'disney', '디즈니',
+  'apple tv', '애플tv', 'wavve', '웨이브', 'watcha', '왓챠',
+  'spotify', '스포티파이', 'tving', '티빙', 'coupang play', '쿠팡플레이',
+  'adobe', '어도비', 'microsoft 365', '마이크로소프트 365', 'ms365',
+  'chatgpt', 'midjourney', 'canva pro', '캔바 프로'
+];
+
+function isGamsgoCompeting(item) {
+  if (!item) return false;
+  if (item.name && item.name.includes('겜스고')) return false; // 겜스고 자신은 제외
+  const text = ((item.name || '') + ' ' + (item.desc || '')).toLowerCase();
+  return GAMSGO_COMPETING_KEYWORDS.some(kw => text.includes(kw.toLowerCase()));
+}
+window.isGamsgoCompeting = isGamsgoCompeting;
+
 function openGamsgoPartner(e) {
   if (e) {
     if (typeof e.stopPropagation === "function") e.stopPropagation();
@@ -597,6 +621,7 @@ function renderModalItems(items) {
 
     const isGuide = currentModalCategoryKey === "guide" || (item.code && item.code.startsWith("TIP-")) || item.url === "#";
     const isGamsgo = item.name && item.name.includes("겜스고");
+    const isGamsgoOverlap = !isGamsgo && isGamsgoCompeting(item);
 
     if (isGuide) {
       itemCard.innerHTML = `
@@ -618,6 +643,17 @@ function renderModalItems(items) {
         </div>
         <button class="btn-coupon-copy" onclick="openGamsgoPartner(event)">
           <i class="fa-solid fa-arrow-up-right-from-square"></i> 바로가기 & 5% 할인
+        </button>
+      `;
+    } else if (isGamsgoOverlap) {
+      itemCard.innerHTML = `
+        <div class="coupon-item-info">
+          <h4>${item.name} ${badgeHtml}</h4>
+          <p>${item.desc}</p>
+          <span class="coupon-code-badge"><i class="fa-solid fa-scissors"></i> ${item.code}</span>
+        </div>
+        <button class="btn-coupon-copy btn-gamsgo-alt" onclick="openGamsgoPartner(event)" title="겜스고에서 더 저렴하게 이용 가능!">
+          <i class="fa-solid fa-rocket"></i> 겜스고로 더 저렴하게 & 복사
         </button>
       `;
     } else {

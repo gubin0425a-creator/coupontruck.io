@@ -4146,6 +4146,36 @@ button {
   transform: scale(0.97);
 }
 
+/* 겜스고 겹침 서비스 전용 버튼 */
+.btn-gamsgo-alt {
+  background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+  color: #ffffff;
+  border: none;
+  animation: gamsgo-pulse 2.5s ease-in-out infinite;
+}
+.btn-gamsgo-alt:hover {
+  background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.45);
+}
+.btn-gamsgo-alt:active {
+  transform: scale(0.97);
+}
+@keyframes gamsgo-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.3); }
+  50%       { box-shadow: 0 0 0 5px rgba(249, 115, 22, 0); }
+}
+
+/* 모달 내 겜스고 겹침 버튼 */
+.btn-coupon-copy.btn-gamsgo-alt {
+  background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+  animation: gamsgo-pulse 2.5s ease-in-out infinite;
+}
+.btn-coupon-copy.btn-gamsgo-alt:hover {
+  background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.45);
+}
+
 /* 검색 결과 없음 */
 .coupon-empty-state {
   grid-column: 1 / -1;
