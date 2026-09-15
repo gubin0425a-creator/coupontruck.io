@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-15T14:08:16.935Z",
+  "last_updated": "2026-09-15T23:22:53.057Z",
   "version": "2.1.0",
   "total_active_offers": 104,
   "categories": {
@@ -1058,12 +1058,12 @@
           "id": "gam-01",
           "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 60% OFF)",
           "code": "자동할인",
-          "desc": "실시간 인기 특가: Baldur's Gate 3(-30%), Batomon Showdown(-35%), No Man's Sky(-60%) 등 수천 개 정품 게임 공식 할인",
+          "desc": "실시간 인기 특가: 딤레이스(-10%), Baldur's Gate 3(-30%), No Man's Sky(-60%) 등 수천 개 정품 게임 공식 할인",
           "url": "https://store.steampowered.com",
           "expires": "2026-09-12",
           "is_active": true,
           "badge": "스팀특가",
-          "verified_at": "2026-09-15T14:08:16.026Z",
+          "verified_at": "2026-09-15T23:22:51.919Z",
           "type": "COUPON"
         },
         {
@@ -1099,7 +1099,7 @@
           "expires": "2026-09-17",
           "is_active": true,
           "badge": "매주무료",
-          "verified_at": "2026-09-15T14:08:16.026Z",
+          "verified_at": "2026-09-15T23:22:51.919Z",
           "type": "COUPON"
         },
         {
