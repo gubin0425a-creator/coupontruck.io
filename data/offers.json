@@ -3362,10 +3362,10 @@
     "brand_id": "steam",
     "category": "game",
     "type": "COUPON",
-    "title": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 60% OFF)",
-    "description": "실시간 인기 특가: Baldur's Gate 3(-30%), 딤레이스(-10%), No Man's Sky(-60%) 등 수천 개 정품 게임 공식 할인",
+    "title": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 30% OFF)",
+    "description": "실시간 인기 특가: 하늘의 궤적 the 2nd(-10%), 하늘의 궤적 the 2nd 디지털 디럭스 버전(-10%), Baldur's Gate 3(-30%) 등 수천 개 정품 게임 공식 할인",
     "coupon_code": "자동할인",
-    "discount_percent": 60,
+    "discount_percent": 30,
     "max_discount_percent": 90,
     "is_up_to": true,
     "end_date": "2026-09-12",
@@ -3378,7 +3378,7 @@
     "source_url": "https://store.steampowered.com",
     "source_kind": "MANUAL",
     "target_url": "https://store.steampowered.com",
-    "verified_at": "2026-09-16T23:31:00.452Z",
+    "verified_at": "2026-09-17T14:04:34.007Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
@@ -3386,7 +3386,7 @@
       "domain_allowed": true,
       "affiliate_matched": false,
       "notes": [
-        "Steam Web API 실시간 특가 피드 수집: Baldur's Gate 3(-30%), 딤레이스(-10%), No Man's Sky(-60%)"
+        "Steam Web API 실시간 특가 피드 수집: 하늘의 궤적 the 2nd(-10%), 하늘의 궤적 the 2nd 디지털 디럭스 버전(-10%), Baldur's Gate 3(-30%)"
       ]
     },
     "confidence": 96,
@@ -3486,7 +3486,7 @@
     "source_url": "https://store.epicgames.com",
     "source_kind": "MANUAL",
     "target_url": "https://store.epicgames.com",
-    "verified_at": "2026-09-16T23:31:00.452Z",
+    "verified_at": "2026-09-17T14:04:34.007Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
