@@ -3362,10 +3362,10 @@
     "brand_id": "steam",
     "category": "game",
     "type": "COUPON",
-    "title": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 30% OFF)",
-    "description": "실시간 인기 특가: 하늘의 궤적 the 2nd(-10%), 하늘의 궤적 the 2nd 디지털 디럭스 버전(-10%), Baldur's Gate 3(-30%) 등 수천 개 정품 게임 공식 할인",
+    "title": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 50% OFF)",
+    "description": "실시간 인기 특가: Baldur's Gate 3(-30%), 하늘의 궤적 the 2nd(-10%), ENDLESS Legend™ 2 엔들리스 레전드 2(-50%) 등 수천 개 정품 게임 공식 할인",
     "coupon_code": "자동할인",
-    "discount_percent": 30,
+    "discount_percent": 50,
     "max_discount_percent": 90,
     "is_up_to": true,
     "end_date": "2026-09-12",
@@ -3378,7 +3378,7 @@
     "source_url": "https://store.steampowered.com",
     "source_kind": "MANUAL",
     "target_url": "https://store.steampowered.com",
-    "verified_at": "2026-09-17T14:04:34.007Z",
+    "verified_at": "2026-09-17T23:21:10.611Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
@@ -3386,7 +3386,7 @@
       "domain_allowed": true,
       "affiliate_matched": false,
       "notes": [
-        "Steam Web API 실시간 특가 피드 수집: 하늘의 궤적 the 2nd(-10%), 하늘의 궤적 the 2nd 디지털 디럭스 버전(-10%), Baldur's Gate 3(-30%)"
+        "Steam Web API 실시간 특가 피드 수집: Baldur's Gate 3(-30%), 하늘의 궤적 the 2nd(-10%), ENDLESS Legend™ 2 엔들리스 레전드 2(-50%)"
       ]
     },
     "confidence": 96,
@@ -3471,12 +3471,12 @@
     "brand_id": "epicgames",
     "category": "game",
     "type": "COUPON",
-    "title": "에픽게임즈 주간 100% 무료 게임 배포 (Luftrausers)",
-    "description": "[지금 무료] Luftrausers, Astral Ascent 무료 다운로드 및 영구 소장 가능 (매주 신규 타이틀 갱신)",
+    "title": "에픽게임즈 주간 100% 무료 게임 배포 (마인드캅)",
+    "description": "[지금 무료] 마인드캅, Shogun Showdown 무료 다운로드 및 영구 소장 가능 (매주 신규 타이틀 갱신)",
     "coupon_code": "100% 무료",
     "discount_percent": 100,
     "is_up_to": false,
-    "end_date": "2026-09-17",
+    "end_date": "2026-09-24",
     "conditions": [
       "온라인 결제 시 적용 가능"
     ],
@@ -3486,7 +3486,7 @@
     "source_url": "https://store.epicgames.com",
     "source_kind": "MANUAL",
     "target_url": "https://store.epicgames.com",
-    "verified_at": "2026-09-17T14:04:34.007Z",
+    "verified_at": "2026-09-17T23:21:10.611Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
@@ -3494,7 +3494,7 @@
       "domain_allowed": true,
       "affiliate_matched": false,
       "notes": [
-        "Epic Games 공식 API 실시간 수집 완료: Luftrausers, Astral Ascent"
+        "Epic Games 공식 API 실시간 수집 완료: 마인드캅, Shogun Showdown"
       ]
     },
     "confidence": 96,

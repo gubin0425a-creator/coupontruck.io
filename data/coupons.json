@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-17T14:04:34.722Z",
+  "last_updated": "2026-09-17T23:21:11.405Z",
   "version": "2.1.0",
   "total_active_offers": 104,
   "categories": {
@@ -1056,14 +1056,14 @@
         },
         {
           "id": "gam-01",
-          "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 30% OFF)",
+          "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 50% OFF)",
           "code": "자동할인",
-          "desc": "실시간 인기 특가: 하늘의 궤적 the 2nd(-10%), 하늘의 궤적 the 2nd 디지털 디럭스 버전(-10%), Baldur's Gate 3(-30%) 등 수천 개 정품 게임 공식 할인",
+          "desc": "실시간 인기 특가: Baldur's Gate 3(-30%), 하늘의 궤적 the 2nd(-10%), ENDLESS Legend™ 2 엔들리스 레전드 2(-50%) 등 수천 개 정품 게임 공식 할인",
           "url": "https://store.steampowered.com",
           "expires": "2026-09-12",
           "is_active": true,
           "badge": "스팀특가",
-          "verified_at": "2026-09-17T14:04:34.007Z",
+          "verified_at": "2026-09-17T23:21:10.611Z",
           "type": "COUPON"
         },
         {
@@ -1092,14 +1092,14 @@
         },
         {
           "id": "gam-04",
-          "name": "에픽게임즈 주간 100% 무료 게임 배포 (Luftrausers)",
+          "name": "에픽게임즈 주간 100% 무료 게임 배포 (마인드캅)",
           "code": "100% 무료",
-          "desc": "[지금 무료] Luftrausers, Astral Ascent 무료 다운로드 및 영구 소장 가능 (매주 신규 타이틀 갱신)",
+          "desc": "[지금 무료] 마인드캅, Shogun Showdown 무료 다운로드 및 영구 소장 가능 (매주 신규 타이틀 갱신)",
           "url": "https://store.epicgames.com",
-          "expires": "2026-09-17",
+          "expires": "2026-09-24",
           "is_active": true,
           "badge": "매주무료",
-          "verified_at": "2026-09-17T14:04:34.007Z",
+          "verified_at": "2026-09-17T23:21:10.611Z",
           "type": "COUPON"
         },
         {
