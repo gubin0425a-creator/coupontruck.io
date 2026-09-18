@@ -3362,10 +3362,10 @@
     "brand_id": "steam",
     "category": "game",
     "type": "COUPON",
-    "title": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 50% OFF)",
-    "description": "실시간 인기 특가: Baldur's Gate 3(-30%), ENDLESS Legend™ 2 엔들리스 레전드 2(-50%), 하늘의 궤적 the 2nd(-10%) 등 수천 개 정품 게임 공식 할인",
+    "title": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 60% OFF)",
+    "description": "실시간 인기 특가: Baldur's Gate 3(-30%), Dune: Awakening 듄 ：어웨이크닝(-50%), No Man's Sky(-60%) 등 수천 개 정품 게임 공식 할인",
     "coupon_code": "자동할인",
-    "discount_percent": 50,
+    "discount_percent": 60,
     "max_discount_percent": 90,
     "is_up_to": true,
     "end_date": "2026-09-12",
@@ -3378,7 +3378,7 @@
     "source_url": "https://store.steampowered.com",
     "source_kind": "MANUAL",
     "target_url": "https://store.steampowered.com",
-    "verified_at": "2026-09-18T13:21:09.624Z",
+    "verified_at": "2026-09-18T22:59:15.176Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
@@ -3386,7 +3386,7 @@
       "domain_allowed": true,
       "affiliate_matched": false,
       "notes": [
-        "Steam Web API 실시간 특가 피드 수집: Baldur's Gate 3(-30%), ENDLESS Legend™ 2 엔들리스 레전드 2(-50%), 하늘의 궤적 the 2nd(-10%)"
+        "Steam Web API 실시간 특가 피드 수집: Baldur's Gate 3(-30%), Dune: Awakening 듄 ：어웨이크닝(-50%), No Man's Sky(-60%)"
       ]
     },
     "confidence": 96,
@@ -3486,7 +3486,7 @@
     "source_url": "https://store.epicgames.com",
     "source_kind": "MANUAL",
     "target_url": "https://store.epicgames.com",
-    "verified_at": "2026-09-18T13:21:09.624Z",
+    "verified_at": "2026-09-18T22:59:15.176Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
