@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-20T22:55:48.721Z",
+  "last_updated": "2026-09-21T15:37:34.796Z",
   "version": "2.1.0",
   "total_active_offers": 104,
   "categories": {
@@ -1058,12 +1058,12 @@
           "id": "gam-01",
           "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 60% OFF)",
           "code": "자동할인",
-          "desc": "실시간 인기 특가: Baldur's Gate 3(-30%), No Man's Sky(-60%), Dune: Awakening 듄 ：어웨이크닝(-50%) 등 수천 개 정품 게임 공식 할인",
+          "desc": "실시간 인기 특가: Baldur's Gate 3(-30%), Dressmaker(-10%), No Man's Sky(-60%) 등 수천 개 정품 게임 공식 할인",
           "url": "https://store.steampowered.com",
           "expires": "2026-09-12",
           "is_active": true,
           "badge": "스팀특가",
-          "verified_at": "2026-09-20T22:55:47.637Z",
+          "verified_at": "2026-09-21T15:37:33.966Z",
           "type": "COUPON"
         },
         {
@@ -1099,7 +1099,7 @@
           "expires": "2026-09-24",
           "is_active": true,
           "badge": "매주무료",
-          "verified_at": "2026-09-20T22:55:47.637Z",
+          "verified_at": "2026-09-21T15:37:33.966Z",
           "type": "COUPON"
         },
         {
