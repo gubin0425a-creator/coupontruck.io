@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-24T13:59:43.010Z",
+  "last_updated": "2026-09-24T23:44:59.068Z",
   "version": "2.1.0",
   "total_active_offers": 104,
   "categories": {
@@ -1056,14 +1056,14 @@
         },
         {
           "id": "gam-01",
-          "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 25% OFF)",
+          "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 70% OFF)",
           "code": "자동할인",
-          "desc": "실시간 인기 특가: Dressmaker(-10%), Kingdom Rush 6: Genesis TD(-10%), 디아블로® IV: 증오의 군주™ - 일반판(-25%) 등 수천 개 정품 게임 공식 할인",
+          "desc": "실시간 인기 특가: Dressmaker(-10%), The Last of Us™ Part II Remastered(-33%), 페르소나3 리로드(-70%) 등 수천 개 정품 게임 공식 할인",
           "url": "https://store.steampowered.com",
           "expires": "2026-09-12",
           "is_active": true,
           "badge": "스팀특가",
-          "verified_at": "2026-09-24T13:59:42.064Z",
+          "verified_at": "2026-09-24T23:44:57.779Z",
           "type": "COUPON"
         },
         {
@@ -1092,14 +1092,14 @@
         },
         {
           "id": "gam-04",
-          "name": "에픽게임즈 주간 100% 무료 게임 배포 (마인드캅)",
+          "name": "에픽게임즈 주간 100% 무료 게임 배포 (Astrea Six Sided Oracles)",
           "code": "100% 무료",
-          "desc": "[지금 무료] 마인드캅, Shogun Showdown 무료 다운로드 및 영구 소장 가능 (매주 신규 타이틀 갱신)",
+          "desc": "[지금 무료] Astrea Six Sided Oracles 무료 다운로드 및 영구 소장 가능 (매주 신규 타이틀 갱신)",
           "url": "https://store.epicgames.com",
-          "expires": "2026-09-24",
+          "expires": "2026-10-01",
           "is_active": true,
           "badge": "매주무료",
-          "verified_at": "2026-09-24T13:59:42.064Z",
+          "verified_at": "2026-09-24T23:44:57.779Z",
           "type": "COUPON"
         },
         {
