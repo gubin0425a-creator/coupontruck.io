@@ -3362,10 +3362,10 @@
     "brand_id": "steam",
     "category": "game",
     "type": "COUPON",
-    "title": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 50% OFF)",
-    "description": "실시간 인기 특가: Dressmaker(-10%), Dune: Awakening 듄 ：어웨이크닝(-50%), Disney Dreamlight Valley(-40%) 등 수천 개 정품 게임 공식 할인",
+    "title": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 25% OFF)",
+    "description": "실시간 인기 특가: Dressmaker(-10%), Kingdom Rush 6: Genesis TD(-10%), 디아블로® IV: 증오의 군주™ - 일반판(-25%) 등 수천 개 정품 게임 공식 할인",
     "coupon_code": "자동할인",
-    "discount_percent": 50,
+    "discount_percent": 25,
     "max_discount_percent": 90,
     "is_up_to": true,
     "end_date": "2026-09-12",
@@ -3378,7 +3378,7 @@
     "source_url": "https://store.steampowered.com",
     "source_kind": "MANUAL",
     "target_url": "https://store.steampowered.com",
-    "verified_at": "2026-09-23T23:24:57.006Z",
+    "verified_at": "2026-09-24T13:59:42.064Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
@@ -3386,7 +3386,7 @@
       "domain_allowed": true,
       "affiliate_matched": false,
       "notes": [
-        "Steam Web API 실시간 특가 피드 수집: Dressmaker(-10%), Dune: Awakening 듄 ：어웨이크닝(-50%), Disney Dreamlight Valley(-40%)"
+        "Steam Web API 실시간 특가 피드 수집: Dressmaker(-10%), Kingdom Rush 6: Genesis TD(-10%), 디아블로® IV: 증오의 군주™ - 일반판(-25%)"
       ]
     },
     "confidence": 96,
@@ -3486,7 +3486,7 @@
     "source_url": "https://store.epicgames.com",
     "source_kind": "MANUAL",
     "target_url": "https://store.epicgames.com",
-    "verified_at": "2026-09-23T23:24:57.006Z",
+    "verified_at": "2026-09-24T13:59:42.064Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
