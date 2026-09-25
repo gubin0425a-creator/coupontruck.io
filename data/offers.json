@@ -3363,7 +3363,7 @@
     "category": "game",
     "type": "COUPON",
     "title": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 50% OFF)",
-    "description": "실시간 인기 특가: The Last of Us™ Part II Remastered(-33%), Dressmaker(-10%), DARK SOULS™: REMASTERED(-50%) 등 수천 개 정품 게임 공식 할인",
+    "description": "실시간 인기 특가: Dressmaker(-10%), The Last of Us™ Part II Remastered(-33%), 더 위쳐 3: 와일드 헌트 - 컴플리트 에디션(-50%) 등 수천 개 정품 게임 공식 할인",
     "coupon_code": "자동할인",
     "discount_percent": 50,
     "max_discount_percent": 90,
@@ -3378,7 +3378,7 @@
     "source_url": "https://store.steampowered.com",
     "source_kind": "MANUAL",
     "target_url": "https://store.steampowered.com",
-    "verified_at": "2026-09-25T14:24:04.810Z",
+    "verified_at": "2026-09-25T23:46:30.381Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
@@ -3386,7 +3386,7 @@
       "domain_allowed": true,
       "affiliate_matched": false,
       "notes": [
-        "Steam Web API 실시간 특가 피드 수집: The Last of Us™ Part II Remastered(-33%), Dressmaker(-10%), DARK SOULS™: REMASTERED(-50%)"
+        "Steam Web API 실시간 특가 피드 수집: Dressmaker(-10%), The Last of Us™ Part II Remastered(-33%), 더 위쳐 3: 와일드 헌트 - 컴플리트 에디션(-50%)"
       ]
     },
     "confidence": 96,
@@ -3486,7 +3486,7 @@
     "source_url": "https://store.epicgames.com",
     "source_kind": "MANUAL",
     "target_url": "https://store.epicgames.com",
-    "verified_at": "2026-09-25T14:24:04.810Z",
+    "verified_at": "2026-09-25T23:46:30.381Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,

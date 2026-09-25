@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-25T14:24:05.639Z",
+  "last_updated": "2026-09-25T23:46:31.440Z",
   "version": "2.1.0",
   "total_active_offers": 104,
   "categories": {
@@ -1058,12 +1058,12 @@
           "id": "gam-01",
           "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 50% OFF)",
           "code": "자동할인",
-          "desc": "실시간 인기 특가: The Last of Us™ Part II Remastered(-33%), Dressmaker(-10%), DARK SOULS™: REMASTERED(-50%) 등 수천 개 정품 게임 공식 할인",
+          "desc": "실시간 인기 특가: Dressmaker(-10%), The Last of Us™ Part II Remastered(-33%), 더 위쳐 3: 와일드 헌트 - 컴플리트 에디션(-50%) 등 수천 개 정품 게임 공식 할인",
           "url": "https://store.steampowered.com",
           "expires": "2026-09-12",
           "is_active": true,
           "badge": "스팀특가",
-          "verified_at": "2026-09-25T14:24:04.810Z",
+          "verified_at": "2026-09-25T23:46:30.381Z",
           "type": "COUPON"
         },
         {
@@ -1099,7 +1099,7 @@
           "expires": "2026-10-01",
           "is_active": true,
           "badge": "매주무료",
-          "verified_at": "2026-09-25T14:24:04.810Z",
+          "verified_at": "2026-09-25T23:46:30.381Z",
           "type": "COUPON"
         },
         {
