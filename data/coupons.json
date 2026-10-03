@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-03T14:09:03.002Z",
+  "last_updated": "2026-10-03T23:29:54.824Z",
   "version": "2.1.0",
   "total_active_offers": 104,
   "categories": {
@@ -1058,12 +1058,12 @@
           "id": "gam-01",
           "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 70% OFF)",
           "code": "자동할인",
-          "desc": "실시간 인기 특가: Cyberpunk 2077(-70%), Baldur's Gate 3(-30%), 낚시 방법(-38%) 등 수천 개 정품 게임 공식 할인",
+          "desc": "실시간 인기 특가: Cyberpunk 2077(-70%), Baldur's Gate 3(-30%), Bodycam(-20%) 등 수천 개 정품 게임 공식 할인",
           "url": "https://store.steampowered.com",
           "expires": "2026-09-12",
           "is_active": true,
           "badge": "스팀특가",
-          "verified_at": "2026-10-03T14:09:02.411Z",
+          "verified_at": "2026-10-03T23:29:54.230Z",
           "type": "COUPON"
         },
         {
@@ -1099,7 +1099,7 @@
           "expires": "2026-10-08",
           "is_active": true,
           "badge": "매주무료",
-          "verified_at": "2026-10-03T14:09:02.411Z",
+          "verified_at": "2026-10-03T23:29:54.230Z",
           "type": "COUPON"
         },
         {
