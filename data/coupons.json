@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-06T15:40:06.883Z",
+  "last_updated": "2026-10-07T00:20:25.734Z",
   "version": "2.1.0",
   "total_active_offers": 104,
   "categories": {
@@ -1063,7 +1063,7 @@
           "expires": "2026-09-12",
           "is_active": true,
           "badge": "스팀특가",
-          "verified_at": "2026-10-06T15:40:05.738Z",
+          "verified_at": "2026-10-07T00:20:24.888Z",
           "type": "COUPON"
         },
         {
@@ -1099,7 +1099,7 @@
           "expires": "2026-10-08",
           "is_active": true,
           "badge": "매주무료",
-          "verified_at": "2026-10-06T15:40:05.738Z",
+          "verified_at": "2026-10-07T00:20:24.888Z",
           "type": "COUPON"
         },
         {
