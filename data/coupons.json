@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-08T00:41:13.545Z",
+  "last_updated": "2026-10-08T16:05:54.208Z",
   "version": "2.1.0",
   "total_active_offers": 104,
   "categories": {
@@ -1063,7 +1063,7 @@
           "expires": "2026-09-12",
           "is_active": true,
           "badge": "스팀특가",
-          "verified_at": "2026-10-08T00:41:13.018Z",
+          "verified_at": "2026-10-08T16:05:53.688Z",
           "type": "COUPON"
         },
         {
@@ -1092,14 +1092,14 @@
         },
         {
           "id": "gam-04",
-          "name": "에픽게임즈 주간 100% 무료 게임 배포 (베리드 스타즈 (BURIED STARS))",
+          "name": "에픽게임즈 주간 100% 무료 게임 배포 (Out of Sight)",
           "code": "100% 무료",
-          "desc": "[지금 무료] 베리드 스타즈 (BURIED STARS) 무료 다운로드 및 영구 소장 가능 (매주 신규 타이틀 갱신)",
+          "desc": "[지금 무료] Out of Sight, TerraScape 무료 다운로드 및 영구 소장 가능 (매주 신규 타이틀 갱신)",
           "url": "https://store.epicgames.com",
-          "expires": "2026-10-08",
+          "expires": "2026-10-15",
           "is_active": true,
           "badge": "매주무료",
-          "verified_at": "2026-10-08T00:41:13.018Z",
+          "verified_at": "2026-10-08T16:05:53.688Z",
           "type": "COUPON"
         },
         {
