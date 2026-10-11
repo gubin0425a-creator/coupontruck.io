@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-10T15:00:16.691Z",
+  "last_updated": "2026-10-11T00:04:32.277Z",
   "version": "2.1.0",
   "total_active_offers": 104,
   "categories": {
@@ -1058,12 +1058,12 @@
           "id": "gam-01",
           "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 50% OFF)",
           "code": "자동할인",
-          "desc": "실시간 인기 특가: Permafrost(-20%), ARC Raiders(-50%), 인보키어: 마의 주사위(-25%) 등 수천 개 정품 게임 공식 할인",
+          "desc": "실시간 인기 특가: ARC Raiders(-50%), Permafrost(-20%), Hood Warfare 2(-10%) 등 수천 개 정품 게임 공식 할인",
           "url": "https://store.steampowered.com",
           "expires": "2026-09-12",
           "is_active": true,
           "badge": "스팀특가",
-          "verified_at": "2026-10-10T15:00:15.966Z",
+          "verified_at": "2026-10-11T00:04:31.619Z",
           "type": "COUPON"
         },
         {
@@ -1099,7 +1099,7 @@
           "expires": "2026-10-15",
           "is_active": true,
           "badge": "매주무료",
-          "verified_at": "2026-10-10T15:00:15.966Z",
+          "verified_at": "2026-10-11T00:04:31.619Z",
           "type": "COUPON"
         },
         {
