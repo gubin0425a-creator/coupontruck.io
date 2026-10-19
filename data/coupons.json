@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-18T22:44:04.720Z",
+  "last_updated": "2026-10-19T16:09:35.111Z",
   "version": "2.1.0",
   "total_active_offers": 104,
   "categories": {
@@ -1056,14 +1056,14 @@
         },
         {
           "id": "gam-01",
-          "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 20% OFF)",
+          "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 75% OFF)",
           "code": "자동할인",
-          "desc": "실시간 인기 특가: Enshrouded(-10%), over the hill(-20%), Scam With Your Friends(-10%) 등 수천 개 정품 게임 공식 할인",
+          "desc": "실시간 인기 특가: Enshrouded(-10%), Scam With Your Friends(-10%), Halo: The Master Chief Collection(-75%) 등 수천 개 정품 게임 공식 할인",
           "url": "https://store.steampowered.com",
           "expires": "2026-09-12",
           "is_active": true,
           "badge": "스팀특가",
-          "verified_at": "2026-10-18T22:44:03.499Z",
+          "verified_at": "2026-10-19T16:09:34.447Z",
           "type": "COUPON"
         },
         {
@@ -1099,7 +1099,7 @@
           "expires": "2026-10-22",
           "is_active": true,
           "badge": "매주무료",
-          "verified_at": "2026-10-18T22:44:03.499Z",
+          "verified_at": "2026-10-19T16:09:34.447Z",
           "type": "COUPON"
         },
         {
