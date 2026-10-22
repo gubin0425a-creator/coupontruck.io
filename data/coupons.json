@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-22T14:18:51.785Z",
+  "last_updated": "2026-10-22T23:51:54.033Z",
   "version": "2.1.0",
   "total_active_offers": 104,
   "categories": {
@@ -1056,14 +1056,14 @@
         },
         {
           "id": "gam-01",
-          "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 75% OFF)",
+          "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 70% OFF)",
           "code": "자동할인",
-          "desc": "실시간 인기 특가: Cyberpunk 2077(-70%), 사이버펑크 2077: 팬텀 리버티(-40%), Red Dead Redemption 2(-75%) 등 수천 개 정품 게임 공식 할인",
+          "desc": "실시간 인기 특가: Cyberpunk 2077(-70%), 사이버펑크 2077: 팬텀 리버티(-40%), Enshrouded(-10%) 등 수천 개 정품 게임 공식 할인",
           "url": "https://store.steampowered.com",
           "expires": "2026-09-12",
           "is_active": true,
           "badge": "스팀특가",
-          "verified_at": "2026-10-22T14:18:50.851Z",
+          "verified_at": "2026-10-22T23:51:53.207Z",
           "type": "COUPON"
         },
         {
@@ -1092,14 +1092,14 @@
         },
         {
           "id": "gam-04",
-          "name": "에픽게임즈 주간 100% 무료 게임 배포 (Bad Cheese)",
+          "name": "에픽게임즈 주간 100% 무료 게임 배포 (Home - A Unique Horror Adventure)",
           "code": "100% 무료",
-          "desc": "[지금 무료] Bad Cheese, Agent A - 숨겨진 퍼즐 무료 다운로드 및 영구 소장 가능 (매주 신규 타이틀 갱신)",
+          "desc": "[지금 무료] Home - A Unique Horror Adventure 무료 다운로드 및 영구 소장 가능 (매주 신규 타이틀 갱신)",
           "url": "https://store.epicgames.com",
-          "expires": "2026-10-22",
+          "expires": "2026-10-29",
           "is_active": true,
           "badge": "매주무료",
-          "verified_at": "2026-10-22T14:18:50.851Z",
+          "verified_at": "2026-10-22T23:51:53.207Z",
           "type": "COUPON"
         },
         {
