@@ -3362,10 +3362,10 @@
     "brand_id": "steam",
     "category": "game",
     "type": "COUPON",
-    "title": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 15% OFF)",
-    "description": "실시간 인기 특가: Probably Stolen - Cyberpunk Shopkeeper Sim(-10%), Moon Sweepers(-15%), Enshrouded(-10%) 등 수천 개 정품 게임 공식 할인",
+    "title": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 20% OFF)",
+    "description": "실시간 인기 특가: The Wolf Among Us Remastered(-20%), Probably Stolen - Cyberpunk Shopkeeper Sim(-10%), Moon Sweepers(-15%) 등 수천 개 정품 게임 공식 할인",
     "coupon_code": "자동할인",
-    "discount_percent": 15,
+    "discount_percent": 20,
     "max_discount_percent": 90,
     "is_up_to": true,
     "end_date": "2026-09-12",
@@ -3378,7 +3378,7 @@
     "source_url": "https://store.steampowered.com",
     "source_kind": "MANUAL",
     "target_url": "https://store.steampowered.com",
-    "verified_at": "2026-10-29T00:34:56.351Z",
+    "verified_at": "2026-10-29T15:49:29.604Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
@@ -3386,7 +3386,7 @@
       "domain_allowed": true,
       "affiliate_matched": false,
       "notes": [
-        "Steam Web API 실시간 특가 피드 수집: Probably Stolen - Cyberpunk Shopkeeper Sim(-10%), Moon Sweepers(-15%), Enshrouded(-10%)"
+        "Steam Web API 실시간 특가 피드 수집: The Wolf Among Us Remastered(-20%), Probably Stolen - Cyberpunk Shopkeeper Sim(-10%), Moon Sweepers(-15%)"
       ]
     },
     "confidence": 96,
@@ -3471,12 +3471,12 @@
     "brand_id": "epicgames",
     "category": "game",
     "type": "COUPON",
-    "title": "에픽게임즈 주간 100% 무료 게임 배포 (Home - A Unique Horror Adventure)",
-    "description": "[지금 무료] Home - A Unique Horror Adventure 무료 다운로드 및 영구 소장 가능 (매주 신규 타이틀 갱신)",
+    "title": "에픽게임즈 주간 100% 무료 게임 배포 (Sorry We're Closed)",
+    "description": "[지금 무료] Sorry We're Closed 무료 다운로드 및 영구 소장 가능 (매주 신규 타이틀 갱신)",
     "coupon_code": "100% 무료",
     "discount_percent": 100,
     "is_up_to": false,
-    "end_date": "2026-10-29",
+    "end_date": "2026-11-02",
     "conditions": [
       "온라인 결제 시 적용 가능"
     ],
@@ -3486,7 +3486,7 @@
     "source_url": "https://store.epicgames.com",
     "source_kind": "MANUAL",
     "target_url": "https://store.epicgames.com",
-    "verified_at": "2026-10-29T00:34:56.351Z",
+    "verified_at": "2026-10-29T15:49:29.604Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
@@ -3494,7 +3494,7 @@
       "domain_allowed": true,
       "affiliate_matched": false,
       "notes": [
-        "Epic Games 공식 API 실시간 수집 완료: Home - A Unique Horror Adventure"
+        "Epic Games 공식 API 실시간 수집 완료: Sorry We're Closed"
       ]
     },
     "confidence": 96,

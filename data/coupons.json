@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-29T00:34:57.166Z",
+  "last_updated": "2026-10-29T15:49:30.811Z",
   "version": "2.1.0",
   "total_active_offers": 104,
   "categories": {
@@ -1056,14 +1056,14 @@
         },
         {
           "id": "gam-01",
-          "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 15% OFF)",
+          "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 20% OFF)",
           "code": "자동할인",
-          "desc": "실시간 인기 특가: Probably Stolen - Cyberpunk Shopkeeper Sim(-10%), Moon Sweepers(-15%), Enshrouded(-10%) 등 수천 개 정품 게임 공식 할인",
+          "desc": "실시간 인기 특가: The Wolf Among Us Remastered(-20%), Probably Stolen - Cyberpunk Shopkeeper Sim(-10%), Moon Sweepers(-15%) 등 수천 개 정품 게임 공식 할인",
           "url": "https://store.steampowered.com",
           "expires": "2026-09-12",
           "is_active": true,
           "badge": "스팀특가",
-          "verified_at": "2026-10-29T00:34:56.351Z",
+          "verified_at": "2026-10-29T15:49:29.604Z",
           "type": "COUPON"
         },
         {
@@ -1092,14 +1092,14 @@
         },
         {
           "id": "gam-04",
-          "name": "에픽게임즈 주간 100% 무료 게임 배포 (Home - A Unique Horror Adventure)",
+          "name": "에픽게임즈 주간 100% 무료 게임 배포 (Sorry We're Closed)",
           "code": "100% 무료",
-          "desc": "[지금 무료] Home - A Unique Horror Adventure 무료 다운로드 및 영구 소장 가능 (매주 신규 타이틀 갱신)",
+          "desc": "[지금 무료] Sorry We're Closed 무료 다운로드 및 영구 소장 가능 (매주 신규 타이틀 갱신)",
           "url": "https://store.epicgames.com",
-          "expires": "2026-10-29",
+          "expires": "2026-11-02",
           "is_active": true,
           "badge": "매주무료",
-          "verified_at": "2026-10-29T00:34:56.351Z",
+          "verified_at": "2026-10-29T15:49:29.604Z",
           "type": "COUPON"
         },
         {
