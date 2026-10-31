@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-31T00:20:02.402Z",
+  "last_updated": "2026-10-31T14:58:46.882Z",
   "version": "2.1.0",
   "total_active_offers": 104,
   "categories": {
@@ -1056,14 +1056,14 @@
         },
         {
           "id": "gam-01",
-          "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 20% OFF)",
+          "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 72% OFF)",
           "code": "자동할인",
-          "desc": "실시간 인기 특가: Probably Stolen - Cyberpunk Shopkeeper Sim(-10%), Queen's Domain(-15%), The Wolf Among Us Remastered(-20%) 등 수천 개 정품 게임 공식 할인",
+          "desc": "실시간 인기 특가: Probably Stolen - Cyberpunk Shopkeeper Sim(-10%), Queen's Domain(-15%), Sons Of The Forest(-72%) 등 수천 개 정품 게임 공식 할인",
           "url": "https://store.steampowered.com",
           "expires": "2026-09-12",
           "is_active": true,
           "badge": "스팀특가",
-          "verified_at": "2026-10-31T00:20:01.163Z",
+          "verified_at": "2026-10-31T14:58:45.935Z",
           "type": "COUPON"
         },
         {
@@ -1099,7 +1099,7 @@
           "expires": "2026-11-02",
           "is_active": true,
           "badge": "매주무료",
-          "verified_at": "2026-10-31T00:20:01.163Z",
+          "verified_at": "2026-10-31T14:58:45.935Z",
           "type": "COUPON"
         },
         {
