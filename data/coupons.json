@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-12T02:06:03.196Z",
+  "last_updated": "2026-11-12T17:19:17.983Z",
   "version": "2.1.0",
   "total_active_offers": 104,
   "categories": {
@@ -1058,12 +1058,12 @@
           "id": "gam-01",
           "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 80% OFF)",
           "code": "자동할인",
-          "desc": "실시간 인기 특가: The Elder Scrolls V: Skyrim Special Edition(-80%), Warhammer Survivors(-10%), Casualties: Unknown(-15%) 등 수천 개 정품 게임 공식 할인",
+          "desc": "실시간 인기 특가: The Elder Scrolls V: Skyrim Special Edition(-80%), 디아블로 II 레저렉션 - 지옥불 에디션(-35%), DREADMOOR(-10%) 등 수천 개 정품 게임 공식 할인",
           "url": "https://store.steampowered.com",
           "expires": "2026-09-12",
           "is_active": true,
           "badge": "스팀특가",
-          "verified_at": "2026-11-12T02:06:01.963Z",
+          "verified_at": "2026-11-12T17:19:17.055Z",
           "type": "COUPON"
         },
         {
@@ -1092,14 +1092,14 @@
         },
         {
           "id": "gam-04",
-          "name": "에픽게임즈 주간 100% 무료 게임 배포 (Idle Champions of the Forgotten Realms)",
+          "name": "에픽게임즈 주간 100% 무료 게임 배포 (Knightica)",
           "code": "100% 무료",
-          "desc": "[지금 무료] Idle Champions of the Forgotten Realms, 표류도시 무료 다운로드 및 영구 소장 가능 (매주 신규 타이틀 갱신)",
+          "desc": "[지금 무료] Knightica 무료 다운로드 및 영구 소장 가능 (매주 신규 타이틀 갱신)",
           "url": "https://store.epicgames.com",
-          "expires": "2026-11-12",
+          "expires": "2026-11-19",
           "is_active": true,
           "badge": "매주무료",
-          "verified_at": "2026-11-12T02:06:01.963Z",
+          "verified_at": "2026-11-12T17:19:17.055Z",
           "type": "COUPON"
         },
         {
