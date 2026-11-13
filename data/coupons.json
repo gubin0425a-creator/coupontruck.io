@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-12T17:19:17.983Z",
+  "last_updated": "2026-11-13T01:39:28.816Z",
   "version": "2.1.0",
   "total_active_offers": 104,
   "categories": {
@@ -1058,12 +1058,12 @@
           "id": "gam-01",
           "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 80% OFF)",
           "code": "자동할인",
-          "desc": "실시간 인기 특가: The Elder Scrolls V: Skyrim Special Edition(-80%), 디아블로 II 레저렉션 - 지옥불 에디션(-35%), DREADMOOR(-10%) 등 수천 개 정품 게임 공식 할인",
+          "desc": "실시간 인기 특가: One More Lawn(-30%), Main Sequence(-20%), The Elder Scrolls V: Skyrim Special Edition(-80%) 등 수천 개 정품 게임 공식 할인",
           "url": "https://store.steampowered.com",
           "expires": "2026-09-12",
           "is_active": true,
           "badge": "스팀특가",
-          "verified_at": "2026-11-12T17:19:17.055Z",
+          "verified_at": "2026-11-13T01:39:28.021Z",
           "type": "COUPON"
         },
         {
@@ -1099,7 +1099,7 @@
           "expires": "2026-11-19",
           "is_active": true,
           "badge": "매주무료",
-          "verified_at": "2026-11-12T17:19:17.055Z",
+          "verified_at": "2026-11-13T01:39:28.021Z",
           "type": "COUPON"
         },
         {
