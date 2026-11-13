@@ -3362,10 +3362,10 @@
     "brand_id": "steam",
     "category": "game",
     "type": "COUPON",
-    "title": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 80% OFF)",
-    "description": "실시간 인기 특가: One More Lawn(-30%), Main Sequence(-20%), The Elder Scrolls V: Skyrim Special Edition(-80%) 등 수천 개 정품 게임 공식 할인",
+    "title": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 30% OFF)",
+    "description": "실시간 인기 특가: One More Lawn(-30%), Drawquarium 드로잉 캔버스 수족관(-20%), Main Sequence(-20%) 등 수천 개 정품 게임 공식 할인",
     "coupon_code": "자동할인",
-    "discount_percent": 80,
+    "discount_percent": 30,
     "max_discount_percent": 90,
     "is_up_to": true,
     "end_date": "2026-09-12",
@@ -3378,7 +3378,7 @@
     "source_url": "https://store.steampowered.com",
     "source_kind": "MANUAL",
     "target_url": "https://store.steampowered.com",
-    "verified_at": "2026-11-13T01:39:28.021Z",
+    "verified_at": "2026-11-13T16:55:09.710Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
@@ -3386,7 +3386,7 @@
       "domain_allowed": true,
       "affiliate_matched": false,
       "notes": [
-        "Steam Web API 실시간 특가 피드 수집: One More Lawn(-30%), Main Sequence(-20%), The Elder Scrolls V: Skyrim Special Edition(-80%)"
+        "Steam Web API 실시간 특가 피드 수집: One More Lawn(-30%), Drawquarium 드로잉 캔버스 수족관(-20%), Main Sequence(-20%)"
       ]
     },
     "confidence": 96,
@@ -3486,7 +3486,7 @@
     "source_url": "https://store.epicgames.com",
     "source_kind": "MANUAL",
     "target_url": "https://store.epicgames.com",
-    "verified_at": "2026-11-13T01:39:28.021Z",
+    "verified_at": "2026-11-13T16:55:09.710Z",
     "evidence": {
       "code_in_source": true,
       "discount_in_source": true,
