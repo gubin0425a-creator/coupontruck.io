@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-19T02:14:02.703Z",
+  "last_updated": "2026-11-19T17:56:40.777Z",
   "version": "2.1.0",
   "total_active_offers": 104,
   "categories": {
@@ -1063,7 +1063,7 @@
           "expires": "2026-09-12",
           "is_active": true,
           "badge": "스팀특가",
-          "verified_at": "2026-11-19T02:14:01.531Z",
+          "verified_at": "2026-11-19T17:56:39.697Z",
           "type": "COUPON"
         },
         {
@@ -1092,14 +1092,14 @@
         },
         {
           "id": "gam-04",
-          "name": "에픽게임즈 주간 100% 무료 게임 배포 (Knightica)",
+          "name": "에픽게임즈 주간 100% 무료 게임 배포 (Mark of the Deep)",
           "code": "100% 무료",
-          "desc": "[지금 무료] Knightica 무료 다운로드 및 영구 소장 가능 (매주 신규 타이틀 갱신)",
+          "desc": "[지금 무료] Mark of the Deep 무료 다운로드 및 영구 소장 가능 (매주 신규 타이틀 갱신)",
           "url": "https://store.epicgames.com",
-          "expires": "2026-11-19",
+          "expires": "2026-11-26",
           "is_active": true,
           "badge": "매주무료",
-          "verified_at": "2026-11-19T02:14:01.531Z",
+          "verified_at": "2026-11-19T17:56:39.697Z",
           "type": "COUPON"
         },
         {
