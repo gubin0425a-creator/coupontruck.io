@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-19T17:56:40.777Z",
+  "last_updated": "2026-11-20T01:59:53.133Z",
   "version": "2.1.0",
   "total_active_offers": 104,
   "categories": {
@@ -1058,12 +1058,12 @@
           "id": "gam-01",
           "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 85% OFF)",
           "code": "자동할인",
-          "desc": "실시간 인기 특가: FINAL FANTASY VII REBIRTH(-85%), Bodycam(-20%), FINAL FANTASY VII REMAKE INTERGRADE(-82%) 등 수천 개 정품 게임 공식 할인",
+          "desc": "실시간 인기 특가: Ghost of Tsushima 디렉터스 컷(-50%), Bodycam(-20%), FINAL FANTASY VII REBIRTH(-85%) 등 수천 개 정품 게임 공식 할인",
           "url": "https://store.steampowered.com",
           "expires": "2026-09-12",
           "is_active": true,
           "badge": "스팀특가",
-          "verified_at": "2026-11-19T17:56:39.697Z",
+          "verified_at": "2026-11-20T01:59:52.499Z",
           "type": "COUPON"
         },
         {
@@ -1099,7 +1099,7 @@
           "expires": "2026-11-26",
           "is_active": true,
           "badge": "매주무료",
-          "verified_at": "2026-11-19T17:56:39.697Z",
+          "verified_at": "2026-11-20T01:59:52.499Z",
           "type": "COUPON"
         },
         {
