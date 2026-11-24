@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-23T20:50:23.969Z",
+  "last_updated": "2026-11-24T05:07:36.418Z",
   "version": "2.1.0",
   "total_active_offers": 104,
   "categories": {
@@ -1058,12 +1058,12 @@
           "id": "gam-01",
           "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 75% OFF)",
           "code": "자동할인",
-          "desc": "실시간 인기 특가: Grand Theft Auto V 인핸스드(-56%), Red Dead Redemption 2(-75%), 007 퍼스트 라이트(-50%) 등 수천 개 정품 게임 공식 할인",
+          "desc": "실시간 인기 특가: 007 퍼스트 라이트(-50%), Red Dead Redemption 2(-75%), Grand Theft Auto V 인핸스드(-56%) 등 수천 개 정품 게임 공식 할인",
           "url": "https://store.steampowered.com",
           "expires": "2026-09-12",
           "is_active": true,
           "badge": "스팀특가",
-          "verified_at": "2026-11-23T20:50:23.320Z",
+          "verified_at": "2026-11-24T05:07:35.629Z",
           "type": "COUPON"
         },
         {
@@ -1099,7 +1099,7 @@
           "expires": "2026-11-26",
           "is_active": true,
           "badge": "매주무료",
-          "verified_at": "2026-11-23T20:50:23.320Z",
+          "verified_at": "2026-11-24T05:07:35.629Z",
           "type": "COUPON"
         },
         {
