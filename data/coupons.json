@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26T03:21:01.806Z",
+  "last_updated": "2026-11-26T18:48:19.738Z",
   "version": "2.1.0",
   "total_active_offers": 104,
   "categories": {
@@ -1058,12 +1058,12 @@
           "id": "gam-01",
           "name": "스팀 (Steam) 실시간 주간 & 특별 할인 (최대 75% OFF)",
           "code": "자동할인",
-          "desc": "실시간 인기 특가: Grand Theft Auto V 인핸스드(-56%), SILENT HILL f(-72%), Red Dead Redemption 2(-75%) 등 수천 개 정품 게임 공식 할인",
+          "desc": "실시간 인기 특가: Grand Theft Auto V 인핸스드(-56%), Red Dead Redemption 2(-75%), 007 퍼스트 라이트(-50%) 등 수천 개 정품 게임 공식 할인",
           "url": "https://store.steampowered.com",
           "expires": "2026-09-12",
           "is_active": true,
           "badge": "스팀특가",
-          "verified_at": "2026-11-26T03:21:00.930Z",
+          "verified_at": "2026-11-26T18:48:19.137Z",
           "type": "COUPON"
         },
         {
@@ -1092,14 +1092,14 @@
         },
         {
           "id": "gam-04",
-          "name": "에픽게임즈 주간 100% 무료 게임 배포 (Mark of the Deep)",
+          "name": "에픽게임즈 주간 100% 무료 게임 배포 (파이어스톤  - 방치 클릭커 온라인 RPG)",
           "code": "100% 무료",
-          "desc": "[지금 무료] Mark of the Deep 무료 다운로드 및 영구 소장 가능 (매주 신규 타이틀 갱신)",
+          "desc": "[지금 무료] 파이어스톤  - 방치 클릭커 온라인 RPG, Bread and Fred 무료 다운로드 및 영구 소장 가능 (매주 신규 타이틀 갱신)",
           "url": "https://store.epicgames.com",
-          "expires": "2026-11-26",
+          "expires": "2026-12-03",
           "is_active": true,
           "badge": "매주무료",
-          "verified_at": "2026-11-26T03:21:00.930Z",
+          "verified_at": "2026-11-26T18:48:19.137Z",
           "type": "COUPON"
         },
         {
